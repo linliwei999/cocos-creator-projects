@@ -16,6 +16,17 @@ export default class BridControl extends cc.Component {
     onLoad() {
         //开启物理引擎
         cc.director.getPhysicsManager().enabled = true;
+        // 打出一条射线
+        let results = cc.director.getPhysicsManager().rayCast(this.node.getPosition(), cc.v2(this.node.x, this.node.y + 100), cc.RayCastType.Closest);
+        for(let i = 0; i < results.length; i++){
+            let res = results[i];
+            //射线碰到的碰撞器
+            res.collider;
+            //触碰到的点
+            res.point;
+            //碰到的法线
+            res.normal;
+        }
     }
 
     start () {
@@ -36,12 +47,11 @@ export default class BridControl extends cc.Component {
         //法线
         let normal = contact.getWorldManifold().normal;
         console.log("发生碰撞 法线" + normal);
-        
     }
 
     //结束碰撞
     onEndContact(contact, self, other){
-        
+        console.log("结束碰撞");
     }
 
 
