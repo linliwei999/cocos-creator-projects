@@ -1,6 +1,6 @@
 
 (function () {
-var scripts = [{"deps":{"./assets/script/EnemyControl":3,"./assets/script/EnemyManger":5,"./assets/script/PlayerControl":2,"./assets/script/BgControl":1,"./assets/script/BulletControl":4},"path":"preview-scripts/__qc_index__.js"},{"deps":{},"path":"preview-scripts/assets/script/BgControl.js"},{"deps":{},"path":"preview-scripts/assets/script/PlayerControl.js"},{"deps":{},"path":"preview-scripts/assets/script/EnemyControl.js"},{"deps":{"./EnemyControl":3},"path":"preview-scripts/assets/script/BulletControl.js"},{"deps":{},"path":"preview-scripts/assets/script/EnemyManger.js"}];
+var scripts = [{"deps":{"./assets/script/EnemyManger":5,"./assets/script/EnemyControl":3,"./assets/script/PlayerControl":2,"./assets/script/BgControl":1,"./assets/script/BulletControl":4},"path":"preview-scripts/__qc_index__.js"},{"deps":{},"path":"preview-scripts/assets/script/BgControl.js"},{"deps":{},"path":"preview-scripts/assets/script/PlayerControl.js"},{"deps":{},"path":"preview-scripts/assets/script/EnemyControl.js"},{"deps":{"./EnemyControl":3},"path":"preview-scripts/assets/script/BulletControl.js"},{"deps":{},"path":"preview-scripts/assets/script/EnemyManger.js"}];
 var entries = ["preview-scripts/__qc_index__.js"];
 
 /**

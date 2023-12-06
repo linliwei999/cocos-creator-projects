@@ -37,4 +37,15 @@ export default class PlayerControl extends cc.Component {
    
 
     }
+
+    onCollisionEnter(ohter){
+        // console.log("发生碰撞：", ohter.tag);
+        //玩家与敌机碰撞
+        if(ohter.tag == 1){
+            cc.loader.loadRes("hero1_die", cc.SpriteFrame, (err, res)=> {
+                this.node.getComponent(cc.Sprite).spriteFrame = res;
+            });
+        }
+        
+    }
 }

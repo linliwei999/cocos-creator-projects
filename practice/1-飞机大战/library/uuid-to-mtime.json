@@ -534,16 +534,6 @@
     "meta": 1701799512547,
     "relativePath": "bullet1.prefab"
   },
-  "909667ce-c362-4043-a897-bd3ce1e6fe80": {
-    "asset": 1701800441934,
-    "meta": 1701800462374,
-    "relativePath": "script/BulletControl.ts"
-  },
-  "1b3c7347-40c6-440b-b238-7bc2210a67bd": {
-    "asset": 1701803071507,
-    "meta": 1701803200060,
-    "relativePath": "script/PlayerControl.ts"
-  },
   "23209447-22bb-4354-93fd-3fa42affe6c7": {
     "asset": 1701840106635,
     "meta": 1701840114800,
@@ -558,5 +548,15 @@
     "asset": 1701840647783,
     "meta": 1701840650721,
     "relativePath": "script/EnemyManger.ts"
+  },
+  "909667ce-c362-4043-a897-bd3ce1e6fe80": {
+    "asset": 1701841226761,
+    "meta": 1701841241470,
+    "relativePath": "script/BulletControl.ts"
+  },
+  "1b3c7347-40c6-440b-b238-7bc2210a67bd": {
+    "asset": 1701841386195,
+    "meta": 1701841389216,
+    "relativePath": "script/PlayerControl.ts"
   }
 }

@@ -32,7 +32,6 @@ export default class BulletControl extends cc.Component {
         if(other.tag == 1){
             //销毁敌人
             other.getComponent(EnemyControl).die();
-
             //销毁自己
             this.node.destroy();
         }

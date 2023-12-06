@@ -59,6 +59,15 @@ var PlayerControl = /** @class */ (function (_super) {
     };
     PlayerControl.prototype.update = function (dt) {
     };
+    PlayerControl.prototype.onCollisionEnter = function (ohter) {
+        var _this = this;
+        console.log("发生碰撞：", ohter.tag);
+        if (ohter.tag == 1) {
+            cc.loader.loadRes("hero1_die", cc.SpriteFrame, function (err, res) {
+                _this.node.getComponent(cc.Sprite).spriteFrame = res;
+            });
+        }
+    };
     __decorate([
         property(cc.Prefab)
     ], PlayerControl.prototype, "bulletPre", void 0);
