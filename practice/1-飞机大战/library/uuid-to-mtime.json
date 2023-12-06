@@ -555,8 +555,13 @@
     "relativePath": "script/BulletControl.ts"
   },
   "1b3c7347-40c6-440b-b238-7bc2210a67bd": {
-    "asset": 1701841386195,
-    "meta": 1701841389216,
+    "asset": 1701841578233,
+    "meta": 1701842051210,
     "relativePath": "script/PlayerControl.ts"
+  },
+  "9b4f1b69-25f8-468c-a76c-ba0a57eeb329": {
+    "asset": 1701842058762,
+    "meta": 1701842058838,
+    "relativePath": "resources/游戏bgm.mp3"
   }
 }
