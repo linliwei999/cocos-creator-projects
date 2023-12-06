@@ -485,7 +485,7 @@
     "relativePath": "game.fire"
   },
   "fbb8f613-0c7f-44eb-ad24-65b5252083da": {
-    "asset": 1701797567034,
+    "asset": 1701799525454,
     "meta": 1701797131519,
     "relativePath": "resources"
   },
@@ -520,7 +520,7 @@
     "relativePath": "resources/enemy0.png"
   },
   "d18bbae3-b2ff-4a31-b9bf-77904df36d3c": {
-    "asset": 1701797578500,
+    "asset": 1701800069549,
     "meta": 1701797551326,
     "relativePath": "script"
   },
@@ -534,19 +534,29 @@
     "meta": 1701799512547,
     "relativePath": "bullet1.prefab"
   },
-  "1b3c7347-40c6-440b-b238-7bc2210a67bd": {
-    "asset": 1701800222305,
-    "meta": 1701800280642,
-    "relativePath": "script/PlayerControl.ts"
-  },
   "909667ce-c362-4043-a897-bd3ce1e6fe80": {
     "asset": 1701800441934,
     "meta": 1701800462374,
     "relativePath": "script/BulletControl.ts"
   },
+  "1b3c7347-40c6-440b-b238-7bc2210a67bd": {
+    "asset": 1701803071507,
+    "meta": 1701803200060,
+    "relativePath": "script/PlayerControl.ts"
+  },
   "23209447-22bb-4354-93fd-3fa42affe6c7": {
-    "asset": 1701800760857,
-    "meta": 1701800765365,
+    "asset": 1701840106635,
+    "meta": 1701840114800,
     "relativePath": "script/EnemyControl.ts"
+  },
+  "cd030e72-3c5c-48f5-bcab-a76228e7a27d": {
+    "asset": 1701840260672,
+    "meta": 1701840260673,
+    "relativePath": "enemy.prefab"
+  },
+  "932e6e70-2c3d-4ede-91a9-5767041536d2": {
+    "asset": 1701840647783,
+    "meta": 1701840650721,
+    "relativePath": "script/EnemyManger.ts"
   }
 }

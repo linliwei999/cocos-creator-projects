@@ -35,15 +35,25 @@ var EnemyControl = /** @class */ (function (_super) {
     function EnemyControl() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.label = null;
+        //是否死亡
+        _this.isDie = false;
         return _this;
     }
     EnemyControl.prototype.start = function () {
     };
     EnemyControl.prototype.update = function (dt) {
+        //移动
+        if (!this.isDie) {
+            this.node.y -= 200 * dt;
+        }
+        if (this.node.y < -850) {
+            this.die();
+        }
     };
     //死亡
     EnemyControl.prototype.die = function () {
         var _this = this;
+        this.isDie = true;
         //加载爆炸图片
         cc.loader.loadRes("enemy0_die", cc.SpriteFrame, function (err, res) {
             _this.node.getComponent(cc.Sprite).spriteFrame = res;

@@ -1,6 +1,6 @@
 "use strict";
-cc._RF.push(module, '23209RHIrtDVJP9P6Qq/+bH', 'EnemyControl');
-// script/EnemyControl.ts
+cc._RF.push(module, '932e65wLD1O3pGpV2cEFTbS', 'EnemyManger');
+// script/EnemyManger.ts
 
 "use strict";
 // Learn TypeScript:
@@ -30,47 +30,39 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var _a = cc._decorator, ccclass = _a.ccclass, property = _a.property;
-var EnemyControl = /** @class */ (function (_super) {
-    __extends(EnemyControl, _super);
-    function EnemyControl() {
+var EnemyManger = /** @class */ (function (_super) {
+    __extends(EnemyManger, _super);
+    function EnemyManger() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
+        //敌机预设体
+        _this.enemyPre = null;
         _this.label = null;
-        //是否死亡
-        _this.isDie = false;
         return _this;
     }
-    EnemyControl.prototype.start = function () {
-    };
-    EnemyControl.prototype.update = function (dt) {
-        //移动
-        if (!this.isDie) {
-            this.node.y -= 200 * dt;
-        }
-        if (this.node.y < -850) {
-            this.die();
-        }
-    };
-    //死亡
-    EnemyControl.prototype.die = function () {
+    EnemyManger.prototype.start = function () {
         var _this = this;
-        this.isDie = true;
-        //加载爆炸图片
-        cc.loader.loadRes("enemy0_die", cc.SpriteFrame, function (err, res) {
-            _this.node.getComponent(cc.Sprite).spriteFrame = res;
-        });
-        //300毫秒后销毁
-        setTimeout(function () {
-            _this.node.destroy();
-        }, 300);
+        //每隔两秒创建一个敌机
+        this.schedule(function () {
+            //创建敌机
+            var enemy = cc.instantiate(_this.enemyPre);
+            enemy.setParent(cc.director.getScene());
+            enemy.y = _this.node.y;
+            enemy.x = Math.random() * 400;
+        }, 1);
+    };
+    EnemyManger.prototype.update = function (dt) {
     };
     __decorate([
+        property(cc.Prefab)
+    ], EnemyManger.prototype, "enemyPre", void 0);
+    __decorate([
         property(cc.Label)
-    ], EnemyControl.prototype, "label", void 0);
-    EnemyControl = __decorate([
+    ], EnemyManger.prototype, "label", void 0);
+    EnemyManger = __decorate([
         ccclass
-    ], EnemyControl);
-    return EnemyControl;
+    ], EnemyManger);
+    return EnemyManger;
 }(cc.Component));
-exports.default = EnemyControl;
+exports.default = EnemyManger;
 
 cc._RF.pop();
