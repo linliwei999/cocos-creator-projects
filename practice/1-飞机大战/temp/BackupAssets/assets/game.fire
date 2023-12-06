@@ -920,6 +920,9 @@
     "_components": [
       {
         "__id__": 25
+      },
+      {
+        "__id__": 26
       }
     ],
     "_prefab": null,
@@ -978,14 +981,23 @@
       "__id__": 24
     },
     "_enabled": true,
-    "_clip": {
-      "__uuid__": "9b4f1b69-25f8-468c-a76c-ba0a57eeb329"
-    },
+    "_clip": null,
     "_volume": 0.1,
     "_mute": false,
     "_loop": false,
     "playOnLoad": false,
     "preload": false,
     "_id": "d37NMeVzJDYKUfMIs4HepI"
+  },
+  {
+    "__type__": "53c61ubF7tGuJxw04VY36dL",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 24
+    },
+    "_enabled": true,
+    "label": null,
+    "_id": "a2av6/N3lHjJLrpAHTCh0L"
   }
 ]

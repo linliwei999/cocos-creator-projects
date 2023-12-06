@@ -479,11 +479,6 @@
     "meta": 1701796928736,
     "relativePath": "model/primitives.fbx"
   },
-  "130a592c-cf1c-4fb9-a247-01eb1a796a50": {
-    "asset": 1701842743909,
-    "meta": 1701842743914,
-    "relativePath": "game.fire"
-  },
   "fbb8f613-0c7f-44eb-ad24-65b5252083da": {
     "asset": 1701799525454,
     "meta": 1701797131519,
@@ -565,8 +560,13 @@
     "relativePath": "script/PlayerControl.ts"
   },
   "53c61b9b-17bb-46b8-9c70-d38558dfa74b": {
-    "asset": 1701843613975,
-    "meta": 1701843615580,
+    "asset": 1701843658637,
+    "meta": 1701843706933,
     "relativePath": "script/AudioManager.ts"
+  },
+  "130a592c-cf1c-4fb9-a247-01eb1a796a50": {
+    "asset": 1701843708685,
+    "meta": 1701843708966,
+    "relativePath": "game.fire"
   }
 }
