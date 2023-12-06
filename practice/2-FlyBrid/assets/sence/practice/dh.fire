@@ -61,7 +61,7 @@
     "_groupIndex": 0,
     "groupIndex": 0,
     "autoReleaseAssets": false,
-    "_id": "1679aaf4-375d-4156-bcbc-e81a442d1b1d"
+    "_id": "37e220d0-06bc-4ec4-b28a-77c37b242554"
   },
   {
     "__type__": "cc.Node",
@@ -171,7 +171,7 @@
       "array": [
         0,
         0,
-        579.8474515422598,
+        346.4101615137755,
         0,
         0,
         0,
@@ -276,7 +276,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "New Sprite(Splash)",
+    "_name": "run (1)",
     "_objFlags": 0,
     "_parent": {
       "__id__": 1
@@ -289,9 +289,6 @@
       },
       {
         "__id__": 9
-      },
-      {
-        "__id__": 10
       }
     ],
     "_prefab": null,
@@ -305,8 +302,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 100,
-      "height": 100
+      "width": 57,
+      "height": 62
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -317,15 +314,15 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        252.076,
-        319.326,
+        189.376,
+        227.677,
         0,
         0,
         0,
         0,
         1,
-        1,
-        1,
+        2,
+        2,
         1
       ]
     },
@@ -340,7 +337,7 @@
     "_is3DNode": false,
     "_groupIndex": 0,
     "groupIndex": 0,
-    "_id": "129K8vXuZLTJy6FFw+rGEO"
+    "_id": "047jmdZ7JAlLgl0p22kVyp"
   },
   {
     "__type__": "cc.Sprite",
@@ -358,10 +355,10 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "a23235d1-15db-4b95-8439-a2e005bfff91"
+      "__uuid__": "6d02b872-702d-4e2f-b210-3ad3ff54e361"
     },
     "_type": 0,
-    "_sizeMode": 0,
+    "_sizeMode": 1,
     "_fillType": 0,
     "_fillCenter": {
       "__type__": "cc.Vec2",
@@ -372,17 +369,7 @@
     "_fillRange": 0,
     "_isTrimmedMode": true,
     "_atlas": null,
-    "_id": "22hDOPKMdHwJVK6DUq9PZn"
-  },
-  {
-    "__type__": "4493cnUYXZJOrN5P1oMN9nf",
-    "_name": "",
-    "_objFlags": 0,
-    "node": {
-      "__id__": 7
-    },
-    "_enabled": true,
-    "_id": "655HnkVIRCyq+vsBCeTA+g"
+    "_id": "32EkSCIZdOpLxFuPUkpQm0"
   },
   {
     "__type__": "cc.Animation",
@@ -392,9 +379,15 @@
       "__id__": 7
     },
     "_enabled": true,
-    "_defaultClip": null,
-    "_clips": [],
+    "_defaultClip": {
+      "__uuid__": "29f8344e-b565-4157-8be6-68b310aa3e70"
+    },
+    "_clips": [
+      {
+        "__uuid__": "29f8344e-b565-4157-8be6-68b310aa3e70"
+      }
+    ],
     "playOnLoad": false,
-    "_id": "b2OmvxbVhJVJJVPnaYVJJV"
+    "_id": "540a+AIJBOI7FUW55jnNdp"
   }
 ]

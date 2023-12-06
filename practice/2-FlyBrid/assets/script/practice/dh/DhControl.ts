@@ -11,7 +11,9 @@ const {ccclass, property} = cc._decorator;
 export default class DhControl extends cc.Component {
 
     start () {
-        
+        let ani = this.getComponent(cc.Animation);
+        //播放动画
+        ani.play("run");
 
     }
 
