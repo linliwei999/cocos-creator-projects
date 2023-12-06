@@ -42,24 +42,30 @@ export default class BridControl extends cc.Component {
     //开始碰撞
     onBeginContact(contact, self, other){
         //得到碰撞点
-        let points = contact.getWorldManifold().points;
-        console.log("发生碰撞 碰撞点" + points[0]);
-        //法线
-        let normal = contact.getWorldManifold().normal;
-        console.log("发生碰撞 法线" + normal);
+        // let points = contact.getWorldManifold().points;
+        // console.log("发生碰撞 碰撞点" + points[0]);
+        // //法线
+        // let normal = contact.getWorldManifold().normal;
+        // console.log("发生碰撞 法线" + normal);
+
+        if(other.tag == 1){
+            console.log("通过管道加分");
+        }else{
+            console.log("碰到障碍 game over");
+        }
     }
 
     //结束碰撞
     onEndContact(contact, self, other){
-        console.log("结束碰撞");
+        // console.log("结束碰撞");
     }
     
     fly(){
         this.getComponent(cc.RigidBody).linearVelocity = cc.v2(0, 150);
     }
 
-
     update (dt) {
 
     }
+
 }

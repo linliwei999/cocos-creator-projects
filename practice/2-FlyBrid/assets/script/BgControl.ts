@@ -23,6 +23,12 @@ export default class BgControl extends cc.Component {
     brid: BridControl = null;
 
     start () {
+        //添加背景音乐
+        cc.loader.loadRes("游戏bgm", cc.AudioClip, (err, clip)=> {
+            let audioId: number = cc.audioEngine.playMusic(clip, true);
+            cc.audioEngine.setVolume(audioId, 0.1);
+            cc.audioEngine.stop(audioId);
+        });
         // 点击监听
         // this.node.on 
         for(let bg of this.node.children){
@@ -30,7 +36,6 @@ export default class BgControl extends cc.Component {
                 this.brid.fly();
             });
         }
-
     }
 
     update (dt) {
