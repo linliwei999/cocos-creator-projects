@@ -55,7 +55,7 @@ export default class BridControl extends cc.Component {
     }
     
     fly(){
-        this.getComponent(cc.RigidBody).linearVelocity = cc.v2(0, 100);
+        this.getComponent(cc.RigidBody).linearVelocity = cc.v2(0, 150);
     }
 
 
