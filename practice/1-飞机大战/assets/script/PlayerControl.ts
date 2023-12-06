@@ -13,7 +13,6 @@ export default class PlayerControl extends cc.Component {
     @property(cc.Prefab)
     bulletPre: cc.Prefab = null;
 
-
     start () {
         //移动
         this.node.on(cc.Node.EventType.TOUCH_MOVE, (event)=>{
@@ -35,14 +34,13 @@ export default class PlayerControl extends cc.Component {
 
     update (dt) {
    
-
     }
 
     onCollisionEnter(ohter){
-        // console.log("发生碰撞：", ohter.tag);
-        //玩家与敌机碰撞
+        //玩家与敌机碰撞 
         if(ohter.tag == 1){
             cc.loader.loadRes("hero1_die", cc.SpriteFrame, (err, res)=> {
+                //替换图片资源
                 this.node.getComponent(cc.Sprite).spriteFrame = res;
             });
         }
