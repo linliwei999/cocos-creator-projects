@@ -5,12 +5,19 @@ const {ccclass, property} = cc._decorator;
 
 @ccclass
 export default class MessageCenter{
+    // static Instance: MessageCenter;
     //管理类列表
-    static ManagerList: ComponentBase[] = [];
+    static Managers: ComponentBase[] = [];
+
+    // constructor() {
+    //     if(!MessageCenter){
+    //         MessageCenter.Instance = this;
+    //     }
+    // }
 
     //发送消息
     static SendMessage(msg: Message){
-        for(let manager of this.ManagerList){
+        for(let manager of this.Managers){
             manager.ReceiveMessage(msg);
         }
     }

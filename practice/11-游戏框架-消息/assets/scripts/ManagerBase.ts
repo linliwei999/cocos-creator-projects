@@ -11,11 +11,13 @@ export default class ManagerBase extends ComponentBase {
     //当前管理类接收的具体类型
     messageType: number;
 
-    onload(){
+    onLoad(){
+        // super.onLoad();
         //设置当前管理类接收的消息类型
         this.messageType = this.SetMessageType();
         //把管理类添加到消息中心列表中
-        MessageCenter.ManagerList.push(this);
+        MessageCenter.Managers.push(this);
+        console.log('MessageCenter.Managers', MessageCenter.Managers);
     }
     
     //设置当前管理类的消息类型
@@ -40,7 +42,6 @@ export default class ManagerBase extends ComponentBase {
         for(let cb of this.ReceiveList){
             cb.ReceiveMessage(message);
         }
-
     }
 }
 
