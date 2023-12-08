@@ -14,11 +14,14 @@ export default class NewClass extends cc.Component {
     //飞翔目标位置 +-110, 185
     targetPosition: cc.Vec2 = null;
     //速度
-    speed: number = 50；
+    speed: number = 50;
+    //游戏结束回调
+    dieCallBack: Function;
+    //加分回调
+    addSoreCallBack: Function;
 
     start () {
        this.fly();
-
     }
 
     fly(){
@@ -31,9 +34,11 @@ export default class NewClass extends cc.Component {
         //移动
         //速度 * 时间 = 距离
         let move = cc.moveTo((this.targetPosition.y - this.node.y) / this.speed, this.targetPosition);
-        this.node.runAction(move);
-
-        //如果飞出屏幕
+        let seq = cc.sequence(move, cc.callFunc(()=> {
+            //结束回调
+            this.dieCallBack();
+        }));
+        this.node.runAction(seq);
 
         //如果触摸到
         this.node.on(cc.Node.EventType.TOUCH_START, (event)=> {
@@ -46,7 +51,12 @@ export default class NewClass extends cc.Component {
                 //向下掉落
                 this.getComponent(cc.Animation).play("die");
                 let moveDie = cc.moveTo(this.node.y / (this.speed * 2), cc.v2(this.node.x, 0));
-                this.node.runAction(moveDie); 
+                this.node.runAction(cc.sequence(moveDie, cc.callFunc(()=>{
+                    // 销毁自身
+                    this.node.destroy();
+                }))); 
+                //加分
+                this.addSoreCallBack && this.addSoreCallBack();
             }   
         });
 
