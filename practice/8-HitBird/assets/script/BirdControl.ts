@@ -32,6 +32,24 @@ export default class NewClass extends cc.Component {
         //速度 * 时间 = 距离
         let move = cc.moveTo((this.targetPosition.y - this.node.y) / this.speed, this.targetPosition);
         this.node.runAction(move);
+
+        //如果飞出屏幕
+
+        //如果触摸到
+        this.node.on(cc.Node.EventType.TOUCH_START, (event)=> {
+            //如果还活着
+            if(this.hp > 0){
+                //血量减少
+                this.hp--;
+                //听着飞翔动作
+                this.node.stopAllActions();
+                //向下掉落
+                this.getComponent(cc.Animation).play("die");
+                let moveDie = cc.moveTo(this.node.y / (this.speed * 2), cc.v2(this.node.x, 0));
+                this.node.runAction(moveDie); 
+            }   
+        });
+
     }
 
     update (dt) {
