@@ -1,7 +1,7 @@
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class NewClass extends cc.Component {
+export default class BirdControl extends cc.Component {
     //生命值
     hp: number = 1;
     //飞翔目标位置 +-110, 185

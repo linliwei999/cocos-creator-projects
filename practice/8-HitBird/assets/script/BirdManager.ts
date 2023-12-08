@@ -6,15 +6,16 @@ export default class NewClass extends cc.Component {
     //bird预设体
     @property(cc.Prefab)
     birdPre: cc.Prefab = null;
-    
     //生成bird间隔
     time: number = 1;
-    
     //分数
     score: number = 0;
     //分数标签
     @property(cc.Label)
     scoreLabel: cc.Label;
+    //返回试图
+    @property(cc.Node)
+    back_View: cc.Node; 
 
     start () {
         //每隔time生成一只brid
@@ -24,6 +25,10 @@ export default class NewClass extends cc.Component {
         this.schedule(()=>{
             this.createBird();
         }, 1);
+    }
+
+    update (dt) {
+
     }
 
     //创建bird
@@ -52,11 +57,13 @@ export default class NewClass extends cc.Component {
         bird.getComponent(BirdControl).dieCallBack = () =>{
             this.node.destroyAllChildren();
             this.node.stopAllActions();
-            console.log('游戏结束');
+            this.back_View.active = true;
+            this.unscheduleAllCallbacks();
+            // console.log('游戏结束');
         };
     }
 
-    update (dt) {
-
+    backView(){
+        cc.director.loadScene("start"); 
     }
 }
