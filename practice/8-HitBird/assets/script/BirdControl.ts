@@ -1,10 +1,3 @@
-// Learn TypeScript:
-//  - https://docs.cocos.com/creator/manual/en/scripting/typescript.html
-// Learn Attribute:
-//  - https://docs.cocos.com/creator/manual/en/scripting/reference/attributes.html
-// Learn life-cycle callbacks:
-//  - https://docs.cocos.com/creator/manual/en/scripting/life-cycle-callbacks.html
-
 const {ccclass, property} = cc._decorator;
 
 @ccclass
@@ -21,7 +14,7 @@ export default class NewClass extends cc.Component {
     addSoreCallBack: Function;
 
     start () {
-       this.fly();
+    //    this.fly();
     }
 
     fly(){
@@ -36,7 +29,8 @@ export default class NewClass extends cc.Component {
         let move = cc.moveTo((this.targetPosition.y - this.node.y) / this.speed, this.targetPosition);
         let seq = cc.sequence(move, cc.callFunc(()=> {
             //结束回调
-            this.dieCallBack();
+            //如果飞出屏幕游戏结束
+            this.dieCallBack && this.dieCallBack();
         }));
         this.node.runAction(seq);
 
