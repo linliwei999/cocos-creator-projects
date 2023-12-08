@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "palyer",
+    "_name": "player",
     "_objFlags": 0,
     "_parent": null,
     "_children": [],
@@ -21,10 +21,13 @@
     "_components": [
       {
         "__id__": 2
+      },
+      {
+        "__id__": 3
       }
     ],
     "_prefab": {
-      "__id__": 3
+      "__id__": 4
     },
     "_opacity": 255,
     "_color": {
@@ -106,12 +109,23 @@
     "_id": ""
   },
   {
+    "__type__": "bfe43xDitxBfomV7hvIQCLv",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "label": null,
+    "_id": ""
+  },
+  {
     "__type__": "cc.PrefabInfo",
     "root": {
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "c8cb0108-866d-46b8-9372-b77309c095da"
     },
     "fileId": "c0uH2qp8lC2Zl8Xs53fF5D",
     "sync": false
