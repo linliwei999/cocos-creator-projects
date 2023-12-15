@@ -12,6 +12,39 @@
       "__unresolved_4": "cce:/internal/x/cc-fu/profiler",
       "__unresolved_5": "cce:/internal/x/cc-fu/tween",
       "__unresolved_6": "cce:/internal/x/cc-fu/ui"
+    },
+    "./mods/fs/0/assets/Enums/index.js": {
+      "cc": "./mods/cce/internal/x/cc.js"
+    },
+    "./mods/fs/0/assets/Levels/level1.js": {
+      "__unresolved_0": "./mods/cce/internal/code-quality/cr.js",
+      "cc": "./mods/cce/internal/x/cc.js",
+      "__unresolved_1": "./mods/fs/0/assets/Enums/index.js"
+    },
+    "./mods/fs/0/assets/Levels/index.js": {
+      "cc": "./mods/cce/internal/x/cc.js",
+      "__unresolved_0": "./mods/cce/internal/code-quality/cr.js",
+      "__unresolved_1": "./mods/fs/0/assets/Levels/level1.js"
+    },
+    "./mods/fs/0/assets/Scripts/Sence/Battle.js": {
+      "cc": "./mods/cce/internal/x/cc.js"
+    },
+    "./mods/fs/0/assets/Scripts/Sence/BattleManager.js": {
+      "__unresolved_0": "./mods/cce/internal/code-quality/cr.js",
+      "cc": "./mods/cce/internal/x/cc.js",
+      "__unresolved_1": "./mods/fs/0/assets/Scripts/Tile/TileMapManager.js"
+    },
+    "./mods/cce/internal/x/prerequisite-imports.js": {
+      "__unresolved_0": "./mods/fs/0/assets/Enums/index.js",
+      "__unresolved_1": "./mods/fs/0/assets/Levels/index.js",
+      "__unresolved_3": "./mods/fs/0/assets/Scripts/Sence/BattleManager.js",
+      "__unresolved_2": "./mods/fs/0/assets/Levels/level1.js",
+      "__unresolved_4": "./mods/fs/0/assets/Scripts/Tile/TileMapManager.js"
+    },
+    "./mods/fs/0/assets/Scripts/Tile/TileMapManager.js": {
+      "__unresolved_0": "./mods/cce/internal/code-quality/cr.js",
+      "cc": "./mods/cce/internal/x/cc.js",
+      "__unresolved_1": "./mods/fs/0/assets/Levels/index.js"
     }
   }
 }

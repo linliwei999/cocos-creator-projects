@@ -35,11 +35,72 @@
     "isEntry": true,
     "exposeAs": "cce:/internal/x/cc"
   },
-  "quick-pack:/cce/internal/x/prerequisite-imports.js": {
+  "assets/Enums/index.js": {
+    "imports": {
+      "cc": "quick-pack:/cce/internal/x/cc.js"
+    },
+    "physicalLocation": "fs/0/assets/Enums/index.js",
+    "mTimestamp": 1702659718905
+  },
+  "quick-pack:/cce/internal/code-quality/cr.js": {
     "imports": {},
+    "physicalLocation": "cce/internal/code-quality/cr.js",
+    "mTimestamp": 1702659719112
+  },
+  "assets/Levels/level1.js": {
+    "imports": {
+      "__unresolved_0": "quick-pack:/cce/internal/code-quality/cr.js",
+      "cc": "quick-pack:/cce/internal/x/cc.js",
+      "__unresolved_1": "assets/Enums/index.js"
+    },
+    "physicalLocation": "fs/0/assets/Levels/level1.js",
+    "mTimestamp": 1702660062115
+  },
+  "assets/Levels/index.js": {
+    "imports": {
+      "cc": "quick-pack:/cce/internal/x/cc.js",
+      "__unresolved_0": "quick-pack:/cce/internal/code-quality/cr.js",
+      "__unresolved_1": "assets/Levels/level1.js"
+    },
+    "physicalLocation": "fs/0/assets/Levels/index.js",
+    "mTimestamp": 1702660062134
+  },
+  "assets/Scripts/Sence/Battle.js": {
+    "imports": {
+      "cc": "quick-pack:/cce/internal/x/cc.js"
+    },
+    "physicalLocation": "fs/0/assets/Scripts/Sence/Battle.js",
+    "mTimestamp": 1702660152735
+  },
+  "assets/Scripts/Sence/BattleManager.js": {
+    "imports": {
+      "__unresolved_0": "quick-pack:/cce/internal/code-quality/cr.js",
+      "cc": "quick-pack:/cce/internal/x/cc.js",
+      "__unresolved_1": "assets/Scripts/Tile/TileMapManager.js"
+    },
+    "physicalLocation": "fs/0/assets/Scripts/Sence/BattleManager.js",
+    "mTimestamp": 1702660587272
+  },
+  "quick-pack:/cce/internal/x/prerequisite-imports.js": {
+    "imports": {
+      "__unresolved_0": "assets/Enums/index.js",
+      "__unresolved_1": "assets/Levels/index.js",
+      "__unresolved_3": "assets/Scripts/Sence/BattleManager.js",
+      "__unresolved_2": "assets/Levels/level1.js",
+      "__unresolved_4": "assets/Scripts/Tile/TileMapManager.js"
+    },
     "physicalLocation": "cce/internal/x/prerequisite-imports.js",
-    "mTimestamp": 1702657977247,
+    "mTimestamp": 1702661758441,
     "isEntry": true,
     "exposeAs": "cce:/internal/x/prerequisite-imports"
+  },
+  "assets/Scripts/Tile/TileMapManager.js": {
+    "imports": {
+      "__unresolved_0": "quick-pack:/cce/internal/code-quality/cr.js",
+      "cc": "quick-pack:/cce/internal/x/cc.js",
+      "__unresolved_1": "assets/Levels/index.js"
+    },
+    "physicalLocation": "fs/0/assets/Scripts/Tile/TileMapManager.js",
+    "mTimestamp": 1702661758482
   }
 }

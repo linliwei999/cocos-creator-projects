@@ -2627,8 +2627,88 @@
     "time": 1702658055919.1404
   },
   "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Sences/Battle.scene": {
-    "time": 1702658913057.5327,
+    "time": 1702661166520.0598,
     "uuid": "31470aa7-2e8d-4262-8d50-b8a0406d0fc8",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels.meta": {
+    "time": 1647767044000
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels": {
+    "time": 1702660046789.3247,
+    "uuid": "30700d78-893e-4054-ba0f-762bbf77382d",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level1.ts.meta": {
+    "time": 1702659127167.4731
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level1.ts": {
+    "time": 1702659899391.7908,
+    "uuid": "36a766d6-8594-443b-a3fb-3b376824f05a",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Enums.meta": {
+    "time": 1702659718640.3442
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Enums/index.ts.meta": {
+    "time": 1702659718640.9553
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/index.ts.meta": {
+    "time": 1702659718641.5442
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Enums": {
+    "time": 1702659718634.4165,
+    "uuid": "b4958616-1c8f-46cd-8e26-3884b533ba2c",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Enums/index.ts": {
+    "time": 1702659514538.5962,
+    "uuid": "114c80cb-ebd8-48d4-a69d-5a331f8a3e8f",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/index.ts": {
+    "time": 1702660046789.181,
+    "uuid": "99a344a1-5479-4e24-bdde-d47e0b51e182",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts.meta": {
+    "time": 1702660100011.9636
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts": {
+    "time": 1702660587091.0603,
+    "uuid": "157b4b45-8faf-483e-938c-c12c2bfa86e2",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Sence.meta": {
+    "time": 1702660143415.9607
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Sence": {
+    "time": 1702660504504.8533,
+    "uuid": "190d29ab-38d9-4f6d-82c9-66d304401d0d",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Sence/BattleManager.ts.meta": {
+    "time": 1702660152569.0073
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Sence/BattleManager.ts": {
+    "time": 1702660504504.7708,
+    "uuid": "bd0bbef9-eda4-4fbc-a655-b42512681271",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Tile.meta": {
+    "time": 1702660587098.7407
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Tile/TileMapManager.ts.meta": {
+    "time": 1702660587100.1382
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Tile": {
+    "time": 1702661730693.2231,
+    "uuid": "4458b11a-a862-4801-9fde-20e40c0637ab",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Tile/TileMapManager.ts": {
+    "time": 1702661730693.1245,
+    "uuid": "48ff63d2-6fd3-4606-bf44-5f26166a13fa",
     "missing": false
   }
 }

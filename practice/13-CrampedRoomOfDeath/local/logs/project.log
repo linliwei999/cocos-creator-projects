@@ -65,3 +65,34 @@ Why you should do it regularly:
 https://github.com/browserslist/browserslist#browsers-data-updating
 2023-12-16 00:32:57-log: [Scene] Cocos Creator v3.4.2
 2023-12-16 00:32:57-info: [Scene] Forward render pipeline initialized.
+2023-12-16 00:54:17-error: [Scene] TILE_TYPE_ENUM is not defined
+2023-12-16 00:54:18-error: [Preview]TILE_TYPE_ENUM is not defined
+2023-12-16 00:54:18-error: [Preview]ReferenceError: TILE_TYPE_ENUM is not defined
+    at Object.execute (http://localhost:7456/scripting/x/mods/fs/0/assets/Levels/level1.js:29:15)
+    at doExec (http://localhost:7456/scripting/systemjs/system.js:467:34)
+    at postOrderExec (http://localhost:7456/scripting/systemjs/system.js:463:12)
+    at http://localhost:7456/scripting/systemjs/system.js:449:30
+    at Array.forEach (<anonymous>)
+    at postOrderExec (http://localhost:7456/scripting/systemjs/system.js:447:12)
+    at http://localhost:7456/scripting/systemjs/system.js:420:14
+2023-12-16 01:01:57-error: [Preview]TILE_TYPE_ENUM is not defined
+2023-12-16 01:01:57-error: [Preview]ReferenceError: TILE_TYPE_ENUM is not defined
+    at Object.execute (http://localhost:7456/scripting/x/mods/fs/0/assets/Levels/level1.js:29:15)
+    at doExec (http://localhost:7456/scripting/systemjs/system.js:467:34)
+    at postOrderExec (http://localhost:7456/scripting/systemjs/system.js:463:12)
+    at http://localhost:7456/scripting/systemjs/system.js:449:30
+    at Array.forEach (<anonymous>)
+    at postOrderExec (http://localhost:7456/scripting/systemjs/system.js:447:12)
+    at http://localhost:7456/scripting/systemjs/system.js:420:14
+2023-12-16 01:26:08-error: [Preview]unhandledrejection: ths is not defined
+2023-12-16 01:26:08-error: [Preview]ReferenceError: ths is not defined
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Tile/TileMapManager.js:47:32
+    at Generator.next (<anonymous>)
+    at asyncGeneratorStep (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Tile/TileMapManager.js:6:105)
+    at _next (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Tile/TileMapManager.js:8:196)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Tile/TileMapManager.js:8:366
+    at new Promise (<anonymous>)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Tile/TileMapManager.js:8:99
+    at TileMapManager.init (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Tile/TileMapManager.js:66:13)
+    at BattleManager.generateTileMap (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/BattleManager.js:50:23)
+    at BattleManager.start (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/BattleManager.js:38:16)
