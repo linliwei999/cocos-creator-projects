@@ -430,10 +430,10 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "972e6ab3-3aa8-4308-bc2d-ecba5f225216"
+      "__uuid__": "645e7d4c-9551-49fa-a854-d6876910dc1a"
     },
     "_type": 0,
-    "_sizeMode": 1,
+    "_sizeMode": 0,
     "_fillType": 0,
     "_fillCenter": {
       "__type__": "cc.Vec2",
@@ -483,7 +483,7 @@
       "__type__": "TypedArray",
       "ctor": "Float64Array",
       "array": [
-        288,
+        280.045,
         0,
         0,
         0,
@@ -524,10 +524,10 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "972e6ab3-3aa8-4308-bc2d-ecba5f225216"
+      "__uuid__": "645e7d4c-9551-49fa-a854-d6876910dc1a"
     },
     "_type": 0,
-    "_sizeMode": 1,
+    "_sizeMode": 0,
     "_fillType": 0,
     "_fillCenter": {
       "__type__": "cc.Vec2",
@@ -727,14 +727,8 @@
       "__id__": 14
     },
     "_enabled": true,
-    "_defaultClip": {
-      "__uuid__": "dd243ff1-4b79-4123-889a-bb97eaa55cfe"
-    },
-    "_clips": [
-      {
-        "__uuid__": "dd243ff1-4b79-4123-889a-bb97eaa55cfe"
-      }
-    ],
+    "_defaultClip": null,
+    "_clips": [],
     "playOnLoad": false,
     "_id": "fd+oqs+KFHEbSqeWI1vrxx"
   },
