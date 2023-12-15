@@ -1,0 +1,30 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "attack (6)",
+    "atlas": "5772e697-94b3-4422-a73c-9474864d26d9",
+    "rect": {
+      "x": 640,
+      "y": 320,
+      "width": 320,
+      "height": 320
+    },
+    "offset": {
+      "x": 0,
+      "y": 0
+    },
+    "originalSize": {
+      "width": 320,
+      "height": 320
+    },
+    "rotated": false,
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "texture": "bbea5a53-0128-4bc9-8424-dfb8285a9f80@6c48a",
+    "packable": true
+  }
+}

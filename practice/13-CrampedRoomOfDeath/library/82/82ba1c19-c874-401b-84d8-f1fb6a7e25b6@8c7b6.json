@@ -1,0 +1,30 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "spikes (2)",
+    "atlas": "82ba1c19-c874-401b-84d8-f1fb6a7e25b6",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 320,
+      "height": 320
+    },
+    "offset": {
+      "x": 0,
+      "y": 0
+    },
+    "originalSize": {
+      "width": 320,
+      "height": 320
+    },
+    "rotated": false,
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "texture": "7c80c3bc-9cb9-4bd3-90bf-6cd0473196d7@6c48a",
+    "packable": true
+  }
+}

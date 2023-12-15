@@ -1,0 +1,298 @@
+{
+  "path": {
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/burst/attack/idle.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/burst/attack/idle.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/burst/idle/idle.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/burst/idle/idle.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/burst/death/idle.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/burst/death/idle.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/ctrl/ctrl.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/ctrl/ctrl.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/door/death/death.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/door/death/death.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/door/idle/left/idle.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/door/idle/left/idle.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/door/idle/top/idle.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/door/idle/top/idle.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/tile/tile.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/tile/tile.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/ironskeleton/death/bottom/death.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/ironskeleton/death/bottom/death.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/ironskeleton/death/left/death.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/ironskeleton/death/left/death.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/ironskeleton/death/right/death.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/ironskeleton/death/right/death.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/ironskeleton/death/top/death.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/ironskeleton/death/top/death.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/ironskeleton/idle/bottom/idle.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/ironskeleton/idle/bottom/idle.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/ironskeleton/idle/left/idle.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/ironskeleton/idle/left/idle.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/ironskeleton/idle/right/idle.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/ironskeleton/idle/right/idle.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/ironskeleton/idle/top/idle.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/ironskeleton/idle/top/idle.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/airdeath/bottom/death.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/airdeath/bottom/death.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/airdeath/left/death.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/airdeath/left/death.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/airdeath/right/death.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/airdeath/right/death.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/attack/bottom/attack.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/attack/bottom/attack.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/airdeath/top/death.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/airdeath/top/death.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/attack/left/attack.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/attack/left/attack.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockback/bottom/blockback.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockback/bottom/blockback.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/attack/right/attack.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/attack/right/attack.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/attack/top/attack.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/attack/top/attack.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockback/left/blockback.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockback/left/blockback.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockback/right/blockback.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockback/right/blockback.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockback/top/blockback.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockback/top/blockback.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockfront/bottom/blockfront.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockfront/bottom/blockfront.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockfront/left/blockfront.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockfront/left/blockfront.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockfront/right/blockfront.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockfront/right/blockfront.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockfront/top/blockfront.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockfront/top/blockfront.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockleft/bottom/blockleft.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockleft/bottom/blockleft.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockleft/left/blockleft.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockleft/left/blockleft.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockleft/top/blockleft.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockleft/top/blockleft.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockleft/right/blockleft.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockleft/right/blockleft.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockright/bottom/blockright.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockright/bottom/blockright.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockright/left/blockright.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockright/left/blockright.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockright/right/blockright.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockright/right/blockright.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockright/top/blockright.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockright/top/blockright.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockturnleft/bottom/blockturnleft.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockturnleft/bottom/blockturnleft.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockturnleft/left/blockturnleft.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockturnleft/left/blockturnleft.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockturnleft/right/blockturnleft.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockturnleft/right/blockturnleft.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockturnleft/top/blockturnleft.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockturnleft/top/blockturnleft.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockturnright/bottom/blockturnright.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockturnright/bottom/blockturnright.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockturnright/left/blockturnright.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockturnright/left/blockturnright.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockturnright/right/blockturnright.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockturnright/right/blockturnright.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockturnright/top/blockturnright.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/blockturnright/top/blockturnright.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/death/bottom/death.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/death/bottom/death.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/death/left/death.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/death/left/death.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/death/right/death.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/death/right/death.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/idle/bottom/idle.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/idle/bottom/idle.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/death/top/death.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/death/top/death.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/idle/left/idle.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/idle/left/idle.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/idle/top/idle.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/idle/top/idle.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/idle/right/idle.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/idle/right/idle.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/turnleft/bottom/turnleft.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/turnleft/bottom/turnleft.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/turnleft/left/turnleft.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/turnleft/left/turnleft.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/turnleft/right/turnleft.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/turnleft/right/turnleft.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/turnright/bottom/turnright.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/turnright/bottom/turnright.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/turnleft/top/turnleft.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/turnleft/top/turnleft.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/turnright/left/turnright.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/turnright/left/turnright.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/turnright/right/turnright.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/turnright/right/turnright.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/turnright/top/turnright.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/player/turnright/top/turnright.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/smoke/idle/bottom/idle.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/smoke/idle/bottom/idle.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/smoke/idle/right/idle.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/smoke/idle/right/idle.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/smoke/idle/left/idle.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/smoke/idle/left/idle.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikesfour/five/five.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikesfour/five/five.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/smoke/idle/top/idle.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/smoke/idle/top/idle.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikesfour/four/four.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikesfour/four/four.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikesfour/one/one.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikesfour/one/one.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikesfour/three/three.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikesfour/three/three.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikesfour/two/two.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikesfour/two/two.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikesfour/zero/zero.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikesfour/zero/zero.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikesone/one/one.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikesone/one/one.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikesone/zero/zero.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikesone/zero/zero.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikesone/two/two.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikesone/two/two.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikesthree/four/four.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikesthree/four/four.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikesthree/one/one.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikesthree/one/one.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikesthree/three/three.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikesthree/three/three.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikesthree/two/two.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikesthree/two/two.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikesthree/zero/zero.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikesthree/zero/zero.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikestwo/one/one.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikestwo/one/one.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikestwo/two/two.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikestwo/two/two.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikestwo/three/three.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikestwo/three/three.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikestwo/zero/zero.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/spikes/spikestwo/zero/zero.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/woodenskeleton/attack/bottom/attack.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/woodenskeleton/attack/bottom/attack.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/woodenskeleton/attack/left/attack.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/woodenskeleton/attack/left/attack.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/woodenskeleton/attack/right/attack.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/woodenskeleton/attack/right/attack.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/woodenskeleton/attack/top/attack.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/woodenskeleton/attack/top/attack.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/woodenskeleton/death/bottom/death.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/woodenskeleton/death/bottom/death.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/woodenskeleton/idle/bottom/idle.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/woodenskeleton/idle/bottom/idle.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/woodenskeleton/death/left/death.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/woodenskeleton/death/left/death.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/woodenskeleton/death/right/death.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/woodenskeleton/death/right/death.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/woodenskeleton/death/top/death.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/woodenskeleton/death/top/death.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/woodenskeleton/idle/left/idle.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/woodenskeleton/idle/left/idle.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/woodenskeleton/idle/right/idle.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/woodenskeleton/idle/right/idle.png"
+    ],
+    "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/woodenskeleton/idle/top/idle.plist": [
+      "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/resources/texture/woodenskeleton/idle/top/idle.png"
+    ]
+  }
+}
