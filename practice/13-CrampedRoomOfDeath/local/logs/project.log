@@ -1,98 +1,67 @@
-2023-12-16 00:32:46-log: [Package] menu@1.0.0 enable
-2023-12-16 00:32:46-log: [Package] profile@1.0.0 enable
-2023-12-16 00:32:46-log: [Package] project@1.0.1 enable
-2023-12-16 00:32:46-log: [Package] messages@1.0.0 enable
-2023-12-16 00:32:46-log: [Package] program@1.0.0 enable
-2023-12-16 00:32:46-log: [Package] device@1.0.1 enable
-2023-12-16 00:32:46-log: [Package] ui-kit@1.0.1 enable
-2023-12-16 00:32:46-log: [Package] tester@1.0.0 enable
-2023-12-16 00:32:46-log: [Package] preferences@1.0.0 enable
-2023-12-16 00:32:47-log: Setup mods mgr.: 335.227ms
-2023-12-16 00:32:47-log: Profile changed: engine (modules.includeModules: 2d,base,gfx-webgl,gfx-webgl2,marionette,profiler,tween,ui)
-2023-12-16 00:32:47-log: [Package] engine@1.0.5 enable
-2023-12-16 00:32:50-log: [Package] programming@1.0.0 enable
-2023-12-16 00:32:50-log: [Package] engine-extends@1.0.0 enable
-2023-12-16 00:32:50-log: [Package] asset-db@1.0.0 enable
-2023-12-16 00:32:50-log: [Package] console@1.0.0 enable
-2023-12-16 00:32:50-log: [Package] scene@1.0.0 enable
-2023-12-16 00:32:50-log: [Package] about@1.0.0 enable
-2023-12-16 00:32:50-log: [Package] server@1.0.0 enable
-2023-12-16 00:32:50-log: [Package] assets@1.0.0 enable
-2023-12-16 00:32:50-log: [Package] inspector@1.0.0 enable
-2023-12-16 00:32:50-log: [Package] hierarchy@1.0.0 enable
-2023-12-16 00:32:52-log: [Package] preview@1.0.1 enable
-2023-12-16 00:32:52-log: [Package] animator@1.0.0 enable
-2023-12-16 00:32:53-log: [Package] builder@1.3.1 enable
-2023-12-16 00:32:53-log: [Package] node-library@1.0.0 enable
-2023-12-16 00:32:53-log: [Package] shortcuts@1.0.1 enable
-2023-12-16 00:32:53-log: [Package] package-asset@1.0.0 enable
-2023-12-16 00:32:53-log: [Package] reference-image@1.0.0 enable
-2023-12-16 00:32:53-log: [Package] animation-graph@1.0.0 enable
-2023-12-16 00:32:53-log: [Package] channel-upload-tools@1.0.0 enable
-2023-12-16 00:32:53-log: [Package] runtime-dev-tools@1.0.0 enable
-2023-12-16 00:32:53-log: [Package] lightmap@1.0.4 enable
-2023-12-16 00:32:53-log: [Package] alipay-mini-game@1.0.0 enable
-2023-12-16 00:32:53-log: [Package] android@1.0.0 enable
-2023-12-16 00:32:53-log: [Package] baidu-mini-game@1.0.0 enable
-2023-12-16 00:32:53-log: [Package] bytedance-mini-game@1.0.1 enable
-2023-12-16 00:32:53-log: [Package] huawei-agc@1.0.0 enable
-2023-12-16 00:32:54-log: [Package] ios@1.0.0 enable
-2023-12-16 00:32:54-log: [Package] ios-app-clip@1.0.0 enable
-2023-12-16 00:32:54-log: [Package] mac@1.0.0 enable
-2023-12-16 00:32:54-log: [Package] native@1.0.0 enable
-2023-12-16 00:32:54-log: [Package] ohos@1.0.0 enable
-2023-12-16 00:32:54-log: [Package] web-desktop@1.0.0 enable
-2023-12-16 00:32:54-log: [Package] web-mobile@1.0.0 enable
-2023-12-16 00:32:54-log: [Package] wechatgame@1.0.1 enable
-2023-12-16 00:32:54-log: [Package] windows@1.0.0 enable
-2023-12-16 00:32:54-log: [Package] xiaomi-quick-game@1.0.0 enable
-2023-12-16 00:32:54-log: [Package] cocos-play@1.0.0 enable
-2023-12-16 00:32:54-log: [Package] huawei-quick-game@1.0.0 enable
-2023-12-16 00:32:54-log: [Package] link-sure@1.0.0 enable
-2023-12-16 00:32:54-log: [Package] oppo-mini-game@1.0.0 enable
-2023-12-16 00:32:54-log: [Package] qtt@1.0.0 enable
-2023-12-16 00:32:54-log: [Package] vivo-mini-game@1.0.0 enable
-2023-12-16 00:32:55-log: [Package] cocos-service@3.0.2 enable
-2023-12-16 00:32:55-log: [Package] importer@1.0.0 enable
-2023-12-16 00:32:55-log: [Package] extension@3.0.15 enable
-2023-12-16 00:32:55-log: [Im-plugin] Check im-plugin version.
-2023-12-16 00:32:55-log: [Package] im-plugin@3.0.8 enable
-2023-12-16 00:32:56-log: [Im-plugin] No online info of im-plugin.
-2023-12-16 00:32:56-warn: Browserslist: caniuse-lite is outdated. Please run:
+2023-12-26 23:13:24-log: [Package] menu@1.0.0 enable
+2023-12-26 23:13:24-log: [Package] profile@1.0.0 enable
+2023-12-26 23:13:24-log: [Package] project@1.0.1 enable
+2023-12-26 23:13:24-log: [Package] messages@1.0.0 enable
+2023-12-26 23:13:24-log: [Package] program@1.0.0 enable
+2023-12-26 23:13:24-log: [Package] device@1.0.1 enable
+2023-12-26 23:13:24-log: [Package] ui-kit@1.0.1 enable
+2023-12-26 23:13:24-log: [Package] tester@1.0.0 enable
+2023-12-26 23:13:24-log: [Package] preferences@1.0.0 enable
+2023-12-26 23:13:24-log: Setup mods mgr.: 311.921ms
+2023-12-26 23:13:24-log: Profile changed: engine (modules.includeModules: 2d,base,gfx-webgl,gfx-webgl2,marionette,profiler,tween,ui)
+2023-12-26 23:13:24-log: [Package] engine@1.0.5 enable
+2023-12-26 23:13:27-log: [Package] programming@1.0.0 enable
+2023-12-26 23:13:28-log: [Package] engine-extends@1.0.0 enable
+2023-12-26 23:13:28-log: [Package] asset-db@1.0.0 enable
+2023-12-26 23:13:28-log: [Package] console@1.0.0 enable
+2023-12-26 23:13:28-log: [Package] scene@1.0.0 enable
+2023-12-26 23:13:28-log: [Package] about@1.0.0 enable
+2023-12-26 23:13:28-log: [Package] server@1.0.0 enable
+2023-12-26 23:13:28-log: [Package] assets@1.0.0 enable
+2023-12-26 23:13:28-log: [Package] inspector@1.0.0 enable
+2023-12-26 23:13:28-log: [Package] hierarchy@1.0.0 enable
+2023-12-26 23:13:30-log: [Package] preview@1.0.1 enable
+2023-12-26 23:13:30-log: [Package] animator@1.0.0 enable
+2023-12-26 23:13:31-log: [Package] builder@1.3.1 enable
+2023-12-26 23:13:31-log: [Package] node-library@1.0.0 enable
+2023-12-26 23:13:31-log: [Package] shortcuts@1.0.1 enable
+2023-12-26 23:13:31-log: [Package] package-asset@1.0.0 enable
+2023-12-26 23:13:31-log: [Package] reference-image@1.0.0 enable
+2023-12-26 23:13:31-log: [Package] animation-graph@1.0.0 enable
+2023-12-26 23:13:31-log: [Package] channel-upload-tools@1.0.0 enable
+2023-12-26 23:13:31-log: [Package] runtime-dev-tools@1.0.0 enable
+2023-12-26 23:13:31-log: [Package] lightmap@1.0.4 enable
+2023-12-26 23:13:31-log: [Package] alipay-mini-game@1.0.0 enable
+2023-12-26 23:13:31-log: [Package] android@1.0.0 enable
+2023-12-26 23:13:31-log: [Package] baidu-mini-game@1.0.0 enable
+2023-12-26 23:13:31-log: [Package] bytedance-mini-game@1.0.1 enable
+2023-12-26 23:13:31-log: [Package] huawei-agc@1.0.0 enable
+2023-12-26 23:13:32-log: [Package] ios@1.0.0 enable
+2023-12-26 23:13:32-log: [Package] ios-app-clip@1.0.0 enable
+2023-12-26 23:13:32-log: [Package] mac@1.0.0 enable
+2023-12-26 23:13:32-log: [Package] native@1.0.0 enable
+2023-12-26 23:13:32-log: [Package] ohos@1.0.0 enable
+2023-12-26 23:13:32-log: [Package] web-desktop@1.0.0 enable
+2023-12-26 23:13:32-log: [Package] web-mobile@1.0.0 enable
+2023-12-26 23:13:32-log: [Package] wechatgame@1.0.1 enable
+2023-12-26 23:13:32-log: [Package] windows@1.0.0 enable
+2023-12-26 23:13:32-log: [Package] xiaomi-quick-game@1.0.0 enable
+2023-12-26 23:13:32-log: [Package] cocos-play@1.0.0 enable
+2023-12-26 23:13:32-log: [Package] huawei-quick-game@1.0.0 enable
+2023-12-26 23:13:32-log: [Package] link-sure@1.0.0 enable
+2023-12-26 23:13:32-log: [Package] oppo-mini-game@1.0.0 enable
+2023-12-26 23:13:32-log: [Package] qtt@1.0.0 enable
+2023-12-26 23:13:32-log: [Package] vivo-mini-game@1.0.0 enable
+2023-12-26 23:13:32-log: [Package] cocos-service@3.0.2 enable
+2023-12-26 23:13:32-log: [Package] importer@1.0.0 enable
+2023-12-26 23:13:33-log: [Package] extension@3.0.15 enable
+2023-12-26 23:13:33-log: [Im-plugin] Check im-plugin version.
+2023-12-26 23:13:33-log: [Package] im-plugin@3.0.8 enable
+2023-12-26 23:13:34-warn: Browserslist: caniuse-lite is outdated. Please run:
 npx browserslist@latest --update-db
 
 Why you should do it regularly:
 https://github.com/browserslist/browserslist#browsers-data-updating
-2023-12-16 00:32:57-log: [Scene] Cocos Creator v3.4.2
-2023-12-16 00:32:57-info: [Scene] Forward render pipeline initialized.
-2023-12-16 00:54:17-error: [Scene] TILE_TYPE_ENUM is not defined
-2023-12-16 00:54:18-error: [Preview]TILE_TYPE_ENUM is not defined
-2023-12-16 00:54:18-error: [Preview]ReferenceError: TILE_TYPE_ENUM is not defined
-    at Object.execute (http://localhost:7456/scripting/x/mods/fs/0/assets/Levels/level1.js:29:15)
-    at doExec (http://localhost:7456/scripting/systemjs/system.js:467:34)
-    at postOrderExec (http://localhost:7456/scripting/systemjs/system.js:463:12)
-    at http://localhost:7456/scripting/systemjs/system.js:449:30
-    at Array.forEach (<anonymous>)
-    at postOrderExec (http://localhost:7456/scripting/systemjs/system.js:447:12)
-    at http://localhost:7456/scripting/systemjs/system.js:420:14
-2023-12-16 01:01:57-error: [Preview]TILE_TYPE_ENUM is not defined
-2023-12-16 01:01:57-error: [Preview]ReferenceError: TILE_TYPE_ENUM is not defined
-    at Object.execute (http://localhost:7456/scripting/x/mods/fs/0/assets/Levels/level1.js:29:15)
-    at doExec (http://localhost:7456/scripting/systemjs/system.js:467:34)
-    at postOrderExec (http://localhost:7456/scripting/systemjs/system.js:463:12)
-    at http://localhost:7456/scripting/systemjs/system.js:449:30
-    at Array.forEach (<anonymous>)
-    at postOrderExec (http://localhost:7456/scripting/systemjs/system.js:447:12)
-    at http://localhost:7456/scripting/systemjs/system.js:420:14
-2023-12-16 01:26:08-error: [Preview]unhandledrejection: ths is not defined
-2023-12-16 01:26:08-error: [Preview]ReferenceError: ths is not defined
-    at http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Tile/TileMapManager.js:47:32
-    at Generator.next (<anonymous>)
-    at asyncGeneratorStep (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Tile/TileMapManager.js:6:105)
-    at _next (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Tile/TileMapManager.js:8:196)
-    at http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Tile/TileMapManager.js:8:366
-    at new Promise (<anonymous>)
-    at http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Tile/TileMapManager.js:8:99
-    at TileMapManager.init (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Tile/TileMapManager.js:66:13)
-    at BattleManager.generateTileMap (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/BattleManager.js:50:23)
-    at BattleManager.start (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/BattleManager.js:38:16)
+2023-12-26 23:13:34-log: [Im-plugin] No online info of im-plugin.
+2023-12-26 23:13:34-log: [Scene] Cocos Creator v3.4.2
+2023-12-26 23:13:34-info: [Scene] Forward render pipeline initialized.
