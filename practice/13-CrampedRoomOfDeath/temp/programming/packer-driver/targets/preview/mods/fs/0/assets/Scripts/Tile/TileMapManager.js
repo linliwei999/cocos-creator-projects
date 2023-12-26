@@ -1,14 +1,22 @@
-System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _context) {
+System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, _decorator, Component, Node, Sprite, resources, SpriteFrame, UITransform, Layers, Levels, _dec, _class, _crd, ccclass, property, TILE_WIDTH, TILE_HEIGHT, TileMapManager;
+  var _reporterNs, _cclegacy, _decorator, Component, resources, SpriteFrame, TileManager, createUINode, DataManagerInstance, _dec, _class, _crd, ccclass, property, TileMapManager;
 
   function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
   function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-  function _reportPossibleCrUseOfLevels(extras) {
-    _reporterNs.report("Levels", "db://assets/Levels", _context.meta, extras);
+  function _reportPossibleCrUseOfTileManager(extras) {
+    _reporterNs.report("TileManager", "db://assets/Scripts/Tile/TileManager", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfcreateUINode(extras) {
+    _reporterNs.report("createUINode", "db://assets/Utils", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfDataManagerInstance(extras) {
+    _reporterNs.report("DataManagerInstance", "db://assets/Runtime/DataManager", _context.meta, extras);
   }
 
   return {
@@ -18,14 +26,14 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
       _cclegacy = _cc.cclegacy;
       _decorator = _cc._decorator;
       Component = _cc.Component;
-      Node = _cc.Node;
-      Sprite = _cc.Sprite;
       resources = _cc.resources;
       SpriteFrame = _cc.SpriteFrame;
-      UITransform = _cc.UITransform;
-      Layers = _cc.Layers;
     }, function (_unresolved_2) {
-      Levels = _unresolved_2.default;
+      TileManager = _unresolved_2.TileManager;
+    }, function (_unresolved_3) {
+      createUINode = _unresolved_3.createUINode;
+    }, function (_unresolved_4) {
+      DataManagerInstance = _unresolved_4.DataManagerInstance;
     }],
     execute: function () {
       _crd = true;
@@ -37,23 +45,19 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
         property
       } = _decorator);
 
-      _export("TILE_WIDTH", TILE_WIDTH = 55);
-
-      _export("TILE_HEIGHT", TILE_HEIGHT = 55);
-
       _export("TileMapManager", TileMapManager = (_dec = ccclass('TileMapManager'), _dec(_class = class TileMapManager extends Component {
         init() {
           var _this = this;
 
           return _asyncToGenerator(function* () {
-            var level = (_crd && Levels === void 0 ? (_reportPossibleCrUseOfLevels({
-              error: Error()
-            }), Levels) : Levels)["level" + 1];
-            var {
-              mapInfo
-            } = level;
             var spriteFrames = yield _this.loadRes(); // console.log('地图信息：', level );
             // console.log(spriteFrames);
+
+            var {
+              mapInfo
+            } = _crd && DataManagerInstance === void 0 ? (_reportPossibleCrUseOfDataManagerInstance({
+              error: Error()
+            }), DataManagerInstance) : DataManagerInstance;
 
             for (var i = 0; i < mapInfo.length; i++) {
               var column = mapInfo[i];
@@ -65,15 +69,15 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
                   return "continue";
                 }
 
-                var node = new Node();
-                var sprite = node.addComponent(Sprite);
+                var node = (_crd && createUINode === void 0 ? (_reportPossibleCrUseOfcreateUINode({
+                  error: Error()
+                }), createUINode) : createUINode)();
                 var imgSrc = "tile (" + item.src + ")";
-                sprite.spriteFrame = spriteFrames.find(v => v.name === imgSrc) || spriteFrames[0];
-                var transform = node.addComponent(UITransform);
-                transform.setContentSize(TILE_WIDTH, TILE_HEIGHT); // node.layer = 1 << 25;
-
-                node.layer = 1 << Layers.nameToLayer("UI_2D");
-                node.setPosition(i * TILE_WIDTH, -j * TILE_HEIGHT);
+                var spriteFrame = spriteFrames.find(v => v.name === imgSrc) || spriteFrames[0];
+                var tileManager = node.addComponent(_crd && TileManager === void 0 ? (_reportPossibleCrUseOfTileManager({
+                  error: Error()
+                }), TileManager) : TileManager);
+                tileManager.init(spriteFrame, i, j);
                 node.setParent(_this.node);
               };
 

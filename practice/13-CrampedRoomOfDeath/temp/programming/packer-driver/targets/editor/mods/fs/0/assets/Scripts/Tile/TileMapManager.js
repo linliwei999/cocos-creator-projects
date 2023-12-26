@@ -1,10 +1,18 @@
-System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _context) {
+System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, _decorator, Component, Node, Sprite, resources, SpriteFrame, UITransform, Layers, Levels, _dec, _class, _crd, ccclass, property, TILE_WIDTH, TILE_HEIGHT, TileMapManager;
+  var _reporterNs, _cclegacy, _decorator, Component, resources, SpriteFrame, TileManager, createUINode, DataManagerInstance, _dec, _class, _crd, ccclass, property, TileMapManager;
 
-  function _reportPossibleCrUseOfLevels(extras) {
-    _reporterNs.report("Levels", "db://assets/Levels", _context.meta, extras);
+  function _reportPossibleCrUseOfTileManager(extras) {
+    _reporterNs.report("TileManager", "db://assets/Scripts/Tile/TileManager", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfcreateUINode(extras) {
+    _reporterNs.report("createUINode", "db://assets/Utils", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfDataManagerInstance(extras) {
+    _reporterNs.report("DataManagerInstance", "db://assets/Runtime/DataManager", _context.meta, extras);
   }
 
   return {
@@ -14,14 +22,14 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
       _cclegacy = _cc.cclegacy;
       _decorator = _cc._decorator;
       Component = _cc.Component;
-      Node = _cc.Node;
-      Sprite = _cc.Sprite;
       resources = _cc.resources;
       SpriteFrame = _cc.SpriteFrame;
-      UITransform = _cc.UITransform;
-      Layers = _cc.Layers;
     }, function (_unresolved_2) {
-      Levels = _unresolved_2.default;
+      TileManager = _unresolved_2.TileManager;
+    }, function (_unresolved_3) {
+      createUINode = _unresolved_3.createUINode;
+    }, function (_unresolved_4) {
+      DataManagerInstance = _unresolved_4.DataManagerInstance;
     }],
     execute: function () {
       _crd = true;
@@ -33,20 +41,16 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
         property
       } = _decorator);
 
-      _export("TILE_WIDTH", TILE_WIDTH = 55);
-
-      _export("TILE_HEIGHT", TILE_HEIGHT = 55);
-
       _export("TileMapManager", TileMapManager = (_dec = ccclass('TileMapManager'), _dec(_class = class TileMapManager extends Component {
         async init() {
-          const level = (_crd && Levels === void 0 ? (_reportPossibleCrUseOfLevels({
-            error: Error()
-          }), Levels) : Levels)[`level${1}`];
-          const {
-            mapInfo
-          } = level;
           const spriteFrames = await this.loadRes(); // console.log('地图信息：', level );
           // console.log(spriteFrames);
+
+          const {
+            mapInfo
+          } = _crd && DataManagerInstance === void 0 ? (_reportPossibleCrUseOfDataManagerInstance({
+            error: Error()
+          }), DataManagerInstance) : DataManagerInstance;
 
           for (let i = 0; i < mapInfo.length; i++) {
             const column = mapInfo[i];
@@ -58,15 +62,15 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
                 continue;
               }
 
-              const node = new Node();
-              const sprite = node.addComponent(Sprite);
+              const node = (_crd && createUINode === void 0 ? (_reportPossibleCrUseOfcreateUINode({
+                error: Error()
+              }), createUINode) : createUINode)();
               const imgSrc = `tile (${item.src})`;
-              sprite.spriteFrame = spriteFrames.find(v => v.name === imgSrc) || spriteFrames[0];
-              const transform = node.addComponent(UITransform);
-              transform.setContentSize(TILE_WIDTH, TILE_HEIGHT); // node.layer = 1 << 25;
-
-              node.layer = 1 << Layers.nameToLayer("UI_2D");
-              node.setPosition(i * TILE_WIDTH, -j * TILE_HEIGHT);
+              const spriteFrame = spriteFrames.find(v => v.name === imgSrc) || spriteFrames[0];
+              const tileManager = node.addComponent(_crd && TileManager === void 0 ? (_reportPossibleCrUseOfTileManager({
+                error: Error()
+              }), TileManager) : TileManager);
+              tileManager.init(spriteFrame, i, j);
               node.setParent(this.node);
             }
           }

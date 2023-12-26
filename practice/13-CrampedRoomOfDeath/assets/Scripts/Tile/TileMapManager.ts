@@ -1,18 +1,17 @@
 import { _decorator, Component, Node, Sprite, resources, SpriteFrame, UITransform, Layers } from 'cc';
 const { ccclass, property } = _decorator;
 import Levels from "db://assets/Levels";
-
-export const TILE_WIDTH = 55;
-export const TILE_HEIGHT = 55;
+import {TileManager} from "db://assets/Scripts/Tile/TileManager";
+import {createUINode} from "db://assets/Utils";
+import {DataManagerInstance} from "db://assets/Runtime/DataManager";
 
 @ccclass('TileMapManager')
 export class TileMapManager extends Component {
     async init () {
-        const level = Levels[`level${1}`];
-        const { mapInfo } = level;
         const spriteFrames = await this.loadRes();
         // console.log('地图信息：', level );
         // console.log(spriteFrames);
+        const { mapInfo } = DataManagerInstance;
         for (let i = 0; i < mapInfo.length; i++) {
             const column = mapInfo[i];
             for (let j = 0; j < column.length; j++) {
@@ -20,15 +19,11 @@ export class TileMapManager extends Component {
                 if(item.src === null || item.type === null){
                     continue
                 }
-                const node = new Node();
-                const sprite = node.addComponent(Sprite);
+                const node = createUINode();
                 const imgSrc = `tile (${item.src})`;
-                sprite.spriteFrame = spriteFrames.find(v => v.name === imgSrc) || spriteFrames[0];
-                const transform = node.addComponent(UITransform);
-                transform.setContentSize(TILE_WIDTH, TILE_HEIGHT);
-                // node.layer = 1 << 25;
-                node.layer = 1 << Layers.nameToLayer("UI_2D");
-                node.setPosition(i * TILE_WIDTH, -j * TILE_HEIGHT);
+                const spriteFrame = spriteFrames.find(v => v.name === imgSrc) || spriteFrames[0];
+                const tileManager = node.addComponent(TileManager);
+                tileManager.init(spriteFrame, i, j);
                 node.setParent(this.node);
             }
         }
