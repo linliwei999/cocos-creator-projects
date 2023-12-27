@@ -2627,7 +2627,7 @@
     "time": 1702658055919.1404
   },
   "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Sences/Battle.scene": {
-    "time": 1703659508345.7717,
+    "time": 1703665750744.1406,
     "uuid": "31470aa7-2e8d-4262-8d50-b8a0406d0fc8",
     "missing": false
   },
@@ -2805,6 +2805,22 @@
   "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level2.ts": {
     "time": 1703658859573.8506,
     "uuid": "84840746-efb0-49fc-82e6-266185eaa426",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/animations.meta": {
+    "time": 1703665312943.154
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/animations": {
+    "time": 1703665344893.84,
+    "uuid": "5cc85c44-29c6-4682-9090-c4f0ba02afe8",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/animations/idle.anim.meta": {
+    "time": 1703665344896.9424
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/animations/idle.anim": {
+    "time": 1703665665745.5156,
+    "uuid": "a303f34b-e3b8-4194-8e40-6fb8aaa9702c",
     "missing": false
   }
 }
