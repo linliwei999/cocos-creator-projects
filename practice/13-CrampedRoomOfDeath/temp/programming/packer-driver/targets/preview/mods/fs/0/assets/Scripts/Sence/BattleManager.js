@@ -1,7 +1,7 @@
 System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4", "__unresolved_5"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, _decorator, Component, TileMapManager, createUINode, Levels, DataManagerInstance, TILE_HEIGHT, TILE_WIDTH, _dec, _class, _temp, _crd, ccclass, property, BattleManager;
+  var _reporterNs, _cclegacy, _decorator, Component, TileMapManager, createUINode, Levels, DataManager, TILE_HEIGHT, TILE_WIDTH, _dec, _class, _temp, _crd, ccclass, property, BattleManager;
 
   function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -21,8 +21,8 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     _reporterNs.report("ILevel", "db://assets/Levels", _context.meta, extras);
   }
 
-  function _reportPossibleCrUseOfDataManagerInstance(extras) {
-    _reporterNs.report("DataManagerInstance", "db://assets/Runtime/DataManager", _context.meta, extras);
+  function _reportPossibleCrUseOfDataManager(extras) {
+    _reporterNs.report("DataManager", "db://assets/Runtime/DataManager", _context.meta, extras);
   }
 
   function _reportPossibleCrUseOfTILE_HEIGHT(extras) {
@@ -47,7 +47,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     }, function (_unresolved_4) {
       Levels = _unresolved_4.default;
     }, function (_unresolved_5) {
-      DataManagerInstance = _unresolved_5.DataManagerInstance;
+      DataManager = _unresolved_5.default;
     }, function (_unresolved_6) {
       TILE_HEIGHT = _unresolved_6.TILE_HEIGHT;
       TILE_WIDTH = _unresolved_6.TILE_WIDTH;
@@ -84,15 +84,15 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           if (level) {
             this.level = level; //把地图数据存到数据中心(单例)
 
-            (_crd && DataManagerInstance === void 0 ? (_reportPossibleCrUseOfDataManagerInstance({
+            (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
               error: Error()
-            }), DataManagerInstance) : DataManagerInstance).mapInfo = this.level.mapInfo;
-            (_crd && DataManagerInstance === void 0 ? (_reportPossibleCrUseOfDataManagerInstance({
+            }), DataManager) : DataManager).Instance.mapInfo = this.level.mapInfo;
+            (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
               error: Error()
-            }), DataManagerInstance) : DataManagerInstance).mapRowCount = this.level.mapInfo.length || 0;
-            (_crd && DataManagerInstance === void 0 ? (_reportPossibleCrUseOfDataManagerInstance({
+            }), DataManager) : DataManager).Instance.mapRowCount = this.level.mapInfo.length || 0;
+            (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
               error: Error()
-            }), DataManagerInstance) : DataManagerInstance).mapColumnCount = this.level.mapInfo[0].length || 0;
+            }), DataManager) : DataManager).Instance.mapColumnCount = this.level.mapInfo[0].length || 0;
             this.generateTileMap();
           }
         }
@@ -122,9 +122,9 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           var {
             mapRowCount,
             mapColumnCount
-          } = _crd && DataManagerInstance === void 0 ? (_reportPossibleCrUseOfDataManagerInstance({
+          } = (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
             error: Error()
-          }), DataManagerInstance) : DataManagerInstance;
+          }), DataManager) : DataManager).Instance;
           var disX = (_crd && TILE_WIDTH === void 0 ? (_reportPossibleCrUseOfTILE_WIDTH({
             error: Error()
           }), TILE_WIDTH) : TILE_WIDTH) * mapRowCount / 2;

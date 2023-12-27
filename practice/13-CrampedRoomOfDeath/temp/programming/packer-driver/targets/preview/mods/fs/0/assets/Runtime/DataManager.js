@@ -1,7 +1,7 @@
-System.register(["__unresolved_0", "cc"], function (_export, _context) {
+System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, DataManager, _crd, DataManagerInstance;
+  var _reporterNs, _cclegacy, Singleton, DataManager, _crd;
 
   function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -9,19 +9,31 @@ System.register(["__unresolved_0", "cc"], function (_export, _context) {
     _reporterNs.report("ITile", "db://assets/Levels", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfSingleton(extras) {
+    _reporterNs.report("Singleton", "db://assets/Base/Singleton", _context.meta, extras);
+  }
+
+  _export("default", void 0);
+
   return {
     setters: [function (_unresolved_) {
       _reporterNs = _unresolved_;
     }, function (_cc) {
       _cclegacy = _cc.cclegacy;
+    }, function (_unresolved_2) {
+      Singleton = _unresolved_2.default;
     }],
     execute: function () {
       _crd = true;
 
       _cclegacy._RF.push({}, "5889c0JwQFJq7dfupf9d2pN", "DataManager", undefined);
 
-      DataManager = class DataManager {
+      _export("default", DataManager = class DataManager extends (_crd && Singleton === void 0 ? (_reportPossibleCrUseOfSingleton({
+        error: Error()
+      }), Singleton) : Singleton) {
         constructor() {
+          super(...arguments);
+
           _defineProperty(this, "mapInfo", void 0);
 
           _defineProperty(this, "mapRowCount", void 0);
@@ -29,9 +41,11 @@ System.register(["__unresolved_0", "cc"], function (_export, _context) {
           _defineProperty(this, "mapColumnCount", void 0);
         }
 
-      };
+        static get Instance() {
+          return super.GetInstance();
+        }
 
-      _export("DataManagerInstance", DataManagerInstance = new DataManager());
+      });
 
       _cclegacy._RF.pop();
 

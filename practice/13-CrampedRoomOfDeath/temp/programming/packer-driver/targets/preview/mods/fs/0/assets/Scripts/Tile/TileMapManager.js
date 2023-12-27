@@ -1,7 +1,7 @@
-System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3"], function (_export, _context) {
+System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, _decorator, Component, resources, SpriteFrame, TileManager, createUINode, DataManagerInstance, _dec, _class, _crd, ccclass, property, TileMapManager;
+  var _reporterNs, _cclegacy, _decorator, Component, TileManager, createUINode, DataManager, ResourceManager, _dec, _class, _crd, ccclass, property, TileMapManager;
 
   function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -15,8 +15,12 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     _reporterNs.report("createUINode", "db://assets/Utils", _context.meta, extras);
   }
 
-  function _reportPossibleCrUseOfDataManagerInstance(extras) {
-    _reporterNs.report("DataManagerInstance", "db://assets/Runtime/DataManager", _context.meta, extras);
+  function _reportPossibleCrUseOfDataManager(extras) {
+    _reporterNs.report("DataManager", "db://assets/Runtime/DataManager", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfResourceManager(extras) {
+    _reporterNs.report("ResourceManager", "db://assets/Runtime/ResourceManager", _context.meta, extras);
   }
 
   return {
@@ -26,14 +30,14 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
       _cclegacy = _cc.cclegacy;
       _decorator = _cc._decorator;
       Component = _cc.Component;
-      resources = _cc.resources;
-      SpriteFrame = _cc.SpriteFrame;
     }, function (_unresolved_2) {
       TileManager = _unresolved_2.TileManager;
     }, function (_unresolved_3) {
       createUINode = _unresolved_3.createUINode;
     }, function (_unresolved_4) {
-      DataManagerInstance = _unresolved_4.DataManagerInstance;
+      DataManager = _unresolved_4.default;
+    }, function (_unresolved_5) {
+      ResourceManager = _unresolved_5.default;
     }],
     execute: function () {
       _crd = true;
@@ -50,14 +54,16 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           var _this = this;
 
           return _asyncToGenerator(function* () {
-            var spriteFrames = yield _this.loadRes(); // console.log('地图信息：', level );
+            var spriteFrames = yield (_crd && ResourceManager === void 0 ? (_reportPossibleCrUseOfResourceManager({
+              error: Error()
+            }), ResourceManager) : ResourceManager).Instance.loadDir("texture/tile/tile"); // console.log('地图信息：', level );
             // console.log(spriteFrames);
 
             var {
               mapInfo
-            } = _crd && DataManagerInstance === void 0 ? (_reportPossibleCrUseOfDataManagerInstance({
+            } = (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
               error: Error()
-            }), DataManagerInstance) : DataManagerInstance;
+            }), DataManager) : DataManager).Instance;
 
             for (var i = 0; i < mapInfo.length; i++) {
               var column = mapInfo[i];
@@ -88,21 +94,20 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
               }
             }
           })();
-        }
+        } // loadRes () {
+        //     return new Promise<SpriteFrame[]>((resolve, reject) => {
+        //         // 加载 test assets 目录下所有 SpriteFrame，并且获取它们的路径
+        //         resources.loadDir("texture/tile/tile", SpriteFrame, function (err, assets) {
+        //             if(err){
+        //                 reject(err);
+        //                 return
+        //             }
+        //             resolve(assets);
+        //         });
+        //     });
+        //
+        // }
 
-        loadRes() {
-          return new Promise((resolve, reject) => {
-            // 加载 test assets 目录下所有 SpriteFrame，并且获取它们的路径
-            resources.loadDir("texture/tile/tile", SpriteFrame, function (err, assets) {
-              if (err) {
-                reject(err);
-                return;
-              }
-
-              resolve(assets);
-            });
-          });
-        }
 
       }) || _class));
 
