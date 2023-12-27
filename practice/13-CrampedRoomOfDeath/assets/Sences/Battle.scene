@@ -558,7 +558,7 @@
     "component": "",
     "_componentId": "3697cTwkKRB+oQxVRs/8Phn",
     "handler": "handleCtrl",
-    "customEventData": ""
+    "customEventData": "TURNLEFT"
   },
   {
     "__type__": "cc.Node",

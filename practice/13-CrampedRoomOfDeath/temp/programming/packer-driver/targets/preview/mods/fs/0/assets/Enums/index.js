@@ -1,12 +1,14 @@
 System.register(["cc"], function (_export, _context) {
   "use strict";
 
-  var _cclegacy, _crd, TILE_TYPE_ENUM, EVENT_ENUM, CONTROLLER_ENUM;
+  var _cclegacy, _crd, TILE_TYPE_ENUM, EVENT_ENUM, CONTROLLER_ENUM, FSM_PARAMS_TYPE_ENUM, PARAMS_NAME_ENUM;
 
   _export({
     TILE_TYPE_ENUM: void 0,
     EVENT_ENUM: void 0,
-    CONTROLLER_ENUM: void 0
+    CONTROLLER_ENUM: void 0,
+    FSM_PARAMS_TYPE_ENUM: void 0,
+    PARAMS_NAME_ENUM: void 0
   });
 
   return {
@@ -44,6 +46,16 @@ System.register(["cc"], function (_export, _context) {
         CONTROLLER_ENUM["TURNLEFT"] = "TURNLEFT";
         CONTROLLER_ENUM["TURNRIGHT"] = "TURNRIGHT";
       })(CONTROLLER_ENUM || _export("CONTROLLER_ENUM", CONTROLLER_ENUM = {}));
+
+      (function (FSM_PARAMS_TYPE_ENUM) {
+        FSM_PARAMS_TYPE_ENUM["NUMBER"] = "NUMBER";
+        FSM_PARAMS_TYPE_ENUM["TRIGGER"] = "TRIGGER";
+      })(FSM_PARAMS_TYPE_ENUM || _export("FSM_PARAMS_TYPE_ENUM", FSM_PARAMS_TYPE_ENUM = {}));
+
+      (function (PARAMS_NAME_ENUM) {
+        PARAMS_NAME_ENUM["IDLE"] = "IDLE";
+        PARAMS_NAME_ENUM["TURNLEFT"] = "TURNLEFT";
+      })(PARAMS_NAME_ENUM || _export("PARAMS_NAME_ENUM", PARAMS_NAME_ENUM = {}));
 
       _cclegacy._RF.pop();
 

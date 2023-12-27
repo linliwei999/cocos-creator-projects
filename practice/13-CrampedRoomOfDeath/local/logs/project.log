@@ -74,3 +74,147 @@ Function provided here: timer-util.ccc:1:1017
 2023-12-27 16:23:13-log: [Scene] Cocos Creator v3.4.2
 2023-12-27 16:23:13-info: [Scene] Forward render pipeline initialized.
 2023-12-27 16:23:14-log: [Scene] Animation node(a1IQBZdjNBnKYLuHBioQ8A)doesn't exist
+2023-12-27 22:10:53-error: [Preview]unhandledrejection: Cannot read properties of undefined (reading 'push')
+2023-12-27 22:10:53-error: [Preview]TypeError: Cannot read properties of undefined (reading 'push')
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:62:35
+    at Generator.next (<anonymous>)
+    at asyncGeneratorStep (http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:6:105)
+    at _next (http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:8:196)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:8:366
+    at new Promise (<anonymous>)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:8:99
+    at State.init (http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:79:13)
+    at new State (http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:51:16)
+    at PlayerStateMachine.initStateMachine (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerStateMachine.js:122:59)
+2023-12-27 22:10:53-error: [Preview]unhandledrejection: Cannot read properties of undefined (reading 'push')
+2023-12-27 22:10:53-error: [Preview]TypeError: Cannot read properties of undefined (reading 'push')
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:62:35
+    at Generator.next (<anonymous>)
+    at asyncGeneratorStep (http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:6:105)
+    at _next (http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:8:196)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:8:366
+    at new Promise (<anonymous>)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:8:99
+    at State.init (http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:79:13)
+    at new State (http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:51:16)
+    at PlayerStateMachine.initStateMachine (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerStateMachine.js:127:63)
+2023-12-27 22:10:53-error: [Preview]unhandledrejection: undefined is not iterable (cannot read property Symbol(Symbol.iterator))
+2023-12-27 22:10:53-error: [Preview]TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))
+    at Function.all (<anonymous>)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerStateMachine.js:106:27
+    at Generator.next (<anonymous>)
+    at asyncGeneratorStep (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerStateMachine.js:6:105)
+    at _next (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerStateMachine.js:8:196)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerStateMachine.js:8:366
+    at new Promise (<anonymous>)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerStateMachine.js:8:99
+    at PlayerStateMachine.init (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerStateMachine.js:107:13)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js:108:23
+2023-12-27 22:10:56-error: [Preview]unhandledrejection: Cannot read properties of undefined (reading 'push')
+2023-12-27 22:10:56-error: [Preview]TypeError: Cannot read properties of undefined (reading 'push')
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:62:35
+    at Generator.next (<anonymous>)
+    at asyncGeneratorStep (http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:6:105)
+    at _next (http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:8:196)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:8:366
+    at new Promise (<anonymous>)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:8:99
+    at State.init (http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:79:13)
+    at new State (http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:51:16)
+    at PlayerStateMachine.initStateMachine (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerStateMachine.js:122:59)
+2023-12-27 22:10:56-error: [Preview]unhandledrejection: Cannot read properties of undefined (reading 'push')
+2023-12-27 22:10:56-error: [Preview]TypeError: Cannot read properties of undefined (reading 'push')
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:62:35
+    at Generator.next (<anonymous>)
+    at asyncGeneratorStep (http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:6:105)
+    at _next (http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:8:196)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:8:366
+    at new Promise (<anonymous>)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:8:99
+    at State.init (http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:79:13)
+    at new State (http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:51:16)
+    at PlayerStateMachine.initStateMachine (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerStateMachine.js:127:63)
+2023-12-27 22:10:56-error: [Preview]unhandledrejection: undefined is not iterable (cannot read property Symbol(Symbol.iterator))
+2023-12-27 22:10:56-error: [Preview]TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))
+    at Function.all (<anonymous>)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerStateMachine.js:106:27
+    at Generator.next (<anonymous>)
+    at asyncGeneratorStep (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerStateMachine.js:6:105)
+    at _next (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerStateMachine.js:8:196)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerStateMachine.js:8:366
+    at new Promise (<anonymous>)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerStateMachine.js:8:99
+    at PlayerStateMachine.init (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerStateMachine.js:107:13)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js:108:23
+2023-12-27 22:11:31-error: [Preview]unhandledrejection: Cannot read properties of undefined (reading 'push')
+2023-12-27 22:11:31-error: [Preview]TypeError: Cannot read properties of undefined (reading 'push')
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:62:35
+    at Generator.next (<anonymous>)
+    at asyncGeneratorStep (http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:6:105)
+    at _next (http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:8:196)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:8:366
+    at new Promise (<anonymous>)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:8:99
+    at State.init (http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:79:13)
+    at new State (http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:51:16)
+    at PlayerStateMachine.initStateMachine (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerStateMachine.js:122:59)
+2023-12-27 22:11:31-error: [Preview]unhandledrejection: Cannot read properties of undefined (reading 'push')
+2023-12-27 22:11:31-error: [Preview]TypeError: Cannot read properties of undefined (reading 'push')
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:62:35
+    at Generator.next (<anonymous>)
+    at asyncGeneratorStep (http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:6:105)
+    at _next (http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:8:196)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:8:366
+    at new Promise (<anonymous>)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:8:99
+    at State.init (http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:79:13)
+    at new State (http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:51:16)
+    at PlayerStateMachine.initStateMachine (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerStateMachine.js:127:63)
+2023-12-27 22:11:31-error: [Preview]unhandledrejection: undefined is not iterable (cannot read property Symbol(Symbol.iterator))
+2023-12-27 22:11:31-error: [Preview]TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))
+    at Function.all (<anonymous>)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerStateMachine.js:106:27
+    at Generator.next (<anonymous>)
+    at asyncGeneratorStep (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerStateMachine.js:6:105)
+    at _next (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerStateMachine.js:8:196)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerStateMachine.js:8:366
+    at new Promise (<anonymous>)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerStateMachine.js:8:99
+    at PlayerStateMachine.init (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerStateMachine.js:107:13)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js:107:29
+2023-12-27 22:13:31-error: [Preview]unhandledrejection: Cannot read properties of undefined (reading 'push')
+2023-12-27 22:13:31-error: [Preview]TypeError: Cannot read properties of undefined (reading 'push')
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:63:35
+    at Generator.next (<anonymous>)
+    at asyncGeneratorStep (http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:6:105)
+    at _next (http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:8:196)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:8:366
+    at new Promise (<anonymous>)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:8:99
+    at State.init (http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:80:13)
+    at new State (http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:51:16)
+    at PlayerStateMachine.initStateMachine (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerStateMachine.js:122:59)
+2023-12-27 22:13:31-error: [Preview]unhandledrejection: Cannot read properties of undefined (reading 'push')
+2023-12-27 22:13:31-error: [Preview]TypeError: Cannot read properties of undefined (reading 'push')
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:63:35
+    at Generator.next (<anonymous>)
+    at asyncGeneratorStep (http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:6:105)
+    at _next (http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:8:196)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:8:366
+    at new Promise (<anonymous>)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:8:99
+    at State.init (http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:80:13)
+    at new State (http://localhost:7456/scripting/x/mods/fs/0/assets/Base/State.js:51:16)
+    at PlayerStateMachine.initStateMachine (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerStateMachine.js:127:63)
+2023-12-27 22:13:31-error: [Preview]unhandledrejection: undefined is not iterable (cannot read property Symbol(Symbol.iterator))
+2023-12-27 22:13:31-error: [Preview]TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))
+    at Function.all (<anonymous>)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerStateMachine.js:106:27
+    at Generator.next (<anonymous>)
+    at asyncGeneratorStep (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerStateMachine.js:6:105)
+    at _next (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerStateMachine.js:8:196)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerStateMachine.js:8:366
+    at new Promise (<anonymous>)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerStateMachine.js:8:99
+    at PlayerStateMachine.init (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerStateMachine.js:107:13)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js:107:29

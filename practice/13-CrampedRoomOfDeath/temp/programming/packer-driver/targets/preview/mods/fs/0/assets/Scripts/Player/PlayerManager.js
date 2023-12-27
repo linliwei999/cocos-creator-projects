@@ -1,7 +1,7 @@
 System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, _decorator, Animation, animation, AnimationClip, Component, Sprite, UITransform, TILE_HEIGHT, TILE_WIDTH, ResourceManager, CONTROLLER_ENUM, EVENT_ENUM, EventManager, _dec, _class, _temp, _crd, ccclass, property, ANIMATION_SPEED, PlayerManager;
+  var _reporterNs, _cclegacy, _decorator, Component, Sprite, UITransform, TILE_HEIGHT, TILE_WIDTH, CONTROLLER_ENUM, EVENT_ENUM, PARAMS_NAME_ENUM, EventManager, PlayerStateMachine, _dec, _class, _temp, _crd, ccclass, property, ANIMATION_SPEED, PlayerManager;
 
   function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -17,10 +17,6 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     _reporterNs.report("TILE_WIDTH", "db://assets/Scripts/Tile/TileManager", _context.meta, extras);
   }
 
-  function _reportPossibleCrUseOfResourceManager(extras) {
-    _reporterNs.report("ResourceManager", "db://assets/Runtime/ResourceManager", _context.meta, extras);
-  }
-
   function _reportPossibleCrUseOfCONTROLLER_ENUM(extras) {
     _reporterNs.report("CONTROLLER_ENUM", "db://assets/Enums", _context.meta, extras);
   }
@@ -29,8 +25,16 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     _reporterNs.report("EVENT_ENUM", "db://assets/Enums", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfPARAMS_NAME_ENUM(extras) {
+    _reporterNs.report("PARAMS_NAME_ENUM", "db://assets/Enums", _context.meta, extras);
+  }
+
   function _reportPossibleCrUseOfEventManager(extras) {
     _reporterNs.report("EventManager", "db://assets/Runtime/EventManager", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfPlayerStateMachine(extras) {
+    _reporterNs.report("PlayerStateMachine", "db://assets/Scripts/Player/PlayerStateMachine", _context.meta, extras);
   }
 
   return {
@@ -39,9 +43,6 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     }, function (_cc) {
       _cclegacy = _cc.cclegacy;
       _decorator = _cc._decorator;
-      Animation = _cc.Animation;
-      animation = _cc.animation;
-      AnimationClip = _cc.AnimationClip;
       Component = _cc.Component;
       Sprite = _cc.Sprite;
       UITransform = _cc.UITransform;
@@ -49,12 +50,13 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
       TILE_HEIGHT = _unresolved_2.TILE_HEIGHT;
       TILE_WIDTH = _unresolved_2.TILE_WIDTH;
     }, function (_unresolved_3) {
-      ResourceManager = _unresolved_3.default;
+      CONTROLLER_ENUM = _unresolved_3.CONTROLLER_ENUM;
+      EVENT_ENUM = _unresolved_3.EVENT_ENUM;
+      PARAMS_NAME_ENUM = _unresolved_3.PARAMS_NAME_ENUM;
     }, function (_unresolved_4) {
-      CONTROLLER_ENUM = _unresolved_4.CONTROLLER_ENUM;
-      EVENT_ENUM = _unresolved_4.EVENT_ENUM;
+      EventManager = _unresolved_4.default;
     }, function (_unresolved_5) {
-      EventManager = _unresolved_5.default;
+      PlayerStateMachine = _unresolved_5.PlayerStateMachine;
     }],
     execute: function () {
       _crd = true;
@@ -79,60 +81,66 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
 
           _defineProperty(this, "targetY", 0);
 
-          _defineProperty(this, "speed", 1 / 8);
+          _defineProperty(this, "speed", ANIMATION_SPEED);
+
+          _defineProperty(this, "fsm", void 0);
         }
 
         init() {
           var _this = this;
 
           return _asyncToGenerator(function* () {
-            yield _this.render();
-            (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
-              error: Error()
-            }), EventManager) : EventManager).Instance.on((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
-              error: Error()
-            }), EVENT_ENUM) : EVENT_ENUM).PLAYER_CTRL, _this.move, _this);
-          })();
-        }
-
-        render() {
-          var _this2 = this;
-
-          return _asyncToGenerator(function* () {
-            var sprite = _this2.addComponent(Sprite);
+            var sprite = _this.addComponent(Sprite);
 
             sprite.sizeMode = Sprite.SizeMode.CUSTOM;
 
-            var transform = _this2.getComponent(UITransform);
+            var transform = _this.getComponent(UITransform);
 
             transform.setContentSize((_crd && TILE_WIDTH === void 0 ? (_reportPossibleCrUseOfTILE_WIDTH({
               error: Error()
             }), TILE_WIDTH) : TILE_WIDTH) * 4, (_crd && TILE_HEIGHT === void 0 ? (_reportPossibleCrUseOfTILE_HEIGHT({
               error: Error()
             }), TILE_HEIGHT) : TILE_HEIGHT) * 4);
-            var spriteFrames = yield (_crd && ResourceManager === void 0 ? (_reportPossibleCrUseOfResourceManager({
+            _this.fsm = _this.node.addComponent(_crd && PlayerStateMachine === void 0 ? (_reportPossibleCrUseOfPlayerStateMachine({
               error: Error()
-            }), ResourceManager) : ResourceManager).Instance.loadDir('texture/player/idle/top');
+            }), PlayerStateMachine) : PlayerStateMachine);
+            yield _this.fsm.init();
 
-            var animationComponent = _this2.addComponent(Animation);
+            _this.fsm.setParams((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
+              error: Error()
+            }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).IDLE, true); // await this.render();
 
-            var animationClip = new AnimationClip();
-            var track = new animation.ObjectTrack(); // 创建一个对象轨道
 
-            track.path = new animation.TrackPath().toComponent(Sprite).toProperty('spriteFrame'); // 指定轨道路径
-
-            var frames = spriteFrames.map((item, index) => [ANIMATION_SPEED * index, item]); // 为 x 通道的曲线添加关键帧
-
-            track.channel.curve.assignSorted(frames); // 最后将轨道添加到动画剪辑以应用
-
-            animationClip.addTrack(track);
-            animationClip.duration = frames.length * ANIMATION_SPEED; // 整个动画剪辑的周期
-
-            animationClip.wrapMode = AnimationClip.WrapMode.Loop;
-            animationComponent.defaultClip = animationClip;
-            animationComponent.play();
+            (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
+              error: Error()
+            }), EventManager) : EventManager).Instance.on((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
+              error: Error()
+            }), EVENT_ENUM) : EVENT_ENUM).PLAYER_CTRL, _this.move, _this);
           })();
-        }
+        } // async render(){
+        //     const sprite = this.addComponent(Sprite);
+        //     sprite.sizeMode = Sprite.SizeMode.CUSTOM;
+        //
+        //     const transform = this.getComponent(UITransform);
+        //     transform.setContentSize(TILE_WIDTH * 4, TILE_HEIGHT * 4);
+        //
+        //     const spriteFrames = await ResourceManager.Instance.loadDir('texture/player/idle/top');
+        //     const animationComponent = this.addComponent(Animation);
+        //     const animationClip = new AnimationClip();
+        //
+        //     const track = new animation.ObjectTrack(); // 创建一个对象轨道
+        //     track.path = new animation.TrackPath().toComponent(Sprite).toProperty('spriteFrame'); // 指定轨道路径
+        //     const frames:Array<[number, SpriteFrame]> = spriteFrames.map((item, index)=> [ANIMATION_SPEED * index, item]);
+        //     // 为 x 通道的曲线添加关键帧
+        //     track.channel.curve.assignSorted(frames);
+        //     // 最后将轨道添加到动画剪辑以应用
+        //     animationClip.addTrack(track);
+        //     animationClip.duration = frames.length * ANIMATION_SPEED; // 整个动画剪辑的周期
+        //     animationClip.wrapMode = AnimationClip.WrapMode.Loop;
+        //     animationComponent.defaultClip = animationClip;
+        //     animationComponent.play();
+        // }
+
 
         updateXY() {
           if (this.targetX < this.x) {
@@ -171,6 +179,12 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             error: Error()
           }), CONTROLLER_ENUM) : CONTROLLER_ENUM).RIGHT) {
             this.targetX += 1;
+          } else if (inputDirection === (_crd && CONTROLLER_ENUM === void 0 ? (_reportPossibleCrUseOfCONTROLLER_ENUM({
+            error: Error()
+          }), CONTROLLER_ENUM) : CONTROLLER_ENUM).TURNLEFT) {
+            this.fsm.setParams((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
+              error: Error()
+            }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).TURNLEFT, true);
           }
         }
 
