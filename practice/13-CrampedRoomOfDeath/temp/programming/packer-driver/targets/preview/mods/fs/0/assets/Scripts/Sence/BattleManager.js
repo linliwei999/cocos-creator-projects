@@ -1,7 +1,7 @@
-System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4", "__unresolved_5", "__unresolved_6", "__unresolved_7"], function (_export, _context) {
+System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4", "__unresolved_5", "__unresolved_6", "__unresolved_7", "__unresolved_8"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, _decorator, Component, TileMapManager, createUINode, Levels, DataManager, TILE_HEIGHT, TILE_WIDTH, EventManager, EVENT_ENUM, _dec, _class, _temp, _crd, ccclass, property, BattleManager;
+  var _reporterNs, _cclegacy, _decorator, Component, TileMapManager, createUINode, Levels, DataManager, TILE_HEIGHT, TILE_WIDTH, EventManager, EVENT_ENUM, PlayerManager, _dec, _class, _temp, _crd, ccclass, property, BattleManager;
 
   function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -41,6 +41,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     _reporterNs.report("EVENT_ENUM", "db://assets/Enums", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfPlayerManager(extras) {
+    _reporterNs.report("PlayerManager", "db://assets/Scripts/Player/PlayerManager", _context.meta, extras);
+  }
+
   return {
     setters: [function (_unresolved_) {
       _reporterNs = _unresolved_;
@@ -63,6 +67,8 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
       EventManager = _unresolved_7.default;
     }, function (_unresolved_8) {
       EVENT_ENUM = _unresolved_8.EVENT_ENUM;
+    }, function (_unresolved_9) {
+      PlayerManager = _unresolved_9.PlayerManager;
     }],
     execute: function () {
       _crd = true;
@@ -123,8 +129,9 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             }), DataManager) : DataManager).Instance.mapRowCount = this.level.mapInfo.length || 0;
             (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
               error: Error()
-            }), DataManager) : DataManager).Instance.mapColumnCount = this.level.mapInfo[0].length || 0;
-            this.generateTileMap();
+            }), DataManager) : DataManager).Instance.mapColumnCount = this.level.mapInfo[0].length || 0; // this.generateTileMap();
+
+            this.generatePlayer();
           }
         } //下一关函数
 
@@ -149,7 +156,8 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             error: Error()
           }), createUINode) : createUINode)();
           this.stage.setParent(this.node);
-        }
+        } //生成地图
+
 
         generateTileMap() {
           var tileMap = (_crd && createUINode === void 0 ? (_reportPossibleCrUseOfcreateUINode({
@@ -161,6 +169,18 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           }), TileMapManager) : TileMapManager);
           tileManager.init();
           this.adaptPos();
+        } //生成玩家
+
+
+        generatePlayer() {
+          var player = (_crd && createUINode === void 0 ? (_reportPossibleCrUseOfcreateUINode({
+            error: Error()
+          }), createUINode) : createUINode)();
+          player.setParent(this.stage);
+          var playerManager = player.addComponent(_crd && PlayerManager === void 0 ? (_reportPossibleCrUseOfPlayerManager({
+            error: Error()
+          }), PlayerManager) : PlayerManager);
+          playerManager.init();
         } //瓦片地图适配屏幕
 
 
