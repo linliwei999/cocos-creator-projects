@@ -1,6 +1,7 @@
 import {_decorator, Animation, AnimationClip, Component, SpriteFrame} from 'cc';
 import {FSM_PARAMS_TYPE_ENUM, PARAMS_NAME_ENUM} from "db://assets/Enums";
 import State from "db://assets/Base/State";
+import {StateMachine} from "db://assets/Base/StateMachine";
 
 const { ccclass, property } = _decorator;
 
@@ -20,36 +21,7 @@ export const getInitParamsTrigger = () =>{
 }
 
 @ccclass('PlayerStateMachine')
-export class PlayerStateMachine extends Component {
-    private _currentState: State = null
-    params:Map<string, IParamsValue> = new Map(); //参数列表
-    stateMachines: Map<string, State> = new Map(); //状态机列表
-    animationComponent: Animation
-    waitingList: Array<Promise<SpriteFrame[]>> = []
-
-    getParams(paramsName: string){
-        if(this.params.has(paramsName)){
-            return this.params.get(paramsName).value;
-        }
-    }
-
-    setParams(paramsName: string, value: ParamsValueType){
-        if(this.params.has(paramsName)){
-            this.params.get(paramsName).value = value;
-            this.run();
-            //重置trigger
-            this.restTrigger();
-        }
-    }
-
-    get currentState(){
-        return this._currentState;
-    }
-
-    set currentState(newState: State){
-        this._currentState = newState;
-        this._currentState.run();
-    }
+export class PlayerStateMachine extends StateMachine {
 
     restTrigger(){
         for(const [_, item] of this.params){

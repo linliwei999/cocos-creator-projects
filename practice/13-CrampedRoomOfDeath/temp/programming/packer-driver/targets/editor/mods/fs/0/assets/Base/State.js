@@ -5,12 +5,12 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
 
   function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-  function _reportPossibleCrUseOfPlayerStateMachine(extras) {
-    _reporterNs.report("PlayerStateMachine", "db://assets/Scripts/Player/PlayerStateMachine", _context.meta, extras);
-  }
-
   function _reportPossibleCrUseOfResourceManager(extras) {
     _reporterNs.report("ResourceManager", "db://assets/Runtime/ResourceManager", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfStateMachine(extras) {
+    _reporterNs.report("StateMachine", "db://assets/Base/StateMachine", _context.meta, extras);
   }
 
   _export("default", void 0);

@@ -1,9 +1,7 @@
-System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], function (_export, _context) {
+System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, _decorator, Animation, AnimationClip, Component, FSM_PARAMS_TYPE_ENUM, PARAMS_NAME_ENUM, State, _dec, _class, _temp, _crd, ccclass, property, getInitParamsTrigger, PlayerStateMachine;
-
-  function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  var _reporterNs, _cclegacy, _decorator, Animation, AnimationClip, FSM_PARAMS_TYPE_ENUM, PARAMS_NAME_ENUM, State, StateMachine, _dec, _class, _crd, ccclass, property, getInitParamsTrigger, PlayerStateMachine;
 
   function _reportPossibleCrUseOfFSM_PARAMS_TYPE_ENUM(extras) {
     _reporterNs.report("FSM_PARAMS_TYPE_ENUM", "db://assets/Enums", _context.meta, extras);
@@ -17,6 +15,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
     _reporterNs.report("State", "db://assets/Base/State", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfStateMachine(extras) {
+    _reporterNs.report("StateMachine", "db://assets/Base/StateMachine", _context.meta, extras);
+  }
+
   return {
     setters: [function (_unresolved_) {
       _reporterNs = _unresolved_;
@@ -25,12 +27,13 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
       _decorator = _cc._decorator;
       Animation = _cc.Animation;
       AnimationClip = _cc.AnimationClip;
-      Component = _cc.Component;
     }, function (_unresolved_2) {
       FSM_PARAMS_TYPE_ENUM = _unresolved_2.FSM_PARAMS_TYPE_ENUM;
       PARAMS_NAME_ENUM = _unresolved_2.PARAMS_NAME_ENUM;
     }, function (_unresolved_3) {
       State = _unresolved_3.default;
+    }, function (_unresolved_4) {
+      StateMachine = _unresolved_4.StateMachine;
     }],
     execute: function () {
       _crd = true;
@@ -51,46 +54,9 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
         };
       });
 
-      _export("PlayerStateMachine", PlayerStateMachine = (_dec = ccclass('PlayerStateMachine'), _dec(_class = (_temp = class PlayerStateMachine extends Component {
-        constructor(...args) {
-          super(...args);
-
-          _defineProperty(this, "_currentState", null);
-
-          _defineProperty(this, "params", new Map());
-
-          _defineProperty(this, "stateMachines", new Map());
-
-          _defineProperty(this, "animationComponent", void 0);
-
-          _defineProperty(this, "waitingList", []);
-        }
-
-        getParams(paramsName) {
-          if (this.params.has(paramsName)) {
-            return this.params.get(paramsName).value;
-          }
-        }
-
-        setParams(paramsName, value) {
-          if (this.params.has(paramsName)) {
-            this.params.get(paramsName).value = value;
-            this.run(); //重置trigger
-
-            this.restTrigger();
-          }
-        }
-
-        get currentState() {
-          return this._currentState;
-        }
-
-        set currentState(newState) {
-          this._currentState = newState;
-
-          this._currentState.run();
-        }
-
+      _export("PlayerStateMachine", PlayerStateMachine = (_dec = ccclass('PlayerStateMachine'), _dec(_class = class PlayerStateMachine extends (_crd && StateMachine === void 0 ? (_reportPossibleCrUseOfStateMachine({
+        error: Error()
+      }), StateMachine) : StateMachine) {
         restTrigger() {
           for (const [_, item] of this.params) {
             if (item.type === (_crd && FSM_PARAMS_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfFSM_PARAMS_TYPE_ENUM({
@@ -175,7 +141,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
           }
         }
 
-      }, _temp)) || _class));
+      }) || _class));
 
       _cclegacy._RF.pop();
 

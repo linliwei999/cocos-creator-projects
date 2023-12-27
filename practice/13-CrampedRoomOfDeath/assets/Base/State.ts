@@ -3,14 +3,14 @@
 * 2.需要具有播放动画能力
 * */
 import {AnimationClip, Sprite, animation, SpriteFrame } from "cc";
-import {PlayerStateMachine} from "db://assets/Scripts/Player/PlayerStateMachine";
 import ResourceManager from "db://assets/Runtime/ResourceManager";
+import {StateMachine} from "db://assets/Base/StateMachine";
 
 const ANIMATION_SPEED = 1/8;
 
 export default class State {
     constructor(
-        private fsm: PlayerStateMachine,
+        private fsm: StateMachine,
         private path: string,
         private wrapMode: AnimationClip.WrapMode = AnimationClip.WrapMode.Normal
     ){
