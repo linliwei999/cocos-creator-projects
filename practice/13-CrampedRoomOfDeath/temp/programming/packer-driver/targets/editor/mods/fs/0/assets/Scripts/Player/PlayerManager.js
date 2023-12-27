@@ -1,7 +1,7 @@
 System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, _decorator, Component, Sprite, UITransform, TILE_HEIGHT, TILE_WIDTH, CONTROLLER_ENUM, EVENT_ENUM, PARAMS_NAME_ENUM, EventManager, PlayerStateMachine, _dec, _class, _temp, _crd, ccclass, property, ANIMATION_SPEED, PlayerManager;
+  var _reporterNs, _cclegacy, _decorator, Component, Sprite, UITransform, TILE_HEIGHT, TILE_WIDTH, CONTROLLER_ENUM, DIRECTION_ENUM, DIRECTION_ODER_ENUM, ENTITY_STATE_ENUM, EVENT_ENUM, PARAMS_NAME_ENUM, EventManager, PlayerStateMachine, _dec, _class, _temp, _crd, ccclass, property, ANIMATION_SPEED, PlayerManager;
 
   function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -15,6 +15,18 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
 
   function _reportPossibleCrUseOfCONTROLLER_ENUM(extras) {
     _reporterNs.report("CONTROLLER_ENUM", "db://assets/Enums", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfDIRECTION_ENUM(extras) {
+    _reporterNs.report("DIRECTION_ENUM", "db://assets/Enums", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfDIRECTION_ODER_ENUM(extras) {
+    _reporterNs.report("DIRECTION_ODER_ENUM", "db://assets/Enums", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfENTITY_STATE_ENUM(extras) {
+    _reporterNs.report("ENTITY_STATE_ENUM", "db://assets/Enums", _context.meta, extras);
   }
 
   function _reportPossibleCrUseOfEVENT_ENUM(extras) {
@@ -47,6 +59,9 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
       TILE_WIDTH = _unresolved_2.TILE_WIDTH;
     }, function (_unresolved_3) {
       CONTROLLER_ENUM = _unresolved_3.CONTROLLER_ENUM;
+      DIRECTION_ENUM = _unresolved_3.DIRECTION_ENUM;
+      DIRECTION_ODER_ENUM = _unresolved_3.DIRECTION_ODER_ENUM;
+      ENTITY_STATE_ENUM = _unresolved_3.ENTITY_STATE_ENUM;
       EVENT_ENUM = _unresolved_3.EVENT_ENUM;
       PARAMS_NAME_ENUM = _unresolved_3.PARAMS_NAME_ENUM;
     }, function (_unresolved_4) {
@@ -80,6 +95,33 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           _defineProperty(this, "speed", ANIMATION_SPEED);
 
           _defineProperty(this, "fsm", void 0);
+
+          _defineProperty(this, "_direction", void 0);
+
+          _defineProperty(this, "_state", void 0);
+        }
+
+        get direction() {
+          return this._direction;
+        }
+
+        set direction(newDirection) {
+          this._direction = newDirection;
+          this.fsm.setParams((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
+            error: Error()
+          }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).DIRECTION, (_crd && DIRECTION_ODER_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ODER_ENUM({
+            error: Error()
+          }), DIRECTION_ODER_ENUM) : DIRECTION_ODER_ENUM)[this._direction]);
+        }
+
+        get state() {
+          return this._state;
+        } //数据驱动视图变化
+
+
+        set state(newState) {
+          this._state = newState;
+          this.fsm.setParams(this._state, true);
         }
 
         async init() {
@@ -95,39 +137,15 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             error: Error()
           }), PlayerStateMachine) : PlayerStateMachine);
           await this.fsm.init();
-          this.fsm.setParams((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
+          this.state = (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
             error: Error()
-          }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).IDLE, true); // await this.render();
-
+          }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).IDLE;
           (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
             error: Error()
           }), EventManager) : EventManager).Instance.on((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
             error: Error()
           }), EVENT_ENUM) : EVENT_ENUM).PLAYER_CTRL, this.move, this);
-        } // async render(){
-        //     const sprite = this.addComponent(Sprite);
-        //     sprite.sizeMode = Sprite.SizeMode.CUSTOM;
-        //
-        //     const transform = this.getComponent(UITransform);
-        //     transform.setContentSize(TILE_WIDTH * 4, TILE_HEIGHT * 4);
-        //
-        //     const spriteFrames = await ResourceManager.Instance.loadDir('texture/player/idle/top');
-        //     const animationComponent = this.addComponent(Animation);
-        //     const animationClip = new AnimationClip();
-        //
-        //     const track = new animation.ObjectTrack(); // 创建一个对象轨道
-        //     track.path = new animation.TrackPath().toComponent(Sprite).toProperty('spriteFrame'); // 指定轨道路径
-        //     const frames:Array<[number, SpriteFrame]> = spriteFrames.map((item, index)=> [ANIMATION_SPEED * index, item]);
-        //     // 为 x 通道的曲线添加关键帧
-        //     track.channel.curve.assignSorted(frames);
-        //     // 最后将轨道添加到动画剪辑以应用
-        //     animationClip.addTrack(track);
-        //     animationClip.duration = frames.length * ANIMATION_SPEED; // 整个动画剪辑的周期
-        //     animationClip.wrapMode = AnimationClip.WrapMode.Loop;
-        //     animationComponent.defaultClip = animationClip;
-        //     animationComponent.play();
-        // }
-
+        }
 
         updateXY() {
           if (this.targetX < this.x) {
@@ -169,9 +187,35 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           } else if (inputDirection === (_crd && CONTROLLER_ENUM === void 0 ? (_reportPossibleCrUseOfCONTROLLER_ENUM({
             error: Error()
           }), CONTROLLER_ENUM) : CONTROLLER_ENUM).TURNLEFT) {
-            this.fsm.setParams((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
+            if (this.direction === (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
               error: Error()
-            }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).TURNLEFT, true);
+            }), DIRECTION_ENUM) : DIRECTION_ENUM).TOP) {
+              this.direction = (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
+                error: Error()
+              }), DIRECTION_ENUM) : DIRECTION_ENUM).LEFT;
+            } else if (this.direction === (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
+              error: Error()
+            }), DIRECTION_ENUM) : DIRECTION_ENUM).LEFT) {
+              this.direction = (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
+                error: Error()
+              }), DIRECTION_ENUM) : DIRECTION_ENUM).BOTTOM;
+            } else if (this.direction === (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
+              error: Error()
+            }), DIRECTION_ENUM) : DIRECTION_ENUM).BOTTOM) {
+              this.direction = (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
+                error: Error()
+              }), DIRECTION_ENUM) : DIRECTION_ENUM).RIGHT;
+            } else if (this.direction === (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
+              error: Error()
+            }), DIRECTION_ENUM) : DIRECTION_ENUM).RIGHT) {
+              this.direction = (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
+                error: Error()
+              }), DIRECTION_ENUM) : DIRECTION_ENUM).TOP;
+            }
+
+            this.state = (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+              error: Error()
+            }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).TURNLEFT;
           }
         }
 

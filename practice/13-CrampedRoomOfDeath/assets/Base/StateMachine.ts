@@ -19,6 +19,13 @@ export const getInitParamsTrigger = () =>{
     }
 }
 
+export const getInitParamsNumber = ()=>{
+    return {
+        type: FSM_PARAMS_TYPE_ENUM.NUMBER,
+        value: 0,
+    }
+}
+
 @ccclass('StateMachine')
 export abstract class StateMachine extends Component {
     private _currentState: State = null

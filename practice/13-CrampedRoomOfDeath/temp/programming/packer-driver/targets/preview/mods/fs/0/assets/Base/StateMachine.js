@@ -1,7 +1,7 @@
 System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, _decorator, Component, FSM_PARAMS_TYPE_ENUM, _dec, _class, _temp, _crd, ccclass, property, getInitParamsTrigger, StateMachine;
+  var _reporterNs, _cclegacy, _decorator, Component, FSM_PARAMS_TYPE_ENUM, _dec, _class, _temp, _crd, ccclass, property, getInitParamsTrigger, getInitParamsNumber, StateMachine;
 
   function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -39,6 +39,15 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
             error: Error()
           }), FSM_PARAMS_TYPE_ENUM) : FSM_PARAMS_TYPE_ENUM).TRIGGER,
           value: false
+        };
+      });
+
+      _export("getInitParamsNumber", getInitParamsNumber = () => {
+        return {
+          type: (_crd && FSM_PARAMS_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfFSM_PARAMS_TYPE_ENUM({
+            error: Error()
+          }), FSM_PARAMS_TYPE_ENUM) : FSM_PARAMS_TYPE_ENUM).NUMBER,
+          value: 0
         };
       });
 

@@ -1,7 +1,7 @@
 System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, _decorator, Animation, AnimationClip, FSM_PARAMS_TYPE_ENUM, PARAMS_NAME_ENUM, State, StateMachine, _dec, _class, _crd, ccclass, property, getInitParamsTrigger, PlayerStateMachine;
+  var _reporterNs, _cclegacy, _decorator, Animation, AnimationClip, FSM_PARAMS_TYPE_ENUM, PARAMS_NAME_ENUM, State, getInitParamsNumber, getInitParamsTrigger, StateMachine, _dec, _class, _crd, ccclass, property, PlayerStateMachine;
 
   function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -17,6 +17,14 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
 
   function _reportPossibleCrUseOfState(extras) {
     _reporterNs.report("State", "db://assets/Base/State", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfgetInitParamsNumber(extras) {
+    _reporterNs.report("getInitParamsNumber", "db://assets/Base/StateMachine", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfgetInitParamsTrigger(extras) {
+    _reporterNs.report("getInitParamsTrigger", "db://assets/Base/StateMachine", _context.meta, extras);
   }
 
   function _reportPossibleCrUseOfStateMachine(extras) {
@@ -37,6 +45,8 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     }, function (_unresolved_3) {
       State = _unresolved_3.default;
     }, function (_unresolved_4) {
+      getInitParamsNumber = _unresolved_4.getInitParamsNumber;
+      getInitParamsTrigger = _unresolved_4.getInitParamsTrigger;
       StateMachine = _unresolved_4.StateMachine;
     }],
     execute: function () {
@@ -48,15 +58,6 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
         ccclass,
         property
       } = _decorator); //自定义联合类型
-
-      _export("getInitParamsTrigger", getInitParamsTrigger = () => {
-        return {
-          type: (_crd && FSM_PARAMS_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfFSM_PARAMS_TYPE_ENUM({
-            error: Error()
-          }), FSM_PARAMS_TYPE_ENUM) : FSM_PARAMS_TYPE_ENUM).TRIGGER,
-          value: false
-        };
-      });
 
       _export("PlayerStateMachine", PlayerStateMachine = (_dec = ccclass('PlayerStateMachine'), _dec(_class = class PlayerStateMachine extends (_crd && StateMachine === void 0 ? (_reportPossibleCrUseOfStateMachine({
         error: Error()
@@ -90,10 +91,19 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
         initParams() {
           this.params.set((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
             error: Error()
-          }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).IDLE, getInitParamsTrigger());
+          }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).IDLE, (_crd && getInitParamsTrigger === void 0 ? (_reportPossibleCrUseOfgetInitParamsTrigger({
+            error: Error()
+          }), getInitParamsTrigger) : getInitParamsTrigger)());
           this.params.set((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
             error: Error()
-          }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).TURNLEFT, getInitParamsTrigger());
+          }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).TURNLEFT, (_crd && getInitParamsTrigger === void 0 ? (_reportPossibleCrUseOfgetInitParamsTrigger({
+            error: Error()
+          }), getInitParamsTrigger) : getInitParamsTrigger)());
+          this.params.set((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
+            error: Error()
+          }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).DIRECTION, (_crd && getInitParamsNumber === void 0 ? (_reportPossibleCrUseOfgetInitParamsNumber({
+            error: Error()
+          }), getInitParamsNumber) : getInitParamsNumber)());
         }
 
         initStateMachine() {
