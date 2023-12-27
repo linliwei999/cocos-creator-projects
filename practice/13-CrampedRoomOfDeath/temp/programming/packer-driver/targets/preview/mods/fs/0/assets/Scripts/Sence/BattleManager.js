@@ -129,8 +129,8 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             }), DataManager) : DataManager).Instance.mapRowCount = this.level.mapInfo.length || 0;
             (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
               error: Error()
-            }), DataManager) : DataManager).Instance.mapColumnCount = this.level.mapInfo[0].length || 0; // this.generateTileMap();
-
+            }), DataManager) : DataManager).Instance.mapColumnCount = this.level.mapInfo[0].length || 0;
+            this.generateTileMap();
             this.generatePlayer();
           }
         } //下一关函数

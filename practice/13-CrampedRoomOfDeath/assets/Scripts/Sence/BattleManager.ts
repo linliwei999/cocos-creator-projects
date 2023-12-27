@@ -42,7 +42,7 @@ export class BattleManager extends Component {
             DataManager.Instance.mapInfo = this.level.mapInfo;
             DataManager.Instance.mapRowCount = this.level.mapInfo.length || 0;
             DataManager.Instance.mapColumnCount = this.level.mapInfo[0].length || 0;
-            // this.generateTileMap();
+            this.generateTileMap();
             this.generatePlayer();
         }
     }

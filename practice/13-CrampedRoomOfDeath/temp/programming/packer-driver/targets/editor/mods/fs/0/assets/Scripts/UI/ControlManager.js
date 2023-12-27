@@ -7,6 +7,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
     _reporterNs.report("EventManager", "db://assets/Runtime/EventManager", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfCONTROLLER_ENUM(extras) {
+    _reporterNs.report("CONTROLLER_ENUM", "db://assets/Enums", _context.meta, extras);
+  }
+
   function _reportPossibleCrUseOfEVENT_ENUM(extras) {
     _reporterNs.report("EVENT_ENUM", "db://assets/Enums", _context.meta, extras);
   }
@@ -34,12 +38,12 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
       } = _decorator);
 
       _export("ControlManager", ControlManager = (_dec = ccclass('ControlManager'), _dec(_class = class ControlManager extends Component {
-        handleCtrl() {
+        handleCtrl(evt, type) {
           (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
             error: Error()
           }), EventManager) : EventManager).Instance.emit((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
             error: Error()
-          }), EVENT_ENUM) : EVENT_ENUM).NEXT_LEVEL);
+          }), EVENT_ENUM) : EVENT_ENUM).PLAYER_CTRL, type);
         }
 
       }) || _class));

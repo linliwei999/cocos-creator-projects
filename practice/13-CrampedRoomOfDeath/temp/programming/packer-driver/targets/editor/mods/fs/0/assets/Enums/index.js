@@ -1,11 +1,12 @@
 System.register(["cc"], function (_export, _context) {
   "use strict";
 
-  var _cclegacy, _crd, TILE_TYPE_ENUM, EVENT_ENUM;
+  var _cclegacy, _crd, TILE_TYPE_ENUM, EVENT_ENUM, CONTROLLER_ENUM;
 
   _export({
     TILE_TYPE_ENUM: void 0,
-    EVENT_ENUM: void 0
+    EVENT_ENUM: void 0,
+    CONTROLLER_ENUM: void 0
   });
 
   return {
@@ -32,7 +33,17 @@ System.register(["cc"], function (_export, _context) {
 
       (function (EVENT_ENUM) {
         EVENT_ENUM["NEXT_LEVEL"] = "NEXT_LEVEL";
+        EVENT_ENUM["PLAYER_CTRL"] = "PLAYER_CTRL";
       })(EVENT_ENUM || _export("EVENT_ENUM", EVENT_ENUM = {}));
+
+      (function (CONTROLLER_ENUM) {
+        CONTROLLER_ENUM["TOP"] = "TOP";
+        CONTROLLER_ENUM["BOTTOM"] = "BOTTOM";
+        CONTROLLER_ENUM["LEFT"] = "LEFT";
+        CONTROLLER_ENUM["RIGHT"] = "RIGHT";
+        CONTROLLER_ENUM["TURNLEFT"] = "TURNLEFT";
+        CONTROLLER_ENUM["TURNRIGHT"] = "TURNRIGHT";
+      })(CONTROLLER_ENUM || _export("CONTROLLER_ENUM", CONTROLLER_ENUM = {}));
 
       _cclegacy._RF.pop();
 
