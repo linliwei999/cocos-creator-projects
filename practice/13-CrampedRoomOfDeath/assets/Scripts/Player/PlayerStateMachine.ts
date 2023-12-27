@@ -1,4 +1,4 @@
-import {_decorator, Component, AnimationClip, Animation, SpriteFrame} from 'cc';
+import {_decorator, Animation, AnimationClip, Component, SpriteFrame} from 'cc';
 import {FSM_PARAMS_TYPE_ENUM, PARAMS_NAME_ENUM} from "db://assets/Enums";
 import State from "db://assets/Base/State";
 
@@ -37,6 +37,8 @@ export class PlayerStateMachine extends Component {
         if(this.params.has(paramsName)){
             this.params.get(paramsName).value = value;
             this.run();
+            //重置trigger
+            this.restTrigger();
         }
     }
 
@@ -49,10 +51,19 @@ export class PlayerStateMachine extends Component {
         this._currentState.run();
     }
 
+    restTrigger(){
+        for(const [_, item] of this.params){
+            if(item.type === FSM_PARAMS_TYPE_ENUM.TRIGGER){
+                item.value = false;
+            }
+        }
+    }
+
     async init(){
         this.animationComponent = this.addComponent(Animation);
         this.initParams();
         this.initStateMachine();
+        this.initAnimationEvent();
         await Promise.all(this.waitingList);
     }
 
@@ -66,13 +77,23 @@ export class PlayerStateMachine extends Component {
         this.stateMachines.set(PARAMS_NAME_ENUM.TURNLEFT, new State(this, 'texture/player/turnleft/top'));
     }
 
+    initAnimationEvent(){
+        this.animationComponent.on(Animation.EventType.FINISHED, ()=> {
+            const name = this.animationComponent.defaultClip.name;
+            const whiteList = ['turn'];
+            if(whiteList.some(v=> name.includes(v))){
+                this.setParams(PARAMS_NAME_ENUM.IDLE, true);
+            }
+        });
+    }
+
     run(){
         switch (this.currentState){
             case this.stateMachines.get(PARAMS_NAME_ENUM.TURNLEFT):
             case this.stateMachines.get(PARAMS_NAME_ENUM.IDLE):
-                if(this.params.get(PARAMS_NAME_ENUM.TURNLEFT)){
+                if(this.params.get(PARAMS_NAME_ENUM.TURNLEFT).value){
                     this.currentState = this.stateMachines.get(PARAMS_NAME_ENUM.TURNLEFT);
-                    }else if(this.params.get(PARAMS_NAME_ENUM.IDLE)){
+                    }else if(this.params.get(PARAMS_NAME_ENUM.IDLE).value){
                     this.currentState = this.stateMachines.get(PARAMS_NAME_ENUM.IDLE);
                 }
                 break;

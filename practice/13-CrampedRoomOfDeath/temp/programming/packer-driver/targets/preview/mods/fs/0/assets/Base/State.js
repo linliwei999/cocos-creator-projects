@@ -73,6 +73,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
 
             _this.animationClip.addTrack(track);
 
+            _this.animationClip.name = _this.path;
             _this.animationClip.duration = frames.length * ANIMATION_SPEED; // 整个动画剪辑的周期
 
             _this.animationClip.wrapMode = _this.wrapMode;

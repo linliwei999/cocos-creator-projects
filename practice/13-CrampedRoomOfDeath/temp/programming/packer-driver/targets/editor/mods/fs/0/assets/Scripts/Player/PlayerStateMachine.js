@@ -1,7 +1,7 @@
 System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, _decorator, Component, AnimationClip, Animation, FSM_PARAMS_TYPE_ENUM, PARAMS_NAME_ENUM, State, _dec, _class, _temp, _crd, ccclass, property, getInitParamsTrigger, PlayerStateMachine;
+  var _reporterNs, _cclegacy, _decorator, Animation, AnimationClip, Component, FSM_PARAMS_TYPE_ENUM, PARAMS_NAME_ENUM, State, _dec, _class, _temp, _crd, ccclass, property, getInitParamsTrigger, PlayerStateMachine;
 
   function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -23,9 +23,9 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
     }, function (_cc) {
       _cclegacy = _cc.cclegacy;
       _decorator = _cc._decorator;
-      Component = _cc.Component;
-      AnimationClip = _cc.AnimationClip;
       Animation = _cc.Animation;
+      AnimationClip = _cc.AnimationClip;
+      Component = _cc.Component;
     }, function (_unresolved_2) {
       FSM_PARAMS_TYPE_ENUM = _unresolved_2.FSM_PARAMS_TYPE_ENUM;
       PARAMS_NAME_ENUM = _unresolved_2.PARAMS_NAME_ENUM;
@@ -75,7 +75,9 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
         setParams(paramsName, value) {
           if (this.params.has(paramsName)) {
             this.params.get(paramsName).value = value;
-            this.run();
+            this.run(); //重置trigger
+
+            this.restTrigger();
           }
         }
 
@@ -89,10 +91,21 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
           this._currentState.run();
         }
 
+        restTrigger() {
+          for (const [_, item] of this.params) {
+            if (item.type === (_crd && FSM_PARAMS_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfFSM_PARAMS_TYPE_ENUM({
+              error: Error()
+            }), FSM_PARAMS_TYPE_ENUM) : FSM_PARAMS_TYPE_ENUM).TRIGGER) {
+              item.value = false;
+            }
+          }
+        }
+
         async init() {
           this.animationComponent = this.addComponent(Animation);
           this.initParams();
           this.initStateMachine();
+          this.initAnimationEvent();
           await Promise.all(this.waitingList);
         }
 
@@ -118,6 +131,19 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
           }), State) : State)(this, 'texture/player/turnleft/top'));
         }
 
+        initAnimationEvent() {
+          this.animationComponent.on(Animation.EventType.FINISHED, () => {
+            const name = this.animationComponent.defaultClip.name;
+            const whiteList = ['turn'];
+
+            if (whiteList.some(v => name.includes(v))) {
+              this.setParams((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
+                error: Error()
+              }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).IDLE, true);
+            }
+          });
+        }
+
         run() {
           switch (this.currentState) {
             case this.stateMachines.get((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
@@ -128,13 +154,13 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
             }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).IDLE):
               if (this.params.get((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
                 error: Error()
-              }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).TURNLEFT)) {
+              }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).TURNLEFT).value) {
                 this.currentState = this.stateMachines.get((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
                   error: Error()
                 }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).TURNLEFT);
               } else if (this.params.get((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
                 error: Error()
-              }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).IDLE)) {
+              }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).IDLE).value) {
                 this.currentState = this.stateMachines.get((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
                   error: Error()
                 }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).IDLE);

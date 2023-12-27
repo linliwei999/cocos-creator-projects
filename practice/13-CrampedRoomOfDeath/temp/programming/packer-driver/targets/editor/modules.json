@@ -389,7 +389,7 @@
     ]
   },
   "cce:/internal/x/prerequisite-imports": {
-    "mTimestamp": 82628856.571664,
+    "mTimestamp": 85850472.951134,
     "chunkId": "quick-pack:/cce/internal/x/prerequisite-imports.js",
     "imports": [
       {
@@ -1717,7 +1717,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Player/PlayerStateMachine.ts": {
     "mTimestamp": {
-      "mtime": 1703686694989.1877,
+      "mtime": 1703690006416.956,
       "uuid": "ff837d40-e28a-47a7-8356-e7e1d1d5b286"
     },
     "chunkId": "assets/Scripts/Player/PlayerStateMachine.js",
@@ -1799,7 +1799,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Base/State.ts": {
     "mTimestamp": {
-      "mtime": 1703686794847.4143,
+      "mtime": 1703689717020.2705,
       "uuid": "659f1742-65a7-4088-a7ef-0f63b42344b0"
     },
     "chunkId": "assets/Base/State.js",
