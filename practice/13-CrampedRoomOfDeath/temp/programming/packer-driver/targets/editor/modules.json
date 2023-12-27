@@ -389,7 +389,7 @@
     ]
   },
   "cce:/internal/x/prerequisite-imports": {
-    "mTimestamp": 48185721.541691,
+    "mTimestamp": 52687938.438159,
     "chunkId": "quick-pack:/cce/internal/x/prerequisite-imports.js",
     "imports": [
       {
@@ -879,7 +879,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Tile/TileMapManager.ts": {
     "mTimestamp": {
-      "mtime": 1703652358343.9673,
+      "mtime": 1703656862335.166,
       "uuid": "48ff63d2-6fd3-4606-bf44-5f26166a13fa"
     },
     "chunkId": "assets/Scripts/Tile/TileMapManager.js",
@@ -924,11 +924,11 @@
         "loc": {
           "start": {
             "line": 5,
-            "column": 27
+            "column": 42
           },
           "end": {
             "line": 5,
-            "column": 46
+            "column": 61
           }
         }
       },
@@ -1035,7 +1035,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Utils/index.ts": {
     "mTimestamp": {
-      "mtime": 1703604978952.5598,
+      "mtime": 1703656688225.06,
       "uuid": "e9061c49-b64e-40a2-a1be-9e3934e748a2"
     },
     "chunkId": "assets/Utils/index.js",

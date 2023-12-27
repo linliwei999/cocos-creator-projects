@@ -1,7 +1,7 @@
 System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, _decorator, Component, TileManager, createUINode, DataManager, ResourceManager, _dec, _class, _crd, ccclass, property, TileMapManager;
+  var _reporterNs, _cclegacy, _decorator, Component, TileManager, createUINode, randomByRange, DataManager, ResourceManager, _dec, _class, _crd, ccclass, property, TileMapManager;
 
   function _reportPossibleCrUseOfTileManager(extras) {
     _reporterNs.report("TileManager", "db://assets/Scripts/Tile/TileManager", _context.meta, extras);
@@ -9,6 +9,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
 
   function _reportPossibleCrUseOfcreateUINode(extras) {
     _reporterNs.report("createUINode", "db://assets/Utils", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfrandomByRange(extras) {
+    _reporterNs.report("randomByRange", "db://assets/Utils", _context.meta, extras);
   }
 
   function _reportPossibleCrUseOfDataManager(extras) {
@@ -30,6 +34,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
       TileManager = _unresolved_2.TileManager;
     }, function (_unresolved_3) {
       createUINode = _unresolved_3.createUINode;
+      randomByRange = _unresolved_3.randomByRange;
     }, function (_unresolved_4) {
       DataManager = _unresolved_4.default;
     }, function (_unresolved_5) {
@@ -71,7 +76,15 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
               const node = (_crd && createUINode === void 0 ? (_reportPossibleCrUseOfcreateUINode({
                 error: Error()
               }), createUINode) : createUINode)();
-              const imgSrc = `tile (${item.src})`;
+              let number = item.src;
+
+              if ((number === 1 || number === 5 || number === 9) && i % 2 === 0 && j % 2 === 0) {
+                number += (_crd && randomByRange === void 0 ? (_reportPossibleCrUseOfrandomByRange({
+                  error: Error()
+                }), randomByRange) : randomByRange)(0, 4);
+              }
+
+              const imgSrc = `tile (${number})`;
               const spriteFrame = spriteFrames.find(v => v.name === imgSrc) || spriteFrames[0];
               const tileManager = node.addComponent(_crd && TileManager === void 0 ? (_reportPossibleCrUseOfTileManager({
                 error: Error()

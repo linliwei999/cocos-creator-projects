@@ -1,7 +1,7 @@
 System.register(["cc"], function (_export, _context) {
   "use strict";
 
-  var _cclegacy, Node, UITransform, Layers, _crd, createUINode;
+  var _cclegacy, Node, UITransform, Layers, _crd, createUINode, randomByRange;
 
   return {
     setters: [function (_cc) {
@@ -25,6 +25,10 @@ System.register(["cc"], function (_export, _context) {
         transform.setAnchorPoint(0, 1);
         node.layer = 1 << Layers.nameToLayer("UI_2D");
         return node;
+      });
+
+      _export("randomByRange", randomByRange = (start, end) => {
+        return Math.floor(start + (end - start) * Math.random());
       });
 
       _cclegacy._RF.pop();

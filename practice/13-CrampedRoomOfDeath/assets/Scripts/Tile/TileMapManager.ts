@@ -2,7 +2,7 @@ import { _decorator, Component, Node, Sprite, resources, SpriteFrame, UITransfor
 const { ccclass, property } = _decorator;
 import Levels from "db://assets/Levels";
 import {TileManager} from "db://assets/Scripts/Tile/TileManager";
-import {createUINode} from "db://assets/Utils";
+import {createUINode, randomByRange} from "db://assets/Utils";
 import DataManager from "db://assets/Runtime/DataManager";
 import ResourceManager from "db://assets/Runtime/ResourceManager";
 
@@ -21,7 +21,11 @@ export class TileMapManager extends Component {
                     continue
                 }
                 const node = createUINode();
-                const imgSrc = `tile (${item.src})`;
+                let number = item.src;
+                if((number === 1 || number === 5 || number === 9) && (i%2 === 0) && (j%2 === 0)){
+                    number += randomByRange(0, 4);
+                }
+                const imgSrc = `tile (${number})`;
                 const spriteFrame = spriteFrames.find(v => v.name === imgSrc) || spriteFrames[0];
                 const tileManager = node.addComponent(TileManager);
                 tileManager.init(spriteFrame, i, j);
