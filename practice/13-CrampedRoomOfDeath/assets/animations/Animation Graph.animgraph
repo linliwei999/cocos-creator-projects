@@ -11,7 +11,7 @@
     ],
     "_variables": {
       "attack": {
-        "__id__": 14
+        "__id__": 19
       }
     }
   },
@@ -42,11 +42,14 @@
       },
       {
         "__id__": 9
+      },
+      {
+        "__id__": 12
       }
     ],
     "_transitions": [
       {
-        "__id__": 12
+        "__id__": 17
       }
     ],
     "_entryState": {
@@ -143,6 +146,55 @@
     "value": 1
   },
   {
+    "__type__": "cc.animation.SubStateMachine",
+    "__editorExtras__": {
+      "centerX": 2.40625,
+      "centerY": -43,
+      "id": "17036951833700.10290036685407689"
+    },
+    "name": "State Machine",
+    "_components": [],
+    "_stateMachine": {
+      "__id__": 13
+    }
+  },
+  {
+    "__type__": "cc.animation.StateMachine",
+    "_states": [
+      {
+        "__id__": 14
+      },
+      {
+        "__id__": 15
+      },
+      {
+        "__id__": 16
+      }
+    ],
+    "_transitions": [],
+    "_entryState": {
+      "__id__": 14
+    },
+    "_exitState": {
+      "__id__": 15
+    },
+    "_anyState": {
+      "__id__": 16
+    }
+  },
+  {
+    "__type__": "cc.animation.State",
+    "name": "Entry"
+  },
+  {
+    "__type__": "cc.animation.State",
+    "name": "Exit"
+  },
+  {
+    "__type__": "cc.animation.State",
+    "name": "Any"
+  },
+  {
     "__type__": "cc.animation.AnimationTransition",
     "from": {
       "__id__": 6
@@ -152,7 +204,7 @@
     },
     "conditions": [
       {
-        "__id__": 13
+        "__id__": 18
       }
     ],
     "duration": 0.3,

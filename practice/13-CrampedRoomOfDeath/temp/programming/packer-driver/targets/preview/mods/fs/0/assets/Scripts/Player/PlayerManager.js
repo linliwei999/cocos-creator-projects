@@ -147,6 +147,9 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
               error: Error()
             }), PlayerStateMachine) : PlayerStateMachine);
             yield _this.fsm.init();
+            _this.direction = (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
+              error: Error()
+            }), DIRECTION_ENUM) : DIRECTION_ENUM).TOP;
             _this.state = (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
               error: Error()
             }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).IDLE;

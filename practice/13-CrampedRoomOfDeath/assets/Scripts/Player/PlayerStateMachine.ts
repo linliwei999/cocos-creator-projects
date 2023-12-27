@@ -2,6 +2,8 @@ import {_decorator, Animation, AnimationClip, Component, SpriteFrame} from 'cc';
 import {FSM_PARAMS_TYPE_ENUM, PARAMS_NAME_ENUM} from "db://assets/Enums";
 import State from "db://assets/Base/State";
 import {getInitParamsNumber, getInitParamsTrigger, StateMachine} from "db://assets/Base/StateMachine";
+import IdleSubStateMachine from "db://assets/Scripts/Player/IdleSubStateMachine";
+import TurnLeftSubStateMachine from "db://assets/Scripts/Player/TurnLeftSubStateMachine";
 
 const { ccclass, property } = _decorator;
 
@@ -34,8 +36,10 @@ export class PlayerStateMachine extends StateMachine {
     }
 
     initStateMachine(){
-        this.stateMachines.set(PARAMS_NAME_ENUM.IDLE, new State(this, 'texture/player/idle/top', AnimationClip.WrapMode.Loop));
-        this.stateMachines.set(PARAMS_NAME_ENUM.TURNLEFT, new State(this, 'texture/player/turnleft/top'));
+        //注册子状态机
+        this.stateMachines.set(PARAMS_NAME_ENUM.IDLE, new IdleSubStateMachine(this));
+        this.stateMachines.set(PARAMS_NAME_ENUM.TURNLEFT, new TurnLeftSubStateMachine(this));
+        // this.stateMachines.set(PARAMS_NAME_ENUM.TURNLEFT, new State(this, 'texture/player/turnleft/top'));
     }
 
     initAnimationEvent(){
@@ -55,8 +59,10 @@ export class PlayerStateMachine extends StateMachine {
                 if(this.params.get(PARAMS_NAME_ENUM.TURNLEFT).value){
                     this.currentState = this.stateMachines.get(PARAMS_NAME_ENUM.TURNLEFT);
                     }else if(this.params.get(PARAMS_NAME_ENUM.IDLE).value){
-                    this.currentState = this.stateMachines.get(PARAMS_NAME_ENUM.IDLE);
-                }
+                        this.currentState = this.stateMachines.get(PARAMS_NAME_ENUM.IDLE);
+                    }else{
+                        this.currentState = this.currentState;
+                    }
                 break;
             default:
                 this.currentState = this.stateMachines.get(PARAMS_NAME_ENUM.IDLE);

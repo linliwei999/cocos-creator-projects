@@ -13,6 +13,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
     _reporterNs.report("State", "db://assets/Base/State", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfSubStateMachine(extras) {
+    _reporterNs.report("SubStateMachine", "db://assets/Base/SubStateMachine", _context.meta, extras);
+  }
+
   return {
     setters: [function (_unresolved_) {
       _reporterNs = _unresolved_;
