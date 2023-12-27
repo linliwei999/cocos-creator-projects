@@ -4,6 +4,8 @@ import {createUINode} from "db://assets/Utils";
 import Levels, {ILevel} from "db://assets/Levels";
 import DataManager from "db://assets/Runtime/DataManager";
 import {TILE_HEIGHT, TILE_WIDTH} from "db://assets/Scripts/Tile/TileManager";
+import EventManager from "db://assets/Runtime/EventManager";
+import {EVENT_ENUM} from "db://assets/Enums";
 const { ccclass, property } = _decorator;
 
 @ccclass('BattleManager')
@@ -17,14 +19,23 @@ export class BattleManager extends Component {
     level: ILevel
     stage: Node
 
+    onLoad(){
+        EventManager.Instance.on(EVENT_ENUM.NEXT_LEVEL, this.nextLevel, this);
+    }
+
+    onDestroy(){
+        EventManager.Instance.off(EVENT_ENUM.NEXT_LEVEL, this.nextLevel);
+    }
+
     start () {
         this.generateStage();
         this.initLevel();
     }
 
     initLevel(){
-        const level = Levels[`level${1}`];
+        const level = Levels[`level${DataManager.Instance.levelIndex}`];
         if(level){
+            this.clearLevel();
             this.level = level;
             //把地图数据存到数据中心(单例)
             DataManager.Instance.mapInfo = this.level.mapInfo;
@@ -32,6 +43,17 @@ export class BattleManager extends Component {
             DataManager.Instance.mapColumnCount = this.level.mapInfo[0].length || 0;
             this.generateTileMap();
         }
+    }
+
+    //下一关函数
+    nextLevel(){
+        DataManager.Instance.levelIndex++
+        this.initLevel();
+    }
+
+    clearLevel(){
+        this.stage.destroyAllChildren();
+        DataManager.Instance.reset();
     }
 
     generateStage(){

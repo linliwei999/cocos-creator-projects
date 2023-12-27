@@ -36,13 +36,21 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
 
           _defineProperty(this, "mapInfo", void 0);
 
-          _defineProperty(this, "mapRowCount", void 0);
+          _defineProperty(this, "mapRowCount", 0);
 
-          _defineProperty(this, "mapColumnCount", void 0);
+          _defineProperty(this, "mapColumnCount", 0);
+
+          _defineProperty(this, "levelIndex", 1);
         }
 
         static get Instance() {
           return super.GetInstance();
+        }
+
+        reset() {
+          this.mapInfo = [];
+          this.mapRowCount = 0;
+          this.mapColumnCount = 0;
         }
 
       });

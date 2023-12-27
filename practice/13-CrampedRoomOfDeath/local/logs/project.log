@@ -65,3 +65,4 @@ Why you should do it regularly:
 https://github.com/browserslist/browserslist#browsers-data-updating
 2023-12-26 23:23:47-log: [Scene] Cocos Creator v3.4.2
 2023-12-26 23:23:48-info: [Scene] Forward render pipeline initialized.
+2023-12-27 14:43:39-error: [Preview]Uncaught TypeError: Cannot read properties of null (reading 'push') in http://localhost:7456/scripting/engine/bin/.cache/dev/preview/bundled/index.js

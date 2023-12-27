@@ -4,18 +4,10 @@
     "cce:/internal/x/prerequisite-imports": "./mods/cce/internal/x/prerequisite-imports.js"
   },
   "scopes": {
-    "./mods/fs/0/assets/Enums/index.js": {
-      "cc": "./mods/cce/internal/x/cc.js"
-    },
-    "./mods/fs/0/assets/Levels/index.js": {
-      "cc": "./mods/cce/internal/x/cc.js",
-      "__unresolved_0": "./mods/cce/internal/code-quality/cr.js",
-      "__unresolved_1": "./mods/fs/0/assets/Levels/level1.js"
-    },
     "./mods/fs/0/assets/Levels/level1.js": {
-      "__unresolved_0": "./mods/cce/internal/code-quality/cr.js",
       "cc": "./mods/cce/internal/x/cc.js",
-      "__unresolved_1": "./mods/fs/0/assets/Enums/index.js"
+      "__unresolved_1": "./mods/fs/0/assets/Enums/index.js",
+      "__unresolved_0": "./mods/cce/internal/code-quality/cr.js"
     },
     "./mods/fs/0/assets/Scripts/Sence/Battle.js": {
       "cc": "./mods/cce/internal/x/cc.js"
@@ -49,20 +41,6 @@
     "./mods/fs/0/assets/Base/Singleton.js": {
       "cc": "./mods/cce/internal/x/cc.js"
     },
-    "./mods/fs/0/assets/Runtime/DataManager.js": {
-      "__unresolved_0": "./mods/cce/internal/code-quality/cr.js",
-      "cc": "./mods/cce/internal/x/cc.js",
-      "__unresolved_1": "./mods/fs/0/assets/Base/Singleton.js"
-    },
-    "./mods/fs/0/assets/Scripts/Sence/BattleManager.js": {
-      "__unresolved_0": "./mods/cce/internal/code-quality/cr.js",
-      "cc": "./mods/cce/internal/x/cc.js",
-      "__unresolved_3": "./mods/fs/0/assets/Levels/index.js",
-      "__unresolved_4": "./mods/fs/0/assets/Runtime/DataManager.js",
-      "__unresolved_5": "./mods/fs/0/assets/Scripts/Tile/TileManager.js",
-      "__unresolved_2": "./mods/fs/0/assets/Utils/index.js",
-      "__unresolved_1": "./mods/fs/0/assets/Scripts/Tile/TileMapManager.js"
-    },
     "./mods/fs/0/assets/Runtime/ResourceManager.js": {
       "__unresolved_0": "./mods/cce/internal/code-quality/cr.js",
       "cc": "./mods/cce/internal/x/cc.js",
@@ -71,18 +49,6 @@
     "./mods/fs/0/assets/Utils/index.js": {
       "cc": "./mods/cce/internal/x/cc.js"
     },
-    "./mods/cce/internal/x/prerequisite-imports.js": {
-      "__unresolved_1": "./mods/fs/0/assets/Enums/index.js",
-      "__unresolved_2": "./mods/fs/0/assets/Levels/index.js",
-      "__unresolved_3": "./mods/fs/0/assets/Levels/level1.js",
-      "__unresolved_4": "./mods/fs/0/assets/Runtime/DataManager.js",
-      "__unresolved_5": "./mods/fs/0/assets/Runtime/ResourceManager.js",
-      "__unresolved_0": "./mods/fs/0/assets/Base/Singleton.js",
-      "__unresolved_6": "./mods/fs/0/assets/Scripts/Sence/BattleManager.js",
-      "__unresolved_7": "./mods/fs/0/assets/Scripts/Tile/TileManager.js",
-      "__unresolved_9": "./mods/fs/0/assets/Utils/index.js",
-      "__unresolved_8": "./mods/fs/0/assets/Scripts/Tile/TileMapManager.js"
-    },
     "./mods/fs/0/assets/Scripts/Tile/TileMapManager.js": {
       "__unresolved_0": "./mods/cce/internal/code-quality/cr.js",
       "cc": "./mods/cce/internal/x/cc.js",
@@ -90,6 +56,62 @@
       "__unresolved_3": "./mods/fs/0/assets/Runtime/DataManager.js",
       "__unresolved_4": "./mods/fs/0/assets/Runtime/ResourceManager.js",
       "__unresolved_2": "./mods/fs/0/assets/Utils/index.js"
+    },
+    "./mods/fs/0/assets/Runtime/EventManager.js": {
+      "__unresolved_0": "./mods/cce/internal/code-quality/cr.js",
+      "cc": "./mods/cce/internal/x/cc.js",
+      "__unresolved_1": "./mods/fs/0/assets/Base/Singleton.js"
+    },
+    "./mods/fs/0/assets/Scripts/UI/ControlManager.js": {
+      "__unresolved_0": "./mods/cce/internal/code-quality/cr.js",
+      "cc": "./mods/cce/internal/x/cc.js",
+      "__unresolved_1": "./mods/fs/0/assets/Runtime/EventManager.js",
+      "__unresolved_2": "./mods/fs/0/assets/Enums/index.js"
+    },
+    "./mods/fs/0/assets/Enums/index.js": {
+      "cc": "./mods/cce/internal/x/cc.js"
+    },
+    "./mods/fs/0/assets/Levels/level2.js": {
+      "__unresolved_0": "./mods/cce/internal/code-quality/cr.js",
+      "cc": "./mods/cce/internal/x/cc.js",
+      "__unresolved_1": "./mods/fs/0/assets/Enums/index.js"
+    },
+    "./mods/fs/0/assets/Levels/index.js": {
+      "__unresolved_0": "./mods/cce/internal/code-quality/cr.js",
+      "cc": "./mods/cce/internal/x/cc.js",
+      "__unresolved_1": "./mods/fs/0/assets/Levels/level1.js",
+      "__unresolved_2": "./mods/fs/0/assets/Levels/level2.js"
+    },
+    "./mods/fs/0/assets/Runtime/DataManager.js": {
+      "__unresolved_0": "./mods/cce/internal/code-quality/cr.js",
+      "cc": "./mods/cce/internal/x/cc.js",
+      "__unresolved_1": "./mods/fs/0/assets/Base/Singleton.js"
+    },
+    "./mods/cce/internal/x/prerequisite-imports.js": {
+      "__unresolved_0": "./mods/fs/0/assets/Base/Singleton.js",
+      "__unresolved_1": "./mods/fs/0/assets/Enums/index.js",
+      "__unresolved_3": "./mods/fs/0/assets/Levels/level1.js",
+      "__unresolved_2": "./mods/fs/0/assets/Levels/index.js",
+      "__unresolved_5": "./mods/fs/0/assets/Runtime/DataManager.js",
+      "__unresolved_6": "./mods/fs/0/assets/Runtime/EventManager.js",
+      "__unresolved_7": "./mods/fs/0/assets/Runtime/ResourceManager.js",
+      "__unresolved_4": "./mods/fs/0/assets/Levels/level2.js",
+      "__unresolved_9": "./mods/fs/0/assets/Scripts/Tile/TileManager.js",
+      "__unresolved_10": "./mods/fs/0/assets/Scripts/Tile/TileMapManager.js",
+      "__unresolved_11": "./mods/fs/0/assets/Scripts/UI/ControlManager.js",
+      "__unresolved_12": "./mods/fs/0/assets/Utils/index.js",
+      "__unresolved_8": "./mods/fs/0/assets/Scripts/Sence/BattleManager.js"
+    },
+    "./mods/fs/0/assets/Scripts/Sence/BattleManager.js": {
+      "__unresolved_0": "./mods/cce/internal/code-quality/cr.js",
+      "cc": "./mods/cce/internal/x/cc.js",
+      "__unresolved_1": "./mods/fs/0/assets/Scripts/Tile/TileMapManager.js",
+      "__unresolved_4": "./mods/fs/0/assets/Runtime/DataManager.js",
+      "__unresolved_5": "./mods/fs/0/assets/Scripts/Tile/TileManager.js",
+      "__unresolved_6": "./mods/fs/0/assets/Runtime/EventManager.js",
+      "__unresolved_2": "./mods/fs/0/assets/Utils/index.js",
+      "__unresolved_3": "./mods/fs/0/assets/Levels/index.js",
+      "__unresolved_7": "./mods/fs/0/assets/Enums/index.js"
     }
   }
 }

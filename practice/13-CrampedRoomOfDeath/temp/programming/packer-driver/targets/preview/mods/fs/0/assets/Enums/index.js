@@ -1,9 +1,12 @@
 System.register(["cc"], function (_export, _context) {
   "use strict";
 
-  var _cclegacy, _crd, TILE_TYPE_ENUM;
+  var _cclegacy, _crd, TILE_TYPE_ENUM, EVENT_ENUM;
 
-  _export("TILE_TYPE_ENUM", void 0);
+  _export({
+    TILE_TYPE_ENUM: void 0,
+    EVENT_ENUM: void 0
+  });
 
   return {
     setters: [function (_cc) {
@@ -26,6 +29,10 @@ System.register(["cc"], function (_export, _context) {
         TILE_TYPE_ENUM["CLIFF_RIGHT"] = "CLIFF_RIGHT";
         TILE_TYPE_ENUM["FLOOR"] = "FLOOR";
       })(TILE_TYPE_ENUM || _export("TILE_TYPE_ENUM", TILE_TYPE_ENUM = {}));
+
+      (function (EVENT_ENUM) {
+        EVENT_ENUM["NEXT_LEVEL"] = "NEXT_LEVEL";
+      })(EVENT_ENUM || _export("EVENT_ENUM", EVENT_ENUM = {}));
 
       _cclegacy._RF.pop();
 

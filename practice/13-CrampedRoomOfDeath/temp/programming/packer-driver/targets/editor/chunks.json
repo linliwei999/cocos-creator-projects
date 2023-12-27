@@ -1,25 +1,9 @@
 {
-  "assets/Enums/index.js": {
-    "imports": {
-      "cc": "quick-pack:/cce/internal/x/cc.js"
-    },
-    "physicalLocation": "fs/0/assets/Enums/index.js",
-    "mTimestamp": 1702659718682
-  },
-  "assets/Levels/index.js": {
-    "imports": {
-      "cc": "quick-pack:/cce/internal/x/cc.js",
-      "__unresolved_0": "quick-pack:/cce/internal/code-quality/cr.js",
-      "__unresolved_1": "assets/Levels/level1.js"
-    },
-    "physicalLocation": "fs/0/assets/Levels/index.js",
-    "mTimestamp": 1702660061911
-  },
   "assets/Levels/level1.js": {
     "imports": {
-      "__unresolved_0": "quick-pack:/cce/internal/code-quality/cr.js",
       "cc": "quick-pack:/cce/internal/x/cc.js",
-      "__unresolved_1": "assets/Enums/index.js"
+      "__unresolved_1": "assets/Enums/index.js",
+      "__unresolved_0": "quick-pack:/cce/internal/code-quality/cr.js"
     },
     "physicalLocation": "fs/0/assets/Levels/level1.js",
     "mTimestamp": 1702660061996
@@ -142,28 +126,6 @@
     "physicalLocation": "fs/0/assets/Base/Singleton.js",
     "mTimestamp": 1703652127554
   },
-  "assets/Runtime/DataManager.js": {
-    "imports": {
-      "__unresolved_0": "quick-pack:/cce/internal/code-quality/cr.js",
-      "cc": "quick-pack:/cce/internal/x/cc.js",
-      "__unresolved_1": "assets/Base/Singleton.js"
-    },
-    "physicalLocation": "fs/0/assets/Runtime/DataManager.js",
-    "mTimestamp": 1703652127584
-  },
-  "assets/Scripts/Sence/BattleManager.js": {
-    "imports": {
-      "__unresolved_0": "quick-pack:/cce/internal/code-quality/cr.js",
-      "cc": "quick-pack:/cce/internal/x/cc.js",
-      "__unresolved_3": "assets/Levels/index.js",
-      "__unresolved_4": "assets/Runtime/DataManager.js",
-      "__unresolved_5": "assets/Scripts/Tile/TileManager.js",
-      "__unresolved_2": "assets/Utils/index.js",
-      "__unresolved_1": "assets/Scripts/Tile/TileMapManager.js"
-    },
-    "physicalLocation": "fs/0/assets/Scripts/Sence/BattleManager.js",
-    "mTimestamp": 1703652127646
-  },
   "assets/Runtime/ResourceManager.js": {
     "imports": {
       "__unresolved_0": "quick-pack:/cce/internal/code-quality/cr.js",
@@ -180,24 +142,6 @@
     "physicalLocation": "fs/0/assets/Utils/index.js",
     "mTimestamp": 1703656803174
   },
-  "quick-pack:/cce/internal/x/prerequisite-imports.js": {
-    "imports": {
-      "__unresolved_1": "assets/Enums/index.js",
-      "__unresolved_2": "assets/Levels/index.js",
-      "__unresolved_3": "assets/Levels/level1.js",
-      "__unresolved_4": "assets/Runtime/DataManager.js",
-      "__unresolved_5": "assets/Runtime/ResourceManager.js",
-      "__unresolved_0": "assets/Base/Singleton.js",
-      "__unresolved_6": "assets/Scripts/Sence/BattleManager.js",
-      "__unresolved_7": "assets/Scripts/Tile/TileManager.js",
-      "__unresolved_9": "assets/Utils/index.js",
-      "__unresolved_8": "assets/Scripts/Tile/TileMapManager.js"
-    },
-    "physicalLocation": "cce/internal/x/prerequisite-imports.js",
-    "mTimestamp": 1703656864416,
-    "isEntry": true,
-    "exposeAs": "cce:/internal/x/prerequisite-imports"
-  },
   "assets/Scripts/Tile/TileMapManager.js": {
     "imports": {
       "__unresolved_0": "quick-pack:/cce/internal/code-quality/cr.js",
@@ -209,5 +153,95 @@
     },
     "physicalLocation": "fs/0/assets/Scripts/Tile/TileMapManager.js",
     "mTimestamp": 1703656864497
+  },
+  "assets/Runtime/EventManager.js": {
+    "imports": {
+      "__unresolved_0": "quick-pack:/cce/internal/code-quality/cr.js",
+      "cc": "quick-pack:/cce/internal/x/cc.js",
+      "__unresolved_1": "assets/Base/Singleton.js"
+    },
+    "physicalLocation": "fs/0/assets/Runtime/EventManager.js",
+    "mTimestamp": 1703658468996
+  },
+  "assets/Scripts/UI/ControlManager.js": {
+    "imports": {
+      "__unresolved_0": "quick-pack:/cce/internal/code-quality/cr.js",
+      "cc": "quick-pack:/cce/internal/x/cc.js",
+      "__unresolved_1": "assets/Runtime/EventManager.js",
+      "__unresolved_2": "assets/Enums/index.js"
+    },
+    "physicalLocation": "fs/0/assets/Scripts/UI/ControlManager.js",
+    "mTimestamp": 1703658469026
+  },
+  "assets/Enums/index.js": {
+    "imports": {
+      "cc": "quick-pack:/cce/internal/x/cc.js"
+    },
+    "physicalLocation": "fs/0/assets/Enums/index.js",
+    "mTimestamp": 1703658469100
+  },
+  "assets/Levels/level2.js": {
+    "imports": {
+      "__unresolved_0": "quick-pack:/cce/internal/code-quality/cr.js",
+      "cc": "quick-pack:/cce/internal/x/cc.js",
+      "__unresolved_1": "assets/Enums/index.js"
+    },
+    "physicalLocation": "fs/0/assets/Levels/level2.js",
+    "mTimestamp": 1703658900891
+  },
+  "assets/Levels/index.js": {
+    "imports": {
+      "__unresolved_0": "quick-pack:/cce/internal/code-quality/cr.js",
+      "cc": "quick-pack:/cce/internal/x/cc.js",
+      "__unresolved_1": "assets/Levels/level1.js",
+      "__unresolved_2": "assets/Levels/level2.js"
+    },
+    "physicalLocation": "fs/0/assets/Levels/index.js",
+    "mTimestamp": 1703658900905
+  },
+  "assets/Runtime/DataManager.js": {
+    "imports": {
+      "__unresolved_0": "quick-pack:/cce/internal/code-quality/cr.js",
+      "cc": "quick-pack:/cce/internal/x/cc.js",
+      "__unresolved_1": "assets/Base/Singleton.js"
+    },
+    "physicalLocation": "fs/0/assets/Runtime/DataManager.js",
+    "mTimestamp": 1703659381443
+  },
+  "quick-pack:/cce/internal/x/prerequisite-imports.js": {
+    "imports": {
+      "__unresolved_0": "assets/Base/Singleton.js",
+      "__unresolved_1": "assets/Enums/index.js",
+      "__unresolved_3": "assets/Levels/level1.js",
+      "__unresolved_2": "assets/Levels/index.js",
+      "__unresolved_5": "assets/Runtime/DataManager.js",
+      "__unresolved_6": "assets/Runtime/EventManager.js",
+      "__unresolved_7": "assets/Runtime/ResourceManager.js",
+      "__unresolved_4": "assets/Levels/level2.js",
+      "__unresolved_9": "assets/Scripts/Tile/TileManager.js",
+      "__unresolved_10": "assets/Scripts/Tile/TileMapManager.js",
+      "__unresolved_11": "assets/Scripts/UI/ControlManager.js",
+      "__unresolved_12": "assets/Utils/index.js",
+      "__unresolved_8": "assets/Scripts/Sence/BattleManager.js"
+    },
+    "physicalLocation": "cce/internal/x/prerequisite-imports.js",
+    "mTimestamp": 1703659507941,
+    "isEntry": true,
+    "exposeAs": "cce:/internal/x/prerequisite-imports"
+  },
+  "assets/Scripts/Sence/BattleManager.js": {
+    "imports": {
+      "__unresolved_0": "quick-pack:/cce/internal/code-quality/cr.js",
+      "cc": "quick-pack:/cce/internal/x/cc.js",
+      "__unresolved_1": "assets/Scripts/Tile/TileMapManager.js",
+      "__unresolved_4": "assets/Runtime/DataManager.js",
+      "__unresolved_5": "assets/Scripts/Tile/TileManager.js",
+      "__unresolved_6": "assets/Runtime/EventManager.js",
+      "__unresolved_2": "assets/Utils/index.js",
+      "__unresolved_3": "assets/Levels/index.js",
+      "__unresolved_7": "assets/Enums/index.js"
+    },
+    "physicalLocation": "fs/0/assets/Scripts/Sence/BattleManager.js",
+    "mTimestamp": 1703659508073
   }
 }

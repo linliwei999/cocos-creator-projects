@@ -1,10 +1,14 @@
-System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _context) {
+System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, level1, _crd, levels;
+  var _reporterNs, _cclegacy, level1, level2, _crd, levels;
 
   function _reportPossibleCrUseOflevel(extras) {
     _reporterNs.report("level1", "./level1", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOflevel2(extras) {
+    _reporterNs.report("level2", "./level2", _context.meta, extras);
   }
 
   function _reportPossibleCrUseOfTILE_TYPE_ENUM(extras) {
@@ -18,6 +22,8 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
       _cclegacy = _cc.cclegacy;
     }, function (_unresolved_2) {
       level1 = _unresolved_2.default;
+    }, function (_unresolved_3) {
+      level2 = _unresolved_3.default;
     }],
     execute: function () {
       _crd = true;
@@ -27,7 +33,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
       levels = {
         level1: _crd && level1 === void 0 ? (_reportPossibleCrUseOflevel({
           error: Error()
-        }), level1) : level1
+        }), level1) : level1,
+        level2: _crd && level2 === void 0 ? (_reportPossibleCrUseOflevel2({
+          error: Error()
+        }), level2) : level2
       };
 
       _export("default", levels);

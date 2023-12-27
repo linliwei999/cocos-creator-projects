@@ -1,7 +1,7 @@
-System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4", "__unresolved_5"], function (_export, _context) {
+System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4", "__unresolved_5", "__unresolved_6", "__unresolved_7"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, _decorator, Component, TileMapManager, createUINode, Levels, DataManager, TILE_HEIGHT, TILE_WIDTH, _dec, _class, _temp, _crd, ccclass, property, BattleManager;
+  var _reporterNs, _cclegacy, _decorator, Component, TileMapManager, createUINode, Levels, DataManager, TILE_HEIGHT, TILE_WIDTH, EventManager, EVENT_ENUM, _dec, _class, _temp, _crd, ccclass, property, BattleManager;
 
   function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -33,6 +33,14 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     _reporterNs.report("TILE_WIDTH", "db://assets/Scripts/Tile/TileManager", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfEventManager(extras) {
+    _reporterNs.report("EventManager", "db://assets/Runtime/EventManager", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfEVENT_ENUM(extras) {
+    _reporterNs.report("EVENT_ENUM", "db://assets/Enums", _context.meta, extras);
+  }
+
   return {
     setters: [function (_unresolved_) {
       _reporterNs = _unresolved_;
@@ -51,6 +59,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     }, function (_unresolved_6) {
       TILE_HEIGHT = _unresolved_6.TILE_HEIGHT;
       TILE_WIDTH = _unresolved_6.TILE_WIDTH;
+    }, function (_unresolved_7) {
+      EventManager = _unresolved_7.default;
+    }, function (_unresolved_8) {
+      EVENT_ENUM = _unresolved_8.EVENT_ENUM;
     }],
     execute: function () {
       _crd = true;
@@ -71,6 +83,22 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           _defineProperty(this, "stage", void 0);
         }
 
+        onLoad() {
+          (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
+            error: Error()
+          }), EventManager) : EventManager).Instance.on((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
+            error: Error()
+          }), EVENT_ENUM) : EVENT_ENUM).NEXT_LEVEL, this.nextLevel, this);
+        }
+
+        onDestroy() {
+          (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
+            error: Error()
+          }), EventManager) : EventManager).Instance.off((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
+            error: Error()
+          }), EVENT_ENUM) : EVENT_ENUM).NEXT_LEVEL, this.nextLevel);
+        }
+
         start() {
           this.generateStage();
           this.initLevel();
@@ -79,9 +107,12 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
         initLevel() {
           const level = (_crd && Levels === void 0 ? (_reportPossibleCrUseOfLevels({
             error: Error()
-          }), Levels) : Levels)[`level${1}`];
+          }), Levels) : Levels)[`level${(_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+            error: Error()
+          }), DataManager) : DataManager).Instance.levelIndex}`];
 
           if (level) {
+            this.clearLevel();
             this.level = level; //把地图数据存到数据中心(单例)
 
             (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
@@ -95,6 +126,21 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             }), DataManager) : DataManager).Instance.mapColumnCount = this.level.mapInfo[0].length || 0;
             this.generateTileMap();
           }
+        } //下一关函数
+
+
+        nextLevel() {
+          (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+            error: Error()
+          }), DataManager) : DataManager).Instance.levelIndex++;
+          this.initLevel();
+        }
+
+        clearLevel() {
+          this.stage.destroyAllChildren();
+          (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+            error: Error()
+          }), DataManager) : DataManager).Instance.reset();
         }
 
         generateStage() {
