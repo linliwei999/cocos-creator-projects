@@ -29,6 +29,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
     _reporterNs.report("ENTITY_STATE_ENUM", "db://assets/Enums", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfENTITY_TYPE_ENUM(extras) {
+    _reporterNs.report("ENTITY_TYPE_ENUM", "db://assets/Enums", _context.meta, extras);
+  }
+
   function _reportPossibleCrUseOfPARAMS_NAME_ENUM(extras) {
     _reporterNs.report("PARAMS_NAME_ENUM", "db://assets/Enums", _context.meta, extras);
   }
@@ -81,6 +85,8 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
           _defineProperty(this, "_direction", void 0);
 
           _defineProperty(this, "_state", void 0);
+
+          _defineProperty(this, "type", void 0);
         }
 
         get direction() {
@@ -123,6 +129,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
             }), TILE_HEIGHT) : TILE_HEIGHT) * 4);
             _this.x = params.x;
             _this.y = params.y;
+            _this.type = params.type;
             _this.direction = params.direction;
             _this.state = params.state;
           })();

@@ -13,6 +13,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
     _reporterNs.report("Singleton", "db://assets/Base/Singleton", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfTileManager(extras) {
+    _reporterNs.report("TileManager", "db://assets/Scripts/Tile/TileManager", _context.meta, extras);
+  }
+
   _export("default", void 0);
 
   return {
@@ -36,6 +40,8 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
 
           _defineProperty(this, "mapInfo", void 0);
 
+          _defineProperty(this, "tileInfo", void 0);
+
           _defineProperty(this, "mapRowCount", 0);
 
           _defineProperty(this, "mapColumnCount", 0);
@@ -49,6 +55,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
 
         reset() {
           this.mapInfo = [];
+          this.tileInfo = [];
           this.mapRowCount = 0;
           this.mapColumnCount = 0;
         }

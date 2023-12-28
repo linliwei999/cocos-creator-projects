@@ -1,7 +1,7 @@
-System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4"], function (_export, _context) {
+System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4", "__unresolved_5"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, _decorator, CONTROLLER_ENUM, DIRECTION_ENUM, ENTITY_STATE_ENUM, ENTITY_TYPE_ENUM, EVENT_ENUM, EventManager, PlayerStateMachine, EntityManager, _dec, _class, _temp, _crd, ccclass, property, ANIMATION_SPEED, PlayerManager;
+  var _reporterNs, _cclegacy, _decorator, CONTROLLER_ENUM, DIRECTION_ENUM, ENTITY_STATE_ENUM, ENTITY_TYPE_ENUM, EVENT_ENUM, EventManager, PlayerStateMachine, EntityManager, DataManager, _dec, _class, _temp, _crd, ccclass, property, ANIMATION_SPEED, PlayerManager;
 
   function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -41,6 +41,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     _reporterNs.report("EntityManager", "db://assets/Base/EntityManager", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfDataManager(extras) {
+    _reporterNs.report("DataManager", "db://assets/Runtime/DataManager", _context.meta, extras);
+  }
+
   return {
     setters: [function (_unresolved_) {
       _reporterNs = _unresolved_;
@@ -59,6 +63,8 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
       PlayerStateMachine = _unresolved_4.PlayerStateMachine;
     }, function (_unresolved_5) {
       EntityManager = _unresolved_5.EntityManager;
+    }, function (_unresolved_6) {
+      DataManager = _unresolved_6.default;
     }],
     execute: function () {
       _crd = true;
@@ -137,6 +143,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
 
 
         move(inputDirection) {
+          console.log('DataM', (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+            error: Error()
+          }), DataManager) : DataManager).Instance.tileInfo);
+
           if (inputDirection === (_crd && CONTROLLER_ENUM === void 0 ? (_reportPossibleCrUseOfCONTROLLER_ENUM({
             error: Error()
           }), CONTROLLER_ENUM) : CONTROLLER_ENUM).TOP) {

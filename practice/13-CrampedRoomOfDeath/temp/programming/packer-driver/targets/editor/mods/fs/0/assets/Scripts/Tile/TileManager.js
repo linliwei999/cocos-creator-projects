@@ -1,15 +1,25 @@
-System.register(["cc"], function (_export, _context) {
+System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _context) {
   "use strict";
 
-  var _cclegacy, _decorator, Component, Sprite, UITransform, _dec, _class, _crd, ccclass, property, TILE_WIDTH, TILE_HEIGHT, TileManager;
+  var _reporterNs, _cclegacy, _decorator, Component, Sprite, UITransform, TILE_TYPE_ENUM, _dec, _class, _temp, _crd, ccclass, property, TILE_WIDTH, TILE_HEIGHT, TileManager;
+
+  function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+  function _reportPossibleCrUseOfTILE_TYPE_ENUM(extras) {
+    _reporterNs.report("TILE_TYPE_ENUM", "db://assets/Enums", _context.meta, extras);
+  }
 
   return {
-    setters: [function (_cc) {
+    setters: [function (_unresolved_) {
+      _reporterNs = _unresolved_;
+    }, function (_cc) {
       _cclegacy = _cc.cclegacy;
       _decorator = _cc._decorator;
       Component = _cc.Component;
       Sprite = _cc.Sprite;
       UITransform = _cc.UITransform;
+    }, function (_unresolved_2) {
+      TILE_TYPE_ENUM = _unresolved_2.TILE_TYPE_ENUM;
     }],
     execute: function () {
       _crd = true;
@@ -25,8 +35,53 @@ System.register(["cc"], function (_export, _context) {
 
       _export("TILE_HEIGHT", TILE_HEIGHT = 55);
 
-      _export("TileManager", TileManager = (_dec = ccclass('TileManager'), _dec(_class = class TileManager extends Component {
-        async init(spriteFrame, i, j) {
+      _export("TileManager", TileManager = (_dec = ccclass('TileManager'), _dec(_class = (_temp = class TileManager extends Component {
+        constructor(...args) {
+          super(...args);
+
+          _defineProperty(this, "type", void 0);
+
+          _defineProperty(this, "moveable", void 0);
+
+          _defineProperty(this, "turnable", void 0);
+        }
+
+        async init(type, spriteFrame, i, j) {
+          this.type = type; //墙壁
+
+          if (this.type === (_crd && TILE_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfTILE_TYPE_ENUM({
+            error: Error()
+          }), TILE_TYPE_ENUM) : TILE_TYPE_ENUM).WALL_ROW || this.type === (_crd && TILE_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfTILE_TYPE_ENUM({
+            error: Error()
+          }), TILE_TYPE_ENUM) : TILE_TYPE_ENUM).WALL_COLUMN || this.type === (_crd && TILE_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfTILE_TYPE_ENUM({
+            error: Error()
+          }), TILE_TYPE_ENUM) : TILE_TYPE_ENUM).WALL_LEFT_TOP || this.type === (_crd && TILE_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfTILE_TYPE_ENUM({
+            error: Error()
+          }), TILE_TYPE_ENUM) : TILE_TYPE_ENUM).WALL_RIGHT_TOP || this.type === (_crd && TILE_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfTILE_TYPE_ENUM({
+            error: Error()
+          }), TILE_TYPE_ENUM) : TILE_TYPE_ENUM).WALL_LEFT_BOTTOM || this.type === (_crd && TILE_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfTILE_TYPE_ENUM({
+            error: Error()
+          }), TILE_TYPE_ENUM) : TILE_TYPE_ENUM).WALL_RIGHT_BOTTOM) {
+            this.moveable = false;
+            this.turnable = false;
+          } else if (this.type === (_crd && TILE_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfTILE_TYPE_ENUM({
+            error: Error()
+          }), TILE_TYPE_ENUM) : TILE_TYPE_ENUM).CLIFF_LEFT || this.type === (_crd && TILE_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfTILE_TYPE_ENUM({
+            error: Error()
+          }), TILE_TYPE_ENUM) : TILE_TYPE_ENUM).CLIFF_RIGHT || this.type === (_crd && TILE_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfTILE_TYPE_ENUM({
+            error: Error()
+          }), TILE_TYPE_ENUM) : TILE_TYPE_ENUM).CLIFF_CENTER) {
+            //悬崖
+            this.moveable = false;
+            this.turnable = true;
+          } else if (this.type === (_crd && TILE_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfTILE_TYPE_ENUM({
+            error: Error()
+          }), TILE_TYPE_ENUM) : TILE_TYPE_ENUM).FLOOR) {
+            //地板
+            this.moveable = true;
+            this.turnable = true;
+          }
+
           const sprite = this.addComponent(Sprite);
           sprite.spriteFrame = spriteFrame;
           const transform = this.getComponent(UITransform);
@@ -34,7 +89,7 @@ System.register(["cc"], function (_export, _context) {
           this.node.setPosition(i * TILE_WIDTH, -j * TILE_HEIGHT);
         }
 
-      }) || _class));
+      }, _temp)) || _class));
 
       _cclegacy._RF.pop();
 

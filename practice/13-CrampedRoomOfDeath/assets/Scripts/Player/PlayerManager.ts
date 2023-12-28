@@ -3,6 +3,7 @@ import {CONTROLLER_ENUM, DIRECTION_ENUM, ENTITY_STATE_ENUM, ENTITY_TYPE_ENUM, EV
 import EventManager from "db://assets/Runtime/EventManager";
 import {PlayerStateMachine} from "db://assets/Scripts/Player/PlayerStateMachine";
 import {EntityManager} from "db://assets/Base/EntityManager";
+import DataManager from "db://assets/Runtime/DataManager";
 
 const { ccclass, property } = _decorator;
 

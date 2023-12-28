@@ -4,7 +4,7 @@ import {
     CONTROLLER_ENUM,
     DIRECTION_ENUM,
     DIRECTION_ODER_ENUM,
-    ENTITY_STATE_ENUM,
+    ENTITY_STATE_ENUM, ENTITY_TYPE_ENUM,
     EVENT_ENUM,
     PARAMS_NAME_ENUM
 } from "db://assets/Enums";
@@ -24,6 +24,7 @@ export class EntityManager extends Component {
 
     private _direction: DIRECTION_ENUM
     private _state: ENTITY_STATE_ENUM
+    private type: ENTITY_TYPE_ENUM
 
     get direction(){
         return this._direction;
@@ -52,6 +53,7 @@ export class EntityManager extends Component {
 
         this.x = params.x;
         this.y = params.y;
+        this.type = params.type;
         this.direction = params.direction;
         this.state = params.state;
     }

@@ -69,9 +69,15 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             } = (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
               error: Error()
             }), DataManager) : DataManager).Instance;
+            (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+              error: Error()
+            }), DataManager) : DataManager).Instance.tileInfo = [];
 
             for (var i = 0; i < mapInfo.length; i++) {
               var column = mapInfo[i];
+              (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+                error: Error()
+              }), DataManager) : DataManager).Instance.tileInfo[i] = [];
 
               var _loop = function _loop(j) {
                 var item = column[j];
@@ -96,7 +102,11 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
                 var tileManager = node.addComponent(_crd && TileManager === void 0 ? (_reportPossibleCrUseOfTileManager({
                   error: Error()
                 }), TileManager) : TileManager);
-                tileManager.init(spriteFrame, i, j);
+                var type = item.type;
+                tileManager.init(type, spriteFrame, i, j);
+                (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+                  error: Error()
+                }), DataManager) : DataManager).Instance.tileInfo[i][j] = tileManager;
                 node.setParent(_this.node);
               };
 
