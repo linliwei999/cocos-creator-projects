@@ -389,7 +389,7 @@
     ]
   },
   "cce:/internal/x/prerequisite-imports": {
-    "mTimestamp": 141031284.073268,
+    "mTimestamp": 142798806.522963,
     "chunkId": "quick-pack:/cce/internal/x/prerequisite-imports.js",
     "imports": [
       {
@@ -1695,7 +1695,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Player/PlayerManager.ts": {
     "mTimestamp": {
-      "mtime": 1703745205553.1252,
+      "mtime": 1703746975436.6072,
       "uuid": "efe88db8-68e1-4998-bbdf-c5af4bf4ece6"
     },
     "chunkId": "assets/Scripts/Player/PlayerManager.js",

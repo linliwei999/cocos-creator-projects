@@ -101,8 +101,8 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             yield _this.fsm.init();
 
             _superprop_getInit().call(_this, {
-              x: 0,
-              y: 0,
+              x: 2,
+              y: 8,
               type: (_crd && ENTITY_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_TYPE_ENUM({
                 error: Error()
               }), ENTITY_TYPE_ENUM) : ENTITY_TYPE_ENUM).PLAYER,
@@ -114,11 +114,13 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
               }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).IDLE
             });
 
+            _this.targetX = _this.x;
+            _this.targetY = _this.y;
             (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
               error: Error()
             }), EventManager) : EventManager).Instance.on((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
               error: Error()
-            }), EVENT_ENUM) : EVENT_ENUM).PLAYER_CTRL, _this.move, _this);
+            }), EVENT_ENUM) : EVENT_ENUM).PLAYER_CTRL, _this.inputHandle, _this);
           })();
         }
 
@@ -139,14 +141,91 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             this.x = this.targetX;
             this.y = this.targetY;
           }
+        }
+
+        inputHandle(inputDirection) {
+          if (this.willBlock(inputDirection)) {
+            console.log('撞墙');
+            return;
+          }
+
+          this.move(inputDirection);
+        }
+
+        willBlock(inputDirection) {
+          var {
+            targetX: x,
+            targetY: y,
+            direction
+          } = this;
+          var {
+            tileInfo
+          } = (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+            error: Error()
+          }), DataManager) : DataManager).Instance;
+
+          if (inputDirection === (_crd && CONTROLLER_ENUM === void 0 ? (_reportPossibleCrUseOfCONTROLLER_ENUM({
+            error: Error()
+          }), CONTROLLER_ENUM) : CONTROLLER_ENUM).TOP) {
+            if (direction === (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
+              error: Error()
+            }), DIRECTION_ENUM) : DIRECTION_ENUM).TOP) {
+              //疑问
+              var playerNextY = y - 1;
+              var weaponNextY = y - 2; //玩家走出地图
+
+              if (playerNextY <= 1) {
+                return true;
+              } //下一个瓦片
+
+
+              var playerTile = tileInfo[x][playerNextY];
+              var weaponTile = tileInfo[x][weaponNextY];
+
+              if (playerTile && playerTile.moveable && (!weaponTile || weaponTile.turnable)) {//empty
+              } else {
+                return true;
+              }
+            }
+          } else if (inputDirection === (_crd && CONTROLLER_ENUM === void 0 ? (_reportPossibleCrUseOfCONTROLLER_ENUM({
+            error: Error()
+          }), CONTROLLER_ENUM) : CONTROLLER_ENUM).TURNLEFT) {
+            var nextX;
+            var nextY;
+
+            if (direction === (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
+              error: Error()
+            }), DIRECTION_ENUM) : DIRECTION_ENUM).TOP) {
+              nextX = x - 1;
+              nextY = y - 1;
+            } else if (direction === (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
+              error: Error()
+            }), DIRECTION_ENUM) : DIRECTION_ENUM).BOTTOM) {
+              nextX = x + 1;
+              nextY = y + 1;
+            } else if (direction === (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
+              error: Error()
+            }), DIRECTION_ENUM) : DIRECTION_ENUM).LEFT) {
+              nextX = x - 1;
+              nextY = y + 1;
+            } else if (direction === (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
+              error: Error()
+            }), DIRECTION_ENUM) : DIRECTION_ENUM).RIGHT) {
+              nextX = x + 1;
+              nextY = y - 1;
+            }
+
+            if ((!tileInfo[x][nextY] || tileInfo[x][nextY].turnable) && (!tileInfo[nextX][y] || tileInfo[nextX][y].turnable) && (!tileInfo[nextX][nextY] || tileInfo[nextX][nextY].turnable)) {//empty
+            } else {
+              return true;
+            }
+          }
+
+          return false;
         } //玩家移动
 
 
         move(inputDirection) {
-          console.log('DataM', (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
-            error: Error()
-          }), DataManager) : DataManager).Instance.tileInfo);
-
           if (inputDirection === (_crd && CONTROLLER_ENUM === void 0 ? (_reportPossibleCrUseOfCONTROLLER_ENUM({
             error: Error()
           }), CONTROLLER_ENUM) : CONTROLLER_ENUM).TOP) {

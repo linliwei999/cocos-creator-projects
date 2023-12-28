@@ -19,13 +19,15 @@ export class PlayerManager extends EntityManager {
         this.fsm = this.node.addComponent(PlayerStateMachine);
         await this.fsm.init();
         super.init({
-            x: 0,
-            y: 0,
+            x: 2,
+            y: 8,
             type: ENTITY_TYPE_ENUM.PLAYER,
             direction: DIRECTION_ENUM.TOP,
             state: ENTITY_STATE_ENUM.IDLE
         });
-        EventManager.Instance.on(EVENT_ENUM.PLAYER_CTRL, this.move, this);
+        this.targetX = this.x;
+        this.targetY = this.y;
+        EventManager.Instance.on(EVENT_ENUM.PLAYER_CTRL, this.inputHandle, this);
     }
 
     updateXY(){
@@ -45,6 +47,64 @@ export class PlayerManager extends EntityManager {
             this.x = this.targetX;
             this.y = this.targetY;
         }
+    }
+
+    inputHandle(inputDirection: CONTROLLER_ENUM){
+        if(this.willBlock(inputDirection)){
+            console.log('撞墙');
+            return
+        }
+        this.move(inputDirection);
+    }
+
+    willBlock(inputDirection: CONTROLLER_ENUM){
+        const { targetX: x, targetY: y, direction } = this;
+        const { tileInfo } = DataManager.Instance;
+        if(inputDirection === CONTROLLER_ENUM.TOP){
+            if(direction === DIRECTION_ENUM.TOP){
+                //疑问
+                const playerNextY = y - 1;
+                const weaponNextY = y - 2;
+                //玩家走出地图
+                if(playerNextY <= 1){
+                    return true;
+                }
+                //下一个瓦片
+                const playerTile = tileInfo[x][playerNextY];
+                const weaponTile = tileInfo[x][weaponNextY];
+                if(playerTile && playerTile.moveable && (!weaponTile || weaponTile.turnable)){
+                    //empty
+                }else {
+                    return true;
+                }
+            }
+        }else if(inputDirection === CONTROLLER_ENUM.TURNLEFT){
+            let nextX
+            let nextY
+            if(direction === DIRECTION_ENUM.TOP){
+                nextX = x - 1;
+                nextY = y - 1;
+            }else if(direction === DIRECTION_ENUM.BOTTOM){
+                nextX = x + 1;
+                nextY = y + 1;
+            }else if(direction === DIRECTION_ENUM.LEFT){
+                nextX = x - 1;
+                nextY = y + 1;
+            }else if(direction === DIRECTION_ENUM.RIGHT){
+                nextX = x + 1;
+                nextY = y - 1;
+            }
+            if(
+                (!tileInfo[x][nextY] || tileInfo[x][nextY].turnable) &&
+                (!tileInfo[nextX][y] || tileInfo[nextX][y].turnable) &&
+                (!tileInfo[nextX][nextY] || tileInfo[nextX][nextY].turnable)
+            ){
+                //empty
+            }else {
+                return true;
+            }
+        }
+        return false;
     }
 
     //玩家移动
