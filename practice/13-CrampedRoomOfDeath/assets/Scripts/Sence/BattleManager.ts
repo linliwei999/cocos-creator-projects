@@ -7,6 +7,7 @@ import {TILE_HEIGHT, TILE_WIDTH} from "db://assets/Scripts/Tile/TileManager";
 import EventManager from "db://assets/Runtime/EventManager";
 import {EVENT_ENUM} from "db://assets/Enums";
 import {PlayerManager} from "db://assets/Scripts/Player/PlayerManager";
+import {WoodenSkeletonManager} from "db://assets/Scripts/WoodenSkeleton/WoodenSkeletonManager";
 const { ccclass, property } = _decorator;
 
 @ccclass('BattleManager')
@@ -44,6 +45,7 @@ export class BattleManager extends Component {
             DataManager.Instance.mapColumnCount = this.level.mapInfo[0].length || 0;
             this.generateTileMap();
             this.generatePlayer();
+            this.generateEnemies();
         }
     }
 
@@ -79,6 +81,14 @@ export class BattleManager extends Component {
         player.setParent(this.stage);
         const playerManager = player.addComponent(PlayerManager);
         playerManager.init();
+    }
+
+    //生成敌人
+    generateEnemies(){
+        const enemy = createUINode();
+        enemy.setParent(this.stage);
+        const woodenSkeletonManager = enemy.addComponent(WoodenSkeletonManager);
+        woodenSkeletonManager.init();
     }
 
     //瓦片地图适配屏幕

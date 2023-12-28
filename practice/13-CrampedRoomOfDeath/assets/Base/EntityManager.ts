@@ -11,6 +11,8 @@ import {
 import EventManager from "db://assets/Runtime/EventManager";
 import {PlayerStateMachine} from "db://assets/Scripts/Player/PlayerStateMachine";
 import {IEntity} from "db://assets/Levels";
+import {WoodenSkeletonStateMachine} from "db://assets/Scripts/WoodenSkeleton/WoodenSkeletonStateMachine";
+import {StateMachine} from "db://assets/Base/StateMachine";
 
 const { ccclass, property } = _decorator;
 
@@ -20,7 +22,7 @@ const ANIMATION_SPEED = 1/8;
 export class EntityManager extends Component {
     x:number = 0
     y:number = 0
-    fsm: PlayerStateMachine
+    fsm: StateMachine
 
     private _direction: DIRECTION_ENUM
     private _state: ENTITY_STATE_ENUM

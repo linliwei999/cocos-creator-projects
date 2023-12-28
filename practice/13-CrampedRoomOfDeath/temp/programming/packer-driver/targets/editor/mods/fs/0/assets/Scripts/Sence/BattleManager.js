@@ -1,7 +1,7 @@
-System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4", "__unresolved_5", "__unresolved_6", "__unresolved_7", "__unresolved_8"], function (_export, _context) {
+System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4", "__unresolved_5", "__unresolved_6", "__unresolved_7", "__unresolved_8", "__unresolved_9"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, _decorator, Component, TileMapManager, createUINode, Levels, DataManager, TILE_HEIGHT, TILE_WIDTH, EventManager, EVENT_ENUM, PlayerManager, _dec, _class, _temp, _crd, ccclass, property, BattleManager;
+  var _reporterNs, _cclegacy, _decorator, Component, TileMapManager, createUINode, Levels, DataManager, TILE_HEIGHT, TILE_WIDTH, EventManager, EVENT_ENUM, PlayerManager, WoodenSkeletonManager, _dec, _class, _temp, _crd, ccclass, property, BattleManager;
 
   function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -45,6 +45,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     _reporterNs.report("PlayerManager", "db://assets/Scripts/Player/PlayerManager", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfWoodenSkeletonManager(extras) {
+    _reporterNs.report("WoodenSkeletonManager", "db://assets/Scripts/WoodenSkeleton/WoodenSkeletonManager", _context.meta, extras);
+  }
+
   return {
     setters: [function (_unresolved_) {
       _reporterNs = _unresolved_;
@@ -69,6 +73,8 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
       EVENT_ENUM = _unresolved_8.EVENT_ENUM;
     }, function (_unresolved_9) {
       PlayerManager = _unresolved_9.PlayerManager;
+    }, function (_unresolved_10) {
+      WoodenSkeletonManager = _unresolved_10.WoodenSkeletonManager;
     }],
     execute: function () {
       _crd = true;
@@ -132,6 +138,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             }), DataManager) : DataManager).Instance.mapColumnCount = this.level.mapInfo[0].length || 0;
             this.generateTileMap();
             this.generatePlayer();
+            this.generateEnemies();
           }
         } //下一关函数
 
@@ -181,6 +188,18 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             error: Error()
           }), PlayerManager) : PlayerManager);
           playerManager.init();
+        } //生成敌人
+
+
+        generateEnemies() {
+          const enemy = (_crd && createUINode === void 0 ? (_reportPossibleCrUseOfcreateUINode({
+            error: Error()
+          }), createUINode) : createUINode)();
+          enemy.setParent(this.stage);
+          const woodenSkeletonManager = enemy.addComponent(_crd && WoodenSkeletonManager === void 0 ? (_reportPossibleCrUseOfWoodenSkeletonManager({
+            error: Error()
+          }), WoodenSkeletonManager) : WoodenSkeletonManager);
+          woodenSkeletonManager.init();
         } //瓦片地图适配屏幕
 
 

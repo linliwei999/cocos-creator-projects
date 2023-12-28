@@ -1,7 +1,7 @@
-System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _context) {
+System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, AnimationClip, Sprite, animation, ResourceManager, State, _crd, ANIMATION_SPEED;
+  var _reporterNs, _cclegacy, AnimationClip, Sprite, animation, ResourceManager, sortSpriteFrame, State, _crd, ANIMATION_SPEED;
 
   function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -11,6 +11,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
 
   function _reportPossibleCrUseOfStateMachine(extras) {
     _reporterNs.report("StateMachine", "db://assets/Base/StateMachine", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfsortSpriteFrame(extras) {
+    _reporterNs.report("sortSpriteFrame", "db://assets/Utils", _context.meta, extras);
   }
 
   _export("default", void 0);
@@ -25,6 +29,8 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
       animation = _cc.animation;
     }, function (_unresolved_2) {
       ResourceManager = _unresolved_2.default;
+    }, function (_unresolved_3) {
+      sortSpriteFrame = _unresolved_3.sortSpriteFrame;
     }],
     execute: function () {
       _crd = true;
@@ -54,7 +60,9 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
 
           track.path = new animation.TrackPath().toComponent(Sprite).toProperty('spriteFrame'); // 指定轨道路径
 
-          const frames = spriteFrames.map((item, index) => [ANIMATION_SPEED * index, item]); // 为 x 通道的曲线添加关键帧
+          const frames = (_crd && sortSpriteFrame === void 0 ? (_reportPossibleCrUseOfsortSpriteFrame({
+            error: Error()
+          }), sortSpriteFrame) : sortSpriteFrame)(spriteFrames).map((item, index) => [ANIMATION_SPEED * index, item]); // 为 x 通道的曲线添加关键帧
 
           track.channel.curve.assignSorted(frames); // 最后将轨道添加到动画剪辑以应用
 

@@ -37,12 +37,12 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
     _reporterNs.report("PARAMS_NAME_ENUM", "db://assets/Enums", _context.meta, extras);
   }
 
-  function _reportPossibleCrUseOfPlayerStateMachine(extras) {
-    _reporterNs.report("PlayerStateMachine", "db://assets/Scripts/Player/PlayerStateMachine", _context.meta, extras);
-  }
-
   function _reportPossibleCrUseOfIEntity(extras) {
     _reporterNs.report("IEntity", "db://assets/Levels", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfStateMachine(extras) {
+    _reporterNs.report("StateMachine", "db://assets/Base/StateMachine", _context.meta, extras);
   }
 
   return {

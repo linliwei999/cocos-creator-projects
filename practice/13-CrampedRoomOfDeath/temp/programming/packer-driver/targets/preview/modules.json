@@ -137,7 +137,7 @@
     ]
   },
   "cce:/internal/x/prerequisite-imports": {
-    "mTimestamp": 149906856.418562,
+    "mTimestamp": 154077267.970211,
     "chunkId": "quick-pack:/cce/internal/x/prerequisite-imports.js",
     "imports": [
       {
@@ -463,7 +463,7 @@
         }
       },
       {
-        "value": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Utils/index.ts",
+        "value": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/WoodenSkeleton/IdleSubStateMachine.ts",
         "rewritten": "__unresolved_23",
         "loc": {
           "start": {
@@ -472,6 +472,48 @@
           },
           "end": {
             "line": 27,
+            "column": 152
+          }
+        }
+      },
+      {
+        "value": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/WoodenSkeleton/WoodenSkeletonManager.ts",
+        "rewritten": "__unresolved_24",
+        "loc": {
+          "start": {
+            "line": 28,
+            "column": 7
+          },
+          "end": {
+            "line": 28,
+            "column": 154
+          }
+        }
+      },
+      {
+        "value": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/WoodenSkeleton/WoodenSkeletonStateMachine.ts",
+        "rewritten": "__unresolved_25",
+        "loc": {
+          "start": {
+            "line": 29,
+            "column": 7
+          },
+          "end": {
+            "line": 29,
+            "column": 159
+          }
+        }
+      },
+      {
+        "value": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Utils/index.ts",
+        "rewritten": "__unresolved_26",
+        "loc": {
+          "start": {
+            "line": 30,
+            "column": 7
+          },
+          "end": {
+            "line": 30,
             "column": 121
           }
         }
@@ -572,6 +614,18 @@
       {
         "isExternal": false,
         "url": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/UI/ControlManager.ts"
+      },
+      {
+        "isExternal": false,
+        "url": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/WoodenSkeleton/IdleSubStateMachine.ts"
+      },
+      {
+        "isExternal": false,
+        "url": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/WoodenSkeleton/WoodenSkeletonManager.ts"
+      },
+      {
+        "isExternal": false,
+        "url": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/WoodenSkeleton/WoodenSkeletonStateMachine.ts"
       },
       {
         "isExternal": false,
@@ -761,7 +815,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Sence/BattleManager.ts": {
     "mTimestamp": {
-      "mtime": 1703671079668.3582,
+      "mtime": 1703755682929.3171,
       "uuid": "bd0bbef9-eda4-4fbc-a655-b42512681271"
     },
     "chunkId": "assets/Scripts/Sence/BattleManager.js",
@@ -897,6 +951,20 @@
             "column": 70
           }
         }
+      },
+      {
+        "value": "db://assets/Scripts/WoodenSkeleton/WoodenSkeletonManager",
+        "rewritten": "__unresolved_9",
+        "loc": {
+          "start": {
+            "line": 10,
+            "column": 36
+          },
+          "end": {
+            "line": 10,
+            "column": 94
+          }
+        }
       }
     ],
     "modLoMetadata": {
@@ -946,6 +1014,10 @@
       {
         "isExternal": false,
         "url": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Player/PlayerManager.ts"
+      },
+      {
+        "isExternal": false,
+        "url": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/WoodenSkeleton/WoodenSkeletonManager.ts"
       }
     ]
   },
@@ -1133,7 +1205,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Utils/index.ts": {
     "mTimestamp": {
-      "mtime": 1703656688225.06,
+      "mtime": 1703755023340.5073,
       "uuid": "e9061c49-b64e-40a2-a1be-9e3934e748a2"
     },
     "chunkId": "assets/Utils/index.js",
@@ -1146,11 +1218,11 @@
         "loc": {
           "start": {
             "line": 1,
-            "column": 42
+            "column": 55
           },
           "end": {
             "line": 1,
-            "column": 46
+            "column": 59
           }
         }
       }
@@ -1825,7 +1897,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Base/State.ts": {
     "mTimestamp": {
-      "mtime": 1703691015299.0273,
+      "mtime": 1703755019067.996,
       "uuid": "659f1742-65a7-4088-a7ef-0f63b42344b0"
     },
     "chunkId": "assets/Base/State.js",
@@ -1863,6 +1935,20 @@
             "column": 65
           }
         }
+      },
+      {
+        "value": "db://assets/Utils",
+        "rewritten": "__unresolved_2",
+        "loc": {
+          "start": {
+            "line": 8,
+            "column": 30
+          },
+          "end": {
+            "line": 8,
+            "column": 49
+          }
+        }
       }
     ],
     "modLoMetadata": {
@@ -1884,12 +1970,16 @@
       {
         "isExternal": false,
         "url": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Runtime/ResourceManager.ts"
+      },
+      {
+        "isExternal": false,
+        "url": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Utils/index.ts"
       }
     ]
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Base/StateMachine.ts": {
     "mTimestamp": {
-      "mtime": 1703696778466.3315,
+      "mtime": 1703757758570.1338,
       "uuid": "4f7d7860-f2c0-42a8-93be-369d32ed9548"
     },
     "chunkId": "assets/Base/StateMachine.js",
@@ -2247,7 +2337,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Base/EntityManager.ts": {
     "mTimestamp": {
-      "mtime": 1703744570505.113,
+      "mtime": 1703757331260.2158,
       "uuid": "c2b48b49-80ae-46c1-aa04-8943765bf540"
     },
     "chunkId": "assets/Base/EntityManager.js",
@@ -2490,6 +2580,306 @@
       {
         "isExternal": false,
         "url": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Base/DirectionSubStateMachine.ts"
+      }
+    ]
+  },
+  "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/WoodenSkeleton/IdleSubStateMachine.ts": {
+    "mTimestamp": {
+      "mtime": 1703757920230.9395,
+      "uuid": "e95e9193-9197-4713-b635-2ec69c030ec5"
+    },
+    "chunkId": "assets/Scripts/WoodenSkeleton/IdleSubStateMachine.js",
+    "imports": [
+      {
+        "value": "cce:/internal/code-quality/cr.mjs",
+        "rewritten": "__unresolved_0"
+      },
+      {
+        "value": "cc"
+      },
+      {
+        "value": "db://assets/Enums",
+        "rewritten": "__unresolved_1",
+        "loc": {
+          "start": {
+            "line": 2,
+            "column": 68
+          },
+          "end": {
+            "line": 2,
+            "column": 87
+          }
+        }
+      },
+      {
+        "value": "db://assets/Base/State",
+        "rewritten": "__unresolved_2",
+        "loc": {
+          "start": {
+            "line": 3,
+            "column": 18
+          },
+          "end": {
+            "line": 3,
+            "column": 42
+          }
+        }
+      },
+      {
+        "value": "cc",
+        "loc": {
+          "start": {
+            "line": 4,
+            "column": 30
+          },
+          "end": {
+            "line": 4,
+            "column": 34
+          }
+        }
+      },
+      {
+        "value": "db://assets/Base/DirectionSubStateMachine",
+        "rewritten": "__unresolved_3",
+        "loc": {
+          "start": {
+            "line": 5,
+            "column": 37
+          },
+          "end": {
+            "line": 5,
+            "column": 80
+          }
+        }
+      }
+    ],
+    "modLoMetadata": {
+      "type": "esm"
+    },
+    "resolvedImports": [
+      {
+        "isExternal": false,
+        "url": "cce:/internal/code-quality/cr.mjs"
+      },
+      {
+        "isExternal": false,
+        "url": "cce:/internal/x/cc"
+      },
+      {
+        "isExternal": false,
+        "url": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Enums/index.ts"
+      },
+      {
+        "isExternal": false,
+        "url": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Base/State.ts"
+      },
+      {
+        "isExternal": false,
+        "url": "cce:/internal/x/cc"
+      },
+      {
+        "isExternal": false,
+        "url": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Base/DirectionSubStateMachine.ts"
+      }
+    ]
+  },
+  "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/WoodenSkeleton/WoodenSkeletonManager.ts": {
+    "mTimestamp": {
+      "mtime": 1703756085945.7302,
+      "uuid": "c7b11a63-048e-4dc8-a7b6-3d8812827f94"
+    },
+    "chunkId": "assets/Scripts/WoodenSkeleton/WoodenSkeletonManager.js",
+    "imports": [
+      {
+        "value": "cce:/internal/code-quality/cr.mjs",
+        "rewritten": "__unresolved_0"
+      },
+      {
+        "value": "cc"
+      },
+      {
+        "value": "cc",
+        "loc": {
+          "start": {
+            "line": 1,
+            "column": 25
+          },
+          "end": {
+            "line": 1,
+            "column": 29
+          }
+        }
+      },
+      {
+        "value": "db://assets/Enums",
+        "rewritten": "__unresolved_1",
+        "loc": {
+          "start": {
+            "line": 2,
+            "column": 95
+          },
+          "end": {
+            "line": 2,
+            "column": 114
+          }
+        }
+      },
+      {
+        "value": "db://assets/Base/EntityManager",
+        "rewritten": "__unresolved_2",
+        "loc": {
+          "start": {
+            "line": 4,
+            "column": 28
+          },
+          "end": {
+            "line": 4,
+            "column": 60
+          }
+        }
+      },
+      {
+        "value": "db://assets/Scripts/WoodenSkeleton/WoodenSkeletonStateMachine",
+        "rewritten": "__unresolved_3",
+        "loc": {
+          "start": {
+            "line": 6,
+            "column": 41
+          },
+          "end": {
+            "line": 6,
+            "column": 104
+          }
+        }
+      }
+    ],
+    "modLoMetadata": {
+      "type": "esm"
+    },
+    "resolvedImports": [
+      {
+        "isExternal": false,
+        "url": "cce:/internal/code-quality/cr.mjs"
+      },
+      {
+        "isExternal": false,
+        "url": "cce:/internal/x/cc"
+      },
+      {
+        "isExternal": false,
+        "url": "cce:/internal/x/cc"
+      },
+      {
+        "isExternal": false,
+        "url": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Enums/index.ts"
+      },
+      {
+        "isExternal": false,
+        "url": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Base/EntityManager.ts"
+      },
+      {
+        "isExternal": false,
+        "url": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/WoodenSkeleton/WoodenSkeletonStateMachine.ts"
+      }
+    ]
+  },
+  "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/WoodenSkeleton/WoodenSkeletonStateMachine.ts": {
+    "mTimestamp": {
+      "mtime": 1703758244415.3567,
+      "uuid": "fe172783-a7fa-4964-bc74-c691de125f37"
+    },
+    "chunkId": "assets/Scripts/WoodenSkeleton/WoodenSkeletonStateMachine.js",
+    "imports": [
+      {
+        "value": "cce:/internal/code-quality/cr.mjs",
+        "rewritten": "__unresolved_0"
+      },
+      {
+        "value": "cc"
+      },
+      {
+        "value": "cc",
+        "loc": {
+          "start": {
+            "line": 1,
+            "column": 75
+          },
+          "end": {
+            "line": 1,
+            "column": 79
+          }
+        }
+      },
+      {
+        "value": "db://assets/Enums",
+        "rewritten": "__unresolved_1",
+        "loc": {
+          "start": {
+            "line": 2,
+            "column": 72
+          },
+          "end": {
+            "line": 2,
+            "column": 91
+          }
+        }
+      },
+      {
+        "value": "db://assets/Base/StateMachine",
+        "rewritten": "__unresolved_2",
+        "loc": {
+          "start": {
+            "line": 3,
+            "column": 70
+          },
+          "end": {
+            "line": 3,
+            "column": 101
+          }
+        }
+      },
+      {
+        "value": "db://assets/Scripts/WoodenSkeleton/IdleSubStateMachine",
+        "rewritten": "__unresolved_3",
+        "loc": {
+          "start": {
+            "line": 4,
+            "column": 32
+          },
+          "end": {
+            "line": 4,
+            "column": 88
+          }
+        }
+      }
+    ],
+    "modLoMetadata": {
+      "type": "esm"
+    },
+    "resolvedImports": [
+      {
+        "isExternal": false,
+        "url": "cce:/internal/code-quality/cr.mjs"
+      },
+      {
+        "isExternal": false,
+        "url": "cce:/internal/x/cc"
+      },
+      {
+        "isExternal": false,
+        "url": "cce:/internal/x/cc"
+      },
+      {
+        "isExternal": false,
+        "url": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Enums/index.ts"
+      },
+      {
+        "isExternal": false,
+        "url": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Base/StateMachine.ts"
+      },
+      {
+        "isExternal": false,
+        "url": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/WoodenSkeleton/IdleSubStateMachine.ts"
       }
     ]
   }
