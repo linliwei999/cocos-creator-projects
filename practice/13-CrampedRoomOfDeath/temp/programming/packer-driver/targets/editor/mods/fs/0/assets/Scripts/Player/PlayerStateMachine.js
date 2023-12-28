@@ -1,7 +1,7 @@
-System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4", "__unresolved_5", "__unresolved_6", "__unresolved_7", "__unresolved_8"], function (_export, _context) {
+System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4", "__unresolved_5", "__unresolved_6", "__unresolved_7", "__unresolved_8", "__unresolved_9"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, _decorator, Animation, ENTITY_STATE_ENUM, FSM_PARAMS_TYPE_ENUM, PARAMS_NAME_ENUM, getInitParamsNumber, getInitParamsTrigger, StateMachine, IdleSubStateMachine, TurnLeftSubStateMachine, BlockFrontSubStateMachine, BlockTurnLeftSubStateMachine, EntityManager, DeathSubStateMachine, _dec, _class, _crd, ccclass, property, PlayerStateMachine;
+  var _reporterNs, _cclegacy, _decorator, Animation, ENTITY_STATE_ENUM, FSM_PARAMS_TYPE_ENUM, PARAMS_NAME_ENUM, getInitParamsNumber, getInitParamsTrigger, StateMachine, IdleSubStateMachine, TurnLeftSubStateMachine, BlockFrontSubStateMachine, BlockTurnLeftSubStateMachine, EntityManager, DeathSubStateMachine, AttackSubStateMachine, _dec, _class, _crd, ccclass, property, PlayerStateMachine;
 
   function _reportPossibleCrUseOfENTITY_STATE_ENUM(extras) {
     _reporterNs.report("ENTITY_STATE_ENUM", "db://assets/Enums", _context.meta, extras);
@@ -51,6 +51,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     _reporterNs.report("DeathSubStateMachine", "db://assets/Scripts/Player/DeathSubStateMachine", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfAttackSubStateMachine(extras) {
+    _reporterNs.report("AttackSubStateMachine", "db://assets/Scripts/Player/AttackSubStateMachine", _context.meta, extras);
+  }
+
   return {
     setters: [function (_unresolved_) {
       _reporterNs = _unresolved_;
@@ -78,6 +82,8 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
       EntityManager = _unresolved_8.EntityManager;
     }, function (_unresolved_9) {
       DeathSubStateMachine = _unresolved_9.default;
+    }, function (_unresolved_10) {
+      AttackSubStateMachine = _unresolved_10.default;
     }],
     execute: function () {
       _crd = true;
@@ -134,6 +140,11 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           }), getInitParamsTrigger) : getInitParamsTrigger)());
           this.params.set((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
             error: Error()
+          }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).ATTACK, (_crd && getInitParamsTrigger === void 0 ? (_reportPossibleCrUseOfgetInitParamsTrigger({
+            error: Error()
+          }), getInitParamsTrigger) : getInitParamsTrigger)());
+          this.params.set((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
+            error: Error()
           }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).DEATH, (_crd && getInitParamsTrigger === void 0 ? (_reportPossibleCrUseOfgetInitParamsTrigger({
             error: Error()
           }), getInitParamsTrigger) : getInitParamsTrigger)());
@@ -168,6 +179,11 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           }), BlockTurnLeftSubStateMachine) : BlockTurnLeftSubStateMachine)(this));
           this.stateMachines.set((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
             error: Error()
+          }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).ATTACK, new (_crd && AttackSubStateMachine === void 0 ? (_reportPossibleCrUseOfAttackSubStateMachine({
+            error: Error()
+          }), AttackSubStateMachine) : AttackSubStateMachine)(this));
+          this.stateMachines.set((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
+            error: Error()
           }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).DEATH, new (_crd && DeathSubStateMachine === void 0 ? (_reportPossibleCrUseOfDeathSubStateMachine({
             error: Error()
           }), DeathSubStateMachine) : DeathSubStateMachine)(this));
@@ -176,7 +192,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
         initAnimationEvent() {
           this.animationComponent.on(Animation.EventType.FINISHED, () => {
             const name = this.animationComponent.defaultClip.name;
-            const whiteList = ['turn', 'block'];
+            const whiteList = ['turn', 'block', 'attack'];
 
             if (whiteList.some(v => name.includes(v))) {
               this.node.getComponent(_crd && EntityManager === void 0 ? (_reportPossibleCrUseOfEntityManager({
@@ -201,6 +217,9 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).BLOCKTURNLEFT):
             case this.stateMachines.get((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
               error: Error()
+            }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).ATTACK):
+            case this.stateMachines.get((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
+              error: Error()
             }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).DEATH):
             case this.stateMachines.get((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
               error: Error()
@@ -217,6 +236,12 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
                 this.currentState = this.stateMachines.get((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
                   error: Error()
                 }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).BLOCKFRONT);
+              } else if (this.params.get((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
+                error: Error()
+              }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).ATTACK).value) {
+                this.currentState = this.stateMachines.get((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
+                  error: Error()
+                }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).ATTACK);
               } else if (this.params.get((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
                 error: Error()
               }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).DEATH).value) {

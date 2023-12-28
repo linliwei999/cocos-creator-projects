@@ -38,6 +38,9 @@ export default class State {
     }
 
     run(){
+        if(this.fsm.animationComponent.defaultClip?.name === this.animationClip?.name){
+            return;
+        }
         this.fsm.animationComponent.defaultClip = this.animationClip;
         this.fsm.animationComponent.play();
     }

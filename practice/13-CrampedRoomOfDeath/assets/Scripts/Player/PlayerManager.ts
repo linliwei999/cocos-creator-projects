@@ -15,6 +15,7 @@ export class PlayerManager extends EntityManager {
     targetY:number = 0
     isMoving: boolean = false
     private readonly speed = ANIMATION_SPEED
+    private testAttackCount = 0
 
     async init(){
         this.fsm = this.node.addComponent(PlayerStateMachine);
@@ -54,14 +55,48 @@ export class PlayerManager extends EntityManager {
     }
 
     inputHandle(inputDirection: CONTROLLER_ENUM){
-        if(this.state === ENTITY_STATE_ENUM.DEATH){
+        //攻击
+        if(this.willAttack(inputDirection)){
             return;
         }
+
+        // if(this.state === ENTITY_STATE_ENUM.DEATH){
+        //     return;
+        // }
+
         if(this.willBlock(inputDirection)){
             console.log('撞墙');
             return
         }
         this.move(inputDirection);
+    }
+
+    onAttack(){
+        this.state = ENTITY_STATE_ENUM.ATTACK;
+        return true;
+    }
+
+    willAttack(inputDirection: CONTROLLER_ENUM){
+        const enemies = DataManager.Instance.enemies;
+        for (let i = 0; i < enemies.length; i++) {
+            const { x: enemyX, y: enemyY } = enemies[i];
+            if(inputDirection === CONTROLLER_ENUM.TOP && this.direction === DIRECTION_ENUM.TOP && enemyX === this.x && enemyY === this.targetY - 2){
+                console.log('玩家攻击');
+                return this.onAttack();
+            }else if(inputDirection === CONTROLLER_ENUM.LEFT && this.direction === DIRECTION_ENUM.LEFT && enemyX === this.targetX - 2 && enemyY === this.y){
+                return this.onAttack();
+            }else if(inputDirection === CONTROLLER_ENUM.RIGHT && this.direction === DIRECTION_ENUM.RIGHT && enemyX === this.targetX + 2 && enemyY === this.y){
+                this.testAttackCount++
+                if(this.testAttackCount === 3){
+                    return false;
+                }
+                return this.onAttack();
+            }else if(inputDirection === CONTROLLER_ENUM.BOTTOM && this.direction === DIRECTION_ENUM.BOTTOM && enemyX === this.x && enemyY === this.targetY + 2){
+                return this.onAttack();
+            }else {
+                return false;
+            }
+        }
     }
 
     willBlock(inputDirection: CONTROLLER_ENUM){
