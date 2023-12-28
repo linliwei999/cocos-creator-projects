@@ -531,3 +531,4 @@ Function provided here: timer-util.ccc:1:1017
 2023-12-28 18:55:30-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading '11') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js
 2023-12-28 18:55:30-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading '11') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js
 2023-12-28 18:55:31-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading '11') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js
+2023-12-28 22:21:55-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading '7') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js

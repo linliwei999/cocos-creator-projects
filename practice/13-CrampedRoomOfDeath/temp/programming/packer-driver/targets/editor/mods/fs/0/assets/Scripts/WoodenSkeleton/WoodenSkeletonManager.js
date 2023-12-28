@@ -91,12 +91,18 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             error: Error()
           }), EventManager) : EventManager).Instance.on((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
             error: Error()
+          }), EVENT_ENUM) : EVENT_ENUM).PLAYER_BORN, this.onChangeDirection, this);
+          (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
+            error: Error()
+          }), EventManager) : EventManager).Instance.on((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
+            error: Error()
           }), EVENT_ENUM) : EVENT_ENUM).PLAYER_MOVE_END, this.onChangeDirection, this);
           (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
             error: Error()
           }), EventManager) : EventManager).Instance.on((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
             error: Error()
-          }), EVENT_ENUM) : EVENT_ENUM).PLAYER_BORN, this.onChangeDirection, this);
+          }), EVENT_ENUM) : EVENT_ENUM).PLAYER_MOVE_END, this.onAttack, this);
+          this.onChangeDirection(true);
         }
 
         onChangeDirection(isInit = false) {
@@ -145,6 +151,28 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
               error: Error()
             }), DIRECTION_ENUM) : DIRECTION_ENUM).RIGHT;
           }
+        }
+
+        onAttack() {
+          const {
+            x: playerX,
+            y: playerY
+          } = (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+            error: Error()
+          }), DataManager) : DataManager).Instance.player;
+
+          if (this.x === playerX && Math.abs(this.y - playerY) <= 1 || this.y === playerY && Math.abs(this.x - playerX) <= 1) {
+            this.state = (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+              error: Error()
+            }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).ATTACK;
+          } else {
+            this.state = (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+              error: Error()
+            }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).IDLE;
+          }
+
+          console.log('this.x', this.x);
+          console.log('playerX', playerX);
         }
 
       }) || _class));
