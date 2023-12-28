@@ -1,7 +1,7 @@
 System.register(["cc"], function (_export, _context) {
   "use strict";
 
-  var _cclegacy, _crd, TILE_TYPE_ENUM, EVENT_ENUM, CONTROLLER_ENUM, FSM_PARAMS_TYPE_ENUM, PARAMS_NAME_ENUM, DIRECTION_ENUM, ENTITY_STATE_ENUM, DIRECTION_ODER_ENUM;
+  var _cclegacy, _crd, TILE_TYPE_ENUM, EVENT_ENUM, CONTROLLER_ENUM, FSM_PARAMS_TYPE_ENUM, PARAMS_NAME_ENUM, DIRECTION_ENUM, ENTITY_STATE_ENUM, DIRECTION_ODER_ENUM, ENTITY_TYPE_ENUM;
 
   _export({
     TILE_TYPE_ENUM: void 0,
@@ -11,7 +11,8 @@ System.register(["cc"], function (_export, _context) {
     PARAMS_NAME_ENUM: void 0,
     DIRECTION_ENUM: void 0,
     ENTITY_STATE_ENUM: void 0,
-    DIRECTION_ODER_ENUM: void 0
+    DIRECTION_ODER_ENUM: void 0,
+    ENTITY_TYPE_ENUM: void 0
   });
 
   return {
@@ -79,6 +80,10 @@ System.register(["cc"], function (_export, _context) {
         DIRECTION_ODER_ENUM[DIRECTION_ODER_ENUM["RIGHT"] = 2] = "RIGHT";
         DIRECTION_ODER_ENUM[DIRECTION_ODER_ENUM["LEFT"] = 3] = "LEFT";
       })(DIRECTION_ODER_ENUM || _export("DIRECTION_ODER_ENUM", DIRECTION_ODER_ENUM = {}));
+
+      (function (ENTITY_TYPE_ENUM) {
+        ENTITY_TYPE_ENUM["PLAYER"] = "PLAYER";
+      })(ENTITY_TYPE_ENUM || _export("ENTITY_TYPE_ENUM", ENTITY_TYPE_ENUM = {}));
 
       _cclegacy._RF.pop();
 

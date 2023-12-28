@@ -1,62 +1,29 @@
-import {_decorator, Component, Sprite, UITransform} from 'cc';
-import {TILE_HEIGHT, TILE_WIDTH} from "db://assets/Scripts/Tile/TileManager";
-import {
-    CONTROLLER_ENUM,
-    DIRECTION_ENUM,
-    DIRECTION_ODER_ENUM,
-    ENTITY_STATE_ENUM,
-    EVENT_ENUM,
-    PARAMS_NAME_ENUM
-} from "db://assets/Enums";
+import {_decorator} from 'cc';
+import {CONTROLLER_ENUM, DIRECTION_ENUM, ENTITY_STATE_ENUM, ENTITY_TYPE_ENUM, EVENT_ENUM} from "db://assets/Enums";
 import EventManager from "db://assets/Runtime/EventManager";
 import {PlayerStateMachine} from "db://assets/Scripts/Player/PlayerStateMachine";
+import {EntityManager} from "db://assets/Base/EntityManager";
 
 const { ccclass, property } = _decorator;
 
 const ANIMATION_SPEED = 1/8;
 
 @ccclass('PlayerManager')
-export class PlayerManager extends Component {
-    x:number = 0
-    y:number = 0
+export class PlayerManager extends EntityManager {
     targetX:number = 0
     targetY:number = 0
-    // private readonly speed = 1/10
     private readonly speed = ANIMATION_SPEED
-    fsm: PlayerStateMachine
-
-    private _direction: DIRECTION_ENUM
-    private _state: ENTITY_STATE_ENUM
-
-    get direction(){
-        return this._direction;
-    }
-
-    set direction(newDirection){
-        this._direction = newDirection;
-        this.fsm.setParams(PARAMS_NAME_ENUM.DIRECTION, DIRECTION_ODER_ENUM[this._direction]);
-    }
-
-    get state(){
-        return this._state;
-    }
-
-    //数据驱动视图变化
-    set state(newState){
-        this._state = newState;
-        this.fsm.setParams(this._state, true);
-    }
 
     async init(){
-        const sprite = this.addComponent(Sprite);
-        sprite.sizeMode = Sprite.SizeMode.CUSTOM;
-        const transform = this.getComponent(UITransform);
-        transform.setContentSize(TILE_WIDTH * 4, TILE_HEIGHT * 4);
-
         this.fsm = this.node.addComponent(PlayerStateMachine);
         await this.fsm.init();
-        this.direction = DIRECTION_ENUM.TOP;
-        this.state = ENTITY_STATE_ENUM.IDLE;
+        super.init({
+            x: 0,
+            y: 0,
+            type: ENTITY_TYPE_ENUM.PLAYER,
+            direction: DIRECTION_ENUM.TOP,
+            state: ENTITY_STATE_ENUM.IDLE
+        });
         EventManager.Instance.on(EVENT_ENUM.PLAYER_CTRL, this.move, this);
     }
 
@@ -105,7 +72,7 @@ export class PlayerManager extends Component {
 
     update(){
         this.updateXY();
-        this.node.setPosition(this.x * TILE_WIDTH - 1.5 * TILE_WIDTH, -this.y * TILE_HEIGHT + 1.5 * TILE_HEIGHT);
+        super.update();
     }
 }
 
