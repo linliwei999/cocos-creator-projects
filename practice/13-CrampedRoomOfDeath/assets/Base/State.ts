@@ -5,6 +5,7 @@
 import {AnimationClip, Sprite, animation, SpriteFrame } from "cc";
 import ResourceManager from "db://assets/Runtime/ResourceManager";
 import {StateMachine} from "db://assets/Base/StateMachine";
+import {sortSpriteFrame} from "db://assets/Utils";
 
 const ANIMATION_SPEED = 1/8;
 
@@ -26,7 +27,7 @@ export default class State {
 
         const track = new animation.ObjectTrack(); // 创建一个对象轨道
         track.path = new animation.TrackPath().toComponent(Sprite).toProperty('spriteFrame'); // 指定轨道路径
-        const frames:Array<[number, SpriteFrame]> = spriteFrames.map((item, index)=> [ANIMATION_SPEED * index, item]);
+        const frames:Array<[number, SpriteFrame]> = sortSpriteFrame(spriteFrames).map((item, index)=> [ANIMATION_SPEED * index, item]);
         // 为 x 通道的曲线添加关键帧
         track.channel.curve.assignSorted(frames);
         // 最后将轨道添加到动画剪辑以应用

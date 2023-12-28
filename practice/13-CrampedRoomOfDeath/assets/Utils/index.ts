@@ -1,4 +1,4 @@
-import { Node, UITransform, Layers } from 'cc';
+import { Node, UITransform, Layers, SpriteFrame } from 'cc';
 
 export const createUINode = (name: string = '') =>{
     const node = new Node();
@@ -10,4 +10,14 @@ export const createUINode = (name: string = '') =>{
 
 export const randomByRange = (start: number, end: number) =>{
     return Math.floor(start + (end - start) * Math.random());
+}
+
+const reg = /\((\d+)\)/;
+
+const getNumberWithinString = (str: string) =>{
+    return parseInt(str.match(reg)[1]) || 0;
+}
+
+export const sortSpriteFrame = (spriteFrames: SpriteFrame[]) =>{
+    return spriteFrames.sort((a, b)=> getNumberWithinString(a.name) - getNumberWithinString(b.name));
 }
