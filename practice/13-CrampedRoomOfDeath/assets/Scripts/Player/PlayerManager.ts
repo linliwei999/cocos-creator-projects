@@ -29,6 +29,7 @@ export class PlayerManager extends EntityManager {
         this.targetX = this.x;
         this.targetY = this.y;
         EventManager.Instance.on(EVENT_ENUM.PLAYER_CTRL, this.inputHandle, this);
+        EventManager.Instance.on(EVENT_ENUM.ATTACK_PLAYER, this.onDied, this);
     }
 
     updateXY(){
@@ -53,6 +54,9 @@ export class PlayerManager extends EntityManager {
     }
 
     inputHandle(inputDirection: CONTROLLER_ENUM){
+        if(this.state === ENTITY_STATE_ENUM.DEATH){
+            return;
+        }
         if(this.willBlock(inputDirection)){
             console.log('撞墙');
             return
@@ -165,6 +169,10 @@ export class PlayerManager extends EntityManager {
             this.isMoving = true;
             // EventManager.Instance.emit(EVENT_ENUM.PLAYER_MOVE_END);
         }
+    }
+
+    onDied(type: ENTITY_STATE_ENUM){
+        this.state = type;
     }
 
     update(){

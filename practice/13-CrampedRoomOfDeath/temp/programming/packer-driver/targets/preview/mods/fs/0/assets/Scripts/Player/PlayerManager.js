@@ -123,6 +123,11 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             }), EventManager) : EventManager).Instance.on((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
               error: Error()
             }), EVENT_ENUM) : EVENT_ENUM).PLAYER_CTRL, _this.inputHandle, _this);
+            (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
+              error: Error()
+            }), EventManager) : EventManager).Instance.on((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
+              error: Error()
+            }), EVENT_ENUM) : EVENT_ENUM).ATTACK_PLAYER, _this.onDied, _this);
           })();
         }
 
@@ -152,6 +157,12 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
         }
 
         inputHandle(inputDirection) {
+          if (this.state === (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+            error: Error()
+          }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).DEATH) {
+            return;
+          }
+
           if (this.willBlock(inputDirection)) {
             console.log('撞墙');
             return;
@@ -333,6 +344,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           }), CONTROLLER_ENUM) : CONTROLLER_ENUM).TURNRIGHT)) {
             this.isMoving = true; // EventManager.Instance.emit(EVENT_ENUM.PLAYER_MOVE_END);
           }
+        }
+
+        onDied(type) {
+          this.state = type;
         }
 
         update() {

@@ -1,15 +1,15 @@
 System.register(["cc"], function (_export, _context) {
   "use strict";
 
-  var _cclegacy, _crd, TILE_TYPE_ENUM, EVENT_ENUM, CONTROLLER_ENUM, FSM_PARAMS_TYPE_ENUM, DIRECTION_ENUM, PARAMS_NAME_ENUM, ENTITY_STATE_ENUM, DIRECTION_ODER_ENUM, ENTITY_TYPE_ENUM;
+  var _cclegacy, _crd, TILE_TYPE_ENUM, CONTROLLER_ENUM, FSM_PARAMS_TYPE_ENUM, DIRECTION_ENUM, PARAMS_NAME_ENUM, EVENT_ENUM, ENTITY_STATE_ENUM, DIRECTION_ODER_ENUM, ENTITY_TYPE_ENUM;
 
   _export({
     TILE_TYPE_ENUM: void 0,
-    EVENT_ENUM: void 0,
     CONTROLLER_ENUM: void 0,
     FSM_PARAMS_TYPE_ENUM: void 0,
     DIRECTION_ENUM: void 0,
     PARAMS_NAME_ENUM: void 0,
+    EVENT_ENUM: void 0,
     ENTITY_STATE_ENUM: void 0,
     DIRECTION_ODER_ENUM: void 0,
     ENTITY_TYPE_ENUM: void 0
@@ -36,13 +36,6 @@ System.register(["cc"], function (_export, _context) {
         TILE_TYPE_ENUM["CLIFF_RIGHT"] = "CLIFF_RIGHT";
         TILE_TYPE_ENUM["FLOOR"] = "FLOOR";
       })(TILE_TYPE_ENUM || _export("TILE_TYPE_ENUM", TILE_TYPE_ENUM = {}));
-
-      (function (EVENT_ENUM) {
-        EVENT_ENUM["NEXT_LEVEL"] = "NEXT_LEVEL";
-        EVENT_ENUM["PLAYER_CTRL"] = "PLAYER_CTRL";
-        EVENT_ENUM["PLAYER_MOVE_END"] = "PLAYER_MOVE_END";
-        EVENT_ENUM["PLAYER_BORN"] = "PLAYER_BORN";
-      })(EVENT_ENUM || _export("EVENT_ENUM", EVENT_ENUM = {}));
 
       (function (CONTROLLER_ENUM) {
         CONTROLLER_ENUM["TOP"] = "TOP";
@@ -72,7 +65,17 @@ System.register(["cc"], function (_export, _context) {
         PARAMS_NAME_ENUM["BLOCKTURNLEFT"] = "BLOCKTURNLEFT";
         PARAMS_NAME_ENUM["DIRECTION"] = "DIRECTION";
         PARAMS_NAME_ENUM["ATTACK"] = "ATTACK";
+        PARAMS_NAME_ENUM["DEATH"] = "DEATH";
+        PARAMS_NAME_ENUM["AIRDEATH"] = "AIRDEATH";
       })(PARAMS_NAME_ENUM || _export("PARAMS_NAME_ENUM", PARAMS_NAME_ENUM = {}));
+
+      (function (EVENT_ENUM) {
+        EVENT_ENUM["NEXT_LEVEL"] = "NEXT_LEVEL";
+        EVENT_ENUM["PLAYER_CTRL"] = "PLAYER_CTRL";
+        EVENT_ENUM["PLAYER_MOVE_END"] = "PLAYER_MOVE_END";
+        EVENT_ENUM["PLAYER_BORN"] = "PLAYER_BORN";
+        EVENT_ENUM["ATTACK_PLAYER"] = "ATTACK_PLAYER";
+      })(EVENT_ENUM || _export("EVENT_ENUM", EVENT_ENUM = {}));
 
       (function (ENTITY_STATE_ENUM) {
         ENTITY_STATE_ENUM["IDLE"] = "IDLE";
@@ -80,6 +83,8 @@ System.register(["cc"], function (_export, _context) {
         ENTITY_STATE_ENUM["BLOCKFRONT"] = "BLOCKFRONT";
         ENTITY_STATE_ENUM["BLOCKTURNLEFT"] = "BLOCKTURNLEFT";
         ENTITY_STATE_ENUM["ATTACK"] = "ATTACK";
+        ENTITY_STATE_ENUM["DEATH"] = "DEATH";
+        ENTITY_STATE_ENUM["AIRDEATH"] = "AIRDEATH";
       })(ENTITY_STATE_ENUM || _export("ENTITY_STATE_ENUM", ENTITY_STATE_ENUM = {}));
 
       (function (DIRECTION_ODER_ENUM) {

@@ -7,6 +7,7 @@ import TurnLeftSubStateMachine from "db://assets/Scripts/Player/TurnLeftSubState
 import BlockFrontSubStateMachine from "db://assets/Scripts/Player/BlockFrontSubStateMachine";
 import BlockTurnLeftSubStateMachine from "db://assets/Scripts/Player/BlockTurnLeftSubStateMachine";
 import {EntityManager} from "db://assets/Base/EntityManager";
+import DeathSubStateMachine from "db://assets/Scripts/Player/DeathSubStateMachine";
 
 const { ccclass, property } = _decorator;
 
@@ -38,6 +39,7 @@ export class PlayerStateMachine extends StateMachine {
         this.params.set(PARAMS_NAME_ENUM.TURNLEFT, getInitParamsTrigger());
         this.params.set(PARAMS_NAME_ENUM.BLOCKFRONT, getInitParamsTrigger());
         this.params.set(PARAMS_NAME_ENUM.BLOCKTURNLEFT, getInitParamsTrigger());
+        this.params.set(PARAMS_NAME_ENUM.DEATH, getInitParamsTrigger());
         this.params.set(PARAMS_NAME_ENUM.DIRECTION, getInitParamsNumber());
     }
 
@@ -47,6 +49,7 @@ export class PlayerStateMachine extends StateMachine {
         this.stateMachines.set(PARAMS_NAME_ENUM.TURNLEFT, new TurnLeftSubStateMachine(this));
         this.stateMachines.set(PARAMS_NAME_ENUM.BLOCKFRONT, new BlockFrontSubStateMachine(this));
         this.stateMachines.set(PARAMS_NAME_ENUM.BLOCKTURNLEFT, new BlockTurnLeftSubStateMachine(this));
+        this.stateMachines.set(PARAMS_NAME_ENUM.DEATH, new DeathSubStateMachine(this));
     }
 
     initAnimationEvent(){
@@ -65,11 +68,14 @@ export class PlayerStateMachine extends StateMachine {
             case this.stateMachines.get(PARAMS_NAME_ENUM.TURNLEFT):
             case this.stateMachines.get(PARAMS_NAME_ENUM.BLOCKFRONT):
             case this.stateMachines.get(PARAMS_NAME_ENUM.BLOCKTURNLEFT):
+            case this.stateMachines.get(PARAMS_NAME_ENUM.DEATH):
             case this.stateMachines.get(PARAMS_NAME_ENUM.IDLE):
                 if(this.params.get(PARAMS_NAME_ENUM.BLOCKTURNLEFT).value){
                     this.currentState = this.stateMachines.get(PARAMS_NAME_ENUM.BLOCKTURNLEFT);
                 }else if(this.params.get(PARAMS_NAME_ENUM.BLOCKFRONT).value){
                     this.currentState = this.stateMachines.get(PARAMS_NAME_ENUM.BLOCKFRONT);
+                }else if(this.params.get(PARAMS_NAME_ENUM.DEATH).value){
+                    this.currentState = this.stateMachines.get(PARAMS_NAME_ENUM.DEATH);
                 }else if(this.params.get(PARAMS_NAME_ENUM.TURNLEFT).value){
                     this.currentState = this.stateMachines.get(PARAMS_NAME_ENUM.TURNLEFT);
                     }else if(this.params.get(PARAMS_NAME_ENUM.IDLE).value){
