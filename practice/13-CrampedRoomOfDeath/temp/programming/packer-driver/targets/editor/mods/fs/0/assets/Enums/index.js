@@ -40,6 +40,8 @@ System.register(["cc"], function (_export, _context) {
       (function (EVENT_ENUM) {
         EVENT_ENUM["NEXT_LEVEL"] = "NEXT_LEVEL";
         EVENT_ENUM["PLAYER_CTRL"] = "PLAYER_CTRL";
+        EVENT_ENUM["PLAYER_MOVE_END"] = "PLAYER_MOVE_END";
+        EVENT_ENUM["PLAYER_BORN"] = "PLAYER_BORN";
       })(EVENT_ENUM || _export("EVENT_ENUM", EVENT_ENUM = {}));
 
       (function (CONTROLLER_ENUM) {

@@ -137,7 +137,7 @@
     ]
   },
   "cce:/internal/x/prerequisite-imports": {
-    "mTimestamp": 154077267.970211,
+    "mTimestamp": 156902715.067278,
     "chunkId": "quick-pack:/cce/internal/x/prerequisite-imports.js",
     "imports": [
       {
@@ -682,7 +682,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Enums/index.ts": {
     "mTimestamp": {
-      "mtime": 1703753846383.8838,
+      "mtime": 1703760427195.8882,
       "uuid": "114c80cb-ebd8-48d4-a69d-5a331f8a3e8f"
     },
     "chunkId": "assets/Enums/index.js",
@@ -815,7 +815,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Sence/BattleManager.ts": {
     "mTimestamp": {
-      "mtime": 1703755682929.3171,
+      "mtime": 1703761053353.8916,
       "uuid": "bd0bbef9-eda4-4fbc-a655-b42512681271"
     },
     "chunkId": "assets/Scripts/Sence/BattleManager.js",
@@ -1243,7 +1243,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Runtime/DataManager.ts": {
     "mTimestamp": {
-      "mtime": 1703745099686.0498,
+      "mtime": 1703760306472.1172,
       "uuid": "5889cd09-c101-49ab-b75f-ba97fd776a4d"
     },
     "chunkId": "assets/Runtime/DataManager.js",
@@ -1551,7 +1551,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Player/PlayerManager.ts": {
     "mTimestamp": {
-      "mtime": 1703753980707.2598,
+      "mtime": 1703760649660.7756,
       "uuid": "efe88db8-68e1-4998-bbdf-c5af4bf4ece6"
     },
     "chunkId": "assets/Scripts/Player/PlayerManager.js",
@@ -2685,7 +2685,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/WoodenSkeleton/WoodenSkeletonManager.ts": {
     "mTimestamp": {
-      "mtime": 1703756085945.7302,
+      "mtime": 1703761074692.9111,
       "uuid": "c7b11a63-048e-4dc8-a7b6-3d8812827f94"
     },
     "chunkId": "assets/Scripts/WoodenSkeleton/WoodenSkeletonManager.js",
@@ -2716,17 +2716,31 @@
         "loc": {
           "start": {
             "line": 2,
-            "column": 95
+            "column": 78
           },
           "end": {
             "line": 2,
-            "column": 114
+            "column": 97
+          }
+        }
+      },
+      {
+        "value": "db://assets/Runtime/EventManager",
+        "rewritten": "__unresolved_2",
+        "loc": {
+          "start": {
+            "line": 3,
+            "column": 25
+          },
+          "end": {
+            "line": 3,
+            "column": 59
           }
         }
       },
       {
         "value": "db://assets/Base/EntityManager",
-        "rewritten": "__unresolved_2",
+        "rewritten": "__unresolved_3",
         "loc": {
           "start": {
             "line": 4,
@@ -2739,8 +2753,22 @@
         }
       },
       {
+        "value": "db://assets/Runtime/DataManager",
+        "rewritten": "__unresolved_4",
+        "loc": {
+          "start": {
+            "line": 5,
+            "column": 24
+          },
+          "end": {
+            "line": 5,
+            "column": 57
+          }
+        }
+      },
+      {
         "value": "db://assets/Scripts/WoodenSkeleton/WoodenSkeletonStateMachine",
-        "rewritten": "__unresolved_3",
+        "rewritten": "__unresolved_5",
         "loc": {
           "start": {
             "line": 6,
@@ -2775,7 +2803,15 @@
       },
       {
         "isExternal": false,
+        "url": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Runtime/EventManager.ts"
+      },
+      {
+        "isExternal": false,
         "url": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Base/EntityManager.ts"
+      },
+      {
+        "isExternal": false,
+        "url": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Runtime/DataManager.ts"
       },
       {
         "isExternal": false,

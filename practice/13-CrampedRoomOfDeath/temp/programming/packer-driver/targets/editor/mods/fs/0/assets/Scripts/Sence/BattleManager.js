@@ -179,7 +179,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
         } //生成玩家
 
 
-        generatePlayer() {
+        async generatePlayer() {
           const player = (_crd && createUINode === void 0 ? (_reportPossibleCrUseOfcreateUINode({
             error: Error()
           }), createUINode) : createUINode)();
@@ -187,11 +187,19 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           const playerManager = player.addComponent(_crd && PlayerManager === void 0 ? (_reportPossibleCrUseOfPlayerManager({
             error: Error()
           }), PlayerManager) : PlayerManager);
-          playerManager.init();
+          await playerManager.init();
+          (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+            error: Error()
+          }), DataManager) : DataManager).Instance.player = playerManager;
+          (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
+            error: Error()
+          }), EventManager) : EventManager).Instance.emit((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
+            error: Error()
+          }), EVENT_ENUM) : EVENT_ENUM).PLAYER_BORN, true);
         } //生成敌人
 
 
-        generateEnemies() {
+        async generateEnemies() {
           const enemy = (_crd && createUINode === void 0 ? (_reportPossibleCrUseOfcreateUINode({
             error: Error()
           }), createUINode) : createUINode)();
@@ -199,7 +207,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           const woodenSkeletonManager = enemy.addComponent(_crd && WoodenSkeletonManager === void 0 ? (_reportPossibleCrUseOfWoodenSkeletonManager({
             error: Error()
           }), WoodenSkeletonManager) : WoodenSkeletonManager);
-          woodenSkeletonManager.init();
+          await woodenSkeletonManager.init();
+          (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+            error: Error()
+          }), DataManager) : DataManager).Instance.enemies.push(woodenSkeletonManager);
         } //瓦片地图适配屏幕
 
 

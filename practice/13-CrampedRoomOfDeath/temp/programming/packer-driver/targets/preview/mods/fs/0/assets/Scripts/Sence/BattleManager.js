@@ -3,6 +3,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
 
   var _reporterNs, _cclegacy, _decorator, Component, TileMapManager, createUINode, Levels, DataManager, TILE_HEIGHT, TILE_WIDTH, EventManager, EVENT_ENUM, PlayerManager, WoodenSkeletonManager, _dec, _class, _temp, _crd, ccclass, property, BattleManager;
 
+  function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+  function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
   function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
   function _reportPossibleCrUseOfTileMapManager(extras) {
@@ -180,26 +184,45 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
 
 
         generatePlayer() {
-          var player = (_crd && createUINode === void 0 ? (_reportPossibleCrUseOfcreateUINode({
-            error: Error()
-          }), createUINode) : createUINode)();
-          player.setParent(this.stage);
-          var playerManager = player.addComponent(_crd && PlayerManager === void 0 ? (_reportPossibleCrUseOfPlayerManager({
-            error: Error()
-          }), PlayerManager) : PlayerManager);
-          playerManager.init();
+          var _this = this;
+
+          return _asyncToGenerator(function* () {
+            var player = (_crd && createUINode === void 0 ? (_reportPossibleCrUseOfcreateUINode({
+              error: Error()
+            }), createUINode) : createUINode)();
+            player.setParent(_this.stage);
+            var playerManager = player.addComponent(_crd && PlayerManager === void 0 ? (_reportPossibleCrUseOfPlayerManager({
+              error: Error()
+            }), PlayerManager) : PlayerManager);
+            yield playerManager.init();
+            (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+              error: Error()
+            }), DataManager) : DataManager).Instance.player = playerManager;
+            (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
+              error: Error()
+            }), EventManager) : EventManager).Instance.emit((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
+              error: Error()
+            }), EVENT_ENUM) : EVENT_ENUM).PLAYER_BORN, true);
+          })();
         } //生成敌人
 
 
         generateEnemies() {
-          var enemy = (_crd && createUINode === void 0 ? (_reportPossibleCrUseOfcreateUINode({
-            error: Error()
-          }), createUINode) : createUINode)();
-          enemy.setParent(this.stage);
-          var woodenSkeletonManager = enemy.addComponent(_crd && WoodenSkeletonManager === void 0 ? (_reportPossibleCrUseOfWoodenSkeletonManager({
-            error: Error()
-          }), WoodenSkeletonManager) : WoodenSkeletonManager);
-          woodenSkeletonManager.init();
+          var _this2 = this;
+
+          return _asyncToGenerator(function* () {
+            var enemy = (_crd && createUINode === void 0 ? (_reportPossibleCrUseOfcreateUINode({
+              error: Error()
+            }), createUINode) : createUINode)();
+            enemy.setParent(_this2.stage);
+            var woodenSkeletonManager = enemy.addComponent(_crd && WoodenSkeletonManager === void 0 ? (_reportPossibleCrUseOfWoodenSkeletonManager({
+              error: Error()
+            }), WoodenSkeletonManager) : WoodenSkeletonManager);
+            yield woodenSkeletonManager.init();
+            (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+              error: Error()
+            }), DataManager) : DataManager).Instance.enemies.push(woodenSkeletonManager);
+          })();
         } //瓦片地图适配屏幕
 
 

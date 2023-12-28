@@ -83,6 +83,8 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
 
           _defineProperty(this, "targetY", 0);
 
+          _defineProperty(this, "isMoving", false);
+
           _defineProperty(this, "speed", ANIMATION_SPEED);
         }
 
@@ -126,9 +128,15 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             this.y += this.speed;
           }
 
-          if (Math.abs(this.targetX - this.x) < -0.1 && Math.abs(this.targetY - this.y) < -0.1) {
+          if (Math.abs(this.targetX - this.x) < -0.1 && Math.abs(this.targetY - this.y) < -0.1 && this.isMoving) {
+            this.isMoving = false;
             this.x = this.targetX;
             this.y = this.targetY;
+            (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
+              error: Error()
+            }), EventManager) : EventManager).Instance.emit((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
+              error: Error()
+            }), EVENT_ENUM) : EVENT_ENUM).PLAYER_MOVE_END);
           }
         }
 
@@ -254,21 +262,37 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
 
 
         move(inputDirection) {
+          if (!(inputDirection === (_crd && CONTROLLER_ENUM === void 0 ? (_reportPossibleCrUseOfCONTROLLER_ENUM({
+            error: Error()
+          }), CONTROLLER_ENUM) : CONTROLLER_ENUM).TURNLEFT || inputDirection === (_crd && CONTROLLER_ENUM === void 0 ? (_reportPossibleCrUseOfCONTROLLER_ENUM({
+            error: Error()
+          }), CONTROLLER_ENUM) : CONTROLLER_ENUM).TURNRIGHT)) {
+            (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
+              error: Error()
+            }), EventManager) : EventManager).Instance.emit((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
+              error: Error()
+            }), EVENT_ENUM) : EVENT_ENUM).PLAYER_MOVE_END);
+          }
+
           if (inputDirection === (_crd && CONTROLLER_ENUM === void 0 ? (_reportPossibleCrUseOfCONTROLLER_ENUM({
             error: Error()
           }), CONTROLLER_ENUM) : CONTROLLER_ENUM).TOP) {
+            this.isMoving = true;
             this.targetY -= 1;
           } else if (inputDirection === (_crd && CONTROLLER_ENUM === void 0 ? (_reportPossibleCrUseOfCONTROLLER_ENUM({
             error: Error()
           }), CONTROLLER_ENUM) : CONTROLLER_ENUM).BOTTOM) {
+            this.isMoving = true;
             this.targetY += 1;
           } else if (inputDirection === (_crd && CONTROLLER_ENUM === void 0 ? (_reportPossibleCrUseOfCONTROLLER_ENUM({
             error: Error()
           }), CONTROLLER_ENUM) : CONTROLLER_ENUM).LEFT) {
+            this.isMoving = true;
             this.targetX -= 1;
           } else if (inputDirection === (_crd && CONTROLLER_ENUM === void 0 ? (_reportPossibleCrUseOfCONTROLLER_ENUM({
             error: Error()
           }), CONTROLLER_ENUM) : CONTROLLER_ENUM).RIGHT) {
+            this.isMoving = true;
             this.targetX += 1;
           } else if (inputDirection === (_crd && CONTROLLER_ENUM === void 0 ? (_reportPossibleCrUseOfCONTROLLER_ENUM({
             error: Error()

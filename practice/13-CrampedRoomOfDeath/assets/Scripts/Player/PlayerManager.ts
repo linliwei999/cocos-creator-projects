@@ -13,6 +13,7 @@ const ANIMATION_SPEED = 1/8;
 export class PlayerManager extends EntityManager {
     targetX:number = 0
     targetY:number = 0
+    isMoving: boolean = false
     private readonly speed = ANIMATION_SPEED
 
     async init(){
@@ -43,9 +44,11 @@ export class PlayerManager extends EntityManager {
             this.y += this.speed
         }
 
-        if(Math.abs(this.targetX - this.x) < -0.1 && Math.abs(this.targetY - this.y) < -0.1){
+        if(Math.abs(this.targetX - this.x) < -0.1 && Math.abs(this.targetY - this.y) < -0.1 && this.isMoving){
+            this.isMoving = false;
             this.x = this.targetX;
             this.y = this.targetY;
+            EventManager.Instance.emit(EVENT_ENUM.PLAYER_MOVE_END);
         }
     }
 
@@ -138,13 +141,20 @@ export class PlayerManager extends EntityManager {
 
     //玩家移动
     move(inputDirection: CONTROLLER_ENUM){
+        if(!(inputDirection === CONTROLLER_ENUM.TURNLEFT || inputDirection === CONTROLLER_ENUM.TURNRIGHT)){
+            EventManager.Instance.emit(EVENT_ENUM.PLAYER_MOVE_END);
+        }
         if (inputDirection === CONTROLLER_ENUM.TOP){
+            this.isMoving = true;
             this.targetY -=1
         }else if(inputDirection === CONTROLLER_ENUM.BOTTOM){
+            this.isMoving = true;
             this.targetY +=1
         }else if(inputDirection === CONTROLLER_ENUM.LEFT){
+            this.isMoving = true;
             this.targetX -=1
         }else if(inputDirection === CONTROLLER_ENUM.RIGHT){
+            this.isMoving = true;
             this.targetX +=1
         }else if(inputDirection === CONTROLLER_ENUM.TURNLEFT){
             if(this.direction === DIRECTION_ENUM.TOP){

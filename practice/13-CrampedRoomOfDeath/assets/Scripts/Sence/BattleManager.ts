@@ -76,19 +76,22 @@ export class BattleManager extends Component {
     }
 
     //生成玩家
-    generatePlayer(){
+    async generatePlayer(){
         const player = createUINode();
         player.setParent(this.stage);
         const playerManager = player.addComponent(PlayerManager);
-        playerManager.init();
+        await playerManager.init();
+        DataManager.Instance.player = playerManager;
+        EventManager.Instance.emit(EVENT_ENUM.PLAYER_BORN, true);
     }
 
     //生成敌人
-    generateEnemies(){
+    async generateEnemies(){
         const enemy = createUINode();
         enemy.setParent(this.stage);
         const woodenSkeletonManager = enemy.addComponent(WoodenSkeletonManager);
-        woodenSkeletonManager.init();
+        await woodenSkeletonManager.init();
+        DataManager.Instance.enemies.push(woodenSkeletonManager);
     }
 
     //瓦片地图适配屏幕

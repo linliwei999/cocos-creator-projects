@@ -1,7 +1,7 @@
-System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3"], function (_export, _context) {
+System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4", "__unresolved_5"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, _decorator, DIRECTION_ENUM, ENTITY_STATE_ENUM, ENTITY_TYPE_ENUM, EntityManager, WoodenSkeletonStateMachine, _dec, _class, _crd, ccclass, property, ANIMATION_SPEED, WoodenSkeletonManager;
+  var _reporterNs, _cclegacy, _decorator, DIRECTION_ENUM, ENTITY_STATE_ENUM, ENTITY_TYPE_ENUM, EVENT_ENUM, EventManager, EntityManager, DataManager, WoodenSkeletonStateMachine, _dec, _class, _crd, ccclass, property, ANIMATION_SPEED, WoodenSkeletonManager;
 
   function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -19,8 +19,20 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     _reporterNs.report("ENTITY_TYPE_ENUM", "db://assets/Enums", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfEVENT_ENUM(extras) {
+    _reporterNs.report("EVENT_ENUM", "db://assets/Enums", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfEventManager(extras) {
+    _reporterNs.report("EventManager", "db://assets/Runtime/EventManager", _context.meta, extras);
+  }
+
   function _reportPossibleCrUseOfEntityManager(extras) {
     _reporterNs.report("EntityManager", "db://assets/Base/EntityManager", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfDataManager(extras) {
+    _reporterNs.report("DataManager", "db://assets/Runtime/DataManager", _context.meta, extras);
   }
 
   function _reportPossibleCrUseOfWoodenSkeletonStateMachine(extras) {
@@ -37,10 +49,15 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
       DIRECTION_ENUM = _unresolved_2.DIRECTION_ENUM;
       ENTITY_STATE_ENUM = _unresolved_2.ENTITY_STATE_ENUM;
       ENTITY_TYPE_ENUM = _unresolved_2.ENTITY_TYPE_ENUM;
+      EVENT_ENUM = _unresolved_2.EVENT_ENUM;
     }, function (_unresolved_3) {
-      EntityManager = _unresolved_3.EntityManager;
+      EventManager = _unresolved_3.default;
     }, function (_unresolved_4) {
-      WoodenSkeletonStateMachine = _unresolved_4.WoodenSkeletonStateMachine;
+      EntityManager = _unresolved_4.EntityManager;
+    }, function (_unresolved_5) {
+      DataManager = _unresolved_5.default;
+    }, function (_unresolved_6) {
+      WoodenSkeletonStateMachine = _unresolved_6.WoodenSkeletonStateMachine;
     }],
     execute: function () {
       _crd = true;
@@ -79,7 +96,70 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
                 error: Error()
               }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).IDLE
             });
+
+            (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
+              error: Error()
+            }), EventManager) : EventManager).Instance.on((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
+              error: Error()
+            }), EVENT_ENUM) : EVENT_ENUM).PLAYER_MOVE_END, _this.onChangeDirection, _this);
+            (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
+              error: Error()
+            }), EventManager) : EventManager).Instance.on((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
+              error: Error()
+            }), EVENT_ENUM) : EVENT_ENUM).PLAYER_BORN, _this.onChangeDirection, _this);
           })();
+        }
+
+        onChangeDirection(isInit) {
+          if (isInit === void 0) {
+            isInit = false;
+          }
+
+          if (!(_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+            error: Error()
+          }), DataManager) : DataManager).Instance.player) {
+            return;
+          }
+
+          var {
+            x: playerX,
+            y: playerY
+          } = (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+            error: Error()
+          }), DataManager) : DataManager).Instance.player;
+          var disX = Math.abs(this.x - playerX);
+          var disY = Math.abs(this.y - playerY);
+
+          if (disX === disY && !isInit) {
+            return;
+          } //第一象限
+
+
+          if (playerX >= this.x && playerY <= this.y) {
+            this.direction = disY > disX ? (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
+              error: Error()
+            }), DIRECTION_ENUM) : DIRECTION_ENUM).TOP : (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
+              error: Error()
+            }), DIRECTION_ENUM) : DIRECTION_ENUM).RIGHT;
+          } else if (playerX <= this.x && playerY <= this.y) {
+            this.direction = disY > disX ? (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
+              error: Error()
+            }), DIRECTION_ENUM) : DIRECTION_ENUM).TOP : (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
+              error: Error()
+            }), DIRECTION_ENUM) : DIRECTION_ENUM).LEFT;
+          } else if (playerX <= this.x && playerY >= this.y) {
+            this.direction = disY > disX ? (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
+              error: Error()
+            }), DIRECTION_ENUM) : DIRECTION_ENUM).BOTTOM : (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
+              error: Error()
+            }), DIRECTION_ENUM) : DIRECTION_ENUM).LEFT;
+          } else if (playerX >= this.x && playerY >= this.y) {
+            this.direction = disY > disX ? (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
+              error: Error()
+            }), DIRECTION_ENUM) : DIRECTION_ENUM).BOTTOM : (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
+              error: Error()
+            }), DIRECTION_ENUM) : DIRECTION_ENUM).RIGHT;
+          }
         }
 
       }) || _class));
