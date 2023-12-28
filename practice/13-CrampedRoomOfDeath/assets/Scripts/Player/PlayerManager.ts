@@ -67,6 +67,7 @@ export class PlayerManager extends EntityManager {
                 const weaponNextY = y - 2;
                 //玩家走出地图
                 if(playerNextY <= 1){
+                    this.state = ENTITY_STATE_ENUM.BLOCKFRONT;
                     return true;
                 }
                 //下一个瓦片
@@ -75,6 +76,7 @@ export class PlayerManager extends EntityManager {
                 if(playerTile && playerTile.moveable && (!weaponTile || weaponTile.turnable)){
                     //empty
                 }else {
+                    this.state = ENTITY_STATE_ENUM.BLOCKFRONT;
                     return true;
                 }
             }else if(direction === DIRECTION_ENUM.LEFT){
@@ -127,6 +129,7 @@ export class PlayerManager extends EntityManager {
             ){
                 //empty
             }else {
+                this.state = ENTITY_STATE_ENUM.BLOCKTURNLEFT;
                 return true;
             }
         }

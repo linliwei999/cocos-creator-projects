@@ -1,9 +1,12 @@
 import {_decorator, Animation, AnimationClip, Component, SpriteFrame} from 'cc';
-import {FSM_PARAMS_TYPE_ENUM, PARAMS_NAME_ENUM} from "db://assets/Enums";
+import {ENTITY_STATE_ENUM, FSM_PARAMS_TYPE_ENUM, PARAMS_NAME_ENUM} from "db://assets/Enums";
 import State from "db://assets/Base/State";
 import {getInitParamsNumber, getInitParamsTrigger, StateMachine} from "db://assets/Base/StateMachine";
 import IdleSubStateMachine from "db://assets/Scripts/Player/IdleSubStateMachine";
 import TurnLeftSubStateMachine from "db://assets/Scripts/Player/TurnLeftSubStateMachine";
+import BlockFrontSubStateMachine from "db://assets/Scripts/Player/BlockFrontSubStateMachine";
+import BlockTurnLeftSubStateMachine from "db://assets/Scripts/Player/BlockTurnLeftSubStateMachine";
+import {EntityManager} from "db://assets/Base/EntityManager";
 
 const { ccclass, property } = _decorator;
 
@@ -30,8 +33,11 @@ export class PlayerStateMachine extends StateMachine {
     }
 
     initParams(){
+        //注册参数
         this.params.set(PARAMS_NAME_ENUM.IDLE, getInitParamsTrigger());
         this.params.set(PARAMS_NAME_ENUM.TURNLEFT, getInitParamsTrigger());
+        this.params.set(PARAMS_NAME_ENUM.BLOCKFRONT, getInitParamsTrigger());
+        this.params.set(PARAMS_NAME_ENUM.BLOCKTURNLEFT, getInitParamsTrigger());
         this.params.set(PARAMS_NAME_ENUM.DIRECTION, getInitParamsNumber());
     }
 
@@ -39,15 +45,17 @@ export class PlayerStateMachine extends StateMachine {
         //注册子状态机
         this.stateMachines.set(PARAMS_NAME_ENUM.IDLE, new IdleSubStateMachine(this));
         this.stateMachines.set(PARAMS_NAME_ENUM.TURNLEFT, new TurnLeftSubStateMachine(this));
-        // this.stateMachines.set(PARAMS_NAME_ENUM.TURNLEFT, new State(this, 'texture/player/turnleft/top'));
+        this.stateMachines.set(PARAMS_NAME_ENUM.BLOCKFRONT, new BlockFrontSubStateMachine(this));
+        this.stateMachines.set(PARAMS_NAME_ENUM.BLOCKTURNLEFT, new BlockTurnLeftSubStateMachine(this));
     }
 
     initAnimationEvent(){
         this.animationComponent.on(Animation.EventType.FINISHED, ()=> {
             const name = this.animationComponent.defaultClip.name;
-            const whiteList = ['turn'];
+            const whiteList = ['turn', 'block'];
             if(whiteList.some(v=> name.includes(v))){
-                this.setParams(PARAMS_NAME_ENUM.IDLE, true);
+                this.node.getComponent(EntityManager).state = ENTITY_STATE_ENUM.IDLE;
+                // this.setParams(PARAMS_NAME_ENUM.IDLE, true);
             }
         });
     }
@@ -55,8 +63,14 @@ export class PlayerStateMachine extends StateMachine {
     run(){
         switch (this.currentState){
             case this.stateMachines.get(PARAMS_NAME_ENUM.TURNLEFT):
+            case this.stateMachines.get(PARAMS_NAME_ENUM.BLOCKFRONT):
+            case this.stateMachines.get(PARAMS_NAME_ENUM.BLOCKTURNLEFT):
             case this.stateMachines.get(PARAMS_NAME_ENUM.IDLE):
-                if(this.params.get(PARAMS_NAME_ENUM.TURNLEFT).value){
+                if(this.params.get(PARAMS_NAME_ENUM.BLOCKTURNLEFT).value){
+                    this.currentState = this.stateMachines.get(PARAMS_NAME_ENUM.BLOCKTURNLEFT);
+                }else if(this.params.get(PARAMS_NAME_ENUM.BLOCKFRONT).value){
+                    this.currentState = this.stateMachines.get(PARAMS_NAME_ENUM.BLOCKFRONT);
+                }else if(this.params.get(PARAMS_NAME_ENUM.TURNLEFT).value){
                     this.currentState = this.stateMachines.get(PARAMS_NAME_ENUM.TURNLEFT);
                     }else if(this.params.get(PARAMS_NAME_ENUM.IDLE).value){
                         this.currentState = this.stateMachines.get(PARAMS_NAME_ENUM.IDLE);

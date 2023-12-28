@@ -231,3 +231,4 @@ Function provided here: timer-util.ccc:1:1017
     at Generator.next (<anonymous>)
     at asyncGeneratorStep (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js:6:105)
     at _next (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js:8:196)
+2023-12-28 16:50:19-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading '7') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js

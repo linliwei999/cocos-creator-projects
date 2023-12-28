@@ -1,11 +1,15 @@
-System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4"], function (_export, _context) {
+System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4", "__unresolved_5", "__unresolved_6", "__unresolved_7"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, _decorator, Animation, FSM_PARAMS_TYPE_ENUM, PARAMS_NAME_ENUM, getInitParamsNumber, getInitParamsTrigger, StateMachine, IdleSubStateMachine, TurnLeftSubStateMachine, _dec, _class, _crd, ccclass, property, PlayerStateMachine;
+  var _reporterNs, _cclegacy, _decorator, Animation, ENTITY_STATE_ENUM, FSM_PARAMS_TYPE_ENUM, PARAMS_NAME_ENUM, getInitParamsNumber, getInitParamsTrigger, StateMachine, IdleSubStateMachine, TurnLeftSubStateMachine, BlockFrontSubStateMachine, BlockTurnLeftSubStateMachine, EntityManager, _dec, _class, _crd, ccclass, property, PlayerStateMachine;
 
   function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
   function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+  function _reportPossibleCrUseOfENTITY_STATE_ENUM(extras) {
+    _reporterNs.report("ENTITY_STATE_ENUM", "db://assets/Enums", _context.meta, extras);
+  }
 
   function _reportPossibleCrUseOfFSM_PARAMS_TYPE_ENUM(extras) {
     _reporterNs.report("FSM_PARAMS_TYPE_ENUM", "db://assets/Enums", _context.meta, extras);
@@ -35,6 +39,18 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     _reporterNs.report("TurnLeftSubStateMachine", "db://assets/Scripts/Player/TurnLeftSubStateMachine", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfBlockFrontSubStateMachine(extras) {
+    _reporterNs.report("BlockFrontSubStateMachine", "db://assets/Scripts/Player/BlockFrontSubStateMachine", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfBlockTurnLeftSubStateMachine(extras) {
+    _reporterNs.report("BlockTurnLeftSubStateMachine", "db://assets/Scripts/Player/BlockTurnLeftSubStateMachine", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfEntityManager(extras) {
+    _reporterNs.report("EntityManager", "db://assets/Base/EntityManager", _context.meta, extras);
+  }
+
   return {
     setters: [function (_unresolved_) {
       _reporterNs = _unresolved_;
@@ -43,6 +59,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
       _decorator = _cc._decorator;
       Animation = _cc.Animation;
     }, function (_unresolved_2) {
+      ENTITY_STATE_ENUM = _unresolved_2.ENTITY_STATE_ENUM;
       FSM_PARAMS_TYPE_ENUM = _unresolved_2.FSM_PARAMS_TYPE_ENUM;
       PARAMS_NAME_ENUM = _unresolved_2.PARAMS_NAME_ENUM;
     }, function (_unresolved_3) {
@@ -53,6 +70,12 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
       IdleSubStateMachine = _unresolved_4.default;
     }, function (_unresolved_5) {
       TurnLeftSubStateMachine = _unresolved_5.default;
+    }, function (_unresolved_6) {
+      BlockFrontSubStateMachine = _unresolved_6.default;
+    }, function (_unresolved_7) {
+      BlockTurnLeftSubStateMachine = _unresolved_7.default;
+    }, function (_unresolved_8) {
+      EntityManager = _unresolved_8.EntityManager;
     }],
     execute: function () {
       _crd = true;
@@ -94,6 +117,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
         }
 
         initParams() {
+          //注册参数
           this.params.set((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
             error: Error()
           }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).IDLE, (_crd && getInitParamsTrigger === void 0 ? (_reportPossibleCrUseOfgetInitParamsTrigger({
@@ -102,6 +126,16 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           this.params.set((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
             error: Error()
           }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).TURNLEFT, (_crd && getInitParamsTrigger === void 0 ? (_reportPossibleCrUseOfgetInitParamsTrigger({
+            error: Error()
+          }), getInitParamsTrigger) : getInitParamsTrigger)());
+          this.params.set((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
+            error: Error()
+          }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).BLOCKFRONT, (_crd && getInitParamsTrigger === void 0 ? (_reportPossibleCrUseOfgetInitParamsTrigger({
+            error: Error()
+          }), getInitParamsTrigger) : getInitParamsTrigger)());
+          this.params.set((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
+            error: Error()
+          }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).BLOCKTURNLEFT, (_crd && getInitParamsTrigger === void 0 ? (_reportPossibleCrUseOfgetInitParamsTrigger({
             error: Error()
           }), getInitParamsTrigger) : getInitParamsTrigger)());
           this.params.set((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
@@ -122,18 +156,30 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             error: Error()
           }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).TURNLEFT, new (_crd && TurnLeftSubStateMachine === void 0 ? (_reportPossibleCrUseOfTurnLeftSubStateMachine({
             error: Error()
-          }), TurnLeftSubStateMachine) : TurnLeftSubStateMachine)(this)); // this.stateMachines.set(PARAMS_NAME_ENUM.TURNLEFT, new State(this, 'texture/player/turnleft/top'));
+          }), TurnLeftSubStateMachine) : TurnLeftSubStateMachine)(this));
+          this.stateMachines.set((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
+            error: Error()
+          }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).BLOCKFRONT, new (_crd && BlockFrontSubStateMachine === void 0 ? (_reportPossibleCrUseOfBlockFrontSubStateMachine({
+            error: Error()
+          }), BlockFrontSubStateMachine) : BlockFrontSubStateMachine)(this));
+          this.stateMachines.set((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
+            error: Error()
+          }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).BLOCKTURNLEFT, new (_crd && BlockTurnLeftSubStateMachine === void 0 ? (_reportPossibleCrUseOfBlockTurnLeftSubStateMachine({
+            error: Error()
+          }), BlockTurnLeftSubStateMachine) : BlockTurnLeftSubStateMachine)(this));
         }
 
         initAnimationEvent() {
           this.animationComponent.on(Animation.EventType.FINISHED, () => {
             var name = this.animationComponent.defaultClip.name;
-            var whiteList = ['turn'];
+            var whiteList = ['turn', 'block'];
 
             if (whiteList.some(v => name.includes(v))) {
-              this.setParams((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
+              this.node.getComponent(_crd && EntityManager === void 0 ? (_reportPossibleCrUseOfEntityManager({
                 error: Error()
-              }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).IDLE, true);
+              }), EntityManager) : EntityManager).state = (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+                error: Error()
+              }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).IDLE; // this.setParams(PARAMS_NAME_ENUM.IDLE, true);
             }
           });
         }
@@ -145,8 +191,26 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).TURNLEFT):
             case this.stateMachines.get((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
               error: Error()
+            }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).BLOCKFRONT):
+            case this.stateMachines.get((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
+              error: Error()
+            }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).BLOCKTURNLEFT):
+            case this.stateMachines.get((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
+              error: Error()
             }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).IDLE):
               if (this.params.get((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
+                error: Error()
+              }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).BLOCKTURNLEFT).value) {
+                this.currentState = this.stateMachines.get((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
+                  error: Error()
+                }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).BLOCKTURNLEFT);
+              } else if (this.params.get((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
+                error: Error()
+              }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).BLOCKFRONT).value) {
+                this.currentState = this.stateMachines.get((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
+                  error: Error()
+                }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).BLOCKFRONT);
+              } else if (this.params.get((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
                 error: Error()
               }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).TURNLEFT).value) {
                 this.currentState = this.stateMachines.get((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({

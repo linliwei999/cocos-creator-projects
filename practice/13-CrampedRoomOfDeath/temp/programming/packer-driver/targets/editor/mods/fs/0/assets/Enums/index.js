@@ -59,6 +59,8 @@ System.register(["cc"], function (_export, _context) {
       (function (PARAMS_NAME_ENUM) {
         PARAMS_NAME_ENUM["IDLE"] = "IDLE";
         PARAMS_NAME_ENUM["TURNLEFT"] = "TURNLEFT";
+        PARAMS_NAME_ENUM["BLOCKFRONT"] = "BLOCKFRONT";
+        PARAMS_NAME_ENUM["BLOCKTURNLEFT"] = "BLOCKTURNLEFT";
         PARAMS_NAME_ENUM["DIRECTION"] = "DIRECTION";
       })(PARAMS_NAME_ENUM || _export("PARAMS_NAME_ENUM", PARAMS_NAME_ENUM = {}));
 
@@ -72,6 +74,8 @@ System.register(["cc"], function (_export, _context) {
       (function (ENTITY_STATE_ENUM) {
         ENTITY_STATE_ENUM["IDLE"] = "IDLE";
         ENTITY_STATE_ENUM["TURNLEFT"] = "TURNLEFT";
+        ENTITY_STATE_ENUM["BLOCKFRONT"] = "BLOCKFRONT";
+        ENTITY_STATE_ENUM["BLOCKTURNLEFT"] = "BLOCKTURNLEFT";
       })(ENTITY_STATE_ENUM || _export("ENTITY_STATE_ENUM", ENTITY_STATE_ENUM = {}));
 
       (function (DIRECTION_ODER_ENUM) {
