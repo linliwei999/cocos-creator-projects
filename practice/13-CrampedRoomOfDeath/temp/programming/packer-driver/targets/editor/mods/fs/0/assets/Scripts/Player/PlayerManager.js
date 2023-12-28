@@ -175,6 +175,36 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
               } else {
                 return true;
               }
+            } else if (direction === (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
+              error: Error()
+            }), DIRECTION_ENUM) : DIRECTION_ENUM).LEFT) {
+              //左方向移动
+              const playerNextY = y - 1;
+              const weaponNextX = x - 1;
+              const weaponNextY = playerNextY; //下一个瓦片
+
+              const playerTile = tileInfo[x][playerNextY];
+              const weaponTile = tileInfo[weaponNextX][weaponNextY];
+
+              if ((playerTile === null || playerTile === void 0 ? void 0 : playerTile.moveable) && weaponTile.moveable) {//empty
+              } else {
+                return true;
+              }
+            } else if (direction === (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
+              error: Error()
+            }), DIRECTION_ENUM) : DIRECTION_ENUM).RIGHT) {
+              //右方向移动
+              const playerNextY = y - 1;
+              const weaponNextX = x + 1;
+              const weaponNextY = playerNextY; //下一个瓦片
+
+              const playerTile = tileInfo[x][playerNextY];
+              const weaponTile = tileInfo[weaponNextX][weaponNextY];
+
+              if ((playerTile === null || playerTile === void 0 ? void 0 : playerTile.moveable) && weaponTile.moveable) {//empty
+              } else {
+                return true;
+              }
             }
           } else if (inputDirection === (_crd && CONTROLLER_ENUM === void 0 ? (_reportPossibleCrUseOfCONTROLLER_ENUM({
             error: Error()

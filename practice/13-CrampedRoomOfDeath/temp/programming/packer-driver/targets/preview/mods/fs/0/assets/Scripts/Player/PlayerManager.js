@@ -186,6 +186,39 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
               } else {
                 return true;
               }
+            } else if (direction === (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
+              error: Error()
+            }), DIRECTION_ENUM) : DIRECTION_ENUM).LEFT) {
+              //左方向移动
+              var _playerNextY = y - 1;
+
+              var weaponNextX = x - 1;
+              var _weaponNextY = _playerNextY; //下一个瓦片
+
+              var _playerTile = tileInfo[x][_playerNextY];
+              var _weaponTile = tileInfo[weaponNextX][_weaponNextY];
+
+              if ((_playerTile === null || _playerTile === void 0 ? void 0 : _playerTile.moveable) && _weaponTile.moveable) {//empty
+              } else {
+                return true;
+              }
+            } else if (direction === (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
+              error: Error()
+            }), DIRECTION_ENUM) : DIRECTION_ENUM).RIGHT) {
+              //右方向移动
+              var _playerNextY2 = y - 1;
+
+              var _weaponNextX = x + 1;
+
+              var _weaponNextY2 = _playerNextY2; //下一个瓦片
+
+              var _playerTile2 = tileInfo[x][_playerNextY2];
+              var _weaponTile2 = tileInfo[_weaponNextX][_weaponNextY2];
+
+              if ((_playerTile2 === null || _playerTile2 === void 0 ? void 0 : _playerTile2.moveable) && _weaponTile2.moveable) {//empty
+              } else {
+                return true;
+              }
             }
           } else if (inputDirection === (_crd && CONTROLLER_ENUM === void 0 ? (_reportPossibleCrUseOfCONTROLLER_ENUM({
             error: Error()

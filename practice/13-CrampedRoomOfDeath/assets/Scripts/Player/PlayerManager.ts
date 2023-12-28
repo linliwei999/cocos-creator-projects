@@ -77,6 +77,32 @@ export class PlayerManager extends EntityManager {
                 }else {
                     return true;
                 }
+            }else if(direction === DIRECTION_ENUM.LEFT){
+                //左方向移动
+                const playerNextY = y - 1;
+                const weaponNextX = x - 1;
+                const weaponNextY = playerNextY;
+                //下一个瓦片
+                const playerTile = tileInfo[x][playerNextY];
+                const weaponTile = tileInfo[weaponNextX][weaponNextY];
+                if(playerTile?.moveable && weaponTile.moveable){
+                    //empty
+                }else {
+                    return true;
+                }
+            }else if(direction === DIRECTION_ENUM.RIGHT){
+                //右方向移动
+                const playerNextY = y - 1;
+                const weaponNextX = x + 1;
+                const weaponNextY = playerNextY;
+                //下一个瓦片
+                const playerTile = tileInfo[x][playerNextY];
+                const weaponTile = tileInfo[weaponNextX][weaponNextY];
+                if(playerTile?.moveable && weaponTile.moveable){
+                    //empty
+                }else {
+                    return true;
+                }
             }
         }else if(inputDirection === CONTROLLER_ENUM.TURNLEFT){
             let nextX
