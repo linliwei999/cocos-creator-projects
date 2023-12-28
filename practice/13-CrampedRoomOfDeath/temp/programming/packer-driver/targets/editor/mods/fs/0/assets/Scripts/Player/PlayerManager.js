@@ -86,10 +86,9 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           _defineProperty(this, "isMoving", false);
 
           _defineProperty(this, "speed", ANIMATION_SPEED);
-
-          _defineProperty(this, "testAttackCount", 0);
         }
 
+        // private testAttackCount = 0
         async init() {
           this.fsm = this.node.addComponent(_crd && PlayerStateMachine === void 0 ? (_reportPossibleCrUseOfPlayerStateMachine({
             error: Error()
@@ -151,10 +150,13 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           //攻击
           if (this.willAttack(inputDirection)) {
             return;
-          } // if(this.state === ENTITY_STATE_ENUM.DEATH){
-          //     return;
-          // }
+          }
 
+          if (this.state === (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+            error: Error()
+          }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).DEATH) {
+            return;
+          }
 
           if (this.willBlock(inputDirection)) {
             console.log('撞墙');
@@ -200,12 +202,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             }), CONTROLLER_ENUM) : CONTROLLER_ENUM).RIGHT && this.direction === (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
               error: Error()
             }), DIRECTION_ENUM) : DIRECTION_ENUM).RIGHT && enemyX === this.targetX + 2 && enemyY === this.y) {
-              this.testAttackCount++;
-
-              if (this.testAttackCount === 3) {
-                return false;
-              }
-
+              // this.testAttackCount++
+              // if(this.testAttackCount === 3){
+              //     return false;
+              // }
               return this.onAttack();
             } else if (inputDirection === (_crd && CONTROLLER_ENUM === void 0 ? (_reportPossibleCrUseOfCONTROLLER_ENUM({
               error: Error()

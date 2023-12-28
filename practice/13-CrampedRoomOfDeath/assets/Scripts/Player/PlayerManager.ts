@@ -15,7 +15,7 @@ export class PlayerManager extends EntityManager {
     targetY:number = 0
     isMoving: boolean = false
     private readonly speed = ANIMATION_SPEED
-    private testAttackCount = 0
+    // private testAttackCount = 0
 
     async init(){
         this.fsm = this.node.addComponent(PlayerStateMachine);
@@ -60,9 +60,9 @@ export class PlayerManager extends EntityManager {
             return;
         }
 
-        // if(this.state === ENTITY_STATE_ENUM.DEATH){
-        //     return;
-        // }
+        if(this.state === ENTITY_STATE_ENUM.DEATH){
+            return;
+        }
 
         if(this.willBlock(inputDirection)){
             console.log('撞墙');
@@ -86,10 +86,10 @@ export class PlayerManager extends EntityManager {
             }else if(inputDirection === CONTROLLER_ENUM.LEFT && this.direction === DIRECTION_ENUM.LEFT && enemyX === this.targetX - 2 && enemyY === this.y){
                 return this.onAttack();
             }else if(inputDirection === CONTROLLER_ENUM.RIGHT && this.direction === DIRECTION_ENUM.RIGHT && enemyX === this.targetX + 2 && enemyY === this.y){
-                this.testAttackCount++
-                if(this.testAttackCount === 3){
-                    return false;
-                }
+                // this.testAttackCount++
+                // if(this.testAttackCount === 3){
+                //     return false;
+                // }
                 return this.onAttack();
             }else if(inputDirection === CONTROLLER_ENUM.BOTTOM && this.direction === DIRECTION_ENUM.BOTTOM && enemyX === this.x && enemyY === this.targetY + 2){
                 return this.onAttack();
