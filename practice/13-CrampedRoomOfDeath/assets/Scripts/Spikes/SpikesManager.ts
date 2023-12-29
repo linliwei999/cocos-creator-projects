@@ -15,6 +15,7 @@ import {WoodenSkeletonStateMachine} from "db://assets/Scripts/WoodenSkeleton/Woo
 import {StateMachine} from "db://assets/Base/StateMachine";
 import {randomStringByLength} from "db://assets/Utils";
 import {SpikesStateMachine} from "db://assets/Scripts/Spikes/SpikesStateMachine";
+import DataManager from "db://assets/Runtime/DataManager";
 
 const { ccclass, property } = _decorator;
 
@@ -81,10 +82,20 @@ export class SpikesManager extends Component {
         }else {
             this.count++;
         }
+        this.onAttack();
     }
 
     backZero(){
         this.count = 0;
+    }
+
+    onAttack(){
+      const player = DataManager.Instance.player;
+      if(!player) return
+      const { x: playerX, y: playerY } = player;
+      if(this.x === playerX && this.y === playerY && this.count === this.totalCount){
+        EventManager.Instance.emit(EVENT_ENUM.ATTACK_PLAYER, ENTITY_STATE_ENUM.DEATH);
+      }
     }
 }
 

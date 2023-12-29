@@ -137,7 +137,7 @@
     ]
   },
   "cce:/internal/x/prerequisite-imports": {
-    "mTimestamp": 231914894.136041,
+    "mTimestamp": 232382045.400093,
     "chunkId": "quick-pack:/cce/internal/x/prerequisite-imports.js",
     "imports": [
       {
@@ -5206,7 +5206,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Spikes/SpikesManager.ts": {
     "mTimestamp": {
-      "mtime": 1703835449882.5999,
+      "mtime": 1703836556461.157,
       "uuid": "0476bb19-9031-4ce9-993f-83e3d38178aa"
     },
     "chunkId": "assets/Scripts/Spikes/SpikesManager.js",
@@ -5300,6 +5300,20 @@
             "column": 80
           }
         }
+      },
+      {
+        "value": "db://assets/Runtime/DataManager",
+        "rewritten": "__unresolved_6",
+        "loc": {
+          "start": {
+            "line": 18,
+            "column": 24
+          },
+          "end": {
+            "line": 18,
+            "column": 57
+          }
+        }
       }
     ],
     "modLoMetadata": {
@@ -5337,6 +5351,10 @@
       {
         "isExternal": false,
         "url": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Spikes/SpikesStateMachine.ts"
+      },
+      {
+        "isExternal": false,
+        "url": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Runtime/DataManager.ts"
       }
     ]
   },

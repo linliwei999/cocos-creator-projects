@@ -1,7 +1,7 @@
-System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4", "__unresolved_5"], function (_export, _context) {
+System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4", "__unresolved_5", "__unresolved_6"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, _decorator, Component, Sprite, UITransform, TILE_HEIGHT, TILE_WIDTH, EVENT_ENUM, PARAMS_NAME_ENUM, SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM, EventManager, randomStringByLength, SpikesStateMachine, _dec, _class, _temp, _crd, ccclass, property, SpikesManager;
+  var _reporterNs, _cclegacy, _decorator, Component, Sprite, UITransform, TILE_HEIGHT, TILE_WIDTH, ENTITY_STATE_ENUM, EVENT_ENUM, PARAMS_NAME_ENUM, SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM, EventManager, randomStringByLength, SpikesStateMachine, DataManager, _dec, _class, _temp, _crd, ccclass, property, SpikesManager;
 
   function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -11,6 +11,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
 
   function _reportPossibleCrUseOfTILE_WIDTH(extras) {
     _reporterNs.report("TILE_WIDTH", "db://assets/Scripts/Tile/TileManager", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfENTITY_STATE_ENUM(extras) {
+    _reporterNs.report("ENTITY_STATE_ENUM", "db://assets/Enums", _context.meta, extras);
   }
 
   function _reportPossibleCrUseOfENTITY_TYPE_ENUM(extras) {
@@ -49,6 +53,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     _reporterNs.report("SpikesStateMachine", "db://assets/Scripts/Spikes/SpikesStateMachine", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfDataManager(extras) {
+    _reporterNs.report("DataManager", "db://assets/Runtime/DataManager", _context.meta, extras);
+  }
+
   return {
     setters: [function (_unresolved_) {
       _reporterNs = _unresolved_;
@@ -62,6 +70,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
       TILE_HEIGHT = _unresolved_2.TILE_HEIGHT;
       TILE_WIDTH = _unresolved_2.TILE_WIDTH;
     }, function (_unresolved_3) {
+      ENTITY_STATE_ENUM = _unresolved_3.ENTITY_STATE_ENUM;
       EVENT_ENUM = _unresolved_3.EVENT_ENUM;
       PARAMS_NAME_ENUM = _unresolved_3.PARAMS_NAME_ENUM;
       SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM = _unresolved_3.SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM;
@@ -71,6 +80,8 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
       randomStringByLength = _unresolved_5.randomStringByLength;
     }, function (_unresolved_6) {
       SpikesStateMachine = _unresolved_6.SpikesStateMachine;
+    }, function (_unresolved_7) {
+      DataManager = _unresolved_7.default;
     }],
     execute: function () {
       _crd = true;
@@ -180,10 +191,33 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           } else {
             this.count++;
           }
+
+          this.onAttack();
         }
 
         backZero() {
           this.count = 0;
+        }
+
+        onAttack() {
+          const player = (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+            error: Error()
+          }), DataManager) : DataManager).Instance.player;
+          if (!player) return;
+          const {
+            x: playerX,
+            y: playerY
+          } = player;
+
+          if (this.x === playerX && this.y === playerY && this.count === this.totalCount) {
+            (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
+              error: Error()
+            }), EventManager) : EventManager).Instance.emit((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
+              error: Error()
+            }), EVENT_ENUM) : EVENT_ENUM).ATTACK_PLAYER, (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+              error: Error()
+            }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).DEATH);
+          }
         }
 
       }, _temp)) || _class));

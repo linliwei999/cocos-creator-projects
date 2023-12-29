@@ -2627,7 +2627,7 @@
     "time": 1702658055919.1404
   },
   "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Sences/Battle.scene": {
-    "time": 1703836197091.1904,
+    "time": 1703836626086.5327,
     "uuid": "31470aa7-2e8d-4262-8d50-b8a0406d0fc8",
     "missing": false
   },
@@ -3124,12 +3124,12 @@
     "time": 1703834061597.049
   },
   "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Spikes": {
-    "time": 1703836093959.8499,
+    "time": 1703836556461.2886,
     "uuid": "723b6a0b-10d9-4f1a-b928-24d331beafa3",
     "missing": false
   },
   "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Spikes/SpikesManager.ts": {
-    "time": 1703835449882.5999,
+    "time": 1703836556461.157,
     "uuid": "0476bb19-9031-4ce9-993f-83e3d38178aa",
     "missing": false
   },
