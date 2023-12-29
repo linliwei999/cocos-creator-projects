@@ -1,7 +1,7 @@
-System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4", "__unresolved_5", "__unresolved_6", "__unresolved_7", "__unresolved_8", "__unresolved_9", "__unresolved_10", "__unresolved_11", "__unresolved_12", "__unresolved_13", "__unresolved_14"], function (_export, _context) {
+System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4", "__unresolved_5", "__unresolved_6", "__unresolved_7", "__unresolved_8", "__unresolved_9", "__unresolved_10", "__unresolved_11", "__unresolved_12", "__unresolved_13", "__unresolved_14", "__unresolved_15"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, _decorator, Component, TileMapManager, createUINode, Levels, DataManager, TILE_HEIGHT, TILE_WIDTH, EventManager, ENTITY_STATE_ENUM, ENTITY_TYPE_ENUM, EVENT_ENUM, PlayerManager, WoodenSkeletonManager, IronSkeletonManager, DoorManager, BurstManager, SpikesManager, SmokeManager, _dec, _class, _temp, _crd, ccclass, property, BattleManager;
+  var _reporterNs, _cclegacy, _decorator, Component, TileMapManager, createUINode, Levels, DataManager, TILE_HEIGHT, TILE_WIDTH, EventManager, ENTITY_STATE_ENUM, ENTITY_TYPE_ENUM, EVENT_ENUM, PlayerManager, WoodenSkeletonManager, IronSkeletonManager, DoorManager, BurstManager, SpikesManager, SmokeManager, FadeManager, _dec, _class, _temp, _crd, ccclass, property, BattleManager;
 
   function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -81,6 +81,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     _reporterNs.report("SmokeManager", "db://assets/Scripts/Smoke/SmokeManager", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfFadeManager(extras) {
+    _reporterNs.report("FadeManager", "db://assets/Runtime/FadeManager", _context.meta, extras);
+  }
+
   return {
     setters: [function (_unresolved_) {
       _reporterNs = _unresolved_;
@@ -119,6 +123,8 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
       SpikesManager = _unresolved_14.SpikesManager;
     }, function (_unresolved_15) {
       SmokeManager = _unresolved_15.SmokeManager;
+    }, function (_unresolved_16) {
+      FadeManager = _unresolved_16.default;
     }],
     execute: function () {
       _crd = true;
@@ -185,7 +191,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           this.initLevel();
         }
 
-        initLevel() {
+        async initLevel() {
           const level = (_crd && Levels === void 0 ? (_reportPossibleCrUseOfLevels({
             error: Error()
           }), Levels) : Levels)[`level${(_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
@@ -193,6 +199,9 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           }), DataManager) : DataManager).Instance.levelIndex}`];
 
           if (level) {
+            await (_crd && FadeManager === void 0 ? (_reportPossibleCrUseOfFadeManager({
+              error: Error()
+            }), FadeManager) : FadeManager).Instance.fader.fadeIn();
             this.clearLevel();
             this.level = level; //把地图数据存到数据中心(单例)
 
@@ -205,9 +214,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
               error: Error()
             }), DataManager) : DataManager).Instance.mapColumnCount = this.level.mapInfo[0].length || 0;
-            this.generateTileMap(); // this.generateDoor();
-            // this.generatePlayer();
-            // this.generateEnemies();
+            await Promise.all([this.generateTileMap(), this.generateBursts(), this.generateSpikes(), this.generateSmokeLayer(), this.generateDoor(), this.generateEnemies(), this.generatePlayer()]);
+            await (_crd && FadeManager === void 0 ? (_reportPossibleCrUseOfFadeManager({
+              error: Error()
+            }), FadeManager) : FadeManager).Instance.fader.fadeOut();
           }
         } //是否切换下一关
 
@@ -268,12 +278,6 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           }), TileMapManager) : TileMapManager);
           await tileManager.init();
           this.adaptPos();
-          this.generateBursts();
-          this.generateSpikes();
-          this.generateSmokeLayer();
-          this.generateDoor();
-          this.generateEnemies();
-          this.generatePlayer();
         } //生成玩家
 
 
@@ -385,7 +389,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           await Promise.all(promise);
         }
 
-        generateSmokeLayer() {
+        async generateSmokeLayer() {
           this.smokeLayer = (_crd && createUINode === void 0 ? (_reportPossibleCrUseOfcreateUINode({
             error: Error()
           }), createUINode) : createUINode)();

@@ -596,3 +596,27 @@ Function provided here: timer-util.ccc:1:1017
 2023-12-29 18:47:22-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading 'undefined') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js
 2023-12-29 18:51:22-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading '4') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js
 2023-12-29 18:51:22-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading '4') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js
+2023-12-29 21:05:37-error: [Preview]unhandledrejection: Cannot read properties of null (reading 'fadeIn')
+2023-12-29 21:05:37-error: [Preview]TypeError: Cannot read properties of null (reading 'fadeIn')
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/BattleManager.js:211:62
+    at Generator.next (<anonymous>)
+    at asyncGeneratorStep (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/BattleManager.js:6:105)
+    at _next (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/BattleManager.js:8:196)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/BattleManager.js:8:366
+    at new Promise (<anonymous>)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/BattleManager.js:8:99
+    at BattleManager.initLevel (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/BattleManager.js:231:13)
+    at BattleManager.start (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/BattleManager.js:195:16)
+    at http://localhost:7456/scripting/engine/bin/.cache/dev/preview/bundled/index.js:140412:16
+2023-12-29 21:06:08-error: [Preview]unhandledrejection: Cannot read properties of null (reading 'fadeIn')
+2023-12-29 21:06:08-error: [Preview]TypeError: Cannot read properties of null (reading 'fadeIn')
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/BattleManager.js:211:62
+    at Generator.next (<anonymous>)
+    at asyncGeneratorStep (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/BattleManager.js:6:105)
+    at _next (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/BattleManager.js:8:196)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/BattleManager.js:8:366
+    at new Promise (<anonymous>)
+    at http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/BattleManager.js:8:99
+    at BattleManager.initLevel (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/BattleManager.js:231:13)
+    at BattleManager.start (http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/BattleManager.js:195:16)
+    at http://localhost:7456/scripting/engine/bin/.cache/dev/preview/bundled/index.js:140412:16

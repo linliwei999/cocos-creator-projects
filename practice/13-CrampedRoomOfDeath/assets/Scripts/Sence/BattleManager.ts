@@ -13,6 +13,7 @@ import {DoorManager} from "db://assets/Scripts/Door/DoorManager";
 import {BurstManager} from "db://assets/Scripts/Burst/BurstManager";
 import {SpikesManager} from "db://assets/Scripts/Spikes/SpikesManager";
 import {SmokeManager} from "db://assets/Scripts/Smoke/SmokeManager";
+import FadeManager from "db://assets/Runtime/FadeManager";
 
 const { ccclass, property } = _decorator;
 
@@ -46,19 +47,28 @@ export class BattleManager extends Component {
         this.initLevel();
     }
 
-    initLevel(){
+    async initLevel(){
         const level = Levels[`level${DataManager.Instance.levelIndex}`];
         if(level){
+            await FadeManager.Instance.fader.fadeIn();
             this.clearLevel();
             this.level = level;
             //把地图数据存到数据中心(单例)
             DataManager.Instance.mapInfo = this.level.mapInfo;
             DataManager.Instance.mapRowCount = this.level.mapInfo.length || 0;
             DataManager.Instance.mapColumnCount = this.level.mapInfo[0].length || 0;
-            this.generateTileMap();
-            // this.generateDoor();
-            // this.generatePlayer();
-            // this.generateEnemies();
+
+            await Promise.all([
+                this.generateTileMap(),
+                this.generateBursts(),
+                this.generateSpikes(),
+                this.generateSmokeLayer(),
+                this.generateDoor(),
+                this.generateEnemies(),
+                this.generatePlayer(),
+            ]);
+
+            await FadeManager.Instance.fader.fadeOut();
         }
     }
 
@@ -97,12 +107,6 @@ export class BattleManager extends Component {
         const tileManager = tileMap.addComponent(TileMapManager);
         await tileManager.init();
         this.adaptPos();
-        this.generateBursts();
-        this.generateSpikes();
-        this.generateSmokeLayer();
-        this.generateDoor();
-        this.generateEnemies();
-        this.generatePlayer();
     }
 
     //生成玩家
@@ -170,7 +174,7 @@ export class BattleManager extends Component {
         await Promise.all(promise);
     }
 
-    generateSmokeLayer(){
+    async generateSmokeLayer(){
         this.smokeLayer = createUINode();
         this.smokeLayer.setParent(this.stage);
     }

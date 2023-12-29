@@ -1,7 +1,7 @@
-System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4", "__unresolved_5", "__unresolved_6", "__unresolved_7", "__unresolved_8", "__unresolved_9", "__unresolved_10", "__unresolved_11", "__unresolved_12", "__unresolved_13", "__unresolved_14"], function (_export, _context) {
+System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4", "__unresolved_5", "__unresolved_6", "__unresolved_7", "__unresolved_8", "__unresolved_9", "__unresolved_10", "__unresolved_11", "__unresolved_12", "__unresolved_13", "__unresolved_14", "__unresolved_15"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, _decorator, Component, TileMapManager, createUINode, Levels, DataManager, TILE_HEIGHT, TILE_WIDTH, EventManager, ENTITY_STATE_ENUM, ENTITY_TYPE_ENUM, EVENT_ENUM, PlayerManager, WoodenSkeletonManager, IronSkeletonManager, DoorManager, BurstManager, SpikesManager, SmokeManager, _dec, _class, _temp, _crd, ccclass, property, BattleManager;
+  var _reporterNs, _cclegacy, _decorator, Component, TileMapManager, createUINode, Levels, DataManager, TILE_HEIGHT, TILE_WIDTH, EventManager, ENTITY_STATE_ENUM, ENTITY_TYPE_ENUM, EVENT_ENUM, PlayerManager, WoodenSkeletonManager, IronSkeletonManager, DoorManager, BurstManager, SpikesManager, SmokeManager, FadeManager, _dec, _class, _temp, _crd, ccclass, property, BattleManager;
 
   function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -85,6 +85,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     _reporterNs.report("SmokeManager", "db://assets/Scripts/Smoke/SmokeManager", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfFadeManager(extras) {
+    _reporterNs.report("FadeManager", "db://assets/Runtime/FadeManager", _context.meta, extras);
+  }
+
   return {
     setters: [function (_unresolved_) {
       _reporterNs = _unresolved_;
@@ -123,6 +127,8 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
       SpikesManager = _unresolved_14.SpikesManager;
     }, function (_unresolved_15) {
       SmokeManager = _unresolved_15.SmokeManager;
+    }, function (_unresolved_16) {
+      FadeManager = _unresolved_16.default;
     }],
     execute: function () {
       _crd = true;
@@ -190,29 +196,39 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
         }
 
         initLevel() {
-          var level = (_crd && Levels === void 0 ? (_reportPossibleCrUseOfLevels({
-            error: Error()
-          }), Levels) : Levels)["level" + (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
-            error: Error()
-          }), DataManager) : DataManager).Instance.levelIndex];
+          var _this = this;
 
-          if (level) {
-            this.clearLevel();
-            this.level = level; //把地图数据存到数据中心(单例)
+          return _asyncToGenerator(function* () {
+            var level = (_crd && Levels === void 0 ? (_reportPossibleCrUseOfLevels({
+              error: Error()
+            }), Levels) : Levels)["level" + (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+              error: Error()
+            }), DataManager) : DataManager).Instance.levelIndex];
 
-            (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
-              error: Error()
-            }), DataManager) : DataManager).Instance.mapInfo = this.level.mapInfo;
-            (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
-              error: Error()
-            }), DataManager) : DataManager).Instance.mapRowCount = this.level.mapInfo.length || 0;
-            (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
-              error: Error()
-            }), DataManager) : DataManager).Instance.mapColumnCount = this.level.mapInfo[0].length || 0;
-            this.generateTileMap(); // this.generateDoor();
-            // this.generatePlayer();
-            // this.generateEnemies();
-          }
+            if (level) {
+              yield (_crd && FadeManager === void 0 ? (_reportPossibleCrUseOfFadeManager({
+                error: Error()
+              }), FadeManager) : FadeManager).Instance.fader.fadeIn();
+
+              _this.clearLevel();
+
+              _this.level = level; //把地图数据存到数据中心(单例)
+
+              (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+                error: Error()
+              }), DataManager) : DataManager).Instance.mapInfo = _this.level.mapInfo;
+              (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+                error: Error()
+              }), DataManager) : DataManager).Instance.mapRowCount = _this.level.mapInfo.length || 0;
+              (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+                error: Error()
+              }), DataManager) : DataManager).Instance.mapColumnCount = _this.level.mapInfo[0].length || 0;
+              yield Promise.all([_this.generateTileMap(), _this.generateBursts(), _this.generateSpikes(), _this.generateSmokeLayer(), _this.generateDoor(), _this.generateEnemies(), _this.generatePlayer()]);
+              yield (_crd && FadeManager === void 0 ? (_reportPossibleCrUseOfFadeManager({
+                error: Error()
+              }), FadeManager) : FadeManager).Instance.fader.fadeOut();
+            }
+          })();
         } //是否切换下一关
 
 
@@ -263,47 +279,35 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
 
 
         generateTileMap() {
-          var _this = this;
+          var _this2 = this;
 
           return _asyncToGenerator(function* () {
             var tileMap = (_crd && createUINode === void 0 ? (_reportPossibleCrUseOfcreateUINode({
               error: Error()
             }), createUINode) : createUINode)();
-            tileMap.setParent(_this.stage);
+            tileMap.setParent(_this2.stage);
             var tileManager = tileMap.addComponent(_crd && TileMapManager === void 0 ? (_reportPossibleCrUseOfTileMapManager({
               error: Error()
             }), TileMapManager) : TileMapManager);
             yield tileManager.init();
 
-            _this.adaptPos();
-
-            _this.generateBursts();
-
-            _this.generateSpikes();
-
-            _this.generateSmokeLayer();
-
-            _this.generateDoor();
-
-            _this.generateEnemies();
-
-            _this.generatePlayer();
+            _this2.adaptPos();
           })();
         } //生成玩家
 
 
         generatePlayer() {
-          var _this2 = this;
+          var _this3 = this;
 
           return _asyncToGenerator(function* () {
             var player = (_crd && createUINode === void 0 ? (_reportPossibleCrUseOfcreateUINode({
               error: Error()
             }), createUINode) : createUINode)();
-            player.setParent(_this2.stage);
+            player.setParent(_this3.stage);
             var playerManager = player.addComponent(_crd && PlayerManager === void 0 ? (_reportPossibleCrUseOfPlayerManager({
               error: Error()
             }), PlayerManager) : PlayerManager);
-            yield playerManager.init(_this2.level.player);
+            yield playerManager.init(_this3.level.player);
             (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
               error: Error()
             }), DataManager) : DataManager).Instance.player = playerManager;
@@ -317,18 +321,18 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
 
 
         generateEnemies() {
-          var _this3 = this;
+          var _this4 = this;
 
           return _asyncToGenerator(function* () {
             var promise = [];
 
-            for (var i = 0; i < _this3.level.enemies.length; i++) {
-              var enemy = _this3.level.enemies[i]; //生成木骷髅
+            for (var i = 0; i < _this4.level.enemies.length; i++) {
+              var enemy = _this4.level.enemies[i]; //生成木骷髅
 
               var node = (_crd && createUINode === void 0 ? (_reportPossibleCrUseOfcreateUINode({
                 error: Error()
               }), createUINode) : createUINode)();
-              node.setParent(_this3.stage);
+              node.setParent(_this4.stage);
               var Manager = enemy.type === (_crd && ENTITY_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_TYPE_ENUM({
                 error: Error()
               }), ENTITY_TYPE_ENUM) : ENTITY_TYPE_ENUM).SKELETON_WOODEN ? _crd && WoodenSkeletonManager === void 0 ? (_reportPossibleCrUseOfWoodenSkeletonManager({
@@ -349,17 +353,17 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
 
 
         generateDoor() {
-          var _this4 = this;
+          var _this5 = this;
 
           return _asyncToGenerator(function* () {
             var door = (_crd && createUINode === void 0 ? (_reportPossibleCrUseOfcreateUINode({
               error: Error()
             }), createUINode) : createUINode)();
-            door.setParent(_this4.stage);
+            door.setParent(_this5.stage);
             var doorManager = door.addComponent(_crd && DoorManager === void 0 ? (_reportPossibleCrUseOfDoorManager({
               error: Error()
             }), DoorManager) : DoorManager);
-            yield doorManager.init(_this4.level.door);
+            yield doorManager.init(_this5.level.door);
             (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
               error: Error()
             }), DataManager) : DataManager).Instance.door = doorManager;
@@ -368,18 +372,18 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
 
 
         generateBursts() {
-          var _this5 = this;
+          var _this6 = this;
 
           return _asyncToGenerator(function* () {
             var promise = [];
 
-            for (var i = 0; i < _this5.level.bursts.length; i++) {
-              var burst = _this5.level.bursts[i]; //生成木骷髅
+            for (var i = 0; i < _this6.level.bursts.length; i++) {
+              var burst = _this6.level.bursts[i]; //生成木骷髅
 
               var node = (_crd && createUINode === void 0 ? (_reportPossibleCrUseOfcreateUINode({
                 error: Error()
               }), createUINode) : createUINode)();
-              node.setParent(_this5.stage);
+              node.setParent(_this6.stage);
               var burstManager = node.addComponent(_crd && BurstManager === void 0 ? (_reportPossibleCrUseOfBurstManager({
                 error: Error()
               }), BurstManager) : BurstManager);
@@ -395,18 +399,18 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
 
 
         generateSpikes() {
-          var _this6 = this;
+          var _this7 = this;
 
           return _asyncToGenerator(function* () {
             var promise = [];
 
-            for (var i = 0; i < _this6.level.spikes.length; i++) {
-              var spikes = _this6.level.spikes[i]; //生成木骷髅
+            for (var i = 0; i < _this7.level.spikes.length; i++) {
+              var spikes = _this7.level.spikes[i]; //生成木骷髅
 
               var node = (_crd && createUINode === void 0 ? (_reportPossibleCrUseOfcreateUINode({
                 error: Error()
               }), createUINode) : createUINode)();
-              node.setParent(_this6.stage);
+              node.setParent(_this7.stage);
               var spikesManager = node.addComponent(_crd && SpikesManager === void 0 ? (_reportPossibleCrUseOfSpikesManager({
                 error: Error()
               }), SpikesManager) : SpikesManager);
@@ -421,15 +425,20 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
         }
 
         generateSmokeLayer() {
-          this.smokeLayer = (_crd && createUINode === void 0 ? (_reportPossibleCrUseOfcreateUINode({
-            error: Error()
-          }), createUINode) : createUINode)();
-          this.smokeLayer.setParent(this.stage);
+          var _this8 = this;
+
+          return _asyncToGenerator(function* () {
+            _this8.smokeLayer = (_crd && createUINode === void 0 ? (_reportPossibleCrUseOfcreateUINode({
+              error: Error()
+            }), createUINode) : createUINode)();
+
+            _this8.smokeLayer.setParent(_this8.stage);
+          })();
         } //生成烟雾
 
 
         generateSmoke(x, y, direction) {
-          var _this7 = this;
+          var _this9 = this;
 
           return _asyncToGenerator(function* () {
             //缓存池
@@ -452,7 +461,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
               var smoke = (_crd && createUINode === void 0 ? (_reportPossibleCrUseOfcreateUINode({
                 error: Error()
               }), createUINode) : createUINode)();
-              smoke.setParent(_this7.smokeLayer);
+              smoke.setParent(_this9.smokeLayer);
               var smokeManager = smoke.addComponent(_crd && SmokeManager === void 0 ? (_reportPossibleCrUseOfSmokeManager({
                 error: Error()
               }), SmokeManager) : SmokeManager);
