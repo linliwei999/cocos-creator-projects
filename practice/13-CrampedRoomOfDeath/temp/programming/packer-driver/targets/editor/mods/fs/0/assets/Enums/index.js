@@ -1,7 +1,7 @@
 System.register(["cc"], function (_export, _context) {
   "use strict";
 
-  var _cclegacy, _crd, TILE_TYPE_ENUM, CONTROLLER_ENUM, FSM_PARAMS_TYPE_ENUM, DIRECTION_ENUM, PARAMS_NAME_ENUM, EVENT_ENUM, ENTITY_STATE_ENUM, DIRECTION_ODER_ENUM, SHAKE_TYPE_ENUM, ENTITY_TYPE_ENUM, SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM, SPIKES_COUNT_ENUM, SPIKES_COUNT_MAP_NUMBER_ENUM;
+  var _cclegacy, _crd, TILE_TYPE_ENUM, CONTROLLER_ENUM, FSM_PARAMS_TYPE_ENUM, DIRECTION_ENUM, PARAMS_NAME_ENUM, EVENT_ENUM, ENTITY_STATE_ENUM, DIRECTION_ODER_ENUM, SHAKE_TYPE_ENUM, ENTITY_TYPE_ENUM, SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM, SPIKES_COUNT_ENUM, SPIKES_COUNT_MAP_NUMBER_ENUM, SCENE_ENUM;
 
   _export({
     TILE_TYPE_ENUM: void 0,
@@ -16,7 +16,8 @@ System.register(["cc"], function (_export, _context) {
     ENTITY_TYPE_ENUM: void 0,
     SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM: void 0,
     SPIKES_COUNT_ENUM: void 0,
-    SPIKES_COUNT_MAP_NUMBER_ENUM: void 0
+    SPIKES_COUNT_MAP_NUMBER_ENUM: void 0,
+    SCENE_ENUM: void 0
   });
 
   return {
@@ -156,6 +157,12 @@ System.register(["cc"], function (_export, _context) {
         SPIKES_COUNT_MAP_NUMBER_ENUM[SPIKES_COUNT_MAP_NUMBER_ENUM["FOUR"] = 4] = "FOUR";
         SPIKES_COUNT_MAP_NUMBER_ENUM[SPIKES_COUNT_MAP_NUMBER_ENUM["FIVE"] = 5] = "FIVE";
       })(SPIKES_COUNT_MAP_NUMBER_ENUM || _export("SPIKES_COUNT_MAP_NUMBER_ENUM", SPIKES_COUNT_MAP_NUMBER_ENUM = {}));
+
+      (function (SCENE_ENUM) {
+        SCENE_ENUM["Loading"] = "Loading";
+        SCENE_ENUM["Start"] = "Start";
+        SCENE_ENUM["Battle"] = "Battle";
+      })(SCENE_ENUM || _export("SCENE_ENUM", SCENE_ENUM = {}));
 
       _cclegacy._RF.pop();
 

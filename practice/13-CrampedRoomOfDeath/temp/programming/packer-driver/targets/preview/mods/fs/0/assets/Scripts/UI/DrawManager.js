@@ -100,6 +100,13 @@ System.register(["cc"], function (_export, _context) {
           });
         }
 
+        mask() {
+          this.setAlpha(1);
+          return new Promise(resolve => {
+            setTimeout(resolve, DEFAULT_DURATION);
+          });
+        }
+
         update() {
           var percent = (game.totalTime - this.oldTime) / this.duration;
 

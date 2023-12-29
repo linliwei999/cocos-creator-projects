@@ -126,3 +126,9 @@ export enum SPIKES_COUNT_MAP_NUMBER_ENUM{
     FOUR = 4,
     FIVE = 5,
 }
+
+export enum SCENE_ENUM{
+    Loading = 'Loading',
+    Start = 'Start',
+    Battle = 'Battle',
+}

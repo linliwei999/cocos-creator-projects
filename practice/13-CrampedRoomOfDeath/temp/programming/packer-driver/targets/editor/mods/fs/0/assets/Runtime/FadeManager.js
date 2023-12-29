@@ -92,6 +92,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           return this.fader.fadeOut(duration);
         }
 
+        mask() {
+          return this.fader.mask();
+        }
+
       });
 
       _cclegacy._RF.pop();

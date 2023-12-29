@@ -159,6 +159,8 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           _defineProperty(this, "stage", void 0);
 
           _defineProperty(this, "smokeLayer", void 0);
+
+          _defineProperty(this, "inited", false);
         }
 
         onLoad() {
@@ -236,9 +238,15 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             }), DataManager) : DataManager).Instance.levelIndex];
 
             if (level) {
-              yield (_crd && FadeManager === void 0 ? (_reportPossibleCrUseOfFadeManager({
-                error: Error()
-              }), FadeManager) : FadeManager).Instance.fader.fadeIn();
+              if (_this.inited) {
+                yield (_crd && FadeManager === void 0 ? (_reportPossibleCrUseOfFadeManager({
+                  error: Error()
+                }), FadeManager) : FadeManager).Instance.fader.fadeIn();
+              } else {
+                yield (_crd && FadeManager === void 0 ? (_reportPossibleCrUseOfFadeManager({
+                  error: Error()
+                }), FadeManager) : FadeManager).Instance.fader.mask();
+              }
 
               _this.clearLevel();
 
@@ -257,6 +265,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
               yield (_crd && FadeManager === void 0 ? (_reportPossibleCrUseOfFadeManager({
                 error: Error()
               }), FadeManager) : FadeManager).Instance.fader.fadeOut();
+              _this.inited = true;
             }
           })();
         } //是否切换下一关

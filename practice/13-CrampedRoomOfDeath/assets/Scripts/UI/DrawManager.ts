@@ -63,6 +63,13 @@ export class DrawManager extends Component {
         }));
     }
 
+    mask(){
+        this.setAlpha(1);
+        return new Promise((resolve => {
+            setTimeout(resolve, DEFAULT_DURATION);
+        }));
+    }
+
     update(){
         const percent = (game.totalTime - this.oldTime) / this.duration;
         switch (this.state){

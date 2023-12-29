@@ -29,6 +29,7 @@ export class BattleManager extends Component {
     level: ILevel
     stage: Node
     private smokeLayer: Node
+    private inited: boolean = false
 
     onLoad(){
         DataManager.Instance.levelIndex = 1;
@@ -55,7 +56,11 @@ export class BattleManager extends Component {
     async initLevel(){
         const level = Levels[`level${DataManager.Instance.levelIndex}`];
         if(level){
-            await FadeManager.Instance.fader.fadeIn();
+            if(this.inited){
+                await FadeManager.Instance.fader.fadeIn();
+            }else {
+                await FadeManager.Instance.fader.mask();
+            }
             this.clearLevel();
             this.level = level;
             //把地图数据存到数据中心(单例)
@@ -74,6 +79,7 @@ export class BattleManager extends Component {
             ]);
 
             await FadeManager.Instance.fader.fadeOut();
+            this.inited = true;
         }
     }
 

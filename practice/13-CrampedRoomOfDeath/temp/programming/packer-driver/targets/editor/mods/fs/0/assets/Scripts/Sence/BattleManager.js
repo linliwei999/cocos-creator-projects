@@ -155,6 +155,8 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           _defineProperty(this, "stage", void 0);
 
           _defineProperty(this, "smokeLayer", void 0);
+
+          _defineProperty(this, "inited", false);
         }
 
         onLoad() {
@@ -229,9 +231,16 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           }), DataManager) : DataManager).Instance.levelIndex}`];
 
           if (level) {
-            await (_crd && FadeManager === void 0 ? (_reportPossibleCrUseOfFadeManager({
-              error: Error()
-            }), FadeManager) : FadeManager).Instance.fader.fadeIn();
+            if (this.inited) {
+              await (_crd && FadeManager === void 0 ? (_reportPossibleCrUseOfFadeManager({
+                error: Error()
+              }), FadeManager) : FadeManager).Instance.fader.fadeIn();
+            } else {
+              await (_crd && FadeManager === void 0 ? (_reportPossibleCrUseOfFadeManager({
+                error: Error()
+              }), FadeManager) : FadeManager).Instance.fader.mask();
+            }
+
             this.clearLevel();
             this.level = level; //把地图数据存到数据中心(单例)
 
@@ -248,6 +257,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             await (_crd && FadeManager === void 0 ? (_reportPossibleCrUseOfFadeManager({
               error: Error()
             }), FadeManager) : FadeManager).Instance.fader.fadeOut();
+            this.inited = true;
           }
         } //是否切换下一关
 
