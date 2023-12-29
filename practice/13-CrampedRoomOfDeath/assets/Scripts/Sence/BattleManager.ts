@@ -11,6 +11,7 @@ import {WoodenSkeletonManager} from "db://assets/Scripts/WoodenSkeleton/WoodenSk
 import {IronSkeletonManager} from "db://assets/Scripts/IronSkeleton/IronSkeletonManager";
 import {DoorManager} from "db://assets/Scripts/Door/DoorManager";
 import {BurstManager} from "db://assets/Scripts/Burst/BurstManager";
+import {SpikesManager} from "db://assets/Scripts/Spikes/SpikesManager";
 const { ccclass, property } = _decorator;
 
 @ccclass('BattleManager')
@@ -78,6 +79,7 @@ export class BattleManager extends Component {
         await tileManager.init();
         this.adaptPos();
         this.generateBursts();
+        this.generateSpikes();
         this.generateDoor();
         this.generateEnemies();
         this.generatePlayer();
@@ -156,6 +158,20 @@ export class BattleManager extends Component {
             state: ENTITY_STATE_ENUM.IDLE
         });
         DataManager.Instance.bursts.push(burstManager);
+    }
+
+    //地刺
+    async generateSpikes(){
+        const spikes = createUINode();
+        spikes.setParent(this.stage);
+        const spikesManager = spikes.addComponent(SpikesManager);
+        await spikesManager.init({
+            x: 2,
+            y: 3,
+            type: ENTITY_TYPE_ENUM.SPIKES_ONE,
+            count: 0
+        });
+        DataManager.Instance.spikes.push(spikesManager);
     }
 
     //瓦片地图适配屏幕

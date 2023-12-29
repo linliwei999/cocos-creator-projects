@@ -7,6 +7,7 @@ import {IronSkeletonManager} from "db://assets/Scripts/IronSkeleton/IronSkeleton
 import {EnemyManager} from "db://assets/Base/EnemyManager";
 import {DoorManager} from "db://assets/Scripts/Door/DoorManager";
 import {BurstManager} from "db://assets/Scripts/Burst/BurstManager";
+import {SpikesManager} from "db://assets/Scripts/Spikes/SpikesManager";
 
 export default class DataManager extends Singleton{
     static get Instance(){
@@ -21,6 +22,7 @@ export default class DataManager extends Singleton{
     enemies: EnemyManager[]
     door: DoorManager
     bursts: BurstManager[]
+    spikes: SpikesManager[]
 
     reset(){
         this.mapInfo = []
@@ -29,6 +31,7 @@ export default class DataManager extends Singleton{
         this.enemies = []
         this.door = null
         this.bursts = []
+        this.spikes = []
         this.mapRowCount = 0
         this.mapColumnCount = 0
     }

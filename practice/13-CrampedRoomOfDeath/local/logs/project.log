@@ -578,3 +578,8 @@ Function provided here: timer-util.ccc:1:1017
 2023-12-28 23:02:27-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading '9') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js
 2023-12-28 23:02:28-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading '9') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js
 2023-12-28 23:09:27-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading '7') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js
+2023-12-29 15:19:06-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading 'moveable') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js
+2023-12-29 15:19:07-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading 'moveable') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js
+2023-12-29 15:19:07-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading 'moveable') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js
+2023-12-29 15:19:08-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading 'moveable') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js
+2023-12-29 15:19:08-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading 'moveable') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js
