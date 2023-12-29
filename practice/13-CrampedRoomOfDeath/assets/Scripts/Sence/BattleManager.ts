@@ -14,6 +14,7 @@ import {BurstManager} from "db://assets/Scripts/Burst/BurstManager";
 import {SpikesManager} from "db://assets/Scripts/Spikes/SpikesManager";
 import {SmokeManager} from "db://assets/Scripts/Smoke/SmokeManager";
 import FadeManager from "db://assets/Runtime/FadeManager";
+import {ShakeManager} from "db://assets/Scripts/UI/ShakeManager";
 
 const { ccclass, property } = _decorator;
 
@@ -98,6 +99,7 @@ export class BattleManager extends Component {
         //创建舞台
         this.stage = createUINode();
         this.stage.setParent(this.node);
+        this.stage.addComponent(ShakeManager);
     }
 
     //生成地图
@@ -210,6 +212,7 @@ export class BattleManager extends Component {
         const { mapRowCount, mapColumnCount } = DataManager.Instance;
         const disX = TILE_WIDTH * mapRowCount / 2;
         const disY = TILE_HEIGHT * mapColumnCount / 2 + 80;
+        this.stage.getComponent(ShakeManager).stop();
         this.stage.setPosition(-disX, disY);
     }
 }

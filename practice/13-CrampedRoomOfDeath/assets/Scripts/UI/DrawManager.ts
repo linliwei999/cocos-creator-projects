@@ -13,7 +13,7 @@ const enum FADE_STATE_ENUM{
     FADE_OUT = 'FADE_OUT',
 }
 
-export const DEFAULT_DURATION = 500;
+export const DEFAULT_DURATION = 200;
 
 //疑问
 @ccclass('DrawManager')

@@ -1,7 +1,7 @@
-System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4", "__unresolved_5", "__unresolved_6", "__unresolved_7", "__unresolved_8", "__unresolved_9", "__unresolved_10"], function (_export, _context) {
+System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4", "__unresolved_5", "__unresolved_6", "__unresolved_7", "__unresolved_8", "__unresolved_9", "__unresolved_10", "__unresolved_11"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, _decorator, Animation, ENTITY_STATE_ENUM, FSM_PARAMS_TYPE_ENUM, PARAMS_NAME_ENUM, getInitParamsNumber, getInitParamsTrigger, StateMachine, IdleSubStateMachine, TurnLeftSubStateMachine, BlockFrontSubStateMachine, BlockTurnLeftSubStateMachine, EntityManager, DeathSubStateMachine, AttackSubStateMachine, AirDeathSubStateMachine, _dec, _class, _crd, ccclass, property, PlayerStateMachine;
+  var _reporterNs, _cclegacy, _decorator, Animation, ENTITY_STATE_ENUM, FSM_PARAMS_TYPE_ENUM, PARAMS_NAME_ENUM, getInitParamsNumber, getInitParamsTrigger, StateMachine, IdleSubStateMachine, TurnLeftSubStateMachine, TurnRightSubStateMachine, BlockFrontSubStateMachine, BlockTurnLeftSubStateMachine, EntityManager, DeathSubStateMachine, AttackSubStateMachine, AirDeathSubStateMachine, _dec, _class, _crd, ccclass, property, PlayerStateMachine;
 
   function _reportPossibleCrUseOfENTITY_STATE_ENUM(extras) {
     _reporterNs.report("ENTITY_STATE_ENUM", "db://assets/Enums", _context.meta, extras);
@@ -33,6 +33,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
 
   function _reportPossibleCrUseOfTurnLeftSubStateMachine(extras) {
     _reporterNs.report("TurnLeftSubStateMachine", "db://assets/Scripts/Player/TurnLeftSubStateMachine", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfTurnRightSubStateMachine(extras) {
+    _reporterNs.report("TurnRightSubStateMachine", "db://assets/Scripts/Player/TurnRightSubStateMachine", _context.meta, extras);
   }
 
   function _reportPossibleCrUseOfBlockFrontSubStateMachine(extras) {
@@ -79,17 +83,19 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     }, function (_unresolved_5) {
       TurnLeftSubStateMachine = _unresolved_5.default;
     }, function (_unresolved_6) {
-      BlockFrontSubStateMachine = _unresolved_6.default;
+      TurnRightSubStateMachine = _unresolved_6.default;
     }, function (_unresolved_7) {
-      BlockTurnLeftSubStateMachine = _unresolved_7.default;
+      BlockFrontSubStateMachine = _unresolved_7.default;
     }, function (_unresolved_8) {
-      EntityManager = _unresolved_8.EntityManager;
+      BlockTurnLeftSubStateMachine = _unresolved_8.default;
     }, function (_unresolved_9) {
-      DeathSubStateMachine = _unresolved_9.default;
+      EntityManager = _unresolved_9.EntityManager;
     }, function (_unresolved_10) {
-      AttackSubStateMachine = _unresolved_10.default;
+      DeathSubStateMachine = _unresolved_10.default;
     }, function (_unresolved_11) {
-      AirDeathSubStateMachine = _unresolved_11.default;
+      AttackSubStateMachine = _unresolved_11.default;
+    }, function (_unresolved_12) {
+      AirDeathSubStateMachine = _unresolved_12.default;
     }],
     execute: function () {
       _crd = true;
@@ -136,6 +142,11 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           }), getInitParamsTrigger) : getInitParamsTrigger)());
           this.params.set((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
             error: Error()
+          }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).TURNRIGHT, (_crd && getInitParamsTrigger === void 0 ? (_reportPossibleCrUseOfgetInitParamsTrigger({
+            error: Error()
+          }), getInitParamsTrigger) : getInitParamsTrigger)());
+          this.params.set((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
+            error: Error()
           }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).BLOCKFRONT, (_crd && getInitParamsTrigger === void 0 ? (_reportPossibleCrUseOfgetInitParamsTrigger({
             error: Error()
           }), getInitParamsTrigger) : getInitParamsTrigger)());
@@ -178,6 +189,11 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).TURNLEFT, new (_crd && TurnLeftSubStateMachine === void 0 ? (_reportPossibleCrUseOfTurnLeftSubStateMachine({
             error: Error()
           }), TurnLeftSubStateMachine) : TurnLeftSubStateMachine)(this));
+          this.stateMachines.set((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
+            error: Error()
+          }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).TURNRIGHT, new (_crd && TurnRightSubStateMachine === void 0 ? (_reportPossibleCrUseOfTurnRightSubStateMachine({
+            error: Error()
+          }), TurnRightSubStateMachine) : TurnRightSubStateMachine)(this));
           this.stateMachines.set((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
             error: Error()
           }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).BLOCKFRONT, new (_crd && BlockFrontSubStateMachine === void 0 ? (_reportPossibleCrUseOfBlockFrontSubStateMachine({
@@ -227,6 +243,9 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).TURNLEFT):
             case this.stateMachines.get((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
               error: Error()
+            }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).TURNRIGHT):
+            case this.stateMachines.get((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
+              error: Error()
             }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).BLOCKFRONT):
             case this.stateMachines.get((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
               error: Error()
@@ -249,6 +268,12 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
                 this.currentState = this.stateMachines.get((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
                   error: Error()
                 }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).BLOCKTURNLEFT);
+              } else if (this.params.get((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
+                error: Error()
+              }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).TURNRIGHT).value) {
+                this.currentState = this.stateMachines.get((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
+                  error: Error()
+                }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).TURNRIGHT);
               } else if (this.params.get((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
                 error: Error()
               }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).BLOCKFRONT).value) {

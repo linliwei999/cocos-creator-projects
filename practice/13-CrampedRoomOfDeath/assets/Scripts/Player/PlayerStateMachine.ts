@@ -4,6 +4,7 @@ import State from "db://assets/Base/State";
 import {getInitParamsNumber, getInitParamsTrigger, StateMachine} from "db://assets/Base/StateMachine";
 import IdleSubStateMachine from "db://assets/Scripts/Player/IdleSubStateMachine";
 import TurnLeftSubStateMachine from "db://assets/Scripts/Player/TurnLeftSubStateMachine";
+import TurnRightSubStateMachine from "db://assets/Scripts/Player/TurnRightSubStateMachine";
 import BlockFrontSubStateMachine from "db://assets/Scripts/Player/BlockFrontSubStateMachine";
 import BlockTurnLeftSubStateMachine from "db://assets/Scripts/Player/BlockTurnLeftSubStateMachine";
 import {EntityManager} from "db://assets/Base/EntityManager";
@@ -39,6 +40,7 @@ export class PlayerStateMachine extends StateMachine {
         //注册参数
         this.params.set(PARAMS_NAME_ENUM.IDLE, getInitParamsTrigger());
         this.params.set(PARAMS_NAME_ENUM.TURNLEFT, getInitParamsTrigger());
+        this.params.set(PARAMS_NAME_ENUM.TURNRIGHT, getInitParamsTrigger());
         this.params.set(PARAMS_NAME_ENUM.BLOCKFRONT, getInitParamsTrigger());
         this.params.set(PARAMS_NAME_ENUM.BLOCKTURNLEFT, getInitParamsTrigger());
         this.params.set(PARAMS_NAME_ENUM.ATTACK, getInitParamsTrigger());
@@ -51,6 +53,7 @@ export class PlayerStateMachine extends StateMachine {
         //注册子状态机
         this.stateMachines.set(PARAMS_NAME_ENUM.IDLE, new IdleSubStateMachine(this));
         this.stateMachines.set(PARAMS_NAME_ENUM.TURNLEFT, new TurnLeftSubStateMachine(this));
+        this.stateMachines.set(PARAMS_NAME_ENUM.TURNRIGHT, new TurnRightSubStateMachine(this));
         this.stateMachines.set(PARAMS_NAME_ENUM.BLOCKFRONT, new BlockFrontSubStateMachine(this));
         this.stateMachines.set(PARAMS_NAME_ENUM.BLOCKTURNLEFT, new BlockTurnLeftSubStateMachine(this));
         this.stateMachines.set(PARAMS_NAME_ENUM.ATTACK, new AttackSubStateMachine(this));
@@ -72,6 +75,7 @@ export class PlayerStateMachine extends StateMachine {
     run(){
         switch (this.currentState){
             case this.stateMachines.get(PARAMS_NAME_ENUM.TURNLEFT):
+            case this.stateMachines.get(PARAMS_NAME_ENUM.TURNRIGHT):
             case this.stateMachines.get(PARAMS_NAME_ENUM.BLOCKFRONT):
             case this.stateMachines.get(PARAMS_NAME_ENUM.BLOCKTURNLEFT):
             case this.stateMachines.get(PARAMS_NAME_ENUM.ATTACK):
@@ -80,6 +84,8 @@ export class PlayerStateMachine extends StateMachine {
             case this.stateMachines.get(PARAMS_NAME_ENUM.IDLE):
                 if(this.params.get(PARAMS_NAME_ENUM.BLOCKTURNLEFT).value){
                     this.currentState = this.stateMachines.get(PARAMS_NAME_ENUM.BLOCKTURNLEFT);
+                }else if(this.params.get(PARAMS_NAME_ENUM.TURNRIGHT).value){
+                    this.currentState = this.stateMachines.get(PARAMS_NAME_ENUM.TURNRIGHT);
                 }else if(this.params.get(PARAMS_NAME_ENUM.BLOCKFRONT).value){
                     this.currentState = this.stateMachines.get(PARAMS_NAME_ENUM.BLOCKFRONT);
                 }else if(this.params.get(PARAMS_NAME_ENUM.ATTACK).value){

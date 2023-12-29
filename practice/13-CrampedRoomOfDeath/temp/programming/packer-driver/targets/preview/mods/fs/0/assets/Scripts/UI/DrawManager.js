@@ -35,7 +35,7 @@ System.register(["cc"], function (_export, _context) {
         FADE_OUT: "FADE_OUT"
       };
 
-      _export("DEFAULT_DURATION", DEFAULT_DURATION = 500); //疑问
+      _export("DEFAULT_DURATION", DEFAULT_DURATION = 200); //疑问
 
 
       _export("DrawManager", DrawManager = (_dec = ccclass('DrawManager'), _dec(_class = (_temp = class DrawManager extends Component {
