@@ -1,7 +1,7 @@
-System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4", "__unresolved_5", "__unresolved_6", "__unresolved_7", "__unresolved_8", "__unresolved_9"], function (_export, _context) {
+System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4", "__unresolved_5", "__unresolved_6", "__unresolved_7", "__unresolved_8", "__unresolved_9", "__unresolved_10"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, _decorator, Component, TileMapManager, createUINode, Levels, DataManager, TILE_HEIGHT, TILE_WIDTH, EventManager, EVENT_ENUM, PlayerManager, WoodenSkeletonManager, _dec, _class, _temp, _crd, ccclass, property, BattleManager;
+  var _reporterNs, _cclegacy, _decorator, Component, TileMapManager, createUINode, Levels, DataManager, TILE_HEIGHT, TILE_WIDTH, EventManager, EVENT_ENUM, PlayerManager, WoodenSkeletonManager, DoorManager, _dec, _class, _temp, _crd, ccclass, property, BattleManager;
 
   function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -49,6 +49,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     _reporterNs.report("WoodenSkeletonManager", "db://assets/Scripts/WoodenSkeleton/WoodenSkeletonManager", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfDoorManager(extras) {
+    _reporterNs.report("DoorManager", "db://assets/Scripts/Door/DoorManager", _context.meta, extras);
+  }
+
   return {
     setters: [function (_unresolved_) {
       _reporterNs = _unresolved_;
@@ -75,6 +79,8 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
       PlayerManager = _unresolved_9.PlayerManager;
     }, function (_unresolved_10) {
       WoodenSkeletonManager = _unresolved_10.WoodenSkeletonManager;
+    }, function (_unresolved_11) {
+      DoorManager = _unresolved_11.DoorManager;
     }],
     execute: function () {
       _crd = true;
@@ -136,9 +142,9 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
               error: Error()
             }), DataManager) : DataManager).Instance.mapColumnCount = this.level.mapInfo[0].length || 0;
-            this.generateTileMap();
-            this.generatePlayer();
-            this.generateEnemies();
+            this.generateTileMap(); // this.generateDoor();
+            // this.generatePlayer();
+            // this.generateEnemies();
           }
         } //下一关函数
 
@@ -166,7 +172,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
         } //生成地图
 
 
-        generateTileMap() {
+        async generateTileMap() {
           const tileMap = (_crd && createUINode === void 0 ? (_reportPossibleCrUseOfcreateUINode({
             error: Error()
           }), createUINode) : createUINode)();
@@ -174,8 +180,11 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           const tileManager = tileMap.addComponent(_crd && TileMapManager === void 0 ? (_reportPossibleCrUseOfTileMapManager({
             error: Error()
           }), TileMapManager) : TileMapManager);
-          tileManager.init();
+          await tileManager.init();
           this.adaptPos();
+          this.generateDoor();
+          this.generatePlayer();
+          this.generateEnemies();
         } //生成玩家
 
 
@@ -211,6 +220,18 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
             error: Error()
           }), DataManager) : DataManager).Instance.enemies.push(woodenSkeletonManager);
+        } //生成门
+
+
+        async generateDoor() {
+          const door = (_crd && createUINode === void 0 ? (_reportPossibleCrUseOfcreateUINode({
+            error: Error()
+          }), createUINode) : createUINode)();
+          door.setParent(this.stage);
+          const doorManager = door.addComponent(_crd && DoorManager === void 0 ? (_reportPossibleCrUseOfDoorManager({
+            error: Error()
+          }), DoorManager) : DoorManager);
+          await doorManager.init();
         } //瓦片地图适配屏幕
 
 

@@ -18,7 +18,7 @@ export class WoodenSkeletonManager extends EntityManager {
         super.init({
             x: 7,
             y: 7,
-            type: ENTITY_TYPE_ENUM.PLAYER,
+            type: ENTITY_TYPE_ENUM.SKELETON_WOODEN,
             direction: DIRECTION_ENUM.TOP,
             state: ENTITY_STATE_ENUM.IDLE
         });
@@ -31,10 +31,10 @@ export class WoodenSkeletonManager extends EntityManager {
 
     onDestroy(){
         super.onDestroy();
-        EventManager.Instance.off(EVENT_ENUM.PLAYER_BORN, this.onChangeDirection, this);
-        EventManager.Instance.off(EVENT_ENUM.PLAYER_MOVE_END, this.onChangeDirection, this);
-        EventManager.Instance.off(EVENT_ENUM.PLAYER_MOVE_END, this.onAttack, this);
-        EventManager.Instance.off(EVENT_ENUM.ATTACK_ENEMY, this.onDeath, this);
+        EventManager.Instance.off(EVENT_ENUM.PLAYER_BORN, this.onChangeDirection);
+        EventManager.Instance.off(EVENT_ENUM.PLAYER_MOVE_END, this.onChangeDirection);
+        EventManager.Instance.off(EVENT_ENUM.PLAYER_MOVE_END, this.onAttack);
+        EventManager.Instance.off(EVENT_ENUM.ATTACK_ENEMY, this.onDeath);
     }
 
     onChangeDirection(isInit: boolean = false){

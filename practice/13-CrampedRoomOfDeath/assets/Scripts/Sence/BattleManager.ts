@@ -8,6 +8,7 @@ import EventManager from "db://assets/Runtime/EventManager";
 import {EVENT_ENUM} from "db://assets/Enums";
 import {PlayerManager} from "db://assets/Scripts/Player/PlayerManager";
 import {WoodenSkeletonManager} from "db://assets/Scripts/WoodenSkeleton/WoodenSkeletonManager";
+import {DoorManager} from "db://assets/Scripts/Door/DoorManager";
 const { ccclass, property } = _decorator;
 
 @ccclass('BattleManager')
@@ -44,8 +45,9 @@ export class BattleManager extends Component {
             DataManager.Instance.mapRowCount = this.level.mapInfo.length || 0;
             DataManager.Instance.mapColumnCount = this.level.mapInfo[0].length || 0;
             this.generateTileMap();
-            this.generatePlayer();
-            this.generateEnemies();
+            // this.generateDoor();
+            // this.generatePlayer();
+            // this.generateEnemies();
         }
     }
 
@@ -67,12 +69,15 @@ export class BattleManager extends Component {
     }
 
     //生成地图
-    generateTileMap(){
+    async generateTileMap(){
         const tileMap = createUINode();
         tileMap.setParent(this.stage);
         const tileManager = tileMap.addComponent(TileMapManager);
-        tileManager.init();
+        await tileManager.init();
         this.adaptPos();
+        this.generateDoor();
+        this.generatePlayer();
+        this.generateEnemies();
     }
 
     //生成玩家
@@ -92,6 +97,14 @@ export class BattleManager extends Component {
         const woodenSkeletonManager = enemy.addComponent(WoodenSkeletonManager);
         await woodenSkeletonManager.init();
         DataManager.Instance.enemies.push(woodenSkeletonManager);
+    }
+
+    //生成门
+    async generateDoor(){
+        const door = createUINode();
+        door.setParent(this.stage);
+        const doorManager = door.addComponent(DoorManager);
+        await doorManager.init();
     }
 
     //瓦片地图适配屏幕

@@ -76,6 +76,7 @@ System.register(["cc"], function (_export, _context) {
         EVENT_ENUM["PLAYER_BORN"] = "PLAYER_BORN";
         EVENT_ENUM["ATTACK_PLAYER"] = "ATTACK_PLAYER";
         EVENT_ENUM["ATTACK_ENEMY"] = "ATTACK_ENEMY";
+        EVENT_ENUM["DOOR_OPEN"] = "DOOR_OPEN";
       })(EVENT_ENUM || _export("EVENT_ENUM", EVENT_ENUM = {}));
 
       (function (ENTITY_STATE_ENUM) {
@@ -97,6 +98,8 @@ System.register(["cc"], function (_export, _context) {
 
       (function (ENTITY_TYPE_ENUM) {
         ENTITY_TYPE_ENUM["PLAYER"] = "PLAYER";
+        ENTITY_TYPE_ENUM["SKELETON_WOODEN"] = "SKELETON_WOODEN";
+        ENTITY_TYPE_ENUM["DOOR"] = "DOOR";
       })(ENTITY_TYPE_ENUM || _export("ENTITY_TYPE_ENUM", ENTITY_TYPE_ENUM = {}));
 
       _cclegacy._RF.pop();

@@ -88,7 +88,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
               y: 7,
               type: (_crd && ENTITY_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_TYPE_ENUM({
                 error: Error()
-              }), ENTITY_TYPE_ENUM) : ENTITY_TYPE_ENUM).PLAYER,
+              }), ENTITY_TYPE_ENUM) : ENTITY_TYPE_ENUM).SKELETON_WOODEN,
               direction: (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
                 error: Error()
               }), DIRECTION_ENUM) : DIRECTION_ENUM).TOP,
@@ -128,22 +128,22 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             error: Error()
           }), EventManager) : EventManager).Instance.off((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
             error: Error()
-          }), EVENT_ENUM) : EVENT_ENUM).PLAYER_BORN, this.onChangeDirection, this);
+          }), EVENT_ENUM) : EVENT_ENUM).PLAYER_BORN, this.onChangeDirection);
           (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
             error: Error()
           }), EventManager) : EventManager).Instance.off((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
             error: Error()
-          }), EVENT_ENUM) : EVENT_ENUM).PLAYER_MOVE_END, this.onChangeDirection, this);
+          }), EVENT_ENUM) : EVENT_ENUM).PLAYER_MOVE_END, this.onChangeDirection);
           (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
             error: Error()
           }), EventManager) : EventManager).Instance.off((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
             error: Error()
-          }), EVENT_ENUM) : EVENT_ENUM).PLAYER_MOVE_END, this.onAttack, this);
+          }), EVENT_ENUM) : EVENT_ENUM).PLAYER_MOVE_END, this.onAttack);
           (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
             error: Error()
           }), EventManager) : EventManager).Instance.off((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
             error: Error()
-          }), EVENT_ENUM) : EVENT_ENUM).ATTACK_ENEMY, this.onDeath, this);
+          }), EVENT_ENUM) : EVENT_ENUM).ATTACK_ENEMY, this.onDeath);
         }
 
         onChangeDirection(isInit) {
