@@ -1,7 +1,7 @@
 System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, SPIKES_COUNT_ENUM, State, SpikesSubStateMachine, SpikesThreeSubStateMachine, _crd, BASE_URL;
+  var _reporterNs, _cclegacy, SPIKES_COUNT_ENUM, State, SpikesSubStateMachine, SpikesFourSubStateMachine, _crd, BASE_URL;
 
   function _reportPossibleCrUseOfStateMachine(extras) {
     _reporterNs.report("StateMachine", "db://assets/Base/StateMachine", _context.meta, extras);
@@ -40,7 +40,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
 
       BASE_URL = 'texture/spikes/spikesfour';
 
-      _export("default", SpikesThreeSubStateMachine = class SpikesThreeSubStateMachine extends (_crd && SpikesSubStateMachine === void 0 ? (_reportPossibleCrUseOfSpikesSubStateMachine({
+      _export("default", SpikesFourSubStateMachine = class SpikesFourSubStateMachine extends (_crd && SpikesSubStateMachine === void 0 ? (_reportPossibleCrUseOfSpikesSubStateMachine({
         error: Error()
       }), SpikesSubStateMachine) : SpikesSubStateMachine) {
         constructor(fsm) {

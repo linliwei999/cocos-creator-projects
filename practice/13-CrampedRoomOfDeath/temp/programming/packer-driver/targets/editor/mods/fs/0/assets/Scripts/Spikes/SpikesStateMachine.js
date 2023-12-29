@@ -1,7 +1,7 @@
-System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4", "__unresolved_5"], function (_export, _context) {
+System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4", "__unresolved_5", "__unresolved_6", "__unresolved_7"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, _decorator, Animation, ENTITY_TYPE_ENUM, FSM_PARAMS_TYPE_ENUM, PARAMS_NAME_ENUM, SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM, getInitParamsNumber, StateMachine, SpikesOneSubStateMachine, SpikesTwoSubStateMachine, SpikesThreeSubStateMachine, _dec, _class, _crd, ccclass, property, SpikesStateMachine;
+  var _reporterNs, _cclegacy, _decorator, Animation, ENTITY_TYPE_ENUM, FSM_PARAMS_TYPE_ENUM, PARAMS_NAME_ENUM, SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM, getInitParamsNumber, StateMachine, SpikesOneSubStateMachine, SpikesTwoSubStateMachine, SpikesThreeSubStateMachine, SpikesManager, SpikesFourSubStateMachine, _dec, _class, _crd, ccclass, property, SpikesStateMachine;
 
   function _reportPossibleCrUseOfENTITY_TYPE_ENUM(extras) {
     _reporterNs.report("ENTITY_TYPE_ENUM", "db://assets/Enums", _context.meta, extras);
@@ -39,6 +39,14 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     _reporterNs.report("SpikesThreeSubStateMachine", "db://assets/Scripts/Spikes/SpikesThreeSubStateMachine", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfSpikesManager(extras) {
+    _reporterNs.report("SpikesManager", "db://assets/Scripts/Spikes/SpikesManager", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfSpikesFourSubStateMachine(extras) {
+    _reporterNs.report("SpikesFourSubStateMachine", "db://assets/Scripts/Spikes/SpikesFourSubStateMachine", _context.meta, extras);
+  }
+
   return {
     setters: [function (_unresolved_) {
       _reporterNs = _unresolved_;
@@ -60,6 +68,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
       SpikesTwoSubStateMachine = _unresolved_5.default;
     }, function (_unresolved_6) {
       SpikesThreeSubStateMachine = _unresolved_6.default;
+    }, function (_unresolved_7) {
+      SpikesManager = _unresolved_7.SpikesManager;
+    }, function (_unresolved_8) {
+      SpikesFourSubStateMachine = _unresolved_8.default;
     }],
     execute: function () {
       _crd = true;
@@ -123,18 +135,38 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           }), SpikesThreeSubStateMachine) : SpikesThreeSubStateMachine)(this));
           this.stateMachines.set((_crd && ENTITY_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_TYPE_ENUM({
             error: Error()
-          }), ENTITY_TYPE_ENUM) : ENTITY_TYPE_ENUM).SPIKES_FOUR, new (_crd && SpikesThreeSubStateMachine === void 0 ? (_reportPossibleCrUseOfSpikesThreeSubStateMachine({
+          }), ENTITY_TYPE_ENUM) : ENTITY_TYPE_ENUM).SPIKES_FOUR, new (_crd && SpikesFourSubStateMachine === void 0 ? (_reportPossibleCrUseOfSpikesFourSubStateMachine({
             error: Error()
-          }), SpikesThreeSubStateMachine) : SpikesThreeSubStateMachine)(this));
+          }), SpikesFourSubStateMachine) : SpikesFourSubStateMachine)(this));
         }
 
-        initAnimationEvent() {// this.animationComponent.on(Animation.EventType.FINISHED, ()=> {
-          //     const name = this.animationComponent.defaultClip.name;
-          //     const whiteList = ['attack'];
-          //     if(whiteList.some(v=> name.includes(v))){
-          //         this.node.getComponent(EntityManager).state = ENTITY_STATE_ENUM.IDLE;
-          //     }
-          // });
+        initAnimationEvent() {
+          this.animationComponent.on(Animation.EventType.FINISHED, () => {
+            const name = this.animationComponent.defaultClip.name;
+            const totalCount = this.getParams((_crd && PARAMS_NAME_ENUM === void 0 ? (_reportPossibleCrUseOfPARAMS_NAME_ENUM({
+              error: Error()
+            }), PARAMS_NAME_ENUM) : PARAMS_NAME_ENUM).SPIKES_TOTAL_COUNT); // console.log('totalCount', totalCount);
+            // console.log('SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM.SPIKES_FOUR', SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM.SPIKES_FOUR);
+            // console.log('name', name);
+
+            if (totalCount === (_crd && SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM === void 0 ? (_reportPossibleCrUseOfSPIKES_TYPE_MAP_TOTAL_COUNT_ENUM({
+              error: Error()
+            }), SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM) : SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM).SPIKES_ONE && name.includes(`spikesone/two`) || totalCount === (_crd && SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM === void 0 ? (_reportPossibleCrUseOfSPIKES_TYPE_MAP_TOTAL_COUNT_ENUM({
+              error: Error()
+            }), SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM) : SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM).SPIKES_TWO && name.includes(`spikestwo/three`) || totalCount === (_crd && SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM === void 0 ? (_reportPossibleCrUseOfSPIKES_TYPE_MAP_TOTAL_COUNT_ENUM({
+              error: Error()
+            }), SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM) : SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM).SPIKES_THREE && name.includes(`spikesthree/four`) || totalCount === (_crd && SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM === void 0 ? (_reportPossibleCrUseOfSPIKES_TYPE_MAP_TOTAL_COUNT_ENUM({
+              error: Error()
+            }), SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM) : SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM).SPIKES_FOUR && name.includes(`spikesfour/five`)) {
+              this.node.getComponent(_crd && SpikesManager === void 0 ? (_reportPossibleCrUseOfSpikesManager({
+                error: Error()
+              }), SpikesManager) : SpikesManager).backZero();
+            } // const whiteList = ['attack'];
+            // if(whiteList.some(v=> name.includes(v))){
+            //     this.node.getComponent(EntityManager).state = ENTITY_STATE_ENUM.IDLE;
+            // }
+
+          });
         }
 
         run() {

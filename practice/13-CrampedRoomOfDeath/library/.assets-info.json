@@ -2627,7 +2627,7 @@
     "time": 1702658055919.1404
   },
   "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Sences/Battle.scene": {
-    "time": 1703834393258.7231,
+    "time": 1703836197091.1904,
     "uuid": "31470aa7-2e8d-4262-8d50-b8a0406d0fc8",
     "missing": false
   },
@@ -3089,12 +3089,12 @@
     "time": 1703830667956.5083
   },
   "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Burst": {
-    "time": 1703832286999.7642,
+    "time": 1703835813487.5007,
     "uuid": "9de8d8f0-f8a8-4f12-95b7-45daf42ba47b",
     "missing": false
   },
   "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Burst/BurstManager.ts": {
-    "time": 1703832286999.6538,
+    "time": 1703835813487.4302,
     "uuid": "15211b28-be07-48f7-8129-db64c5c69a70",
     "missing": false
   },
@@ -3124,12 +3124,12 @@
     "time": 1703834061597.049
   },
   "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Spikes": {
-    "time": 1703834887807.286,
+    "time": 1703836093959.8499,
     "uuid": "723b6a0b-10d9-4f1a-b928-24d331beafa3",
     "missing": false
   },
   "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Spikes/SpikesManager.ts": {
-    "time": 1703833912830.9658,
+    "time": 1703835449882.5999,
     "uuid": "0476bb19-9031-4ce9-993f-83e3d38178aa",
     "missing": false
   },
@@ -3139,7 +3139,7 @@
     "missing": false
   },
   "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Spikes/SpikesStateMachine.ts": {
-    "time": 1703834824145.61,
+    "time": 1703836093959.735,
     "uuid": "eb81c687-f5d8-46ce-a8ff-02b9ea55f937",
     "missing": false
   },
@@ -3156,7 +3156,7 @@
     "time": 1703834887816.399
   },
   "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Spikes/SpikesFourSubStateMachine.ts": {
-    "time": 1703834651776.5652,
+    "time": 1703836059744.6797,
     "uuid": "ac273477-229d-4731-a9b0-b1c93da38ac1",
     "missing": false
   },

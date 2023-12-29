@@ -13,7 +13,7 @@ import SpikesSubStateMachine from "db://assets/Scripts/Spikes/SpikesSubStateMach
 
 const BASE_URL = 'texture/spikes/spikesfour';
 
-export default class SpikesThreeSubStateMachine extends SpikesSubStateMachine{
+export default class SpikesFourSubStateMachine extends SpikesSubStateMachine{
     constructor(fsm: StateMachine) {
         super(fsm);
         this.stateMachines.set(SPIKES_COUNT_ENUM.ZERO, new State(fsm, `${BASE_URL}/zero`));

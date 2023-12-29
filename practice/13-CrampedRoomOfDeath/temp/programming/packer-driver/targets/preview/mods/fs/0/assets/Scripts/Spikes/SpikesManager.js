@@ -1,7 +1,7 @@
-System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4"], function (_export, _context) {
+System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4", "__unresolved_5"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, _decorator, Component, Sprite, UITransform, TILE_HEIGHT, TILE_WIDTH, PARAMS_NAME_ENUM, SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM, randomStringByLength, SpikesStateMachine, _dec, _class, _temp, _crd, ccclass, property, SpikesManager;
+  var _reporterNs, _cclegacy, _decorator, Component, Sprite, UITransform, TILE_HEIGHT, TILE_WIDTH, EVENT_ENUM, PARAMS_NAME_ENUM, SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM, EventManager, randomStringByLength, SpikesStateMachine, _dec, _class, _temp, _crd, ccclass, property, SpikesManager;
 
   function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -21,12 +21,20 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     _reporterNs.report("ENTITY_TYPE_ENUM", "db://assets/Enums", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfEVENT_ENUM(extras) {
+    _reporterNs.report("EVENT_ENUM", "db://assets/Enums", _context.meta, extras);
+  }
+
   function _reportPossibleCrUseOfPARAMS_NAME_ENUM(extras) {
     _reporterNs.report("PARAMS_NAME_ENUM", "db://assets/Enums", _context.meta, extras);
   }
 
   function _reportPossibleCrUseOfSPIKES_TYPE_MAP_TOTAL_COUNT_ENUM(extras) {
     _reporterNs.report("SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM", "db://assets/Enums", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfEventManager(extras) {
+    _reporterNs.report("EventManager", "db://assets/Runtime/EventManager", _context.meta, extras);
   }
 
   function _reportPossibleCrUseOfISpikes(extras) {
@@ -58,12 +66,15 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
       TILE_HEIGHT = _unresolved_2.TILE_HEIGHT;
       TILE_WIDTH = _unresolved_2.TILE_WIDTH;
     }, function (_unresolved_3) {
+      EVENT_ENUM = _unresolved_3.EVENT_ENUM;
       PARAMS_NAME_ENUM = _unresolved_3.PARAMS_NAME_ENUM;
       SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM = _unresolved_3.SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM;
     }, function (_unresolved_4) {
-      randomStringByLength = _unresolved_4.randomStringByLength;
+      EventManager = _unresolved_4.default;
     }, function (_unresolved_5) {
-      SpikesStateMachine = _unresolved_5.SpikesStateMachine;
+      randomStringByLength = _unresolved_5.randomStringByLength;
+    }, function (_unresolved_6) {
+      SpikesStateMachine = _unresolved_6.SpikesStateMachine;
     }],
     execute: function () {
       _crd = true;
@@ -146,6 +157,11 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
               error: Error()
             }), SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM) : SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM)[_this.type];
             _this.count = params.count;
+            (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
+              error: Error()
+            }), EventManager) : EventManager).Instance.on((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
+              error: Error()
+            }), EVENT_ENUM) : EVENT_ENUM).PLAYER_MOVE_END, _this.onLoop, _this);
           })();
         }
 
@@ -161,7 +177,25 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           }), TILE_HEIGHT) : TILE_HEIGHT));
         }
 
-        onDestroy() {}
+        onDestroy() {
+          (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
+            error: Error()
+          }), EventManager) : EventManager).Instance.off((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
+            error: Error()
+          }), EVENT_ENUM) : EVENT_ENUM).PLAYER_MOVE_END, this.onLoop);
+        }
+
+        onLoop() {
+          if (this.count === this.totalCount) {
+            this.count = 1;
+          } else {
+            this.count++;
+          }
+        }
+
+        backZero() {
+          this.count = 0;
+        }
 
       }, _temp)) || _class));
 

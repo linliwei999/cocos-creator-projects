@@ -389,7 +389,7 @@
     ]
   },
   "cce:/internal/x/prerequisite-imports": {
-    "mTimestamp": 230707502.411135,
+    "mTimestamp": 231914717.159226,
     "chunkId": "quick-pack:/cce/internal/x/prerequisite-imports.js",
     "imports": [
       {
@@ -5038,7 +5038,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Burst/BurstManager.ts": {
     "mTimestamp": {
-      "mtime": 1703832286999.6538,
+      "mtime": 1703835813487.4302,
       "uuid": "15211b28-be07-48f7-8129-db64c5c69a70"
     },
     "chunkId": "assets/Scripts/Burst/BurstManager.js",
@@ -5375,7 +5375,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Spikes/SpikesStateMachine.ts": {
     "mTimestamp": {
-      "mtime": 1703834824145.61,
+      "mtime": 1703836093959.735,
       "uuid": "eb81c687-f5d8-46ce-a8ff-02b9ea55f937"
     },
     "chunkId": "assets/Scripts/Spikes/SpikesStateMachine.js",
@@ -5469,6 +5469,34 @@
             "column": 94
           }
         }
+      },
+      {
+        "value": "db://assets/Scripts/Spikes/SpikesManager",
+        "rewritten": "__unresolved_6",
+        "loc": {
+          "start": {
+            "line": 13,
+            "column": 28
+          },
+          "end": {
+            "line": 13,
+            "column": 70
+          }
+        }
+      },
+      {
+        "value": "db://assets/Scripts/Spikes/SpikesFourSubStateMachine",
+        "rewritten": "__unresolved_7",
+        "loc": {
+          "start": {
+            "line": 14,
+            "column": 38
+          },
+          "end": {
+            "line": 14,
+            "column": 92
+          }
+        }
       }
     ],
     "modLoMetadata": {
@@ -5506,12 +5534,20 @@
       {
         "isExternal": false,
         "url": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Spikes/SpikesThreeSubStateMachine.ts"
+      },
+      {
+        "isExternal": false,
+        "url": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Spikes/SpikesManager.ts"
+      },
+      {
+        "isExternal": false,
+        "url": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Spikes/SpikesFourSubStateMachine.ts"
       }
     ]
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Spikes/SpikesManager.ts": {
     "mTimestamp": {
-      "mtime": 1703833912830.9658,
+      "mtime": 1703835449882.5999,
       "uuid": "0476bb19-9031-4ce9-993f-83e3d38178aa"
     },
     "chunkId": "assets/Scripts/Spikes/SpikesManager.js",
@@ -5565,8 +5601,22 @@
         }
       },
       {
-        "value": "db://assets/Utils",
+        "value": "db://assets/Runtime/EventManager",
         "rewritten": "__unresolved_3",
+        "loc": {
+          "start": {
+            "line": 11,
+            "column": 25
+          },
+          "end": {
+            "line": 11,
+            "column": 59
+          }
+        }
+      },
+      {
+        "value": "db://assets/Utils",
+        "rewritten": "__unresolved_4",
         "loc": {
           "start": {
             "line": 16,
@@ -5580,7 +5630,7 @@
       },
       {
         "value": "db://assets/Scripts/Spikes/SpikesStateMachine",
-        "rewritten": "__unresolved_4",
+        "rewritten": "__unresolved_5",
         "loc": {
           "start": {
             "line": 17,
@@ -5616,6 +5666,10 @@
       {
         "isExternal": false,
         "url": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Enums/index.ts"
+      },
+      {
+        "isExternal": false,
+        "url": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Runtime/EventManager.ts"
       },
       {
         "isExternal": false,
@@ -5943,7 +5997,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Spikes/SpikesFourSubStateMachine.ts": {
     "mTimestamp": {
-      "mtime": 1703834651776.5652,
+      "mtime": 1703836059744.6797,
       "uuid": "ac273477-229d-4731-a9b0-b1c93da38ac1"
     },
     "chunkId": "assets/Scripts/Spikes/SpikesFourSubStateMachine.js",

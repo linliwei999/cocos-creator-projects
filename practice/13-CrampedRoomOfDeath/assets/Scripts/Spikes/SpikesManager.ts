@@ -63,6 +63,8 @@ export class SpikesManager extends Component {
         this.type = params.type;
         this.totalCount = SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM[this.type];
         this.count = params.count;
+
+        EventManager.Instance.on(EVENT_ENUM.PLAYER_MOVE_END, this.onLoop, this);
     }
 
     update(){
@@ -70,7 +72,19 @@ export class SpikesManager extends Component {
     }
 
     onDestroy(){
+        EventManager.Instance.off(EVENT_ENUM.PLAYER_MOVE_END, this.onLoop);
+    }
 
+    onLoop(){
+        if(this.count === this.totalCount){
+            this.count = 1;
+        }else {
+            this.count++;
+        }
+    }
+
+    backZero(){
+        this.count = 0;
     }
 }
 

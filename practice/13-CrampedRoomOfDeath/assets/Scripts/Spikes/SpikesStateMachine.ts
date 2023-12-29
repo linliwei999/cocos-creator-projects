@@ -10,6 +10,8 @@ import {getInitParamsNumber, getInitParamsTrigger, StateMachine} from "db://asse
 import SpikesOneSubStateMachine from "db://assets/Scripts/Spikes/SpikesOneSubStateMachine";
 import SpikesTwoSubStateMachine from "db://assets/Scripts/Spikes/SpikesTwoSubStateMachine";
 import SpikesThreeSubStateMachine from "db://assets/Scripts/Spikes/SpikesThreeSubStateMachine";
+import {SpikesManager} from "db://assets/Scripts/Spikes/SpikesManager";
+import SpikesFourSubStateMachine from "db://assets/Scripts/Spikes/SpikesFourSubStateMachine";
 
 const { ccclass, property } = _decorator;
 
@@ -44,17 +46,30 @@ export class SpikesStateMachine extends StateMachine {
         this.stateMachines.set(ENTITY_TYPE_ENUM.SPIKES_ONE, new SpikesOneSubStateMachine(this));
         this.stateMachines.set(ENTITY_TYPE_ENUM.SPIKES_TWO, new SpikesTwoSubStateMachine(this));
         this.stateMachines.set(ENTITY_TYPE_ENUM.SPIKES_THREE, new SpikesThreeSubStateMachine(this));
-        this.stateMachines.set(ENTITY_TYPE_ENUM.SPIKES_FOUR, new SpikesThreeSubStateMachine(this));
+        this.stateMachines.set(ENTITY_TYPE_ENUM.SPIKES_FOUR, new SpikesFourSubStateMachine(this));
     }
 
     initAnimationEvent(){
-        // this.animationComponent.on(Animation.EventType.FINISHED, ()=> {
-        //     const name = this.animationComponent.defaultClip.name;
-        //     const whiteList = ['attack'];
-        //     if(whiteList.some(v=> name.includes(v))){
-        //         this.node.getComponent(EntityManager).state = ENTITY_STATE_ENUM.IDLE;
-        //     }
-        // });
+        this.animationComponent.on(Animation.EventType.FINISHED, ()=> {
+            const name = this.animationComponent.defaultClip.name;
+            const totalCount =  this.getParams(PARAMS_NAME_ENUM.SPIKES_TOTAL_COUNT);
+            // console.log('totalCount', totalCount);
+            // console.log('SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM.SPIKES_FOUR', SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM.SPIKES_FOUR);
+            // console.log('name', name);
+            if(
+                (totalCount === SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM.SPIKES_ONE) && name.includes(`spikesone/two`) ||
+                (totalCount === SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM.SPIKES_TWO) && name.includes(`spikestwo/three`) ||
+                (totalCount === SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM.SPIKES_THREE) && name.includes(`spikesthree/four`) ||
+                    (totalCount === SPIKES_TYPE_MAP_TOTAL_COUNT_ENUM.SPIKES_FOUR) && name.includes(`spikesfour/five`)
+            ){
+                this.node.getComponent(SpikesManager).backZero();
+            }
+
+            // const whiteList = ['attack'];
+            // if(whiteList.some(v=> name.includes(v))){
+            //     this.node.getComponent(EntityManager).state = ENTITY_STATE_ENUM.IDLE;
+            // }
+        });
     }
 
     run(){

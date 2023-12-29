@@ -35,7 +35,7 @@ export class BurstManager extends EntityManager {
         }
         const { x: playerX, y: playerY, state: playerState } = DataManager.Instance.player;
         const isPlayerOnBurst = this.x === playerX && this.y === playerY;
-        console.log(this.x, playerX, this.y, playerY)
+        // console.log(this.x, playerX, this.y, playerY)
         if(isPlayerOnBurst && this.state === ENTITY_STATE_ENUM.IDLE){
             this.state = ENTITY_STATE_ENUM.ATTACK;
         }else if(this.state === ENTITY_STATE_ENUM.ATTACK){

@@ -138,8 +138,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           } = (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
             error: Error()
           }), DataManager) : DataManager).Instance.player;
-          var isPlayerOnBurst = this.x === playerX && this.y === playerY;
-          console.log(this.x, playerX, this.y, playerY);
+          var isPlayerOnBurst = this.x === playerX && this.y === playerY; // console.log(this.x, playerX, this.y, playerY)
 
           if (isPlayerOnBurst && this.state === (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
             error: Error()
