@@ -101,7 +101,13 @@ export class PlayerManager extends EntityManager {
 
     willBlock(inputDirection: CONTROLLER_ENUM){
         const { targetX: x, targetY: y, direction } = this;
-        const { tileInfo } = DataManager.Instance;
+        const {
+            tileInfo,
+            door: { x: doorX, y: doorY, state: doorState },
+        } = DataManager.Instance;
+        const enemies = DataManager.Instance.enemies.filter((item)=> item.state !== ENTITY_STATE_ENUM.DEATH);
+
+        //按钮方向-向上
         if(inputDirection === CONTROLLER_ENUM.TOP){
             if(direction === DIRECTION_ENUM.TOP){
                 //疑问
@@ -115,6 +121,22 @@ export class PlayerManager extends EntityManager {
                 //下一个瓦片
                 const playerTile = tileInfo[x][playerNextY];
                 const weaponTile = tileInfo[x][weaponNextY];
+
+                //门的碰撞
+                if(((x === doorX && playerNextY === doorY) || (x === doorX && weaponNextY === doorY)) && doorState !== ENTITY_STATE_ENUM.DEATH){
+                    this.state = ENTITY_STATE_ENUM.BLOCKFRONT;
+                    return true;
+                }
+
+                //敌人的碰撞
+                for (let i = 0; i < enemies.length; i++) {
+                    const { x: enemyX, y: enemyY, id: enemyId, state: enemyState } = enemies[i];
+                    if(((x === enemyX && playerNextY === enemyY) || (x === enemyX && weaponNextY === enemyY))){
+                        this.state = ENTITY_STATE_ENUM.BLOCKFRONT;
+                        return true;
+                    }
+                }
+
                 if(playerTile && playerTile.moveable && (!weaponTile || weaponTile.turnable)){
                     //empty
                 }else {
@@ -164,6 +186,23 @@ export class PlayerManager extends EntityManager {
                 nextX = x + 1;
                 nextY = y - 1;
             }
+
+            //门的碰撞
+            if(((x === doorX && nextY === doorY) || (nextX === doorX && y === doorY) || (nextX === doorX && nextY === doorY)) && doorState !== ENTITY_STATE_ENUM.DEATH){
+                this.state = ENTITY_STATE_ENUM.BLOCKTURNLEFT;
+                return true;
+            }
+
+            //敌人的碰撞
+            for (let i = 0; i < enemies.length; i++) {
+                const { x: enemyX, y: enemyY, id: enemyId, state: enemyState } = enemies[i];
+                if(((x === enemyX && nextY === enemyY) || (x === enemyX && y === enemyY) || (nextX === enemyX && nextY === enemyY))){
+                    this.state = ENTITY_STATE_ENUM.BLOCKTURNLEFT;
+                    return true;
+                }
+            }
+
+            //判断地图元素
             if(
                 (!tileInfo[x][nextY] || tileInfo[x][nextY].turnable) &&
                 (!tileInfo[nextX][y] || tileInfo[nextX][y].turnable) &&

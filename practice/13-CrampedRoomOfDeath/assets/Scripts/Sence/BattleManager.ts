@@ -132,6 +132,7 @@ export class BattleManager extends Component {
         door.setParent(this.stage);
         const doorManager = door.addComponent(DoorManager);
         await doorManager.init();
+        DataManager.Instance.door = doorManager;
     }
 
     //瓦片地图适配屏幕

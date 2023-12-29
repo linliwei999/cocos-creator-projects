@@ -25,6 +25,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
     _reporterNs.report("EnemyManager", "db://assets/Base/EnemyManager", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfDoorManager(extras) {
+    _reporterNs.report("DoorManager", "db://assets/Scripts/Door/DoorManager", _context.meta, extras);
+  }
+
   _export("default", void 0);
 
   return {
@@ -59,6 +63,8 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
           _defineProperty(this, "player", void 0);
 
           _defineProperty(this, "enemies", void 0);
+
+          _defineProperty(this, "door", void 0);
         }
 
         static get Instance() {
@@ -70,6 +76,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
           this.tileInfo = [];
           this.player = null;
           this.enemies = [];
+          this.door = null;
           this.mapRowCount = 0;
           this.mapColumnCount = 0;
         }

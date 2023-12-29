@@ -302,6 +302,9 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             error: Error()
           }), DoorManager) : DoorManager);
           await doorManager.init();
+          (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+            error: Error()
+          }), DataManager) : DataManager).Instance.door = doorManager;
         } //瓦片地图适配屏幕
 
 

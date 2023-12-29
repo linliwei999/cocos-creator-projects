@@ -5,6 +5,7 @@ import {PlayerManager} from "db://assets/Scripts/Player/PlayerManager";
 import {WoodenSkeletonManager} from "db://assets/Scripts/WoodenSkeleton/WoodenSkeletonManager";
 import {IronSkeletonManager} from "db://assets/Scripts/IronSkeleton/IronSkeletonManager";
 import {EnemyManager} from "db://assets/Base/EnemyManager";
+import {DoorManager} from "db://assets/Scripts/Door/DoorManager";
 
 export default class DataManager extends Singleton{
     static get Instance(){
@@ -17,12 +18,14 @@ export default class DataManager extends Singleton{
     levelIndex: number = 1
     player: PlayerManager
     enemies: EnemyManager[]
+    door: DoorManager
 
     reset(){
         this.mapInfo = []
         this.tileInfo = []
         this.player = null
         this.enemies = []
+        this.door = null
         this.mapRowCount = 0
         this.mapColumnCount = 0
     }

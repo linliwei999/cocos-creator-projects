@@ -243,10 +243,20 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             direction
           } = this;
           var {
-            tileInfo
+            tileInfo,
+            door: {
+              x: doorX,
+              y: doorY,
+              state: doorState
+            }
           } = (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
             error: Error()
           }), DataManager) : DataManager).Instance;
+          var enemies = (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+            error: Error()
+          }), DataManager) : DataManager).Instance.enemies.filter(item => item.state !== (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+            error: Error()
+          }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).DEATH); //按钮方向-向上
 
           if (inputDirection === (_crd && CONTROLLER_ENUM === void 0 ? (_reportPossibleCrUseOfCONTROLLER_ENUM({
             error: Error()
@@ -267,7 +277,33 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
 
 
               var playerTile = tileInfo[x][playerNextY];
-              var weaponTile = tileInfo[x][weaponNextY];
+              var weaponTile = tileInfo[x][weaponNextY]; //门的碰撞
+
+              if ((x === doorX && playerNextY === doorY || x === doorX && weaponNextY === doorY) && doorState !== (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+                error: Error()
+              }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).DEATH) {
+                this.state = (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+                  error: Error()
+                }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).BLOCKFRONT;
+                return true;
+              } //敌人的碰撞
+
+
+              for (var i = 0; i < enemies.length; i++) {
+                var {
+                  x: enemyX,
+                  y: enemyY,
+                  id: enemyId,
+                  state: enemyState
+                } = enemies[i];
+
+                if (x === enemyX && playerNextY === enemyY || x === enemyX && weaponNextY === enemyY) {
+                  this.state = (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+                    error: Error()
+                  }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).BLOCKFRONT;
+                  return true;
+                }
+              }
 
               if (playerTile && playerTile.moveable && (!weaponTile || weaponTile.turnable)) {//empty
               } else {
@@ -336,7 +372,35 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             }), DIRECTION_ENUM) : DIRECTION_ENUM).RIGHT) {
               nextX = x + 1;
               nextY = y - 1;
-            }
+            } //门的碰撞
+
+
+            if ((x === doorX && nextY === doorY || nextX === doorX && y === doorY || nextX === doorX && nextY === doorY) && doorState !== (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+              error: Error()
+            }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).DEATH) {
+              this.state = (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+                error: Error()
+              }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).BLOCKTURNLEFT;
+              return true;
+            } //敌人的碰撞
+
+
+            for (var _i = 0; _i < enemies.length; _i++) {
+              var {
+                x: _enemyX,
+                y: _enemyY,
+                id: _enemyId,
+                state: _enemyState
+              } = enemies[_i];
+
+              if (x === _enemyX && nextY === _enemyY || x === _enemyX && y === _enemyY || nextX === _enemyX && nextY === _enemyY) {
+                this.state = (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+                  error: Error()
+                }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).BLOCKTURNLEFT;
+                return true;
+              }
+            } //判断地图元素
+
 
             if ((!tileInfo[x][nextY] || tileInfo[x][nextY].turnable) && (!tileInfo[nextX][y] || tileInfo[nextX][y].turnable) && (!tileInfo[nextX][nextY] || tileInfo[nextX][nextY].turnable)) {//empty
             } else {
