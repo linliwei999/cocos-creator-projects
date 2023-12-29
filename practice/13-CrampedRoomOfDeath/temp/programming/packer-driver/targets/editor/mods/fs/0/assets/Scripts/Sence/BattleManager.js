@@ -1,7 +1,7 @@
 System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4", "__unresolved_5", "__unresolved_6", "__unresolved_7", "__unresolved_8", "__unresolved_9", "__unresolved_10", "__unresolved_11", "__unresolved_12", "__unresolved_13", "__unresolved_14", "__unresolved_15", "__unresolved_16"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, _decorator, Component, TileMapManager, createUINode, Levels, DataManager, TILE_HEIGHT, TILE_WIDTH, EventManager, ENTITY_STATE_ENUM, ENTITY_TYPE_ENUM, EVENT_ENUM, PlayerManager, WoodenSkeletonManager, IronSkeletonManager, DoorManager, BurstManager, SpikesManager, SmokeManager, FadeManager, ShakeManager, _dec, _class, _temp, _crd, ccclass, property, BattleManager;
+  var _reporterNs, _cclegacy, _decorator, Component, director, TileMapManager, createUINode, Levels, DataManager, TILE_HEIGHT, TILE_WIDTH, EventManager, ENTITY_STATE_ENUM, ENTITY_TYPE_ENUM, EVENT_ENUM, SCENE_ENUM, PlayerManager, WoodenSkeletonManager, IronSkeletonManager, DoorManager, BurstManager, SpikesManager, SmokeManager, FadeManager, ShakeManager, _dec, _class, _temp, _crd, ccclass, property, BattleManager;
 
   function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -57,6 +57,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     _reporterNs.report("EVENT_ENUM", "db://assets/Enums", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfSCENE_ENUM(extras) {
+    _reporterNs.report("SCENE_ENUM", "db://assets/Enums", _context.meta, extras);
+  }
+
   function _reportPossibleCrUseOfPlayerManager(extras) {
     _reporterNs.report("PlayerManager", "db://assets/Scripts/Player/PlayerManager", _context.meta, extras);
   }
@@ -100,6 +104,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
       _cclegacy = _cc.cclegacy;
       _decorator = _cc._decorator;
       Component = _cc.Component;
+      director = _cc.director;
     }, function (_unresolved_2) {
       TileMapManager = _unresolved_2.TileMapManager;
     }, function (_unresolved_3) {
@@ -117,6 +122,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
       ENTITY_STATE_ENUM = _unresolved_8.ENTITY_STATE_ENUM;
       ENTITY_TYPE_ENUM = _unresolved_8.ENTITY_TYPE_ENUM;
       EVENT_ENUM = _unresolved_8.EVENT_ENUM;
+      SCENE_ENUM = _unresolved_8.SCENE_ENUM;
     }, function (_unresolved_9) {
       PlayerManager = _unresolved_9.PlayerManager;
     }, function (_unresolved_10) {
@@ -188,6 +194,16 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           }), EventManager) : EventManager).Instance.on((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
             error: Error()
           }), EVENT_ENUM) : EVENT_ENUM).REVOKE_STEP, this.revoke, this);
+          (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
+            error: Error()
+          }), EventManager) : EventManager).Instance.on((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
+            error: Error()
+          }), EVENT_ENUM) : EVENT_ENUM).RESTART_LEVEL, this.initLevel, this);
+          (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
+            error: Error()
+          }), EventManager) : EventManager).Instance.on((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
+            error: Error()
+          }), EVENT_ENUM) : EVENT_ENUM).OUT_BATTLE, this.outBattle, this);
         }
 
         onDestroy() {
@@ -216,6 +232,16 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           }), EventManager) : EventManager).Instance.off((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
             error: Error()
           }), EVENT_ENUM) : EVENT_ENUM).REVOKE_STEP, this.revoke);
+          (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
+            error: Error()
+          }), EventManager) : EventManager).Instance.off((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
+            error: Error()
+          }), EVENT_ENUM) : EVENT_ENUM).RESTART_LEVEL, this.initLevel);
+          (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
+            error: Error()
+          }), EventManager) : EventManager).Instance.off((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
+            error: Error()
+          }), EVENT_ENUM) : EVENT_ENUM).OUT_BATTLE, this.outBattle);
         }
 
         start() {
@@ -258,6 +284,8 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
               error: Error()
             }), FadeManager) : FadeManager).Instance.fader.fadeOut();
             this.inited = true;
+          } else {
+            await this.outBattle();
           }
         } //是否切换下一关
 
@@ -282,6 +310,15 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).DEATH) {
             this.nextLevel();
           }
+        }
+
+        async outBattle() {
+          await (_crd && FadeManager === void 0 ? (_reportPossibleCrUseOfFadeManager({
+            error: Error()
+          }), FadeManager) : FadeManager).Instance.fadeIn();
+          director.loadScene((_crd && SCENE_ENUM === void 0 ? (_reportPossibleCrUseOfSCENE_ENUM({
+            error: Error()
+          }), SCENE_ENUM) : SCENE_ENUM).Start);
         } //下一关函数
 
 

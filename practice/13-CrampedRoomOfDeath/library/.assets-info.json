@@ -2627,7 +2627,7 @@
     "time": 1702658055919.1404
   },
   "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Sences/Battle.scene": {
-    "time": 1703866501893.1145,
+    "time": 1703870718630.978,
     "uuid": "31470aa7-2e8d-4262-8d50-b8a0406d0fc8",
     "missing": false
   },
@@ -2657,12 +2657,12 @@
     "time": 1702659718641.5442
   },
   "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Enums": {
-    "time": 1703868024887.6016,
+    "time": 1703869975179.0952,
     "uuid": "b4958616-1c8f-46cd-8e26-3884b533ba2c",
     "missing": false
   },
   "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Enums/index.ts": {
-    "time": 1703868024887.5225,
+    "time": 1703869975179.0435,
     "uuid": "114c80cb-ebd8-48d4-a69d-5a331f8a3e8f",
     "missing": false
   },
@@ -2683,7 +2683,7 @@
     "time": 1702660143415.9607
   },
   "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Sence": {
-    "time": 1703869410304.6594,
+    "time": 1703870263195.496,
     "uuid": "190d29ab-38d9-4f6d-82c9-66d304401d0d",
     "missing": false
   },
@@ -2691,7 +2691,7 @@
     "time": 1702660152569.0073
   },
   "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Sence/BattleManager.ts": {
-    "time": 1703869410304.5857,
+    "time": 1703870263195.431,
     "uuid": "bd0bbef9-eda4-4fbc-a655-b42512681271",
     "missing": false
   },
@@ -2785,7 +2785,7 @@
     "time": 1703658468939.2727
   },
   "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/UI": {
-    "time": 1703869382357.1836,
+    "time": 1703869982004.808,
     "uuid": "e97fdcd9-2e5e-439b-9526-ce0bd89c5ff6",
     "missing": false
   },
@@ -3403,7 +3403,7 @@
     "time": 1703865583045.9165
   },
   "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/UI/MenuManager.ts": {
-    "time": 1703865580180.6023,
+    "time": 1703869982004.6672,
     "uuid": "f4d507ed-78d0-40d0-8ef2-5be7d4b382be",
     "missing": false
   },

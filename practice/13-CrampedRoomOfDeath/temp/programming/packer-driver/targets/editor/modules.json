@@ -389,7 +389,7 @@
     ]
   },
   "cce:/internal/x/prerequisite-imports": {
-    "mTimestamp": 3023534.1774210036,
+    "mTimestamp": 3873462.2310250103,
     "chunkId": "quick-pack:/cce/internal/x/prerequisite-imports.js",
     "imports": [
       {
@@ -2223,7 +2223,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Enums/index.ts": {
     "mTimestamp": {
-      "mtime": 1703868024887.5225,
+      "mtime": 1703869975179.0435,
       "uuid": "114c80cb-ebd8-48d4-a69d-5a331f8a3e8f"
     },
     "chunkId": "assets/Enums/index.js",
@@ -2291,7 +2291,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Sence/BattleManager.ts": {
     "mTimestamp": {
-      "mtime": 1703869410304.5857,
+      "mtime": 1703870263195.431,
       "uuid": "bd0bbef9-eda4-4fbc-a655-b42512681271"
     },
     "chunkId": "assets/Scripts/Sence/BattleManager.js",
@@ -2308,11 +2308,11 @@
         "loc": {
           "start": {
             "line": 1,
-            "column": 42
+            "column": 52
           },
           "end": {
             "line": 1,
-            "column": 46
+            "column": 56
           }
         }
       },
@@ -2406,11 +2406,11 @@
         "loc": {
           "start": {
             "line": 8,
-            "column": 78
+            "column": 90
           },
           "end": {
             "line": 8,
-            "column": 97
+            "column": 109
           }
         }
       },
@@ -9947,7 +9947,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/UI/MenuManager.ts": {
     "mTimestamp": {
-      "mtime": 1703865580180.6023,
+      "mtime": 1703869982004.6672,
       "uuid": "f4d507ed-78d0-40d0-8ef2-5be7d4b382be"
     },
     "chunkId": "assets/Scripts/UI/MenuManager.js",

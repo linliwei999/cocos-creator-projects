@@ -1,11 +1,11 @@
-import {_decorator, Component, Node} from 'cc';
+import {_decorator, Component, Node, director} from 'cc';
 import {TileMapManager} from "db://assets/Scripts/Tile/TileMapManager";
 import {createUINode} from "db://assets/Utils";
 import Levels, {ILevel} from "db://assets/Levels";
 import DataManager, {IRecord} from "db://assets/Runtime/DataManager";
 import {TILE_HEIGHT, TILE_WIDTH} from "db://assets/Scripts/Tile/TileManager";
 import EventManager from "db://assets/Runtime/EventManager";
-import {DIRECTION_ENUM, ENTITY_STATE_ENUM, ENTITY_TYPE_ENUM, EVENT_ENUM} from "db://assets/Enums";
+import {DIRECTION_ENUM, ENTITY_STATE_ENUM, ENTITY_TYPE_ENUM, EVENT_ENUM, SCENE_ENUM} from "db://assets/Enums";
 import {PlayerManager} from "db://assets/Scripts/Player/PlayerManager";
 import {WoodenSkeletonManager} from "db://assets/Scripts/WoodenSkeleton/WoodenSkeletonManager";
 import {IronSkeletonManager} from "db://assets/Scripts/IronSkeleton/IronSkeletonManager";
@@ -38,6 +38,8 @@ export class BattleManager extends Component {
         EventManager.Instance.on(EVENT_ENUM.SHOW_SMOKE, this.generateSmoke, this);
         EventManager.Instance.on(EVENT_ENUM.RECORD_STEP, this.record, this);
         EventManager.Instance.on(EVENT_ENUM.REVOKE_STEP, this.revoke, this);
+        EventManager.Instance.on(EVENT_ENUM.RESTART_LEVEL, this.initLevel, this);
+        EventManager.Instance.on(EVENT_ENUM.OUT_BATTLE, this.outBattle, this);
     }
 
     onDestroy(){
@@ -46,6 +48,8 @@ export class BattleManager extends Component {
         EventManager.Instance.off(EVENT_ENUM.SHOW_SMOKE, this.generateSmoke);
         EventManager.Instance.off(EVENT_ENUM.RECORD_STEP, this.record);
         EventManager.Instance.off(EVENT_ENUM.REVOKE_STEP, this.revoke);
+        EventManager.Instance.off(EVENT_ENUM.RESTART_LEVEL, this.initLevel);
+        EventManager.Instance.off(EVENT_ENUM.OUT_BATTLE, this.outBattle);
     }
 
     start () {
@@ -80,6 +84,8 @@ export class BattleManager extends Component {
 
             await FadeManager.Instance.fader.fadeOut();
             this.inited = true;
+        }else {
+            await this.outBattle();
         }
     }
 
@@ -92,6 +98,11 @@ export class BattleManager extends Component {
         if(playerX === doorX && playerY === doorY && doorState === ENTITY_STATE_ENUM.DEATH){
             this.nextLevel();
         }
+    }
+
+    async outBattle(){
+      await FadeManager.Instance.fadeIn()
+        director.loadScene(SCENE_ENUM.Start);
     }
 
     //下一关函数

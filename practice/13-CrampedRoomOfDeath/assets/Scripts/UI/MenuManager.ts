@@ -9,5 +9,15 @@ export class MenuManager extends Component {
     handleUndo(){
         EventManager.Instance.emit(EVENT_ENUM.REVOKE_STEP);
     }
+
+    //重新开始
+    handleRestart(){
+        EventManager.Instance.emit(EVENT_ENUM.RESTART_LEVEL);
+    }
+
+    //退出
+    handleOut(){
+        EventManager.Instance.emit(EVENT_ENUM.OUT_BATTLE);
+    }
 }
 
