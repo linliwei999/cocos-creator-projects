@@ -12,6 +12,7 @@ import {IronSkeletonManager} from "db://assets/Scripts/IronSkeleton/IronSkeleton
 import {DoorManager} from "db://assets/Scripts/Door/DoorManager";
 import {BurstManager} from "db://assets/Scripts/Burst/BurstManager";
 import {SpikesManager} from "db://assets/Scripts/Spikes/SpikesManager";
+import {SmokeManager} from "db://assets/Scripts/Smoke/SmokeManager";
 
 const { ccclass, property } = _decorator;
 
@@ -25,15 +26,19 @@ export class BattleManager extends Component {
     // serializableDummy = 0;
     level: ILevel
     stage: Node
+    private smokeLayer: Node
 
     onLoad(){
         DataManager.Instance.levelIndex = 1;
         EventManager.Instance.on(EVENT_ENUM.NEXT_LEVEL, this.nextLevel, this);
         EventManager.Instance.on(EVENT_ENUM.PLAYER_MOVE_END, this.checkArrivedDoor, this);
+        EventManager.Instance.on(EVENT_ENUM.SHOW_SMOKE, this.generateSmoke, this);
     }
 
     onDestroy(){
         EventManager.Instance.off(EVENT_ENUM.NEXT_LEVEL, this.nextLevel);
+        EventManager.Instance.off(EVENT_ENUM.PLAYER_MOVE_END, this.checkArrivedDoor);
+        EventManager.Instance.off(EVENT_ENUM.SHOW_SMOKE, this.generateSmoke);
     }
 
     start () {
@@ -94,6 +99,7 @@ export class BattleManager extends Component {
         this.adaptPos();
         this.generateBursts();
         this.generateSpikes();
+        this.generateSmokeLayer();
         this.generateDoor();
         this.generateEnemies();
         this.generatePlayer();
@@ -162,6 +168,26 @@ export class BattleManager extends Component {
             DataManager.Instance.spikes.push(spikesManager);
         }
         await Promise.all(promise);
+    }
+
+    generateSmokeLayer(){
+        this.smokeLayer = createUINode();
+        this.smokeLayer.setParent(this.stage);
+    }
+
+    //生成烟雾
+    async generateSmoke(x: number, y: number, direction: DIRECTION_ENUM){
+        const smoke = createUINode();
+        smoke.setParent(this.smokeLayer);
+        const smokeManager = smoke.addComponent(SmokeManager);
+        await smokeManager.init({
+            x,
+            y,
+            direction,
+            type: ENTITY_TYPE_ENUM.SMOKE,
+            state: ENTITY_STATE_ENUM.IDLE,
+        });
+        DataManager.Instance.smokes.push(smokeManager);
     }
 
     //瓦片地图适配屏幕

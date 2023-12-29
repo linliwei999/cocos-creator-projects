@@ -239,16 +239,25 @@ export class PlayerManager extends EntityManager {
         return false;
     }
 
+    //生成移动烟雾
+    showSmoke(direction: CONTROLLER_ENUM){
+        EventManager.Instance.emit(EVENT_ENUM.SHOW_SMOKE, this.x, this.y, direction);
+    }
+
     //玩家移动
     move(inputDirection: CONTROLLER_ENUM){
         if (inputDirection === CONTROLLER_ENUM.TOP){
-            this.targetY -=1
+            this.targetY -=1;
+            this.showSmoke(inputDirection);
         }else if(inputDirection === CONTROLLER_ENUM.BOTTOM){
-            this.targetY +=1
+            this.targetY +=1;
+            this.showSmoke(inputDirection);
         }else if(inputDirection === CONTROLLER_ENUM.LEFT){
-            this.targetX -=1
+            this.targetX -=1;
+            this.showSmoke(inputDirection);
         }else if(inputDirection === CONTROLLER_ENUM.RIGHT){
-            this.targetX +=1
+            this.targetX +=1;
+            this.showSmoke(inputDirection);
         }else if(inputDirection === CONTROLLER_ENUM.TURNLEFT){
             if(this.direction === DIRECTION_ENUM.TOP){
                 this.direction = DIRECTION_ENUM.LEFT;

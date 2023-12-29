@@ -37,6 +37,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
     _reporterNs.report("SpikesManager", "db://assets/Scripts/Spikes/SpikesManager", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfSmokeManager(extras) {
+    _reporterNs.report("SmokeManager", "db://assets/Scripts/Smoke/SmokeManager", _context.meta, extras);
+  }
+
   _export("default", void 0);
 
   return {
@@ -77,6 +81,8 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
           _defineProperty(this, "bursts", void 0);
 
           _defineProperty(this, "spikes", void 0);
+
+          _defineProperty(this, "smokes", void 0);
         }
 
         static get Instance() {
@@ -91,6 +97,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
           this.door = null;
           this.bursts = [];
           this.spikes = [];
+          this.smokes = [];
           this.mapRowCount = 0;
           this.mapColumnCount = 0;
         }

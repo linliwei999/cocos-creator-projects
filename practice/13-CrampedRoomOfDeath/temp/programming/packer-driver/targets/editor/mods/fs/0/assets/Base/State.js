@@ -37,15 +37,16 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
 
       _cclegacy._RF.push({}, "659f1dCZadAiKfvD2O0I0Sw", "State", undefined);
 
-      ANIMATION_SPEED = 1 / 8;
+      _export("ANIMATION_SPEED", ANIMATION_SPEED = 1 / 8);
 
       _export("default", State = class State {
-        constructor(fsm, path, wrapMode = AnimationClip.WrapMode.Normal) {
+        constructor(fsm, path, wrapMode = AnimationClip.WrapMode.Normal, speed = ANIMATION_SPEED) {
           _defineProperty(this, "animationClip", void 0);
 
           this.fsm = fsm;
           this.path = path;
           this.wrapMode = wrapMode;
+          this.speed = speed;
           this.init();
         }
 
@@ -62,13 +63,13 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
 
           const frames = (_crd && sortSpriteFrame === void 0 ? (_reportPossibleCrUseOfsortSpriteFrame({
             error: Error()
-          }), sortSpriteFrame) : sortSpriteFrame)(spriteFrames).map((item, index) => [ANIMATION_SPEED * index, item]); // 为 x 通道的曲线添加关键帧
+          }), sortSpriteFrame) : sortSpriteFrame)(spriteFrames).map((item, index) => [this.speed * index, item]); // 为 x 通道的曲线添加关键帧
 
           track.channel.curve.assignSorted(frames); // 最后将轨道添加到动画剪辑以应用
 
           this.animationClip.addTrack(track);
           this.animationClip.name = this.path;
-          this.animationClip.duration = frames.length * ANIMATION_SPEED; // 整个动画剪辑的周期
+          this.animationClip.duration = frames.length * this.speed; // 整个动画剪辑的周期
 
           this.animationClip.wrapMode = this.wrapMode;
         }
