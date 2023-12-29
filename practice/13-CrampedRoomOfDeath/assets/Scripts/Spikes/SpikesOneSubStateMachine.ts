@@ -9,10 +9,11 @@ import {
 import State from "db://assets/Base/State";
 import DirectionSubStateMachine from "db://assets/Base/DirectionSubStateMachine";
 import {SubStateMachine} from "db://assets/Base/SubStateMachine";
+import SpikesSubStateMachine from "db://assets/Scripts/Spikes/SpikesSubStateMachine";
 
 const BASE_URL = 'texture/spikes/spikesone';
 
-export default class SpikesOneSubStateMachine extends SubStateMachine{
+export default class SpikesOneSubStateMachine extends SpikesSubStateMachine{
     constructor(fsm: StateMachine) {
         super(fsm);
         this.stateMachines.set(SPIKES_COUNT_ENUM.ZERO, new State(fsm, `${BASE_URL}/zero`));
@@ -20,8 +21,4 @@ export default class SpikesOneSubStateMachine extends SubStateMachine{
         this.stateMachines.set(SPIKES_COUNT_ENUM.TWO, new State(fsm, `${BASE_URL}/two`));
     }
 
-    run(){
-        const currentCount = this.fsm.getParams(PARAMS_NAME_ENUM.SPIKES_CURRENT_COUNT);
-        this.currentState = this.stateMachines.get(SPIKES_COUNT_MAP_NUMBER_ENUM[currentCount as number]);
-    }
 }

@@ -407,7 +407,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
               y: 3,
               type: (_crd && ENTITY_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_TYPE_ENUM({
                 error: Error()
-              }), ENTITY_TYPE_ENUM) : ENTITY_TYPE_ENUM).SPIKES_ONE,
+              }), ENTITY_TYPE_ENUM) : ENTITY_TYPE_ENUM).SPIKES_FOUR,
               count: 0
             });
             (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
