@@ -7,8 +7,8 @@
     "types": [
       "./temp/declarations/cc.custom-macro",
       "./temp/declarations/cc.env",
-      "./temp/declarations/jsb",
-      "./temp/declarations/cc"
+      "./temp/declarations/cc",
+      "./temp/declarations/jsb"
     ],
     "paths": {
       "db://internal/*": [

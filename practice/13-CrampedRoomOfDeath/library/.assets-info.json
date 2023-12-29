@@ -2619,7 +2619,7 @@
     "time": 1702658379107.7805
   },
   "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Sences": {
-    "time": 1702658417923.8496,
+    "time": 1703866515159.2964,
     "uuid": "002d2999-a610-4033-b2f5-bcd5de60d0fe",
     "missing": false
   },
@@ -2627,7 +2627,7 @@
     "time": 1702658055919.1404
   },
   "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Sences/Battle.scene": {
-    "time": 1703866062320.6938,
+    "time": 1703866501893.1145,
     "uuid": "31470aa7-2e8d-4262-8d50-b8a0406d0fc8",
     "missing": false
   },
@@ -3405,6 +3405,22 @@
   "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/UI/MenuManager.ts": {
     "time": 1703865580180.6023,
     "uuid": "f4d507ed-78d0-40d0-8ef2-5be7d4b382be",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/scene.scene.meta": {
+    "time": 1703866495431.6606
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/scene.scene": {
+    "time": 1703866495428.3708,
+    "uuid": "9ad70891-45ac-4214-b002-1ad488b7f577",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Sences/Start.scene.meta": {
+    "time": 1703866508863.7842
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Sences/Start.scene": {
+    "time": 1703867265630.261,
+    "uuid": "0e90e121-dd3e-443e-8496-df3d69e3f787",
     "missing": false
   }
 }
