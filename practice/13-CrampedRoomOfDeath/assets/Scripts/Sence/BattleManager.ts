@@ -177,17 +177,28 @@ export class BattleManager extends Component {
 
     //生成烟雾
     async generateSmoke(x: number, y: number, direction: DIRECTION_ENUM){
-        const smoke = createUINode();
-        smoke.setParent(this.smokeLayer);
-        const smokeManager = smoke.addComponent(SmokeManager);
-        await smokeManager.init({
-            x,
-            y,
-            direction,
-            type: ENTITY_TYPE_ENUM.SMOKE,
-            state: ENTITY_STATE_ENUM.IDLE,
-        });
-        DataManager.Instance.smokes.push(smokeManager);
+        //缓存池
+        const item = DataManager.Instance.smokes.find(smoke => smoke.state === ENTITY_STATE_ENUM.DEATH);
+        if(item){
+            console.log('smoke cache pool');
+           item.x = x;
+           item.y = y;
+           item.direction = direction;
+           // item.node.setPosition();
+           item.state = ENTITY_STATE_ENUM.IDLE;
+        }else {
+            const smoke = createUINode();
+            smoke.setParent(this.smokeLayer);
+            const smokeManager = smoke.addComponent(SmokeManager);
+            await smokeManager.init({
+                x,
+                y,
+                direction,
+                type: ENTITY_TYPE_ENUM.SMOKE,
+                state: ENTITY_STATE_ENUM.IDLE,
+            });
+            DataManager.Instance.smokes.push(smokeManager);
+        }
     }
 
     //瓦片地图适配屏幕

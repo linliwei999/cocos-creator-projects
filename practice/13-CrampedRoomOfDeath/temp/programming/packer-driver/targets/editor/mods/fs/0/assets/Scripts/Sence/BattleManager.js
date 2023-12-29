@@ -394,27 +394,45 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
 
 
         async generateSmoke(x, y, direction) {
-          const smoke = (_crd && createUINode === void 0 ? (_reportPossibleCrUseOfcreateUINode({
+          //缓存池
+          const item = (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
             error: Error()
-          }), createUINode) : createUINode)();
-          smoke.setParent(this.smokeLayer);
-          const smokeManager = smoke.addComponent(_crd && SmokeManager === void 0 ? (_reportPossibleCrUseOfSmokeManager({
+          }), DataManager) : DataManager).Instance.smokes.find(smoke => smoke.state === (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
             error: Error()
-          }), SmokeManager) : SmokeManager);
-          await smokeManager.init({
-            x,
-            y,
-            direction,
-            type: (_crd && ENTITY_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_TYPE_ENUM({
+          }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).DEATH);
+
+          if (item) {
+            console.log('smoke cache pool');
+            item.x = x;
+            item.y = y;
+            item.direction = direction; // item.node.setPosition();
+
+            item.state = (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
               error: Error()
-            }), ENTITY_TYPE_ENUM) : ENTITY_TYPE_ENUM).SMOKE,
-            state: (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+            }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).IDLE;
+          } else {
+            const smoke = (_crd && createUINode === void 0 ? (_reportPossibleCrUseOfcreateUINode({
               error: Error()
-            }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).IDLE
-          });
-          (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
-            error: Error()
-          }), DataManager) : DataManager).Instance.smokes.push(smokeManager);
+            }), createUINode) : createUINode)();
+            smoke.setParent(this.smokeLayer);
+            const smokeManager = smoke.addComponent(_crd && SmokeManager === void 0 ? (_reportPossibleCrUseOfSmokeManager({
+              error: Error()
+            }), SmokeManager) : SmokeManager);
+            await smokeManager.init({
+              x,
+              y,
+              direction,
+              type: (_crd && ENTITY_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_TYPE_ENUM({
+                error: Error()
+              }), ENTITY_TYPE_ENUM) : ENTITY_TYPE_ENUM).SMOKE,
+              state: (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+                error: Error()
+              }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).IDLE
+            });
+            (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+              error: Error()
+            }), DataManager) : DataManager).Instance.smokes.push(smokeManager);
+          }
         } //瓦片地图适配屏幕
 
 
