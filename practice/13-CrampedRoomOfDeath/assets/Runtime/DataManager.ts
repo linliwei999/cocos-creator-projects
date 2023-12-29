@@ -3,6 +3,8 @@ import Singleton from "db://assets/Base/Singleton";
 import {TileManager} from "db://assets/Scripts/Tile/TileManager";
 import {PlayerManager} from "db://assets/Scripts/Player/PlayerManager";
 import {WoodenSkeletonManager} from "db://assets/Scripts/WoodenSkeleton/WoodenSkeletonManager";
+import {IronSkeletonManager} from "db://assets/Scripts/IronSkeleton/IronSkeletonManager";
+import {EnemyManager} from "db://assets/Base/EnemyManager";
 
 export default class DataManager extends Singleton{
     static get Instance(){
@@ -14,7 +16,7 @@ export default class DataManager extends Singleton{
     mapColumnCount: number = 0
     levelIndex: number = 1
     player: PlayerManager
-    enemies: WoodenSkeletonManager[]
+    enemies: EnemyManager[]
 
     reset(){
         this.mapInfo = []

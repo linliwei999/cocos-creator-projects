@@ -21,8 +21,8 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
     _reporterNs.report("PlayerManager", "db://assets/Scripts/Player/PlayerManager", _context.meta, extras);
   }
 
-  function _reportPossibleCrUseOfWoodenSkeletonManager(extras) {
-    _reporterNs.report("WoodenSkeletonManager", "db://assets/Scripts/WoodenSkeleton/WoodenSkeletonManager", _context.meta, extras);
+  function _reportPossibleCrUseOfEnemyManager(extras) {
+    _reporterNs.report("EnemyManager", "db://assets/Base/EnemyManager", _context.meta, extras);
   }
 
   _export("default", void 0);

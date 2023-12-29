@@ -4,6 +4,7 @@ import EventManager from "db://assets/Runtime/EventManager";
 import {PlayerStateMachine} from "db://assets/Scripts/Player/PlayerStateMachine";
 import {EntityManager} from "db://assets/Base/EntityManager";
 import DataManager from "db://assets/Runtime/DataManager";
+import {IEntity} from "db://assets/Levels";
 
 const { ccclass, property } = _decorator;
 
@@ -17,16 +18,10 @@ export class PlayerManager extends EntityManager {
     private readonly speed = ANIMATION_SPEED
     // private testAttackCount = 0
 
-    async init(){
+    async init(params: IEntity){
         this.fsm = this.node.addComponent(PlayerStateMachine);
         await this.fsm.init();
-        super.init({
-            x: 2,
-            y: 8,
-            type: ENTITY_TYPE_ENUM.PLAYER,
-            direction: DIRECTION_ENUM.TOP,
-            state: ENTITY_STATE_ENUM.IDLE
-        });
+        super.init(params);
         this.targetX = this.x;
         this.targetY = this.y;
         EventManager.Instance.on(EVENT_ENUM.PLAYER_CTRL, this.inputHandle, this);
@@ -85,9 +80,6 @@ export class PlayerManager extends EntityManager {
         const enemies = DataManager.Instance.enemies.filter((item)=> item.state !== ENTITY_STATE_ENUM.DEATH);
         for (let i = 0; i < enemies.length; i++) {
             const { x: enemyX, y: enemyY, id: enemyId, state: enemyState } = enemies[i];
-            // if(enemyState === ENTITY_STATE_ENUM.DEATH){
-            //     return '';
-            // }
             if(inputDirection === CONTROLLER_ENUM.TOP && this.direction === DIRECTION_ENUM.TOP && enemyX === this.x && enemyY === this.targetY - 2){
                 console.log('玩家攻击');
                 return this.onAttack(enemyId);

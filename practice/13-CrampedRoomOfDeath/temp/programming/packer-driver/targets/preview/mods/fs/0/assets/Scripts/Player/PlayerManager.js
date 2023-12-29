@@ -1,7 +1,7 @@
 System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4", "__unresolved_5"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, _decorator, CONTROLLER_ENUM, DIRECTION_ENUM, ENTITY_STATE_ENUM, ENTITY_TYPE_ENUM, EVENT_ENUM, EventManager, PlayerStateMachine, EntityManager, DataManager, _dec, _class, _temp, _crd, ccclass, property, ANIMATION_SPEED, PlayerManager;
+  var _reporterNs, _cclegacy, _decorator, CONTROLLER_ENUM, DIRECTION_ENUM, ENTITY_STATE_ENUM, EVENT_ENUM, EventManager, PlayerStateMachine, EntityManager, DataManager, _dec, _class, _temp, _crd, ccclass, property, ANIMATION_SPEED, PlayerManager;
 
   function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -19,10 +19,6 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
 
   function _reportPossibleCrUseOfENTITY_STATE_ENUM(extras) {
     _reporterNs.report("ENTITY_STATE_ENUM", "db://assets/Enums", _context.meta, extras);
-  }
-
-  function _reportPossibleCrUseOfENTITY_TYPE_ENUM(extras) {
-    _reporterNs.report("ENTITY_TYPE_ENUM", "db://assets/Enums", _context.meta, extras);
   }
 
   function _reportPossibleCrUseOfEVENT_ENUM(extras) {
@@ -45,6 +41,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     _reporterNs.report("DataManager", "db://assets/Runtime/DataManager", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfIEntity(extras) {
+    _reporterNs.report("IEntity", "db://assets/Levels", _context.meta, extras);
+  }
+
   return {
     setters: [function (_unresolved_) {
       _reporterNs = _unresolved_;
@@ -55,7 +55,6 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
       CONTROLLER_ENUM = _unresolved_2.CONTROLLER_ENUM;
       DIRECTION_ENUM = _unresolved_2.DIRECTION_ENUM;
       ENTITY_STATE_ENUM = _unresolved_2.ENTITY_STATE_ENUM;
-      ENTITY_TYPE_ENUM = _unresolved_2.ENTITY_TYPE_ENUM;
       EVENT_ENUM = _unresolved_2.EVENT_ENUM;
     }, function (_unresolved_3) {
       EventManager = _unresolved_3.default;
@@ -93,7 +92,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
         }
 
         // private testAttackCount = 0
-        init() {
+        init(params) {
           var _superprop_getInit = () => super.init,
               _this = this;
 
@@ -103,19 +102,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             }), PlayerStateMachine) : PlayerStateMachine);
             yield _this.fsm.init();
 
-            _superprop_getInit().call(_this, {
-              x: 2,
-              y: 8,
-              type: (_crd && ENTITY_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_TYPE_ENUM({
-                error: Error()
-              }), ENTITY_TYPE_ENUM) : ENTITY_TYPE_ENUM).PLAYER,
-              direction: (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
-                error: Error()
-              }), DIRECTION_ENUM) : DIRECTION_ENUM).TOP,
-              state: (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
-                error: Error()
-              }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).IDLE
-            });
+            _superprop_getInit().call(_this, params);
 
             _this.targetX = _this.x;
             _this.targetY = _this.y;
@@ -212,9 +199,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
               y: enemyY,
               id: enemyId,
               state: enemyState
-            } = enemies[i]; // if(enemyState === ENTITY_STATE_ENUM.DEATH){
-            //     return '';
-            // }
+            } = enemies[i];
 
             if (inputDirection === (_crd && CONTROLLER_ENUM === void 0 ? (_reportPossibleCrUseOfCONTROLLER_ENUM({
               error: Error()

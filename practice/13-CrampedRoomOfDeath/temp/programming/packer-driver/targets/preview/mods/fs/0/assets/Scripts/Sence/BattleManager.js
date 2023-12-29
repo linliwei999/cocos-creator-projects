@@ -1,7 +1,7 @@
-System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4", "__unresolved_5", "__unresolved_6", "__unresolved_7", "__unresolved_8", "__unresolved_9", "__unresolved_10"], function (_export, _context) {
+System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4", "__unresolved_5", "__unresolved_6", "__unresolved_7", "__unresolved_8", "__unresolved_9", "__unresolved_10", "__unresolved_11"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, _decorator, Component, TileMapManager, createUINode, Levels, DataManager, TILE_HEIGHT, TILE_WIDTH, EventManager, EVENT_ENUM, PlayerManager, WoodenSkeletonManager, DoorManager, _dec, _class, _temp, _crd, ccclass, property, BattleManager;
+  var _reporterNs, _cclegacy, _decorator, Component, TileMapManager, createUINode, Levels, DataManager, TILE_HEIGHT, TILE_WIDTH, EventManager, DIRECTION_ENUM, ENTITY_STATE_ENUM, ENTITY_TYPE_ENUM, EVENT_ENUM, PlayerManager, WoodenSkeletonManager, IronSkeletonManager, DoorManager, _dec, _class, _temp, _crd, ccclass, property, BattleManager;
 
   function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -41,6 +41,18 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     _reporterNs.report("EventManager", "db://assets/Runtime/EventManager", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfDIRECTION_ENUM(extras) {
+    _reporterNs.report("DIRECTION_ENUM", "db://assets/Enums", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfENTITY_STATE_ENUM(extras) {
+    _reporterNs.report("ENTITY_STATE_ENUM", "db://assets/Enums", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfENTITY_TYPE_ENUM(extras) {
+    _reporterNs.report("ENTITY_TYPE_ENUM", "db://assets/Enums", _context.meta, extras);
+  }
+
   function _reportPossibleCrUseOfEVENT_ENUM(extras) {
     _reporterNs.report("EVENT_ENUM", "db://assets/Enums", _context.meta, extras);
   }
@@ -51,6 +63,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
 
   function _reportPossibleCrUseOfWoodenSkeletonManager(extras) {
     _reporterNs.report("WoodenSkeletonManager", "db://assets/Scripts/WoodenSkeleton/WoodenSkeletonManager", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfIronSkeletonManager(extras) {
+    _reporterNs.report("IronSkeletonManager", "db://assets/Scripts/IronSkeleton/IronSkeletonManager", _context.meta, extras);
   }
 
   function _reportPossibleCrUseOfDoorManager(extras) {
@@ -78,13 +94,18 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     }, function (_unresolved_7) {
       EventManager = _unresolved_7.default;
     }, function (_unresolved_8) {
+      DIRECTION_ENUM = _unresolved_8.DIRECTION_ENUM;
+      ENTITY_STATE_ENUM = _unresolved_8.ENTITY_STATE_ENUM;
+      ENTITY_TYPE_ENUM = _unresolved_8.ENTITY_TYPE_ENUM;
       EVENT_ENUM = _unresolved_8.EVENT_ENUM;
     }, function (_unresolved_9) {
       PlayerManager = _unresolved_9.PlayerManager;
     }, function (_unresolved_10) {
       WoodenSkeletonManager = _unresolved_10.WoodenSkeletonManager;
     }, function (_unresolved_11) {
-      DoorManager = _unresolved_11.DoorManager;
+      IronSkeletonManager = _unresolved_11.IronSkeletonManager;
+    }, function (_unresolved_12) {
+      DoorManager = _unresolved_12.DoorManager;
     }],
     execute: function () {
       _crd = true;
@@ -193,9 +214,9 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
 
             _this.generateDoor();
 
-            _this.generatePlayer();
-
             _this.generateEnemies();
+
+            _this.generatePlayer();
           })();
         } //生成玩家
 
@@ -211,7 +232,19 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             var playerManager = player.addComponent(_crd && PlayerManager === void 0 ? (_reportPossibleCrUseOfPlayerManager({
               error: Error()
             }), PlayerManager) : PlayerManager);
-            yield playerManager.init();
+            yield playerManager.init({
+              x: 2,
+              y: 8,
+              type: (_crd && ENTITY_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_TYPE_ENUM({
+                error: Error()
+              }), ENTITY_TYPE_ENUM) : ENTITY_TYPE_ENUM).PLAYER,
+              direction: (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
+                error: Error()
+              }), DIRECTION_ENUM) : DIRECTION_ENUM).TOP,
+              state: (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+                error: Error()
+              }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).IDLE
+            });
             (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
               error: Error()
             }), DataManager) : DataManager).Instance.player = playerManager;
@@ -228,17 +261,54 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           var _this3 = this;
 
           return _asyncToGenerator(function* () {
-            var enemy = (_crd && createUINode === void 0 ? (_reportPossibleCrUseOfcreateUINode({
+            //生成木骷髅
+            var enemy1 = (_crd && createUINode === void 0 ? (_reportPossibleCrUseOfcreateUINode({
               error: Error()
             }), createUINode) : createUINode)();
-            enemy.setParent(_this3.stage);
-            var woodenSkeletonManager = enemy.addComponent(_crd && WoodenSkeletonManager === void 0 ? (_reportPossibleCrUseOfWoodenSkeletonManager({
+            enemy1.setParent(_this3.stage);
+            var woodenSkeletonManager = enemy1.addComponent(_crd && WoodenSkeletonManager === void 0 ? (_reportPossibleCrUseOfWoodenSkeletonManager({
               error: Error()
             }), WoodenSkeletonManager) : WoodenSkeletonManager);
-            yield woodenSkeletonManager.init();
+            yield woodenSkeletonManager.init({
+              x: 7,
+              y: 7,
+              type: (_crd && ENTITY_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_TYPE_ENUM({
+                error: Error()
+              }), ENTITY_TYPE_ENUM) : ENTITY_TYPE_ENUM).SKELETON_WOODEN,
+              direction: (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
+                error: Error()
+              }), DIRECTION_ENUM) : DIRECTION_ENUM).TOP,
+              state: (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+                error: Error()
+              }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).IDLE
+            });
             (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
               error: Error()
-            }), DataManager) : DataManager).Instance.enemies.push(woodenSkeletonManager);
+            }), DataManager) : DataManager).Instance.enemies.push(woodenSkeletonManager); //生成铁骷髅
+
+            var enemy2 = (_crd && createUINode === void 0 ? (_reportPossibleCrUseOfcreateUINode({
+              error: Error()
+            }), createUINode) : createUINode)();
+            enemy2.setParent(_this3.stage);
+            var ironSkeletonManager = enemy2.addComponent(_crd && IronSkeletonManager === void 0 ? (_reportPossibleCrUseOfIronSkeletonManager({
+              error: Error()
+            }), IronSkeletonManager) : IronSkeletonManager);
+            yield ironSkeletonManager.init({
+              x: 8,
+              y: 6,
+              type: (_crd && ENTITY_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_TYPE_ENUM({
+                error: Error()
+              }), ENTITY_TYPE_ENUM) : ENTITY_TYPE_ENUM).SKELETON_IRON,
+              direction: (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
+                error: Error()
+              }), DIRECTION_ENUM) : DIRECTION_ENUM).TOP,
+              state: (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+                error: Error()
+              }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).IDLE
+            });
+            (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+              error: Error()
+            }), DataManager) : DataManager).Instance.enemies.push(ironSkeletonManager);
           })();
         } //生成门
 

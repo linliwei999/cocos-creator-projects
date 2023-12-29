@@ -5,9 +5,10 @@ import Levels, {ILevel} from "db://assets/Levels";
 import DataManager from "db://assets/Runtime/DataManager";
 import {TILE_HEIGHT, TILE_WIDTH} from "db://assets/Scripts/Tile/TileManager";
 import EventManager from "db://assets/Runtime/EventManager";
-import {EVENT_ENUM} from "db://assets/Enums";
+import {DIRECTION_ENUM, ENTITY_STATE_ENUM, ENTITY_TYPE_ENUM, EVENT_ENUM} from "db://assets/Enums";
 import {PlayerManager} from "db://assets/Scripts/Player/PlayerManager";
 import {WoodenSkeletonManager} from "db://assets/Scripts/WoodenSkeleton/WoodenSkeletonManager";
+import {IronSkeletonManager} from "db://assets/Scripts/IronSkeleton/IronSkeletonManager";
 import {DoorManager} from "db://assets/Scripts/Door/DoorManager";
 const { ccclass, property } = _decorator;
 
@@ -76,8 +77,8 @@ export class BattleManager extends Component {
         await tileManager.init();
         this.adaptPos();
         this.generateDoor();
-        this.generatePlayer();
         this.generateEnemies();
+        this.generatePlayer();
     }
 
     //生成玩家
@@ -85,18 +86,44 @@ export class BattleManager extends Component {
         const player = createUINode();
         player.setParent(this.stage);
         const playerManager = player.addComponent(PlayerManager);
-        await playerManager.init();
+        await playerManager.init({
+            x: 2,
+            y: 8,
+            type: ENTITY_TYPE_ENUM.PLAYER,
+            direction: DIRECTION_ENUM.TOP,
+            state: ENTITY_STATE_ENUM.IDLE
+        });
         DataManager.Instance.player = playerManager;
         EventManager.Instance.emit(EVENT_ENUM.PLAYER_BORN, true);
     }
 
     //生成敌人
     async generateEnemies(){
-        const enemy = createUINode();
-        enemy.setParent(this.stage);
-        const woodenSkeletonManager = enemy.addComponent(WoodenSkeletonManager);
-        await woodenSkeletonManager.init();
+        //生成木骷髅
+        const enemy1 = createUINode();
+        enemy1.setParent(this.stage);
+        const woodenSkeletonManager = enemy1.addComponent(WoodenSkeletonManager);
+        await woodenSkeletonManager.init({
+            x: 7,
+            y: 7,
+            type: ENTITY_TYPE_ENUM.SKELETON_WOODEN,
+            direction: DIRECTION_ENUM.TOP,
+            state: ENTITY_STATE_ENUM.IDLE
+        });
         DataManager.Instance.enemies.push(woodenSkeletonManager);
+
+        //生成铁骷髅
+        const enemy2 = createUINode();
+        enemy2.setParent(this.stage);
+        const ironSkeletonManager = enemy2.addComponent(IronSkeletonManager);
+        await ironSkeletonManager.init({
+            x: 8,
+            y: 6,
+            type: ENTITY_TYPE_ENUM.SKELETON_IRON,
+            direction: DIRECTION_ENUM.TOP,
+            state: ENTITY_STATE_ENUM.IDLE
+        });
+        DataManager.Instance.enemies.push(ironSkeletonManager);
     }
 
     //生成门

@@ -99,6 +99,7 @@ System.register(["cc"], function (_export, _context) {
       (function (ENTITY_TYPE_ENUM) {
         ENTITY_TYPE_ENUM["PLAYER"] = "PLAYER";
         ENTITY_TYPE_ENUM["SKELETON_WOODEN"] = "SKELETON_WOODEN";
+        ENTITY_TYPE_ENUM["SKELETON_IRON"] = "SKELETON_IRON";
         ENTITY_TYPE_ENUM["DOOR"] = "DOOR";
       })(ENTITY_TYPE_ENUM || _export("ENTITY_TYPE_ENUM", ENTITY_TYPE_ENUM = {}));
 
