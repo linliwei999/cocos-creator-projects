@@ -1,4 +1,4 @@
-import { _decorator, Component, Node } from 'cc';
+import {_decorator, Component, Node} from 'cc';
 import {TileMapManager} from "db://assets/Scripts/Tile/TileMapManager";
 import {createUINode} from "db://assets/Utils";
 import Levels, {ILevel} from "db://assets/Levels";
@@ -12,6 +12,7 @@ import {IronSkeletonManager} from "db://assets/Scripts/IronSkeleton/IronSkeleton
 import {DoorManager} from "db://assets/Scripts/Door/DoorManager";
 import {BurstManager} from "db://assets/Scripts/Burst/BurstManager";
 import {SpikesManager} from "db://assets/Scripts/Spikes/SpikesManager";
+
 const { ccclass, property } = _decorator;
 
 @ccclass('BattleManager')
@@ -26,6 +27,7 @@ export class BattleManager extends Component {
     stage: Node
 
     onLoad(){
+        DataManager.Instance.levelIndex = 1;
         EventManager.Instance.on(EVENT_ENUM.NEXT_LEVEL, this.nextLevel, this);
     }
 
@@ -90,44 +92,32 @@ export class BattleManager extends Component {
         const player = createUINode();
         player.setParent(this.stage);
         const playerManager = player.addComponent(PlayerManager);
-        await playerManager.init({
-            x: 2,
-            y: 8,
-            type: ENTITY_TYPE_ENUM.PLAYER,
-            direction: DIRECTION_ENUM.TOP,
-            state: ENTITY_STATE_ENUM.IDLE
-        });
+        // await playerManager.init({
+        //     x: 2,
+        //     y: 8,
+        //     type: ENTITY_TYPE_ENUM.PLAYER,
+        //     direction: DIRECTION_ENUM.TOP,
+        //     state: ENTITY_STATE_ENUM.IDLE
+        // });
+        await playerManager.init(this.level.player);
         DataManager.Instance.player = playerManager;
         EventManager.Instance.emit(EVENT_ENUM.PLAYER_BORN, true);
     }
 
     //生成敌人
     async generateEnemies(){
-        //生成木骷髅
-        const enemy1 = createUINode();
-        enemy1.setParent(this.stage);
-        const woodenSkeletonManager = enemy1.addComponent(WoodenSkeletonManager);
-        await woodenSkeletonManager.init({
-            x: 7,
-            y: 7,
-            type: ENTITY_TYPE_ENUM.SKELETON_WOODEN,
-            direction: DIRECTION_ENUM.TOP,
-            state: ENTITY_STATE_ENUM.IDLE
-        });
-        DataManager.Instance.enemies.push(woodenSkeletonManager);
-
-        //生成铁骷髅
-        const enemy2 = createUINode();
-        enemy2.setParent(this.stage);
-        const ironSkeletonManager = enemy2.addComponent(IronSkeletonManager);
-        await ironSkeletonManager.init({
-            x: 8,
-            y: 6,
-            type: ENTITY_TYPE_ENUM.SKELETON_IRON,
-            direction: DIRECTION_ENUM.TOP,
-            state: ENTITY_STATE_ENUM.IDLE
-        });
-        DataManager.Instance.enemies.push(ironSkeletonManager);
+        const promise = [];
+        for (let i = 0; i < this.level.enemies.length; i++) {
+            const enemy = this.level.enemies[i];
+            //生成木骷髅
+            const node = createUINode();
+            node.setParent(this.stage);
+            const Manager = enemy.type === ENTITY_TYPE_ENUM.SKELETON_WOODEN ? WoodenSkeletonManager : IronSkeletonManager;
+            const manager = node.addComponent(Manager);
+            promise.push(manager.init(enemy));
+            DataManager.Instance.enemies.push(manager);
+        }
+        await Promise.all(promise);
     }
 
     //生成门
@@ -135,43 +125,38 @@ export class BattleManager extends Component {
         const door = createUINode();
         door.setParent(this.stage);
         const doorManager = door.addComponent(DoorManager);
-        await doorManager.init({
-            x: 7,
-            y: 8,
-            type: ENTITY_TYPE_ENUM.DOOR,
-            direction: DIRECTION_ENUM.TOP,
-            state: ENTITY_STATE_ENUM.IDLE
-        });
+        await doorManager.init(this.level.door);
         DataManager.Instance.door = doorManager;
     }
 
     //地裂瓦片
     async generateBursts(){
-        const burst = createUINode();
-        burst.setParent(this.stage);
-        const burstManager = burst.addComponent(BurstManager);
-        await burstManager.init({
-            x: 2,
-            y: 6,
-            type: ENTITY_TYPE_ENUM.BURST,
-            direction: DIRECTION_ENUM.TOP,
-            state: ENTITY_STATE_ENUM.IDLE
-        });
-        DataManager.Instance.bursts.push(burstManager);
+        const promise = [];
+        for (let i = 0; i < this.level.bursts.length; i++) {
+            const burst = this.level.bursts[i];
+            //生成木骷髅
+            const node = createUINode();
+            node.setParent(this.stage);
+            const burstManager = node.addComponent(BurstManager);
+            promise.push(burstManager.init(burst));
+            DataManager.Instance.bursts.push(burstManager);
+        }
+        await Promise.all(promise);
     }
 
     //地刺
     async generateSpikes(){
-        const spikes = createUINode();
-        spikes.setParent(this.stage);
-        const spikesManager = spikes.addComponent(SpikesManager);
-        await spikesManager.init({
-            x: 2,
-            y: 3,
-            type: ENTITY_TYPE_ENUM.SPIKES_FOUR,
-            count: 0
-        });
-        DataManager.Instance.spikes.push(spikesManager);
+        const promise = [];
+        for (let i = 0; i < this.level.spikes.length; i++) {
+            const spikes = this.level.spikes[i];
+            //生成木骷髅
+            const node = createUINode();
+            node.setParent(this.stage);
+            const spikesManager = node.addComponent(SpikesManager);
+            promise.push(spikesManager.init(spikes));
+            DataManager.Instance.spikes.push(spikesManager);
+        }
+        await Promise.all(promise);
     }
 
     //瓦片地图适配屏幕

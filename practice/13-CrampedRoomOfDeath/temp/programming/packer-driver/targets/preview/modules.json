@@ -137,7 +137,7 @@
     ]
   },
   "cce:/internal/x/prerequisite-imports": {
-    "mTimestamp": 232382045.400093,
+    "mTimestamp": 240392413.66228,
     "chunkId": "quick-pack:/cce/internal/x/prerequisite-imports.js",
     "imports": [
       {
@@ -1049,7 +1049,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level1.ts": {
     "mTimestamp": {
-      "mtime": 1703831756489.2263,
+      "mtime": 1703842910383.1125,
       "uuid": "36a766d6-8594-443b-a3fb-3b376824f05a"
     },
     "chunkId": "assets/Levels/level1.js",
@@ -1062,16 +1062,16 @@
         "value": "cc"
       },
       {
-        "value": "../Enums",
+        "value": "db://assets/Enums",
         "rewritten": "__unresolved_1",
         "loc": {
           "start": {
-            "line": 1,
-            "column": 29
+            "line": 2,
+            "column": 84
           },
           "end": {
-            "line": 1,
-            "column": 39
+            "line": 2,
+            "column": 103
           }
         }
       }
@@ -1117,7 +1117,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/index.ts": {
     "mTimestamp": {
-      "mtime": 1703833152864.2866,
+      "mtime": 1703842961502.761,
       "uuid": "99a344a1-5479-4e24-bdde-d47e0b51e182"
     },
     "chunkId": "assets/Levels/index.js",
@@ -1229,7 +1229,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Sence/BattleManager.ts": {
     "mTimestamp": {
-      "mtime": 1703834885133.5625,
+      "mtime": 1703844571517.566,
       "uuid": "bd0bbef9-eda4-4fbc-a655-b42512681271"
     },
     "chunkId": "assets/Scripts/Sence/BattleManager.js",
@@ -1246,11 +1246,11 @@
         "loc": {
           "start": {
             "line": 1,
-            "column": 44
+            "column": 42
           },
           "end": {
             "line": 1,
-            "column": 48
+            "column": 46
           }
         }
       },
@@ -1990,7 +1990,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level2.ts": {
     "mTimestamp": {
-      "mtime": 1703658859573.8506,
+      "mtime": 1703842999537.0264,
       "uuid": "84840746-efb0-49fc-82e6-266185eaa426"
     },
     "chunkId": "assets/Levels/level2.js",
@@ -2008,11 +2008,11 @@
         "loc": {
           "start": {
             "line": 1,
-            "column": 29
+            "column": 84
           },
           "end": {
             "line": 1,
-            "column": 48
+            "column": 103
           }
         }
       }

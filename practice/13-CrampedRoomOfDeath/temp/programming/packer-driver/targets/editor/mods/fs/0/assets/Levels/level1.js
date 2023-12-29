@@ -1,14 +1,34 @@
 System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, TILE_TYPE_ENUM, _crd, mapInfo, level;
+  var _reporterNs, _cclegacy, TILE_TYPE_ENUM, DIRECTION_ENUM, ENTITY_TYPE_ENUM, ENTITY_STATE_ENUM, _crd, mapInfo, player, enemies, spikes, bursts, door, level;
 
   function _reportPossibleCrUseOfTILE_TYPE_ENUM(extras) {
-    _reporterNs.report("TILE_TYPE_ENUM", "../Enums", _context.meta, extras);
+    _reporterNs.report("TILE_TYPE_ENUM", "db://assets/Enums", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfDIRECTION_ENUM(extras) {
+    _reporterNs.report("DIRECTION_ENUM", "db://assets/Enums", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfENTITY_TYPE_ENUM(extras) {
+    _reporterNs.report("ENTITY_TYPE_ENUM", "db://assets/Enums", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfENTITY_STATE_ENUM(extras) {
+    _reporterNs.report("ENTITY_STATE_ENUM", "db://assets/Enums", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfIEntity(extras) {
+    _reporterNs.report("IEntity", "./index", _context.meta, extras);
   }
 
   function _reportPossibleCrUseOfILevel(extras) {
-    _reporterNs.report("ILevel", "db://assets/Levels/index", _context.meta, extras);
+    _reporterNs.report("ILevel", "./index", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfISpikes(extras) {
+    _reporterNs.report("ISpikes", "./index", _context.meta, extras);
   }
 
   return {
@@ -18,6 +38,9 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
       _cclegacy = _cc.cclegacy;
     }, function (_unresolved_2) {
       TILE_TYPE_ENUM = _unresolved_2.TILE_TYPE_ENUM;
+      DIRECTION_ENUM = _unresolved_2.DIRECTION_ENUM;
+      ENTITY_TYPE_ENUM = _unresolved_2.ENTITY_TYPE_ENUM;
+      ENTITY_STATE_ENUM = _unresolved_2.ENTITY_STATE_ENUM;
     }],
     execute: function () {
       _crd = true;
@@ -147,10 +170,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
           error: Error()
         }), TILE_TYPE_ENUM) : TILE_TYPE_ENUM).FLOOR
       }, {
-        // src: 1,
-        // type: TILE_TYPE_ENUM.FLOOR,
-        src: null,
-        type: null
+        src: 1,
+        type: (_crd && TILE_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfTILE_TYPE_ENUM({
+          error: Error()
+        }), TILE_TYPE_ENUM) : TILE_TYPE_ENUM).FLOOR
       }, {
         src: 1,
         type: (_crd && TILE_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfTILE_TYPE_ENUM({
@@ -515,11 +538,490 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
           error: Error()
         }), TILE_TYPE_ENUM) : TILE_TYPE_ENUM).CLIFF_RIGHT
       }]];
+      player = {
+        x: 2,
+        y: 8,
+        direction: (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
+          error: Error()
+        }), DIRECTION_ENUM) : DIRECTION_ENUM).TOP,
+        state: (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+          error: Error()
+        }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).IDLE,
+        type: (_crd && ENTITY_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_TYPE_ENUM({
+          error: Error()
+        }), ENTITY_TYPE_ENUM) : ENTITY_TYPE_ENUM).PLAYER
+      };
+      enemies = [{
+        x: 7,
+        y: 6,
+        direction: (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
+          error: Error()
+        }), DIRECTION_ENUM) : DIRECTION_ENUM).TOP,
+        state: (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+          error: Error()
+        }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).IDLE,
+        type: (_crd && ENTITY_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_TYPE_ENUM({
+          error: Error()
+        }), ENTITY_TYPE_ENUM) : ENTITY_TYPE_ENUM).SKELETON_WOODEN
+      }];
+      spikes = [];
+      bursts = [];
+      door = {
+        x: 7,
+        y: 8,
+        direction: (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
+          error: Error()
+        }), DIRECTION_ENUM) : DIRECTION_ENUM).BOTTOM,
+        state: (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+          error: Error()
+        }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).IDLE,
+        type: (_crd && ENTITY_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_TYPE_ENUM({
+          error: Error()
+        }), ENTITY_TYPE_ENUM) : ENTITY_TYPE_ENUM).DOOR
+      };
       level = {
-        mapInfo
+        mapInfo,
+        player,
+        enemies,
+        spikes,
+        bursts,
+        door
       };
 
-      _export("default", level);
+      _export("default", level); // import {TILE_TYPE_ENUM} from "../Enums";
+      // import {ILevel} from "db://assets/Levels/index";
+      //
+      // const mapInfo = [
+      //     [
+      //         {
+      //             src: null,
+      //             type: null,
+      //         },
+      //         {
+      //             src: null,
+      //             type: null,
+      //         },
+      //         {
+      //             src: null,
+      //             type: null,
+      //         },
+      //         {
+      //             src: null,
+      //             type: null,
+      //         },
+      //         {
+      //             src: 16,
+      //             type: TILE_TYPE_ENUM.WALL_LEFT_TOP,
+      //         },
+      //         {
+      //             src: 5,
+      //             type: TILE_TYPE_ENUM.WALL_COLUMN,
+      //         },
+      //         {
+      //             src: 5,
+      //             type: TILE_TYPE_ENUM.WALL_COLUMN,
+      //         },
+      //         {
+      //             src: 5,
+      //             type: TILE_TYPE_ENUM.WALL_COLUMN,
+      //         },
+      //         {
+      //             src: 13,
+      //             type: TILE_TYPE_ENUM.WALL_LEFT_BOTTOM,
+      //         },
+      //         {
+      //             src: 18,
+      //             type: TILE_TYPE_ENUM.CLIFF_LEFT,
+      //         },
+      //     ],
+      //     [
+      //         {
+      //             src: 16,
+      //             type: TILE_TYPE_ENUM.WALL_LEFT_TOP,
+      //         },
+      //         {
+      //             src: 5,
+      //             type: TILE_TYPE_ENUM.WALL_COLUMN,
+      //         },
+      //         {
+      //             src: 5,
+      //             type: TILE_TYPE_ENUM.WALL_COLUMN,
+      //         },
+      //         {
+      //             src: 5,
+      //             type: TILE_TYPE_ENUM.WALL_COLUMN,
+      //         },
+      //         {
+      //             src: 14,
+      //             type: TILE_TYPE_ENUM.WALL_RIGHT_BOTTOM,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 21,
+      //             type: TILE_TYPE_ENUM.WALL_RIGHT_BOTTOM,
+      //         },
+      //         {
+      //             src: 17,
+      //             type: TILE_TYPE_ENUM.CLIFF_CENTER,
+      //         },
+      //     ],
+      //     [
+      //         {
+      //             src: 9,
+      //             type: TILE_TYPE_ENUM.WALL_ROW,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             // src: 1,
+      //             // type: TILE_TYPE_ENUM.FLOOR,
+      //             src: null,
+      //             type: null,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 17,
+      //             type: TILE_TYPE_ENUM.CLIFF_CENTER,
+      //         },
+      //     ],
+      //     [
+      //         {
+      //             src: 9,
+      //             type: TILE_TYPE_ENUM.WALL_ROW,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 16,
+      //             type: TILE_TYPE_ENUM.WALL_LEFT_TOP,
+      //         },
+      //         {
+      //             src: 13,
+      //             type: TILE_TYPE_ENUM.WALL_LEFT_BOTTOM,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 20,
+      //             type: TILE_TYPE_ENUM.WALL_LEFT_BOTTOM,
+      //         },
+      //         {
+      //             src: 17,
+      //             type: TILE_TYPE_ENUM.CLIFF_CENTER,
+      //         },
+      //     ],
+      //     [
+      //         {
+      //             src: 15,
+      //             type: TILE_TYPE_ENUM.WALL_RIGHT_TOP,
+      //         },
+      //         {
+      //             src: 13,
+      //             type: TILE_TYPE_ENUM.WALL_LEFT_BOTTOM,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 9,
+      //             type: TILE_TYPE_ENUM.WALL_ROW,
+      //         },
+      //         {
+      //             src: 15,
+      //             type: TILE_TYPE_ENUM.WALL_RIGHT_TOP,
+      //         },
+      //         {
+      //             src: 5,
+      //             type: TILE_TYPE_ENUM.WALL_COLUMN,
+      //         },
+      //         {
+      //             src: 5,
+      //             type: TILE_TYPE_ENUM.WALL_COLUMN,
+      //         },
+      //         {
+      //             src: 5,
+      //             type: TILE_TYPE_ENUM.WALL_COLUMN,
+      //         },
+      //         {
+      //             src: 14,
+      //             type: TILE_TYPE_ENUM.WALL_RIGHT_BOTTOM,
+      //         },
+      //         {
+      //             src: 19,
+      //             type: TILE_TYPE_ENUM.CLIFF_RIGHT,
+      //         },
+      //     ],
+      //     [
+      //         {
+      //             src: null,
+      //             type: null,
+      //         },
+      //         {
+      //             src: 9,
+      //             type: TILE_TYPE_ENUM.WALL_ROW,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 9,
+      //             type: TILE_TYPE_ENUM.WALL_ROW,
+      //         },
+      //         {
+      //             src: 16,
+      //             type: TILE_TYPE_ENUM.WALL_LEFT_TOP,
+      //         },
+      //         {
+      //             src: 5,
+      //             type: TILE_TYPE_ENUM.WALL_COLUMN,
+      //         },
+      //         {
+      //             src: 5,
+      //             type: TILE_TYPE_ENUM.WALL_COLUMN,
+      //         },
+      //         {
+      //             src: 5,
+      //             type: TILE_TYPE_ENUM.WALL_COLUMN,
+      //         },
+      //         {
+      //             src: 13,
+      //             type: TILE_TYPE_ENUM.WALL_LEFT_BOTTOM,
+      //         },
+      //         {
+      //             src: 18,
+      //             type: TILE_TYPE_ENUM.CLIFF_LEFT,
+      //         },
+      //     ],
+      //     [
+      //         {
+      //             src: 16,
+      //             type: TILE_TYPE_ENUM.WALL_LEFT_TOP,
+      //         },
+      //         {
+      //             src: 14,
+      //             type: TILE_TYPE_ENUM.WALL_RIGHT_BOTTOM,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 15,
+      //             type: TILE_TYPE_ENUM.WALL_RIGHT_TOP,
+      //         },
+      //         {
+      //             src: 14,
+      //             type: TILE_TYPE_ENUM.WALL_RIGHT_BOTTOM,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 21,
+      //             type: TILE_TYPE_ENUM.WALL_RIGHT_BOTTOM,
+      //         },
+      //         {
+      //             src: 19,
+      //             type: TILE_TYPE_ENUM.CLIFF_RIGHT,
+      //         },
+      //     ],
+      //     [
+      //         {
+      //             src: 9,
+      //             type: TILE_TYPE_ENUM.WALL_ROW,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 17,
+      //             type: TILE_TYPE_ENUM.CLIFF_CENTER,
+      //         },
+      //     ],
+      //     [
+      //         {
+      //             src: 9,
+      //             type: TILE_TYPE_ENUM.WALL_ROW,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 16,
+      //             type: TILE_TYPE_ENUM.WALL_LEFT_TOP,
+      //         },
+      //         {
+      //             src: 13,
+      //             type: TILE_TYPE_ENUM.WALL_LEFT_BOTTOM,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 1,
+      //             type: TILE_TYPE_ENUM.FLOOR,
+      //         },
+      //         {
+      //             src: 20,
+      //             type: TILE_TYPE_ENUM.WALL_LEFT_BOTTOM,
+      //         },
+      //         {
+      //             src: 17,
+      //             type: TILE_TYPE_ENUM.CLIFF_CENTER,
+      //         },
+      //     ],
+      //     [
+      //         {
+      //             src: 15,
+      //             type: TILE_TYPE_ENUM.WALL_RIGHT_TOP,
+      //         },
+      //         {
+      //             src: 5,
+      //             type: TILE_TYPE_ENUM.WALL_COLUMN,
+      //         },
+      //         {
+      //             src: 5,
+      //             type: TILE_TYPE_ENUM.WALL_COLUMN,
+      //         },
+      //         {
+      //             src: 14,
+      //             type: TILE_TYPE_ENUM.WALL_RIGHT_BOTTOM,
+      //         },
+      //         {
+      //             src: 15,
+      //             type: TILE_TYPE_ENUM.WALL_RIGHT_TOP,
+      //         },
+      //         {
+      //             src: 5,
+      //             type: TILE_TYPE_ENUM.WALL_COLUMN,
+      //         },
+      //         {
+      //             src: 5,
+      //             type: TILE_TYPE_ENUM.WALL_COLUMN,
+      //         },
+      //         {
+      //             src: 5,
+      //             type: TILE_TYPE_ENUM.WALL_COLUMN,
+      //         },
+      //         {
+      //             src: 14,
+      //             type: TILE_TYPE_ENUM.WALL_RIGHT_BOTTOM,
+      //         },
+      //         {
+      //             src: 19,
+      //             type: TILE_TYPE_ENUM.CLIFF_RIGHT,
+      //         },
+      //     ],
+      // ];
+      //
+      // const level: ILevel = {
+      //     mapInfo,
+      // }
+      //
+      // export default level;
+
 
       _cclegacy._RF.pop();
 
