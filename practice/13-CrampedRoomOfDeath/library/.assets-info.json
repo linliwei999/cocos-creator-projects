@@ -2627,7 +2627,7 @@
     "time": 1702658055919.1404
   },
   "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Sences/Battle.scene": {
-    "time": 1703847050106.9958,
+    "time": 1703850524806.0374,
     "uuid": "31470aa7-2e8d-4262-8d50-b8a0406d0fc8",
     "missing": false
   },
@@ -2635,7 +2635,7 @@
     "time": 1647767044000
   },
   "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels": {
-    "time": 1703846688886.3486,
+    "time": 1703847695604.023,
     "uuid": "30700d78-893e-4054-ba0f-762bbf77382d",
     "missing": false
   },
@@ -2667,7 +2667,7 @@
     "missing": false
   },
   "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/index.ts": {
-    "time": 1703842961502.761,
+    "time": 1703847695603.925,
     "uuid": "99a344a1-5479-4e24-bdde-d47e0b51e182",
     "missing": false
   },
@@ -3173,6 +3173,158 @@
   "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Spikes/SpikesTwoSubStateMachine.ts": {
     "time": 1703834570497.3755,
     "uuid": "06f20a11-accc-41f9-80f0-013ec78ffd8f",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level10.ts.meta": {
+    "time": 1703847598536.1643
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level11.ts.meta": {
+    "time": 1703847598536.7043
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level12.ts.meta": {
+    "time": 1703847598537.2676
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level13.ts.meta": {
+    "time": 1703847598537.8003
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level14.ts.meta": {
+    "time": 1703847598538.183
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level15.ts.meta": {
+    "time": 1703847598539.1104
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level16.ts.meta": {
+    "time": 1703847598540.2214
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level17.ts.meta": {
+    "time": 1703847598540.7327
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level18.ts.meta": {
+    "time": 1703847598541.1042
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level19.ts.meta": {
+    "time": 1703847598541.527
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level20.ts.meta": {
+    "time": 1703847598542.2917
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level21.ts.meta": {
+    "time": 1703847598542.829
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level3.ts.meta": {
+    "time": 1703847598545.0107
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level4.ts.meta": {
+    "time": 1703847598545.3677
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level5.ts.meta": {
+    "time": 1703847598545.6487
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level6.ts.meta": {
+    "time": 1703847598547.0308
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level7.ts.meta": {
+    "time": 1703847598547.4746
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level8.ts.meta": {
+    "time": 1703847598548.0212
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level9.ts.meta": {
+    "time": 1703847598548.344
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level10.ts": {
+    "time": 1703847554084.4194,
+    "uuid": "27be6b80-c3b3-4f35-b5e5-736a5d73d3aa",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level11.ts": {
+    "time": 1703847556509.0786,
+    "uuid": "cadb5c10-5354-4a85-a185-84b6f5f12784",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level12.ts": {
+    "time": 1703847563761.098,
+    "uuid": "bfc327db-226e-4fde-be01-4244cf1ffbe6",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level13.ts": {
+    "time": 1703847566905.9844,
+    "uuid": "d9c3f644-3f6c-42cb-b248-877801d590f3",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level14.ts": {
+    "time": 1703847569896.5234,
+    "uuid": "f1994a64-d508-4b71-ab00-aad77407aae8",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level15.ts": {
+    "time": 1703847572500.117,
+    "uuid": "def14e0e-7201-446c-8c57-9467edda7ad3",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level16.ts": {
+    "time": 1703847575660.9758,
+    "uuid": "14439909-f624-4aba-87a0-e0db32c795d5",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level17.ts": {
+    "time": 1703847579068.0076,
+    "uuid": "1565870e-f1a6-48ae-b37f-5dbb8b6c62d2",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level18.ts": {
+    "time": 1703847582083.0212,
+    "uuid": "38044741-c471-4fff-bfe0-ec2e2d6539cb",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level19.ts": {
+    "time": 1703847584632.9836,
+    "uuid": "41dc0ab0-7486-4f16-921c-c886567acb86",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level20.ts": {
+    "time": 1703847587456.9482,
+    "uuid": "639ac476-62c4-4147-ba55-300ace9eb525",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level21.ts": {
+    "time": 1703847591053.7415,
+    "uuid": "11a6e31c-8afc-4dc9-b05d-a4005ef57ef0",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level3.ts": {
+    "time": 1703847491733.1484,
+    "uuid": "d84fb29d-b5ca-4e0c-8755-4926b38e063b",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level4.ts": {
+    "time": 1703847533445.3645,
+    "uuid": "a0ad94bd-d3f3-4a37-b058-671606da1f6c",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level5.ts": {
+    "time": 1703847540172.8833,
+    "uuid": "43d0202b-0715-4820-819d-77d4f49c7071",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level6.ts": {
+    "time": 1703847540170.6702,
+    "uuid": "01be3a55-d008-4a0d-bc76-42f040396e68",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level7.ts": {
+    "time": 1703847543077.7808,
+    "uuid": "1dd39582-b2c0-46ca-aa5c-86c91ad5625c",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level8.ts": {
+    "time": 1703847546056.804,
+    "uuid": "7c9371f0-627d-4f62-8093-07ac76470147",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level9.ts": {
+    "time": 1703847550062.4937,
+    "uuid": "0af6c76d-8335-4019-8465-e591b64892a3",
     "missing": false
   }
 }
