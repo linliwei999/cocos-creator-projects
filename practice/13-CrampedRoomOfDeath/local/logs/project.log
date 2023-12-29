@@ -68,3 +68,181 @@ https://github.com/browserslist/browserslist#browsers-data-updating
 2023-12-30 00:13:31-info: [Scene] Forward render pipeline initialized.
 2023-12-30 00:32:28-error: [Scene] Widget target must be one of the parent nodes of it
 2023-12-30 00:56:33-error: [Scene] Widget target must be one of the parent nodes of it
+2023-12-30 01:34:42-error: 无法加载模块 file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Sence/LoadingManager.ts ：SyntaxError: unknown: Missing semicolon (14:37)
+
+  12 |     onLoad(){
+  13 |         resources.preloadDir("texture/ctrl", (current, total)=>{
+> 14 |             this.bar.progress = curre nt / total;
+     |                                      ^
+  15 |         }, ()=>{
+  16 |             //成功回调
+  17 |             director.loadScene(SCENE_ENUM.Start);.
+2023-12-30 01:34:42-error: 无法加载模块 file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Sence/LoadingManager.ts ：SyntaxError: unknown: Missing semicolon (14:37)
+
+  12 |     onLoad(){
+  13 |         resources.preloadDir("texture/ctrl", (current, total)=>{
+> 14 |             this.bar.progress = curre nt / total;
+     |                                      ^
+  15 |         }, ()=>{
+  16 |             //成功回调
+  17 |             director.loadScene(SCENE_ENUM.Start);.
+2023-12-30 01:34:44-error: [Preview]Unable to resolve bare specifier '__unresolved_55' from http://localhost:7456/scripting/x/mods/cce/internal/x/prerequisite-imports.js (SystemJS Error#8 https://git.io/JvFET#8)
+2023-12-30 01:34:44-error: [Preview]Error: Unable to resolve bare specifier '__unresolved_55' from http://localhost:7456/scripting/x/mods/cce/internal/x/prerequisite-imports.js (SystemJS Error#8 https://git.io/JvFET#8)
+    at throwUnresolved (http://localhost:7456/scripting/systemjs/system.js:696:11)
+    at systemJSPrototype.resolve (http://localhost:7456/scripting/systemjs/system.js:692:102)
+    at systemJSPrototype.resolve (http://localhost:7456/scripting/systemjs/system.js:1048:24)
+    at http://localhost:7456/scripting/systemjs/system.js:335:39
+    at Array.map (<anonymous>)
+    at http://localhost:7456/scripting/systemjs/system.js:333:43
+2023-12-30 01:35:03-error: [Preview]Unable to resolve bare specifier '__unresolved_55' from http://localhost:7456/scripting/x/mods/cce/internal/x/prerequisite-imports.js (SystemJS Error#8 https://git.io/JvFET#8)
+2023-12-30 01:35:03-error: [Preview]Error: Unable to resolve bare specifier '__unresolved_55' from http://localhost:7456/scripting/x/mods/cce/internal/x/prerequisite-imports.js (SystemJS Error#8 https://git.io/JvFET#8)
+    at throwUnresolved (http://localhost:7456/scripting/systemjs/system.js:696:11)
+    at systemJSPrototype.resolve (http://localhost:7456/scripting/systemjs/system.js:692:102)
+    at systemJSPrototype.resolve (http://localhost:7456/scripting/systemjs/system.js:1048:24)
+    at http://localhost:7456/scripting/systemjs/system.js:335:39
+    at Array.map (<anonymous>)
+    at http://localhost:7456/scripting/systemjs/system.js:333:43
+2023-12-30 01:35:36-error: [Preview]Unable to resolve bare specifier '__unresolved_55' from http://localhost:7456/scripting/x/mods/cce/internal/x/prerequisite-imports.js (SystemJS Error#8 https://git.io/JvFET#8)
+2023-12-30 01:35:36-error: [Preview]Error: Unable to resolve bare specifier '__unresolved_55' from http://localhost:7456/scripting/x/mods/cce/internal/x/prerequisite-imports.js (SystemJS Error#8 https://git.io/JvFET#8)
+    at throwUnresolved (http://localhost:7456/scripting/systemjs/system.js:696:11)
+    at systemJSPrototype.resolve (http://localhost:7456/scripting/systemjs/system.js:692:102)
+    at systemJSPrototype.resolve (http://localhost:7456/scripting/systemjs/system.js:1048:24)
+    at http://localhost:7456/scripting/systemjs/system.js:335:39
+    at Array.map (<anonymous>)
+    at http://localhost:7456/scripting/systemjs/system.js:333:43
+2023-12-30 01:36:02-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:02-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:02-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:02-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:02-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:02-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:02-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:03-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:03-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:04-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:04-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:07-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:07-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:07-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:07-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:07-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:07-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:07-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:07-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:07-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:07-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:08-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:08-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:08-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:53-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:53-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:53-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:53-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:53-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:53-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:53-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:53-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:53-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:53-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:54-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:54-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:54-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:58-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:58-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:58-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:58-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:58-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:58-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:58-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:58-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:58-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:58-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:58-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:58-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:36:58-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:03-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:03-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:03-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:03-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:03-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:03-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:03-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:03-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:03-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:03-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:03-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:03-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:04-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:13-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:13-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:13-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:13-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:13-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:13-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:13-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:13-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:13-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:13-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:13-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:13-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:13-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:18-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:18-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:18-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:18-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:18-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:18-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:18-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:18-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:18-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:18-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:18-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:18-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:18-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:24-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:24-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:24-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:24-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:24-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:24-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:24-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:24-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:24-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:24-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:24-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:24-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 01:38:24-error: [Preview]Uncaught TypeError: Cannot set properties of null (setting 'progress') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/LoadingManager.js
+2023-12-30 02:13:14-error: 无法加载模块 file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Sence/LoadingManager.ts ：SyntaxError: unknown: Identifier 'string' has already been declared (14:37)
+
+  12 |     constructor(props) {
+  13 |         super(props);
+> 14 |         const { path: string, scene: string } = props;
+     |                                      ^
+  15 |
+  16 |     }
+  17 |.
+2023-12-30 02:13:14-error: 无法加载模块 file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Sence/LoadingManager.ts ：SyntaxError: unknown: Identifier 'string' has already been declared (14:37)
+
+  12 |     constructor(props) {
+  13 |         super(props);
+> 14 |         const { path: string, scene: string } = props;
+     |                                      ^
+  15 |
+  16 |     }
+  17 |.
+2023-12-30 02:13:15-error: [Preview]Unable to resolve bare specifier '__unresolved_55' from http://localhost:7456/scripting/x/mods/cce/internal/x/prerequisite-imports.js (SystemJS Error#8 https://git.io/JvFET#8)
+2023-12-30 02:13:15-error: [Preview]Error: Unable to resolve bare specifier '__unresolved_55' from http://localhost:7456/scripting/x/mods/cce/internal/x/prerequisite-imports.js (SystemJS Error#8 https://git.io/JvFET#8)
+    at throwUnresolved (http://localhost:7456/scripting/systemjs/system.js:696:11)
+    at systemJSPrototype.resolve (http://localhost:7456/scripting/systemjs/system.js:692:102)
+    at systemJSPrototype.resolve (http://localhost:7456/scripting/systemjs/system.js:1048:24)
+    at http://localhost:7456/scripting/systemjs/system.js:335:39
+    at Array.map (<anonymous>)
+    at http://localhost:7456/scripting/systemjs/system.js:333:43
+2023-12-30 02:13:17-error: [Preview]Unable to resolve bare specifier '__unresolved_55' from http://localhost:7456/scripting/x/mods/cce/internal/x/prerequisite-imports.js (SystemJS Error#8 https://git.io/JvFET#8)
+2023-12-30 02:13:17-error: [Preview]Error: Unable to resolve bare specifier '__unresolved_55' from http://localhost:7456/scripting/x/mods/cce/internal/x/prerequisite-imports.js (SystemJS Error#8 https://git.io/JvFET#8)
+    at throwUnresolved (http://localhost:7456/scripting/systemjs/system.js:696:11)
+    at systemJSPrototype.resolve (http://localhost:7456/scripting/systemjs/system.js:692:102)
+    at systemJSPrototype.resolve (http://localhost:7456/scripting/systemjs/system.js:1048:24)
+    at http://localhost:7456/scripting/systemjs/system.js:335:39
+    at Array.map (<anonymous>)
+    at http://localhost:7456/scripting/systemjs/system.js:333:43

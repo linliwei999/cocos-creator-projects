@@ -2619,7 +2619,7 @@
     "time": 1702658379107.7805
   },
   "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Sences": {
-    "time": 1703866515159.2964,
+    "time": 1703870809330.3953,
     "uuid": "002d2999-a610-4033-b2f5-bcd5de60d0fe",
     "missing": false
   },
@@ -2683,7 +2683,7 @@
     "time": 1702660143415.9607
   },
   "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Sence": {
-    "time": 1703870263195.496,
+    "time": 1703873984142.0596,
     "uuid": "190d29ab-38d9-4f6d-82c9-66d304401d0d",
     "missing": false
   },
@@ -3419,7 +3419,7 @@
     "time": 1703866508863.7842
   },
   "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Sences/Start.scene": {
-    "time": 1703869196831.4895,
+    "time": 1703873988864.398,
     "uuid": "0e90e121-dd3e-443e-8496-df3d69e3f787",
     "missing": false
   },
@@ -3427,8 +3427,24 @@
     "time": 1703867408137.9346
   },
   "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Sence/StartManager.ts": {
-    "time": 1703869105394.352,
+    "time": 1703873816352.4707,
     "uuid": "309e0213-8633-45a7-acfc-631f5bd1ba94",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Sences/Loading.scene.meta": {
+    "time": 1703870804071.7295
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Sences/Loading.scene": {
+    "time": 1703873405631.9028,
+    "uuid": "591af6d0-bb57-4aa7-967d-8697ecbefd79",
+    "missing": false
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Sence/LoadingManager.ts.meta": {
+    "time": 1703871276217.7207
+  },
+  "/Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Sence/LoadingManager.ts": {
+    "time": 1703873984141.946,
+    "uuid": "39c21e12-6124-45a0-bc26-da8668bdd320",
     "missing": false
   }
 }

@@ -37,6 +37,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
 
       _export("StartManager", StartManager = (_dec = ccclass('StartManager'), _dec(_class = class StartManager extends Component {
         onLoad() {
+          // director.preloadScene(SCENE_ENUM.Battle);
           director.preloadScene((_crd && SCENE_ENUM === void 0 ? (_reportPossibleCrUseOfSCENE_ENUM({
             error: Error()
           }), SCENE_ENUM) : SCENE_ENUM).Battle);
@@ -48,12 +49,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
         }
 
         async handleStart() {
-          await (_crd && FadeManager === void 0 ? (_reportPossibleCrUseOfFadeManager({
-            error: Error()
-          }), FadeManager) : FadeManager).Instance.fader.fadeIn(300);
+          // await FadeManager.Instance.fader.fadeIn(300);
           director.loadScene((_crd && SCENE_ENUM === void 0 ? (_reportPossibleCrUseOfSCENE_ENUM({
             error: Error()
-          }), SCENE_ENUM) : SCENE_ENUM).Battle);
+          }), SCENE_ENUM) : SCENE_ENUM).Loading);
         }
 
       }) || _class));

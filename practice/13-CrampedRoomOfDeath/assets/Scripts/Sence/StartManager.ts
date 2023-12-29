@@ -7,6 +7,7 @@ const { ccclass, property } = _decorator;
 @ccclass('StartManager')
 export class StartManager extends Component {
     onLoad(){
+        // director.preloadScene(SCENE_ENUM.Battle);
         director.preloadScene(SCENE_ENUM.Battle);
         FadeManager.Instance.fader.fadeOut(1000);
         // this.node.on(Node.EventType.TOUCH_START, this.handleStart, this);
@@ -14,8 +15,8 @@ export class StartManager extends Component {
     }
 
     async handleStart(){
-       await FadeManager.Instance.fader.fadeIn(300);
-       director.loadScene(SCENE_ENUM.Battle);
+       // await FadeManager.Instance.fader.fadeIn(300);
+       director.loadScene(SCENE_ENUM.Loading);
     }
 
 }
