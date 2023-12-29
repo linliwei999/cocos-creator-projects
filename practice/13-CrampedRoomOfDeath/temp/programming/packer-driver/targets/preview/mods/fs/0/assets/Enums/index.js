@@ -101,6 +101,7 @@ System.register(["cc"], function (_export, _context) {
         ENTITY_TYPE_ENUM["SKELETON_WOODEN"] = "SKELETON_WOODEN";
         ENTITY_TYPE_ENUM["SKELETON_IRON"] = "SKELETON_IRON";
         ENTITY_TYPE_ENUM["DOOR"] = "DOOR";
+        ENTITY_TYPE_ENUM["BURST"] = "BURST";
       })(ENTITY_TYPE_ENUM || _export("ENTITY_TYPE_ENUM", ENTITY_TYPE_ENUM = {}));
 
       _cclegacy._RF.pop();

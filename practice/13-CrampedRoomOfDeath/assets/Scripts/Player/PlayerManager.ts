@@ -106,6 +106,7 @@ export class PlayerManager extends EntityManager {
             door: { x: doorX, y: doorY, state: doorState },
         } = DataManager.Instance;
         const enemies = DataManager.Instance.enemies.filter((item)=> item.state !== ENTITY_STATE_ENUM.DEATH);
+        const bursts = DataManager.Instance.bursts.filter((item)=> item.state !== ENTITY_STATE_ENUM.DEATH);
 
         //按钮方向-向上
         if(inputDirection === CONTROLLER_ENUM.TOP){
@@ -134,6 +135,14 @@ export class PlayerManager extends EntityManager {
                     if(((x === enemyX && playerNextY === enemyY) || (x === enemyX && weaponNextY === enemyY))){
                         this.state = ENTITY_STATE_ENUM.BLOCKFRONT;
                         return true;
+                    }
+                }
+
+                //地裂的碰撞
+                for (let i = 0; i < bursts.length; i++) {
+                    const { x: burstX, y: burstY, id: burstId, state: burstState } = bursts[i];
+                    if(((x === burstX && playerNextY === burstY) || (x === burstX && weaponNextY === burstY))){
+                        return false;
                     }
                 }
 
@@ -238,6 +247,7 @@ export class PlayerManager extends EntityManager {
                 this.direction = DIRECTION_ENUM.TOP;
             }
             this.state = ENTITY_STATE_ENUM.TURNLEFT;
+            EventManager.Instance.emit(EVENT_ENUM.PLAYER_MOVE_END);
         }
         if(!(inputDirection === CONTROLLER_ENUM.TURNLEFT || inputDirection === CONTROLLER_ENUM.TURNRIGHT)){
             this.isMoving = true;

@@ -10,6 +10,7 @@ import {PlayerManager} from "db://assets/Scripts/Player/PlayerManager";
 import {WoodenSkeletonManager} from "db://assets/Scripts/WoodenSkeleton/WoodenSkeletonManager";
 import {IronSkeletonManager} from "db://assets/Scripts/IronSkeleton/IronSkeletonManager";
 import {DoorManager} from "db://assets/Scripts/Door/DoorManager";
+import {BurstManager} from "db://assets/Scripts/Burst/BurstManager";
 const { ccclass, property } = _decorator;
 
 @ccclass('BattleManager')
@@ -76,6 +77,7 @@ export class BattleManager extends Component {
         const tileManager = tileMap.addComponent(TileMapManager);
         await tileManager.init();
         this.adaptPos();
+        this.generateBursts();
         this.generateDoor();
         this.generateEnemies();
         this.generatePlayer();
@@ -131,8 +133,29 @@ export class BattleManager extends Component {
         const door = createUINode();
         door.setParent(this.stage);
         const doorManager = door.addComponent(DoorManager);
-        await doorManager.init();
+        await doorManager.init({
+            x: 7,
+            y: 8,
+            type: ENTITY_TYPE_ENUM.DOOR,
+            direction: DIRECTION_ENUM.TOP,
+            state: ENTITY_STATE_ENUM.IDLE
+        });
         DataManager.Instance.door = doorManager;
+    }
+
+    //地裂瓦片
+    async generateBursts(){
+        const burst = createUINode();
+        burst.setParent(this.stage);
+        const burstManager = burst.addComponent(BurstManager);
+        await burstManager.init({
+            x: 2,
+            y: 6,
+            type: ENTITY_TYPE_ENUM.BURST,
+            direction: DIRECTION_ENUM.TOP,
+            state: ENTITY_STATE_ENUM.IDLE
+        });
+        DataManager.Instance.bursts.push(burstManager);
     }
 
     //瓦片地图适配屏幕

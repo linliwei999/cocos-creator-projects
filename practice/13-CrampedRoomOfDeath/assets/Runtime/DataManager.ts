@@ -6,6 +6,7 @@ import {WoodenSkeletonManager} from "db://assets/Scripts/WoodenSkeleton/WoodenSk
 import {IronSkeletonManager} from "db://assets/Scripts/IronSkeleton/IronSkeletonManager";
 import {EnemyManager} from "db://assets/Base/EnemyManager";
 import {DoorManager} from "db://assets/Scripts/Door/DoorManager";
+import {BurstManager} from "db://assets/Scripts/Burst/BurstManager";
 
 export default class DataManager extends Singleton{
     static get Instance(){
@@ -19,6 +20,7 @@ export default class DataManager extends Singleton{
     player: PlayerManager
     enemies: EnemyManager[]
     door: DoorManager
+    bursts: BurstManager[]
 
     reset(){
         this.mapInfo = []
@@ -26,6 +28,7 @@ export default class DataManager extends Singleton{
         this.player = null
         this.enemies = []
         this.door = null
+        this.bursts = []
         this.mapRowCount = 0
         this.mapColumnCount = 0
     }

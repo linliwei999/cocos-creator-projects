@@ -245,6 +245,11 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             error: Error()
           }), DataManager) : DataManager).Instance.enemies.filter(item => item.state !== (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
             error: Error()
+          }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).DEATH);
+          const bursts = (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+            error: Error()
+          }), DataManager) : DataManager).Instance.bursts.filter(item => item.state !== (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+            error: Error()
           }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).DEATH); //按钮方向-向上
 
           if (inputDirection === (_crd && CONTROLLER_ENUM === void 0 ? (_reportPossibleCrUseOfCONTROLLER_ENUM({
@@ -291,6 +296,20 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
                     error: Error()
                   }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).BLOCKFRONT;
                   return true;
+                }
+              } //地裂的碰撞
+
+
+              for (let i = 0; i < bursts.length; i++) {
+                const {
+                  x: burstX,
+                  y: burstY,
+                  id: burstId,
+                  state: burstState
+                } = bursts[i];
+
+                if (x === burstX && playerNextY === burstY || x === burstX && weaponNextY === burstY) {
+                  return false;
                 }
               }
 
@@ -450,6 +469,11 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             this.state = (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
               error: Error()
             }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).TURNLEFT;
+            (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
+              error: Error()
+            }), EventManager) : EventManager).Instance.emit((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
+              error: Error()
+            }), EVENT_ENUM) : EVENT_ENUM).PLAYER_MOVE_END);
           }
 
           if (!(inputDirection === (_crd && CONTROLLER_ENUM === void 0 ? (_reportPossibleCrUseOfCONTROLLER_ENUM({

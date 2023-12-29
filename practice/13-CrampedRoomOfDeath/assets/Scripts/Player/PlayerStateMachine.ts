@@ -9,6 +9,7 @@ import BlockTurnLeftSubStateMachine from "db://assets/Scripts/Player/BlockTurnLe
 import {EntityManager} from "db://assets/Base/EntityManager";
 import DeathSubStateMachine from "db://assets/Scripts/Player/DeathSubStateMachine";
 import AttackSubStateMachine from "db://assets/Scripts/Player/AttackSubStateMachine";
+import AirDeathSubStateMachine from "db://assets/Scripts/Player/AirDeathSubStateMachine";
 
 const { ccclass, property } = _decorator;
 
@@ -42,6 +43,7 @@ export class PlayerStateMachine extends StateMachine {
         this.params.set(PARAMS_NAME_ENUM.BLOCKTURNLEFT, getInitParamsTrigger());
         this.params.set(PARAMS_NAME_ENUM.ATTACK, getInitParamsTrigger());
         this.params.set(PARAMS_NAME_ENUM.DEATH, getInitParamsTrigger());
+        this.params.set(PARAMS_NAME_ENUM.AIRDEATH, getInitParamsTrigger());
         this.params.set(PARAMS_NAME_ENUM.DIRECTION, getInitParamsNumber());
     }
 
@@ -53,6 +55,7 @@ export class PlayerStateMachine extends StateMachine {
         this.stateMachines.set(PARAMS_NAME_ENUM.BLOCKTURNLEFT, new BlockTurnLeftSubStateMachine(this));
         this.stateMachines.set(PARAMS_NAME_ENUM.ATTACK, new AttackSubStateMachine(this));
         this.stateMachines.set(PARAMS_NAME_ENUM.DEATH, new DeathSubStateMachine(this));
+        this.stateMachines.set(PARAMS_NAME_ENUM.AIRDEATH, new AirDeathSubStateMachine(this));
     }
 
     initAnimationEvent(){
@@ -73,6 +76,7 @@ export class PlayerStateMachine extends StateMachine {
             case this.stateMachines.get(PARAMS_NAME_ENUM.BLOCKTURNLEFT):
             case this.stateMachines.get(PARAMS_NAME_ENUM.ATTACK):
             case this.stateMachines.get(PARAMS_NAME_ENUM.DEATH):
+            case this.stateMachines.get(PARAMS_NAME_ENUM.AIRDEATH):
             case this.stateMachines.get(PARAMS_NAME_ENUM.IDLE):
                 if(this.params.get(PARAMS_NAME_ENUM.BLOCKTURNLEFT).value){
                     this.currentState = this.stateMachines.get(PARAMS_NAME_ENUM.BLOCKTURNLEFT);
@@ -82,6 +86,8 @@ export class PlayerStateMachine extends StateMachine {
                     this.currentState = this.stateMachines.get(PARAMS_NAME_ENUM.ATTACK);
                 }else if(this.params.get(PARAMS_NAME_ENUM.DEATH).value){
                     this.currentState = this.stateMachines.get(PARAMS_NAME_ENUM.DEATH);
+                }else if(this.params.get(PARAMS_NAME_ENUM.AIRDEATH).value){
+                    this.currentState = this.stateMachines.get(PARAMS_NAME_ENUM.AIRDEATH);
                 }else if(this.params.get(PARAMS_NAME_ENUM.TURNLEFT).value){
                     this.currentState = this.stateMachines.get(PARAMS_NAME_ENUM.TURNLEFT);
                     }else if(this.params.get(PARAMS_NAME_ENUM.IDLE).value){
