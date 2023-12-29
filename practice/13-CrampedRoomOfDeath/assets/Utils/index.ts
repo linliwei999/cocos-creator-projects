@@ -21,3 +21,7 @@ const getNumberWithinString = (str: string) =>{
 export const sortSpriteFrame = (spriteFrames: SpriteFrame[]) =>{
     return spriteFrames.sort((a, b)=> getNumberWithinString(a.name) - getNumberWithinString(b.name));
 }
+
+export const randomStringByLength = (length: number) =>{
+    return Array.from({ length }).reduce<string>((total, item)=> total + Math.floor(Math.random() * 10), '');
+}

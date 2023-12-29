@@ -1,7 +1,7 @@
 System.register(["cc"], function (_export, _context) {
   "use strict";
 
-  var _cclegacy, Node, UITransform, Layers, _crd, createUINode, randomByRange, reg, getNumberWithinString, sortSpriteFrame;
+  var _cclegacy, Node, UITransform, Layers, _crd, createUINode, randomByRange, reg, getNumberWithinString, sortSpriteFrame, randomStringByLength;
 
   return {
     setters: [function (_cc) {
@@ -39,6 +39,12 @@ System.register(["cc"], function (_export, _context) {
 
       _export("sortSpriteFrame", sortSpriteFrame = spriteFrames => {
         return spriteFrames.sort((a, b) => getNumberWithinString(a.name) - getNumberWithinString(b.name));
+      });
+
+      _export("randomStringByLength", randomStringByLength = length => {
+        return Array.from({
+          length
+        }).reduce((total, item) => total + Math.floor(Math.random() * 10), '');
       });
 
       _cclegacy._RF.pop();

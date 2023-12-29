@@ -13,6 +13,7 @@ import {PlayerStateMachine} from "db://assets/Scripts/Player/PlayerStateMachine"
 import {IEntity} from "db://assets/Levels";
 import {WoodenSkeletonStateMachine} from "db://assets/Scripts/WoodenSkeleton/WoodenSkeletonStateMachine";
 import {StateMachine} from "db://assets/Base/StateMachine";
+import {randomStringByLength} from "db://assets/Utils";
 
 const { ccclass, property } = _decorator;
 
@@ -20,6 +21,7 @@ const ANIMATION_SPEED = 1/8;
 
 @ccclass('EntityManager')
 export class EntityManager extends Component {
+    id: string = randomStringByLength(12)
     x:number = 0
     y:number = 0
     fsm: StateMachine
@@ -62,6 +64,10 @@ export class EntityManager extends Component {
 
     update(){
         this.node.setPosition(this.x * TILE_WIDTH - 1.5 * TILE_WIDTH, -this.y * TILE_HEIGHT + 1.5 * TILE_HEIGHT);
+    }
+
+    onDestroy(){
+
     }
 }
 

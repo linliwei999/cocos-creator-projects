@@ -148,7 +148,9 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
 
         inputHandle(inputDirection) {
           //攻击
-          if (this.willAttack(inputDirection)) {
+          const enemyId = this.willAttack(inputDirection);
+
+          if (enemyId) {
             return;
           }
 
@@ -166,23 +168,34 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           this.move(inputDirection);
         }
 
-        onAttack() {
+        onAttack(enemyId) {
           this.state = (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
             error: Error()
           }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).ATTACK;
-          return true;
+          (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
+            error: Error()
+          }), EventManager) : EventManager).Instance.emit((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
+            error: Error()
+          }), EVENT_ENUM) : EVENT_ENUM).ATTACK_ENEMY, enemyId);
+          return enemyId;
         }
 
         willAttack(inputDirection) {
           const enemies = (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
             error: Error()
-          }), DataManager) : DataManager).Instance.enemies;
+          }), DataManager) : DataManager).Instance.enemies.filter(item => item.state !== (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+            error: Error()
+          }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).DEATH);
 
           for (let i = 0; i < enemies.length; i++) {
             const {
               x: enemyX,
-              y: enemyY
-            } = enemies[i];
+              y: enemyY,
+              id: enemyId,
+              state: enemyState
+            } = enemies[i]; // if(enemyState === ENTITY_STATE_ENUM.DEATH){
+            //     return '';
+            // }
 
             if (inputDirection === (_crd && CONTROLLER_ENUM === void 0 ? (_reportPossibleCrUseOfCONTROLLER_ENUM({
               error: Error()
@@ -190,13 +203,13 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
               error: Error()
             }), DIRECTION_ENUM) : DIRECTION_ENUM).TOP && enemyX === this.x && enemyY === this.targetY - 2) {
               console.log('玩家攻击');
-              return this.onAttack();
+              return this.onAttack(enemyId);
             } else if (inputDirection === (_crd && CONTROLLER_ENUM === void 0 ? (_reportPossibleCrUseOfCONTROLLER_ENUM({
               error: Error()
             }), CONTROLLER_ENUM) : CONTROLLER_ENUM).LEFT && this.direction === (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
               error: Error()
             }), DIRECTION_ENUM) : DIRECTION_ENUM).LEFT && enemyX === this.targetX - 2 && enemyY === this.y) {
-              return this.onAttack();
+              return this.onAttack(enemyId);
             } else if (inputDirection === (_crd && CONTROLLER_ENUM === void 0 ? (_reportPossibleCrUseOfCONTROLLER_ENUM({
               error: Error()
             }), CONTROLLER_ENUM) : CONTROLLER_ENUM).RIGHT && this.direction === (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
@@ -206,15 +219,15 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
               // if(this.testAttackCount === 3){
               //     return false;
               // }
-              return this.onAttack();
+              return this.onAttack(enemyId);
             } else if (inputDirection === (_crd && CONTROLLER_ENUM === void 0 ? (_reportPossibleCrUseOfCONTROLLER_ENUM({
               error: Error()
             }), CONTROLLER_ENUM) : CONTROLLER_ENUM).BOTTOM && this.direction === (_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
               error: Error()
             }), DIRECTION_ENUM) : DIRECTION_ENUM).BOTTOM && enemyX === this.x && enemyY === this.targetY + 2) {
-              return this.onAttack();
+              return this.onAttack(enemyId);
             } else {
-              return false;
+              return '';
             }
           }
         }

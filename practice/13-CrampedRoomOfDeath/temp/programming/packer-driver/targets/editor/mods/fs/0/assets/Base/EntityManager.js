@@ -1,7 +1,7 @@
-System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], function (_export, _context) {
+System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, _decorator, Component, Sprite, UITransform, TILE_HEIGHT, TILE_WIDTH, DIRECTION_ODER_ENUM, PARAMS_NAME_ENUM, _dec, _class, _temp, _crd, ccclass, property, ANIMATION_SPEED, EntityManager;
+  var _reporterNs, _cclegacy, _decorator, Component, Sprite, UITransform, TILE_HEIGHT, TILE_WIDTH, DIRECTION_ODER_ENUM, PARAMS_NAME_ENUM, randomStringByLength, _dec, _class, _temp, _crd, ccclass, property, ANIMATION_SPEED, EntityManager;
 
   function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -41,6 +41,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
     _reporterNs.report("StateMachine", "db://assets/Base/StateMachine", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfrandomStringByLength(extras) {
+    _reporterNs.report("randomStringByLength", "db://assets/Utils", _context.meta, extras);
+  }
+
   return {
     setters: [function (_unresolved_) {
       _reporterNs = _unresolved_;
@@ -56,6 +60,8 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
     }, function (_unresolved_3) {
       DIRECTION_ODER_ENUM = _unresolved_3.DIRECTION_ODER_ENUM;
       PARAMS_NAME_ENUM = _unresolved_3.PARAMS_NAME_ENUM;
+    }, function (_unresolved_4) {
+      randomStringByLength = _unresolved_4.randomStringByLength;
     }],
     execute: function () {
       _crd = true;
@@ -71,6 +77,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
       _export("EntityManager", EntityManager = (_dec = ccclass('EntityManager'), _dec(_class = (_temp = class EntityManager extends Component {
         constructor(...args) {
           super(...args);
+
+          _defineProperty(this, "id", (_crd && randomStringByLength === void 0 ? (_reportPossibleCrUseOfrandomStringByLength({
+            error: Error()
+          }), randomStringByLength) : randomStringByLength)(12));
 
           _defineProperty(this, "x", 0);
 
@@ -135,6 +145,8 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
             error: Error()
           }), TILE_HEIGHT) : TILE_HEIGHT));
         }
+
+        onDestroy() {}
 
       }, _temp)) || _class));
 

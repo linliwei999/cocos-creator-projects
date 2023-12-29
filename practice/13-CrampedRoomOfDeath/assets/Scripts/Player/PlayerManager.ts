@@ -56,7 +56,8 @@ export class PlayerManager extends EntityManager {
 
     inputHandle(inputDirection: CONTROLLER_ENUM){
         //攻击
-        if(this.willAttack(inputDirection)){
+        const enemyId = this.willAttack(inputDirection);
+        if(enemyId){
             return;
         }
 
@@ -71,30 +72,34 @@ export class PlayerManager extends EntityManager {
         this.move(inputDirection);
     }
 
-    onAttack(){
+    onAttack(enemyId: string){
         this.state = ENTITY_STATE_ENUM.ATTACK;
-        return true;
+        EventManager.Instance.emit(EVENT_ENUM.ATTACK_ENEMY, enemyId);
+        return enemyId;
     }
 
     willAttack(inputDirection: CONTROLLER_ENUM){
-        const enemies = DataManager.Instance.enemies;
+        const enemies = DataManager.Instance.enemies.filter((item)=> item.state !== ENTITY_STATE_ENUM.DEATH);
         for (let i = 0; i < enemies.length; i++) {
-            const { x: enemyX, y: enemyY } = enemies[i];
+            const { x: enemyX, y: enemyY, id: enemyId, state: enemyState } = enemies[i];
+            // if(enemyState === ENTITY_STATE_ENUM.DEATH){
+            //     return '';
+            // }
             if(inputDirection === CONTROLLER_ENUM.TOP && this.direction === DIRECTION_ENUM.TOP && enemyX === this.x && enemyY === this.targetY - 2){
                 console.log('玩家攻击');
-                return this.onAttack();
+                return this.onAttack(enemyId);
             }else if(inputDirection === CONTROLLER_ENUM.LEFT && this.direction === DIRECTION_ENUM.LEFT && enemyX === this.targetX - 2 && enemyY === this.y){
-                return this.onAttack();
+                return this.onAttack(enemyId);
             }else if(inputDirection === CONTROLLER_ENUM.RIGHT && this.direction === DIRECTION_ENUM.RIGHT && enemyX === this.targetX + 2 && enemyY === this.y){
                 // this.testAttackCount++
                 // if(this.testAttackCount === 3){
                 //     return false;
                 // }
-                return this.onAttack();
+                return this.onAttack(enemyId);
             }else if(inputDirection === CONTROLLER_ENUM.BOTTOM && this.direction === DIRECTION_ENUM.BOTTOM && enemyX === this.x && enemyY === this.targetY + 2){
-                return this.onAttack();
+                return this.onAttack(enemyId);
             }else {
-                return false;
+                return '';
             }
         }
     }
