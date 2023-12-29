@@ -137,7 +137,7 @@
     ]
   },
   "cce:/internal/x/prerequisite-imports": {
-    "mTimestamp": 257252909.676187,
+    "mTimestamp": 259148582.946799,
     "chunkId": "quick-pack:/cce/internal/x/prerequisite-imports.js",
     "imports": [
       {
@@ -2865,7 +2865,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Player/PlayerManager.ts": {
     "mTimestamp": {
-      "mtime": 1703861430921.0708,
+      "mtime": 1703863316786.4539,
       "uuid": "efe88db8-68e1-4998-bbdf-c5af4bf4ece6"
     },
     "chunkId": "assets/Scripts/Player/PlayerManager.js",
@@ -3283,7 +3283,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Base/State.ts": {
     "mTimestamp": {
-      "mtime": 1703852418111.5564,
+      "mtime": 1703862956882.4207,
       "uuid": "659f1742-65a7-4088-a7ef-0f63b42344b0"
     },
     "chunkId": "assets/Base/State.js",
@@ -4545,7 +4545,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Player/AttackSubStateMachine.ts": {
     "mTimestamp": {
-      "mtime": 1703775396597.8113,
+      "mtime": 1703863247330.068,
       "uuid": "0cd17ba5-33a1-4c1e-989e-e6270acd4b64"
     },
     "chunkId": "assets/Scripts/Player/AttackSubStateMachine.js",
@@ -4563,11 +4563,11 @@
         "loc": {
           "start": {
             "line": 3,
-            "column": 68
+            "column": 85
           },
           "end": {
             "line": 3,
-            "column": 87
+            "column": 104
           }
         }
       },
@@ -4577,11 +4577,24 @@
         "loc": {
           "start": {
             "line": 4,
-            "column": 18
+            "column": 37
           },
           "end": {
             "line": 4,
-            "column": 42
+            "column": 61
+          }
+        }
+      },
+      {
+        "value": "cc",
+        "loc": {
+          "start": {
+            "line": 5,
+            "column": 30
+          },
+          "end": {
+            "line": 5,
+            "column": 34
           }
         }
       },
@@ -4619,6 +4632,10 @@
       {
         "isExternal": false,
         "url": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Base/State.ts"
+      },
+      {
+        "isExternal": false,
+        "url": "cce:/internal/x/cc"
       },
       {
         "isExternal": false,

@@ -116,6 +116,10 @@ export class PlayerManager extends EntityManager {
         }
     }
 
+    onAttackShake(type: SHAKE_TYPE_ENUM){
+        EventManager.Instance.emit(EVENT_ENUM.SCREEN_SHAKE, type);
+    }
+
     willBlockMy(inputDirection: CONTROLLER_ENUM){
         const { targetX: x, targetY: y, direction } = this;
         // console.log('this', this);

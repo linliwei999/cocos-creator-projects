@@ -40,13 +40,14 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
       _export("ANIMATION_SPEED", ANIMATION_SPEED = 1 / 8);
 
       _export("default", State = class State {
-        constructor(fsm, path, wrapMode = AnimationClip.WrapMode.Normal, speed = ANIMATION_SPEED) {
+        constructor(fsm, path, wrapMode = AnimationClip.WrapMode.Normal, speed = ANIMATION_SPEED, events = []) {
           _defineProperty(this, "animationClip", void 0);
 
           this.fsm = fsm;
           this.path = path;
           this.wrapMode = wrapMode;
           this.speed = speed;
+          this.events = events;
           this.init();
         }
 
@@ -71,7 +72,22 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2"], fu
           this.animationClip.name = this.path;
           this.animationClip.duration = frames.length * this.speed; // 整个动画剪辑的周期
 
-          this.animationClip.wrapMode = this.wrapMode;
+          this.animationClip.wrapMode = this.wrapMode; //绑定动画帧事件
+
+          for (const event of this.events) {
+            this.animationClip.events.push(event);
+          }
+
+          this.animationClip.updateEventDatas(); // const animationComponent = this.node.getComponent(Animation);
+          // if (animationComponent && animationComponent.defaultClip) {
+          //     const { defaultClip } = animationComponent;
+          //     defaultClip.events.push({
+          //         frame: 0.5, // 第 0.5 秒时触发事件
+          //         func: 'onTriggered', // 事件触发时调用的函数名称
+          //         params: [ 0 ], // 向 `func` 传递的参数
+          //     });
+          //     defaultClip.updateEventDatas();
+          // }
         }
 
         run() {

@@ -1,7 +1,7 @@
 System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, DIRECTION_ENUM, State, DirectionSubStateMachine, AttackSubStateMachine, _crd, BASE_URL;
+  var _reporterNs, _cclegacy, DIRECTION_ENUM, SHAKE_TYPE_ENUM, State, ANIMATION_SPEED, AnimationClip, DirectionSubStateMachine, AttackSubStateMachine, _crd, BASE_URL;
 
   function _reportPossibleCrUseOfStateMachine(extras) {
     _reporterNs.report("StateMachine", "db://assets/Base/StateMachine", _context.meta, extras);
@@ -11,8 +11,16 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     _reporterNs.report("DIRECTION_ENUM", "db://assets/Enums", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfSHAKE_TYPE_ENUM(extras) {
+    _reporterNs.report("SHAKE_TYPE_ENUM", "db://assets/Enums", _context.meta, extras);
+  }
+
   function _reportPossibleCrUseOfState(extras) {
     _reporterNs.report("State", "db://assets/Base/State", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfANIMATION_SPEED(extras) {
+    _reporterNs.report("ANIMATION_SPEED", "db://assets/Base/State", _context.meta, extras);
   }
 
   function _reportPossibleCrUseOfDirectionSubStateMachine(extras) {
@@ -26,10 +34,13 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
       _reporterNs = _unresolved_;
     }, function (_cc) {
       _cclegacy = _cc.cclegacy;
+      AnimationClip = _cc.AnimationClip;
     }, function (_unresolved_2) {
       DIRECTION_ENUM = _unresolved_2.DIRECTION_ENUM;
+      SHAKE_TYPE_ENUM = _unresolved_2.SHAKE_TYPE_ENUM;
     }, function (_unresolved_3) {
       State = _unresolved_3.default;
+      ANIMATION_SPEED = _unresolved_3.ANIMATION_SPEED;
     }, function (_unresolved_4) {
       DirectionSubStateMachine = _unresolved_4.default;
     }],
@@ -49,22 +60,66 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             error: Error()
           }), DIRECTION_ENUM) : DIRECTION_ENUM).TOP, new (_crd && State === void 0 ? (_reportPossibleCrUseOfState({
             error: Error()
-          }), State) : State)(fsm, `${BASE_URL}/top`));
+          }), State) : State)(fsm, `${BASE_URL}/top`, AnimationClip.WrapMode.Normal, _crd && ANIMATION_SPEED === void 0 ? (_reportPossibleCrUseOfANIMATION_SPEED({
+            error: Error()
+          }), ANIMATION_SPEED) : ANIMATION_SPEED, [{
+            frame: (_crd && ANIMATION_SPEED === void 0 ? (_reportPossibleCrUseOfANIMATION_SPEED({
+              error: Error()
+            }), ANIMATION_SPEED) : ANIMATION_SPEED) * 4,
+            //第五帧执行
+            func: 'onAttackShake',
+            params: [(_crd && SHAKE_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfSHAKE_TYPE_ENUM({
+              error: Error()
+            }), SHAKE_TYPE_ENUM) : SHAKE_TYPE_ENUM).TOP]
+          }]));
           this.stateMachines.set((_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
             error: Error()
           }), DIRECTION_ENUM) : DIRECTION_ENUM).BOTTOM, new (_crd && State === void 0 ? (_reportPossibleCrUseOfState({
             error: Error()
-          }), State) : State)(fsm, `${BASE_URL}/bottom`));
+          }), State) : State)(fsm, `${BASE_URL}/bottom`, AnimationClip.WrapMode.Normal, _crd && ANIMATION_SPEED === void 0 ? (_reportPossibleCrUseOfANIMATION_SPEED({
+            error: Error()
+          }), ANIMATION_SPEED) : ANIMATION_SPEED, [{
+            frame: (_crd && ANIMATION_SPEED === void 0 ? (_reportPossibleCrUseOfANIMATION_SPEED({
+              error: Error()
+            }), ANIMATION_SPEED) : ANIMATION_SPEED) * 4,
+            //第五帧执行
+            func: 'onAttackShake',
+            params: [(_crd && SHAKE_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfSHAKE_TYPE_ENUM({
+              error: Error()
+            }), SHAKE_TYPE_ENUM) : SHAKE_TYPE_ENUM).BOTTOM]
+          }]));
           this.stateMachines.set((_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
             error: Error()
           }), DIRECTION_ENUM) : DIRECTION_ENUM).RIGHT, new (_crd && State === void 0 ? (_reportPossibleCrUseOfState({
             error: Error()
-          }), State) : State)(fsm, `${BASE_URL}/right`));
+          }), State) : State)(fsm, `${BASE_URL}/right`, AnimationClip.WrapMode.Normal, _crd && ANIMATION_SPEED === void 0 ? (_reportPossibleCrUseOfANIMATION_SPEED({
+            error: Error()
+          }), ANIMATION_SPEED) : ANIMATION_SPEED, [{
+            frame: (_crd && ANIMATION_SPEED === void 0 ? (_reportPossibleCrUseOfANIMATION_SPEED({
+              error: Error()
+            }), ANIMATION_SPEED) : ANIMATION_SPEED) * 4,
+            //第五帧执行
+            func: 'onAttackShake',
+            params: [(_crd && SHAKE_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfSHAKE_TYPE_ENUM({
+              error: Error()
+            }), SHAKE_TYPE_ENUM) : SHAKE_TYPE_ENUM).RIGHT]
+          }]));
           this.stateMachines.set((_crd && DIRECTION_ENUM === void 0 ? (_reportPossibleCrUseOfDIRECTION_ENUM({
             error: Error()
           }), DIRECTION_ENUM) : DIRECTION_ENUM).LEFT, new (_crd && State === void 0 ? (_reportPossibleCrUseOfState({
             error: Error()
-          }), State) : State)(fsm, `${BASE_URL}/left`));
+          }), State) : State)(fsm, `${BASE_URL}/left`, AnimationClip.WrapMode.Normal, _crd && ANIMATION_SPEED === void 0 ? (_reportPossibleCrUseOfANIMATION_SPEED({
+            error: Error()
+          }), ANIMATION_SPEED) : ANIMATION_SPEED, [{
+            frame: (_crd && ANIMATION_SPEED === void 0 ? (_reportPossibleCrUseOfANIMATION_SPEED({
+              error: Error()
+            }), ANIMATION_SPEED) : ANIMATION_SPEED) * 4,
+            //第五帧执行
+            func: 'onAttackShake',
+            params: [(_crd && SHAKE_TYPE_ENUM === void 0 ? (_reportPossibleCrUseOfSHAKE_TYPE_ENUM({
+              error: Error()
+            }), SHAKE_TYPE_ENUM) : SHAKE_TYPE_ENUM).LEFT]
+          }]));
         }
 
       });
