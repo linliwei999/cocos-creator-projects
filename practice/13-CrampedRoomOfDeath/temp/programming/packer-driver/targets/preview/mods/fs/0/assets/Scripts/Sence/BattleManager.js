@@ -29,6 +29,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     _reporterNs.report("DataManager", "db://assets/Runtime/DataManager", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfIRecord(extras) {
+    _reporterNs.report("IRecord", "db://assets/Runtime/DataManager", _context.meta, extras);
+  }
+
   function _reportPossibleCrUseOfTILE_HEIGHT(extras) {
     _reporterNs.report("TILE_HEIGHT", "db://assets/Scripts/Tile/TileManager", _context.meta, extras);
   }
@@ -176,6 +180,16 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           }), EventManager) : EventManager).Instance.on((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
             error: Error()
           }), EVENT_ENUM) : EVENT_ENUM).SHOW_SMOKE, this.generateSmoke, this);
+          (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
+            error: Error()
+          }), EventManager) : EventManager).Instance.on((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
+            error: Error()
+          }), EVENT_ENUM) : EVENT_ENUM).RECORD_STEP, this.record, this);
+          (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
+            error: Error()
+          }), EventManager) : EventManager).Instance.on((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
+            error: Error()
+          }), EVENT_ENUM) : EVENT_ENUM).REVOKE_STEP, this.revoke, this);
         }
 
         onDestroy() {
@@ -194,6 +208,16 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           }), EventManager) : EventManager).Instance.off((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
             error: Error()
           }), EVENT_ENUM) : EVENT_ENUM).SHOW_SMOKE, this.generateSmoke);
+          (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
+            error: Error()
+          }), EventManager) : EventManager).Instance.off((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
+            error: Error()
+          }), EVENT_ENUM) : EVENT_ENUM).RECORD_STEP, this.record);
+          (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
+            error: Error()
+          }), EventManager) : EventManager).Instance.off((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
+            error: Error()
+          }), EVENT_ENUM) : EVENT_ENUM).REVOKE_STEP, this.revoke);
         }
 
         start() {
@@ -510,6 +534,213 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             error: Error()
           }), ShakeManager) : ShakeManager).stop();
           this.stage.setPosition(-disX, disY);
+        } //保存数据 -> 记录玩家移动数据
+
+
+        record() {
+          var item = {
+            player: {
+              x: (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+                error: Error()
+              }), DataManager) : DataManager).Instance.player.x,
+              y: (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+                error: Error()
+              }), DataManager) : DataManager).Instance.player.y,
+              direction: (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+                error: Error()
+              }), DataManager) : DataManager).Instance.player.direction,
+              type: (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+                error: Error()
+              }), DataManager) : DataManager).Instance.player.type,
+              state: (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+                error: Error()
+              }), DataManager) : DataManager).Instance.player.state === (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+                error: Error()
+              }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).IDLE || (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+                error: Error()
+              }), DataManager) : DataManager).Instance.player.state === (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+                error: Error()
+              }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).DEATH || (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+                error: Error()
+              }), DataManager) : DataManager).Instance.player.state === (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+                error: Error()
+              }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).AIRDEATH ? (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+                error: Error()
+              }), DataManager) : DataManager).Instance.player.state : (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+                error: Error()
+              }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).IDLE
+            },
+            door: {
+              x: (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+                error: Error()
+              }), DataManager) : DataManager).Instance.door.x,
+              y: (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+                error: Error()
+              }), DataManager) : DataManager).Instance.door.y,
+              direction: (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+                error: Error()
+              }), DataManager) : DataManager).Instance.door.direction,
+              type: (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+                error: Error()
+              }), DataManager) : DataManager).Instance.door.type,
+              state: (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+                error: Error()
+              }), DataManager) : DataManager).Instance.door.state
+            },
+            enemies: (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+              error: Error()
+            }), DataManager) : DataManager).Instance.enemies.map((_ref) => {
+              var {
+                x,
+                y,
+                direction,
+                type,
+                state
+              } = _ref;
+              return {
+                x,
+                y,
+                direction,
+                type,
+                state
+              };
+            }),
+            bursts: (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+              error: Error()
+            }), DataManager) : DataManager).Instance.bursts.map((_ref2) => {
+              var {
+                x,
+                y,
+                direction,
+                type,
+                state
+              } = _ref2;
+              return {
+                x,
+                y,
+                direction,
+                type,
+                state
+              };
+            }),
+            spikes: (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+              error: Error()
+            }), DataManager) : DataManager).Instance.spikes.map((_ref3) => {
+              var {
+                x,
+                y,
+                count,
+                type
+              } = _ref3;
+              return {
+                x,
+                y,
+                count,
+                type
+              };
+            })
+          };
+          (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+            error: Error()
+          }), DataManager) : DataManager).Instance.records.push(item);
+        } //撤回
+
+
+        revoke() {
+          var item = (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+            error: Error()
+          }), DataManager) : DataManager).Instance.records.pop();
+
+          if (item) {
+            //疑问
+            // DataManager.Instance.player = item.player
+            (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+              error: Error()
+            }), DataManager) : DataManager).Instance.player.x = (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+              error: Error()
+            }), DataManager) : DataManager).Instance.player.targetX = item.player.x;
+            (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+              error: Error()
+            }), DataManager) : DataManager).Instance.player.y = (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+              error: Error()
+            }), DataManager) : DataManager).Instance.player.targetY = item.player.y;
+            (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+              error: Error()
+            }), DataManager) : DataManager).Instance.player.direction = item.player.direction;
+            (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+              error: Error()
+            }), DataManager) : DataManager).Instance.player.state = item.player.state;
+            (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+              error: Error()
+            }), DataManager) : DataManager).Instance.door.x = item.door.x;
+            (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+              error: Error()
+            }), DataManager) : DataManager).Instance.door.y = item.door.y;
+            (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+              error: Error()
+            }), DataManager) : DataManager).Instance.door.direction = item.door.direction;
+            (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+              error: Error()
+            }), DataManager) : DataManager).Instance.door.state = item.door.state;
+
+            for (var i = 0; i < (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+              error: Error()
+            }), DataManager) : DataManager).Instance.enemies.length; i++) {
+              // const enemy = DataManager.Instance.enemies[i];
+              var enemy = item.enemies[i];
+              (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+                error: Error()
+              }), DataManager) : DataManager).Instance.enemies[i].x = enemy.x;
+              (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+                error: Error()
+              }), DataManager) : DataManager).Instance.enemies[i].y = enemy.y;
+              (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+                error: Error()
+              }), DataManager) : DataManager).Instance.enemies[i].type = enemy.type;
+              (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+                error: Error()
+              }), DataManager) : DataManager).Instance.enemies[i].direction = enemy.direction;
+              (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+                error: Error()
+              }), DataManager) : DataManager).Instance.enemies[i].state = enemy.state;
+            }
+
+            for (var _i = 0; _i < (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+              error: Error()
+            }), DataManager) : DataManager).Instance.bursts.length; _i++) {
+              var burst = item.bursts[_i];
+              (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+                error: Error()
+              }), DataManager) : DataManager).Instance.bursts[_i].x = burst.x;
+              (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+                error: Error()
+              }), DataManager) : DataManager).Instance.bursts[_i].y = burst.y;
+              (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+                error: Error()
+              }), DataManager) : DataManager).Instance.bursts[_i].type = burst.type;
+              (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+                error: Error()
+              }), DataManager) : DataManager).Instance.bursts[_i].state = burst.state;
+            }
+
+            for (var _i2 = 0; _i2 < (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+              error: Error()
+            }), DataManager) : DataManager).Instance.spikes.length; _i2++) {
+              var one = item.spikes[_i2];
+              (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+                error: Error()
+              }), DataManager) : DataManager).Instance.spikes[_i2].x = one.x;
+              (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+                error: Error()
+              }), DataManager) : DataManager).Instance.spikes[_i2].y = one.y;
+              (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+                error: Error()
+              }), DataManager) : DataManager).Instance.spikes[_i2].type = one.type;
+              (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+                error: Error()
+              }), DataManager) : DataManager).Instance.spikes[_i2].count = one.count;
+            }
+          }
         }
 
       }, _temp)) || _class));

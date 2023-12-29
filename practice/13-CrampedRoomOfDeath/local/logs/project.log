@@ -1385,3 +1385,7 @@ Function provided here: timer-util.ccc:1:1017
 2023-12-29 22:37:45-error: [Preview]unhandledrejection: download failed: assets/resources/import/42/429757a5-5a24-4609-b452-fe06c64bfcd0@96db9.json, status: 0(abort)
 2023-12-29 22:37:45-error: [Preview]Error: download failed: assets/resources/import/42/429757a5-5a24-4609-b452-fe06c64bfcd0@96db9.json, status: 0(abort)
     at xhr.onabort (http://localhost:7456/scripting/engine/bin/.cache/dev/preview/bundled/index.js:97519:20)
+2023-12-30 00:00:42-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading 'push') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/BattleManager.js
+2023-12-30 00:00:42-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading 'push') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/BattleManager.js
+2023-12-30 00:00:42-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading 'push') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/BattleManager.js
+2023-12-30 00:02:06-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading 'pop') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Sence/BattleManager.js

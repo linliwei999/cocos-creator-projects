@@ -9,6 +9,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
     _reporterNs.report("ITile", "db://assets/Levels", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfILevel(extras) {
+    _reporterNs.report("ILevel", "db://assets/Levels", _context.meta, extras);
+  }
+
   function _reportPossibleCrUseOfSingleton(extras) {
     _reporterNs.report("Singleton", "db://assets/Base/Singleton", _context.meta, extras);
   }
@@ -83,6 +87,8 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
           _defineProperty(this, "spikes", void 0);
 
           _defineProperty(this, "smokes", void 0);
+
+          _defineProperty(this, "records", void 0);
         }
 
         static get Instance() {
@@ -90,6 +96,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1"], function (_export, _
         }
 
         reset() {
+          this.records = [];
           this.mapInfo = [];
           this.tileInfo = [];
           this.player = null;

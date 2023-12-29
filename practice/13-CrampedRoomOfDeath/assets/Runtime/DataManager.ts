@@ -1,4 +1,4 @@
-import {ITile} from "db://assets/Levels";
+import {ITile, ILevel} from "db://assets/Levels";
 import Singleton from "db://assets/Base/Singleton";
 import {TileManager} from "db://assets/Scripts/Tile/TileManager";
 import {PlayerManager} from "db://assets/Scripts/Player/PlayerManager";
@@ -9,6 +9,8 @@ import {DoorManager} from "db://assets/Scripts/Door/DoorManager";
 import {BurstManager} from "db://assets/Scripts/Burst/BurstManager";
 import {SpikesManager} from "db://assets/Scripts/Spikes/SpikesManager";
 import {SmokeManager} from "db://assets/Scripts/Smoke/SmokeManager";
+
+export type IRecord = Omit<ILevel, 'mapInfo'>;
 
 export default class DataManager extends Singleton{
     static get Instance(){
@@ -25,8 +27,10 @@ export default class DataManager extends Singleton{
     bursts: BurstManager[]
     spikes: SpikesManager[]
     smokes: SmokeManager[]
+    records: IRecord[]
 
     reset(){
+        this.records = []
         this.mapInfo = []
         this.tileInfo = []
         this.player = null

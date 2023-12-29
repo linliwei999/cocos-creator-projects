@@ -111,11 +111,11 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
 
           _defineProperty(this, "fsm", void 0);
 
+          _defineProperty(this, "type", void 0);
+
           _defineProperty(this, "_count", void 0);
 
           _defineProperty(this, "_totalCount", void 0);
-
-          _defineProperty(this, "type", void 0);
         }
 
         get count() {

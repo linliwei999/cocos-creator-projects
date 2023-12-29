@@ -88,11 +88,11 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
 
           _defineProperty(this, "fsm", void 0);
 
+          _defineProperty(this, "type", void 0);
+
           _defineProperty(this, "_direction", void 0);
 
           _defineProperty(this, "_state", void 0);
-
-          _defineProperty(this, "type", void 0);
         }
 
         get direction() {

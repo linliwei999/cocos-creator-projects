@@ -86,6 +86,8 @@ System.register(["cc"], function (_export, _context) {
         EVENT_ENUM["DOOR_OPEN"] = "DOOR_OPEN";
         EVENT_ENUM["SHOW_SMOKE"] = "SHOW_SMOKE";
         EVENT_ENUM["SCREEN_SHAKE"] = "SCREEN_SHAKE";
+        EVENT_ENUM["RECORD_STEP"] = "RECORD_STEP";
+        EVENT_ENUM["REVOKE_STEP"] = "REVOKE_STEP";
       })(EVENT_ENUM || _export("EVENT_ENUM", EVENT_ENUM = {}));
 
       (function (ENTITY_STATE_ENUM) {

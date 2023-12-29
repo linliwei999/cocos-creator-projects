@@ -86,9 +86,11 @@ export class PlayerManager extends EntityManager {
 
     onAttack(enemyId: string){
         if(enemyId){
+            EventManager.Instance.emit(EVENT_ENUM.RECORD_STEP);
             this.state = ENTITY_STATE_ENUM.ATTACK;
             EventManager.Instance.emit(EVENT_ENUM.ATTACK_ENEMY, enemyId);
             EventManager.Instance.emit(EVENT_ENUM.DOOR_OPEN);
+            EventManager.Instance.emit(EVENT_ENUM.PLAYER_MOVE_END);
         }
         return enemyId;
     }
@@ -1200,7 +1202,7 @@ export class PlayerManager extends EntityManager {
 
     //玩家移动
     move(inputDirection: CONTROLLER_ENUM){
-        console.log('inputDirection', inputDirection)
+        EventManager.Instance.emit(EVENT_ENUM.RECORD_STEP);
         if (inputDirection === CONTROLLER_ENUM.TOP){
             this.targetY -=1;
             this.showSmoke(inputDirection);
