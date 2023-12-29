@@ -137,7 +137,7 @@
     ]
   },
   "cce:/internal/x/prerequisite-imports": {
-    "mTimestamp": 240392413.66228,
+    "mTimestamp": 242869249.644706,
     "chunkId": "quick-pack:/cce/internal/x/prerequisite-imports.js",
     "imports": [
       {
@@ -1229,7 +1229,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Sence/BattleManager.ts": {
     "mTimestamp": {
-      "mtime": 1703844571517.566,
+      "mtime": 1703846634078.7727,
       "uuid": "bd0bbef9-eda4-4fbc-a655-b42512681271"
     },
     "chunkId": "assets/Scripts/Sence/BattleManager.js",
@@ -1990,7 +1990,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Levels/level2.ts": {
     "mTimestamp": {
-      "mtime": 1703842999537.0264,
+      "mtime": 1703846688886.2185,
       "uuid": "84840746-efb0-49fc-82e6-266185eaa426"
     },
     "chunkId": "assets/Levels/level2.js",
@@ -2037,7 +2037,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Player/PlayerManager.ts": {
     "mTimestamp": {
-      "mtime": 1703832341997.1824,
+      "mtime": 1703847048539.6873,
       "uuid": "efe88db8-68e1-4998-bbdf-c5af4bf4ece6"
     },
     "chunkId": "assets/Scripts/Player/PlayerManager.js",
@@ -2877,7 +2877,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Base/EntityManager.ts": {
     "mTimestamp": {
-      "mtime": 1703818339009.7695,
+      "mtime": 1703846934126.7932,
       "uuid": "c2b48b49-80ae-46c1-aa04-8943765bf540"
     },
     "chunkId": "assets/Base/EntityManager.js",

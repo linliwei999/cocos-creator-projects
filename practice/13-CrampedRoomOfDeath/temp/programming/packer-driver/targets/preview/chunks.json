@@ -110,8 +110,8 @@
   },
   "assets/Base/DirectionSubStateMachine.js": {
     "imports": {
-      "__unresolved_0": "quick-pack:/cce/internal/code-quality/cr.js",
       "cc": "quick-pack:/cce/internal/x/cc.js",
+      "__unresolved_0": "quick-pack:/cce/internal/code-quality/cr.js",
       "__unresolved_1": "assets/Base/SubStateMachine.js",
       "__unresolved_2": "assets/Enums/index.js"
     },
@@ -260,17 +260,6 @@
     "physicalLocation": "fs/0/assets/Scripts/WoodenSkeleton/DeathSubStateMachine.js",
     "mTimestamp": 1703816613290
   },
-  "assets/Base/EntityManager.js": {
-    "imports": {
-      "__unresolved_0": "quick-pack:/cce/internal/code-quality/cr.js",
-      "cc": "quick-pack:/cce/internal/x/cc.js",
-      "__unresolved_2": "assets/Enums/index.js",
-      "__unresolved_1": "assets/Scripts/Tile/TileManager.js",
-      "__unresolved_3": "assets/Utils/index.js"
-    },
-    "physicalLocation": "fs/0/assets/Base/EntityManager.js",
-    "mTimestamp": 1703818624738
-  },
   "assets/Utils/index.js": {
     "imports": {
       "cc": "quick-pack:/cce/internal/x/cc.js"
@@ -305,9 +294,9 @@
       "__unresolved_0": "quick-pack:/cce/internal/code-quality/cr.js",
       "cc": "quick-pack:/cce/internal/x/cc.js",
       "__unresolved_1": "assets/Enums/index.js",
+      "__unresolved_2": "assets/Base/StateMachine.js",
       "__unresolved_4": "assets/Scripts/Door/DeathSubStateMachine.js",
-      "__unresolved_3": "assets/Scripts/Door/IdleSubStateMachine.js",
-      "__unresolved_2": "assets/Base/StateMachine.js"
+      "__unresolved_3": "assets/Scripts/Door/IdleSubStateMachine.js"
     },
     "physicalLocation": "fs/0/assets/Scripts/Door/DoorStateMachine.js",
     "mTimestamp": 1703820080103
@@ -341,9 +330,9 @@
       "__unresolved_0": "quick-pack:/cce/internal/code-quality/cr.js",
       "cc": "quick-pack:/cce/internal/x/cc.js",
       "__unresolved_1": "assets/Enums/index.js",
+      "__unresolved_2": "assets/Base/StateMachine.js",
       "__unresolved_3": "assets/Scripts/IronSkeleton/IdleSubStateMachine.js",
-      "__unresolved_4": "assets/Scripts/IronSkeleton/DeathSubStateMachine.js",
-      "__unresolved_2": "assets/Base/StateMachine.js"
+      "__unresolved_4": "assets/Scripts/IronSkeleton/DeathSubStateMachine.js"
     },
     "physicalLocation": "fs/0/assets/Scripts/IronSkeleton/IronSkeletonStateMachine.js",
     "mTimestamp": 1703822062823
@@ -371,10 +360,10 @@
   },
   "assets/Base/EnemyManager.js": {
     "imports": {
-      "cc": "quick-pack:/cce/internal/x/cc.js",
       "__unresolved_0": "quick-pack:/cce/internal/code-quality/cr.js",
-      "__unresolved_3": "assets/Base/EntityManager.js",
+      "cc": "quick-pack:/cce/internal/x/cc.js",
       "__unresolved_1": "assets/Enums/index.js",
+      "__unresolved_3": "assets/Base/EntityManager.js",
       "__unresolved_4": "assets/Runtime/DataManager.js",
       "__unresolved_2": "assets/Runtime/EventManager.js"
     },
@@ -386,8 +375,8 @@
       "__unresolved_0": "quick-pack:/cce/internal/code-quality/cr.js",
       "cc": "quick-pack:/cce/internal/x/cc.js",
       "__unresolved_1": "assets/Enums/index.js",
-      "__unresolved_3": "assets/Base/State.js",
-      "__unresolved_2": "assets/Base/StateMachine.js"
+      "__unresolved_2": "assets/Base/StateMachine.js",
+      "__unresolved_3": "assets/Base/State.js"
     },
     "physicalLocation": "fs/0/assets/Scripts/Burst/BurstStateMachine.js",
     "mTimestamp": 1703830668425
@@ -433,19 +422,6 @@
     },
     "physicalLocation": "fs/0/assets/Scripts/Player/PlayerStateMachine.js",
     "mTimestamp": 1703830800864
-  },
-  "assets/Scripts/Player/PlayerManager.js": {
-    "imports": {
-      "__unresolved_0": "quick-pack:/cce/internal/code-quality/cr.js",
-      "cc": "quick-pack:/cce/internal/x/cc.js",
-      "__unresolved_1": "assets/Enums/index.js",
-      "__unresolved_2": "assets/Runtime/EventManager.js",
-      "__unresolved_4": "assets/Base/EntityManager.js",
-      "__unresolved_5": "assets/Runtime/DataManager.js",
-      "__unresolved_3": "assets/Scripts/Player/PlayerStateMachine.js"
-    },
-    "physicalLocation": "fs/0/assets/Scripts/Player/PlayerManager.js",
-    "mTimestamp": 1703832344438
   },
   "assets/Runtime/DataManager.js": {
     "imports": {
@@ -511,10 +487,10 @@
       "__unresolved_0": "quick-pack:/cce/internal/code-quality/cr.js",
       "cc": "quick-pack:/cce/internal/x/cc.js",
       "__unresolved_1": "assets/Enums/index.js",
+      "__unresolved_2": "assets/Runtime/EventManager.js",
       "__unresolved_3": "assets/Base/EntityManager.js",
       "__unresolved_4": "assets/Runtime/DataManager.js",
       "__unresolved_5": "assets/Scripts/Burst/BurstStateMachine.js",
-      "__unresolved_2": "assets/Runtime/EventManager.js",
       "__unresolved_6": "assets/Scripts/Tile/TileManager.js"
     },
     "physicalLocation": "fs/0/assets/Scripts/Burst/BurstManager.js",
@@ -537,9 +513,9 @@
       "cc": "quick-pack:/cce/internal/x/cc.js",
       "__unresolved_1": "assets/Enums/index.js",
       "__unresolved_2": "assets/Base/StateMachine.js",
+      "__unresolved_3": "assets/Scripts/Spikes/SpikesOneSubStateMachine.js",
       "__unresolved_6": "assets/Scripts/Spikes/SpikesManager.js",
       "__unresolved_7": "assets/Scripts/Spikes/SpikesFourSubStateMachine.js",
-      "__unresolved_3": "assets/Scripts/Spikes/SpikesOneSubStateMachine.js",
       "__unresolved_5": "assets/Scripts/Spikes/SpikesThreeSubStateMachine.js",
       "__unresolved_4": "assets/Scripts/Spikes/SpikesTwoSubStateMachine.js"
     },
@@ -570,15 +546,6 @@
     "physicalLocation": "fs/0/assets/Levels/index.js",
     "mTimestamp": 1703843013702
   },
-  "assets/Levels/level2.js": {
-    "imports": {
-      "__unresolved_0": "quick-pack:/cce/internal/code-quality/cr.js",
-      "cc": "quick-pack:/cce/internal/x/cc.js",
-      "__unresolved_1": "assets/Enums/index.js"
-    },
-    "physicalLocation": "fs/0/assets/Levels/level2.js",
-    "mTimestamp": 1703843013760
-  },
   "assets/Levels/level1.js": {
     "imports": {
       "__unresolved_0": "quick-pack:/cce/internal/code-quality/cr.js",
@@ -588,46 +555,87 @@
     "physicalLocation": "fs/0/assets/Levels/level1.js",
     "mTimestamp": 1703843013908
   },
+  "assets/Scripts/Sence/BattleManager.js": {
+    "imports": {
+      "__unresolved_0": "quick-pack:/cce/internal/code-quality/cr.js",
+      "cc": "quick-pack:/cce/internal/x/cc.js",
+      "__unresolved_3": "assets/Levels/index.js",
+      "__unresolved_4": "assets/Runtime/DataManager.js",
+      "__unresolved_6": "assets/Runtime/EventManager.js",
+      "__unresolved_7": "assets/Enums/index.js",
+      "__unresolved_10": "assets/Scripts/IronSkeleton/IronSkeletonManager.js",
+      "__unresolved_11": "assets/Scripts/Door/DoorManager.js",
+      "__unresolved_12": "assets/Scripts/Burst/BurstManager.js",
+      "__unresolved_13": "assets/Scripts/Spikes/SpikesManager.js",
+      "__unresolved_5": "assets/Scripts/Tile/TileManager.js",
+      "__unresolved_1": "assets/Scripts/Tile/TileMapManager.js",
+      "__unresolved_9": "assets/Scripts/WoodenSkeleton/WoodenSkeletonManager.js",
+      "__unresolved_2": "assets/Utils/index.js",
+      "__unresolved_8": "assets/Scripts/Player/PlayerManager.js"
+    },
+    "physicalLocation": "fs/0/assets/Scripts/Sence/BattleManager.js",
+    "mTimestamp": 1703846674257
+  },
+  "assets/Levels/level2.js": {
+    "imports": {
+      "__unresolved_0": "quick-pack:/cce/internal/code-quality/cr.js",
+      "cc": "quick-pack:/cce/internal/x/cc.js",
+      "__unresolved_1": "assets/Enums/index.js"
+    },
+    "physicalLocation": "fs/0/assets/Levels/level2.js",
+    "mTimestamp": 1703846756323
+  },
+  "assets/Base/EntityManager.js": {
+    "imports": {
+      "__unresolved_0": "quick-pack:/cce/internal/code-quality/cr.js",
+      "cc": "quick-pack:/cce/internal/x/cc.js",
+      "__unresolved_2": "assets/Enums/index.js",
+      "__unresolved_1": "assets/Scripts/Tile/TileManager.js",
+      "__unresolved_3": "assets/Utils/index.js"
+    },
+    "physicalLocation": "fs/0/assets/Base/EntityManager.js",
+    "mTimestamp": 1703847006213
+  },
   "quick-pack:/cce/internal/x/prerequisite-imports.js": {
     "imports": {
-      "__unresolved_1": "assets/Base/EnemyManager.js",
+      "__unresolved_0": "assets/Base/DirectionSubStateMachine.js",
       "__unresolved_3": "assets/Base/Singleton.js",
+      "__unresolved_2": "assets/Base/EntityManager.js",
+      "__unresolved_5": "assets/Base/StateMachine.js",
       "__unresolved_4": "assets/Base/State.js",
       "__unresolved_6": "assets/Base/SubStateMachine.js",
-      "__unresolved_2": "assets/Base/EntityManager.js",
-      "__unresolved_0": "assets/Base/DirectionSubStateMachine.js",
-      "__unresolved_8": "assets/Levels/index.js",
       "__unresolved_7": "assets/Enums/index.js",
+      "__unresolved_8": "assets/Levels/index.js",
       "__unresolved_10": "assets/Levels/level2.js",
       "__unresolved_9": "assets/Levels/level1.js",
-      "__unresolved_13": "assets/Runtime/ResourceManager.js",
       "__unresolved_11": "assets/Runtime/DataManager.js",
-      "__unresolved_15": "assets/Scripts/Burst/BurstStateMachine.js",
-      "__unresolved_14": "assets/Scripts/Burst/BurstManager.js",
+      "__unresolved_1": "assets/Base/EnemyManager.js",
       "__unresolved_12": "assets/Runtime/EventManager.js",
-      "__unresolved_18": "assets/Scripts/Door/DoorStateMachine.js",
+      "__unresolved_13": "assets/Runtime/ResourceManager.js",
+      "__unresolved_14": "assets/Scripts/Burst/BurstManager.js",
       "__unresolved_16": "assets/Scripts/Door/DeathSubStateMachine.js",
+      "__unresolved_15": "assets/Scripts/Burst/BurstStateMachine.js",
+      "__unresolved_18": "assets/Scripts/Door/DoorStateMachine.js",
       "__unresolved_17": "assets/Scripts/Door/DoorManager.js",
       "__unresolved_19": "assets/Scripts/Door/IdleSubStateMachine.js",
+      "__unresolved_20": "assets/Scripts/IronSkeleton/DeathSubStateMachine.js",
       "__unresolved_21": "assets/Scripts/IronSkeleton/IdleSubStateMachine.js",
       "__unresolved_22": "assets/Scripts/IronSkeleton/IronSkeletonManager.js",
-      "__unresolved_23": "assets/Scripts/IronSkeleton/IronSkeletonStateMachine.js",
       "__unresolved_24": "assets/Scripts/Player/AirDeathSubStateMachine.js",
-      "__unresolved_20": "assets/Scripts/IronSkeleton/DeathSubStateMachine.js",
-      "__unresolved_25": "assets/Scripts/Player/AttackSubStateMachine.js",
+      "__unresolved_23": "assets/Scripts/IronSkeleton/IronSkeletonStateMachine.js",
       "__unresolved_26": "assets/Scripts/Player/BlockFrontSubStateMachine.js",
-      "__unresolved_28": "assets/Scripts/Player/DeathSubStateMachine.js",
+      "__unresolved_25": "assets/Scripts/Player/AttackSubStateMachine.js",
       "__unresolved_27": "assets/Scripts/Player/BlockTurnLeftSubStateMachine.js",
-      "__unresolved_5": "assets/Base/StateMachine.js",
+      "__unresolved_28": "assets/Scripts/Player/DeathSubStateMachine.js",
       "__unresolved_29": "assets/Scripts/Player/IdleSubStateMachine.js",
-      "__unresolved_30": "assets/Scripts/Player/PlayerManager.js",
       "__unresolved_31": "assets/Scripts/Player/PlayerStateMachine.js",
       "__unresolved_32": "assets/Scripts/Player/TurnLeftSubStateMachine.js",
+      "__unresolved_33": "assets/Scripts/Sence/BattleManager.js",
       "__unresolved_34": "assets/Scripts/Spikes/SpikesFourSubStateMachine.js",
       "__unresolved_35": "assets/Scripts/Spikes/SpikesManager.js",
-      "__unresolved_38": "assets/Scripts/Spikes/SpikesSubStateMachine.js",
-      "__unresolved_37": "assets/Scripts/Spikes/SpikesStateMachine.js",
       "__unresolved_36": "assets/Scripts/Spikes/SpikesOneSubStateMachine.js",
+      "__unresolved_37": "assets/Scripts/Spikes/SpikesStateMachine.js",
+      "__unresolved_38": "assets/Scripts/Spikes/SpikesSubStateMachine.js",
       "__unresolved_39": "assets/Scripts/Spikes/SpikesThreeSubStateMachine.js",
       "__unresolved_40": "assets/Scripts/Spikes/SpikesTwoSubStateMachine.js",
       "__unresolved_41": "assets/Scripts/Tile/TileManager.js",
@@ -639,32 +647,24 @@
       "__unresolved_47": "assets/Scripts/WoodenSkeleton/WoodenSkeletonManager.js",
       "__unresolved_48": "assets/Scripts/WoodenSkeleton/WoodenSkeletonStateMachine.js",
       "__unresolved_49": "assets/Utils/index.js",
-      "__unresolved_33": "assets/Scripts/Sence/BattleManager.js"
+      "__unresolved_30": "assets/Scripts/Player/PlayerManager.js"
     },
     "physicalLocation": "cce/internal/x/prerequisite-imports.js",
-    "mTimestamp": 1703844573058,
+    "mTimestamp": 1703847049896,
     "isEntry": true,
     "exposeAs": "cce:/internal/x/prerequisite-imports"
   },
-  "assets/Scripts/Sence/BattleManager.js": {
+  "assets/Scripts/Player/PlayerManager.js": {
     "imports": {
       "__unresolved_0": "quick-pack:/cce/internal/code-quality/cr.js",
       "cc": "quick-pack:/cce/internal/x/cc.js",
-      "__unresolved_1": "assets/Scripts/Tile/TileMapManager.js",
-      "__unresolved_4": "assets/Runtime/DataManager.js",
-      "__unresolved_5": "assets/Scripts/Tile/TileManager.js",
-      "__unresolved_6": "assets/Runtime/EventManager.js",
-      "__unresolved_8": "assets/Scripts/Player/PlayerManager.js",
-      "__unresolved_9": "assets/Scripts/WoodenSkeleton/WoodenSkeletonManager.js",
-      "__unresolved_10": "assets/Scripts/IronSkeleton/IronSkeletonManager.js",
-      "__unresolved_11": "assets/Scripts/Door/DoorManager.js",
-      "__unresolved_12": "assets/Scripts/Burst/BurstManager.js",
-      "__unresolved_13": "assets/Scripts/Spikes/SpikesManager.js",
-      "__unresolved_2": "assets/Utils/index.js",
-      "__unresolved_3": "assets/Levels/index.js",
-      "__unresolved_7": "assets/Enums/index.js"
+      "__unresolved_2": "assets/Runtime/EventManager.js",
+      "__unresolved_4": "assets/Base/EntityManager.js",
+      "__unresolved_3": "assets/Scripts/Player/PlayerStateMachine.js",
+      "__unresolved_5": "assets/Runtime/DataManager.js",
+      "__unresolved_1": "assets/Enums/index.js"
     },
-    "physicalLocation": "fs/0/assets/Scripts/Sence/BattleManager.js",
-    "mTimestamp": 1703844573139
+    "physicalLocation": "fs/0/assets/Scripts/Player/PlayerManager.js",
+    "mTimestamp": 1703847050070
   }
 }

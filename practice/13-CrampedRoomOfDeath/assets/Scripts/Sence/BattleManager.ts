@@ -29,6 +29,7 @@ export class BattleManager extends Component {
     onLoad(){
         DataManager.Instance.levelIndex = 1;
         EventManager.Instance.on(EVENT_ENUM.NEXT_LEVEL, this.nextLevel, this);
+        EventManager.Instance.on(EVENT_ENUM.PLAYER_MOVE_END, this.checkArrivedDoor, this);
     }
 
     onDestroy(){
@@ -53,6 +54,17 @@ export class BattleManager extends Component {
             // this.generateDoor();
             // this.generatePlayer();
             // this.generateEnemies();
+        }
+    }
+
+    //是否切换下一关
+    checkArrivedDoor(){
+        const {
+            player: { x: playerX, y: playerY },
+            door: { x: doorX, y: doorY, state: doorState }
+        } = DataManager.Instance;
+        if(playerX === doorX && playerY === doorY && doorState === ENTITY_STATE_ENUM.DEATH){
+            this.nextLevel();
         }
     }
 
@@ -92,13 +104,6 @@ export class BattleManager extends Component {
         const player = createUINode();
         player.setParent(this.stage);
         const playerManager = player.addComponent(PlayerManager);
-        // await playerManager.init({
-        //     x: 2,
-        //     y: 8,
-        //     type: ENTITY_TYPE_ENUM.PLAYER,
-        //     direction: DIRECTION_ENUM.TOP,
-        //     state: ENTITY_STATE_ENUM.IDLE
-        // });
         await playerManager.init(this.level.player);
         DataManager.Instance.player = playerManager;
         EventManager.Instance.emit(EVENT_ENUM.PLAYER_BORN, true);

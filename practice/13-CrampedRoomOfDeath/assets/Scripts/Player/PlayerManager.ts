@@ -23,9 +23,15 @@ export class PlayerManager extends EntityManager {
         await this.fsm.init();
         super.init(params);
         this.targetX = this.x;
-        this.targetY = this.y;
+        this.targetY = this.y;;
         EventManager.Instance.on(EVENT_ENUM.PLAYER_CTRL, this.inputHandle, this);
         EventManager.Instance.on(EVENT_ENUM.ATTACK_PLAYER, this.onDied, this);
+    }
+
+    onDestroy() {
+        super.onDestroy();
+        EventManager.Instance.off(EVENT_ENUM.PLAYER_CTRL, this.inputHandle);
+        EventManager.Instance.off(EVENT_ENUM.ATTACK_PLAYER, this.onDied);
     }
 
     updateXY(){
@@ -101,6 +107,7 @@ export class PlayerManager extends EntityManager {
 
     willBlock(inputDirection: CONTROLLER_ENUM){
         const { targetX: x, targetY: y, direction } = this;
+        console.log('this', this);
         const {
             tileInfo,
             door: { x: doorX, y: doorY, state: doorState },
@@ -182,6 +189,7 @@ export class PlayerManager extends EntityManager {
         }else if(inputDirection === CONTROLLER_ENUM.TURNLEFT){
             let nextX
             let nextY
+            // console.log('direction', direction)
             if(direction === DIRECTION_ENUM.TOP){
                 nextX = x - 1;
                 nextY = y - 1;
@@ -212,6 +220,11 @@ export class PlayerManager extends EntityManager {
             }
 
             //判断地图元素
+            // console.log('tileInfo', tileInfo)
+            // console.log('x', x)
+            // console.log('nextX', nextX)
+            // console.log('y', y)
+            // console.log('nextY', nextY)
             if(
                 (!tileInfo[x][nextY] || tileInfo[x][nextY].turnable) &&
                 (!tileInfo[nextX][y] || tileInfo[nextX][y].turnable) &&

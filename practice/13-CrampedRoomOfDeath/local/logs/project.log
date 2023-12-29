@@ -585,3 +585,14 @@ Function provided here: timer-util.ccc:1:1017
 2023-12-29 15:19:08-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading 'moveable') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js
 2023-12-29 15:48:32-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading 'moveable') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js
 2023-12-29 15:48:32-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading 'moveable') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js
+2023-12-29 18:15:45-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading 'undefined') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js
+2023-12-29 18:16:43-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading 'undefined') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js
+2023-12-29 18:19:13-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading 'undefined') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js
+2023-12-29 18:24:59-error: [Preview]Uncaught TypeError: Cannot read properties of null (reading 'setParams') in http://localhost:7456/scripting/x/mods/fs/0/assets/Base/EntityManager.js
+2023-12-29 18:25:57-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading 'undefined') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js
+2023-12-29 18:36:53-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading 'undefined') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js
+2023-12-29 18:41:53-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading 'undefined') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js
+2023-12-29 18:43:38-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading 'undefined') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js
+2023-12-29 18:47:22-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading 'undefined') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js
+2023-12-29 18:51:22-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading '4') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js
+2023-12-29 18:51:22-error: [Preview]Uncaught TypeError: Cannot read properties of undefined (reading '4') in http://localhost:7456/scripting/x/mods/fs/0/assets/Scripts/Player/PlayerManager.js

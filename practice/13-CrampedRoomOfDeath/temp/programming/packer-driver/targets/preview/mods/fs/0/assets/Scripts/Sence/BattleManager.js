@@ -1,7 +1,7 @@
 System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4", "__unresolved_5", "__unresolved_6", "__unresolved_7", "__unresolved_8", "__unresolved_9", "__unresolved_10", "__unresolved_11", "__unresolved_12", "__unresolved_13"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, _decorator, Component, TileMapManager, createUINode, Levels, DataManager, TILE_HEIGHT, TILE_WIDTH, EventManager, ENTITY_TYPE_ENUM, EVENT_ENUM, PlayerManager, WoodenSkeletonManager, IronSkeletonManager, DoorManager, BurstManager, SpikesManager, _dec, _class, _temp, _crd, ccclass, property, BattleManager;
+  var _reporterNs, _cclegacy, _decorator, Component, TileMapManager, createUINode, Levels, DataManager, TILE_HEIGHT, TILE_WIDTH, EventManager, ENTITY_STATE_ENUM, ENTITY_TYPE_ENUM, EVENT_ENUM, PlayerManager, WoodenSkeletonManager, IronSkeletonManager, DoorManager, BurstManager, SpikesManager, _dec, _class, _temp, _crd, ccclass, property, BattleManager;
 
   function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -39,6 +39,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
 
   function _reportPossibleCrUseOfEventManager(extras) {
     _reporterNs.report("EventManager", "db://assets/Runtime/EventManager", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfENTITY_STATE_ENUM(extras) {
+    _reporterNs.report("ENTITY_STATE_ENUM", "db://assets/Enums", _context.meta, extras);
   }
 
   function _reportPossibleCrUseOfENTITY_TYPE_ENUM(extras) {
@@ -94,6 +98,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     }, function (_unresolved_7) {
       EventManager = _unresolved_7.default;
     }, function (_unresolved_8) {
+      ENTITY_STATE_ENUM = _unresolved_8.ENTITY_STATE_ENUM;
       ENTITY_TYPE_ENUM = _unresolved_8.ENTITY_TYPE_ENUM;
       EVENT_ENUM = _unresolved_8.EVENT_ENUM;
     }, function (_unresolved_9) {
@@ -131,12 +136,17 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
         onLoad() {
           (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
             error: Error()
-          }), DataManager) : DataManager).Instance.levelIndex = 2;
+          }), DataManager) : DataManager).Instance.levelIndex = 1;
           (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
             error: Error()
           }), EventManager) : EventManager).Instance.on((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
             error: Error()
           }), EVENT_ENUM) : EVENT_ENUM).NEXT_LEVEL, this.nextLevel, this);
+          (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
+            error: Error()
+          }), EventManager) : EventManager).Instance.on((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
+            error: Error()
+          }), EVENT_ENUM) : EVENT_ENUM).PLAYER_MOVE_END, this.checkArrivedDoor, this);
         }
 
         onDestroy() {
@@ -175,6 +185,29 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             this.generateTileMap(); // this.generateDoor();
             // this.generatePlayer();
             // this.generateEnemies();
+          }
+        } //是否切换下一关
+
+
+        checkArrivedDoor() {
+          var {
+            player: {
+              x: playerX,
+              y: playerY
+            },
+            door: {
+              x: doorX,
+              y: doorY,
+              state: doorState
+            }
+          } = (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+            error: Error()
+          }), DataManager) : DataManager).Instance;
+
+          if (playerX === doorX && playerY === doorY && doorState === (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+            error: Error()
+          }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).DEATH) {
+            this.nextLevel();
           }
         } //下一关函数
 
@@ -240,14 +273,7 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
             player.setParent(_this2.stage);
             var playerManager = player.addComponent(_crd && PlayerManager === void 0 ? (_reportPossibleCrUseOfPlayerManager({
               error: Error()
-            }), PlayerManager) : PlayerManager); // await playerManager.init({
-            //     x: 2,
-            //     y: 8,
-            //     type: ENTITY_TYPE_ENUM.PLAYER,
-            //     direction: DIRECTION_ENUM.TOP,
-            //     state: ENTITY_STATE_ENUM.IDLE
-            // });
-
+            }), PlayerManager) : PlayerManager);
             yield playerManager.init(_this2.level.player);
             (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
               error: Error()
