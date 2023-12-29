@@ -389,7 +389,7 @@
     ]
   },
   "cce:/internal/x/prerequisite-imports": {
-    "mTimestamp": 216073499.658966,
+    "mTimestamp": 216396658.376871,
     "chunkId": "quick-pack:/cce/internal/x/prerequisite-imports.js",
     "imports": [
       {
@@ -1965,7 +1965,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Player/PlayerManager.ts": {
     "mTimestamp": {
-      "mtime": 1703818963137.463,
+      "mtime": 1703820568495.3052,
       "uuid": "efe88db8-68e1-4998-bbdf-c5af4bf4ece6"
     },
     "chunkId": "assets/Scripts/Player/PlayerManager.js",
@@ -4059,7 +4059,7 @@
   },
   "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Scripts/Door/DoorManager.ts": {
     "mTimestamp": {
-      "mtime": 1703820055953.2764,
+      "mtime": 1703820501262.237,
       "uuid": "5c142984-edd7-4128-b760-5c6e28333c95"
     },
     "chunkId": "assets/Scripts/Door/DoorManager.js",
@@ -4127,15 +4127,29 @@
         }
       },
       {
-        "value": "db://assets/Scripts/Door/DoorStateMachine",
+        "value": "db://assets/Runtime/DataManager",
         "rewritten": "__unresolved_4",
         "loc": {
           "start": {
-            "line": 7,
+            "line": 5,
+            "column": 24
+          },
+          "end": {
+            "line": 5,
+            "column": 57
+          }
+        }
+      },
+      {
+        "value": "db://assets/Scripts/Door/DoorStateMachine",
+        "rewritten": "__unresolved_5",
+        "loc": {
+          "start": {
+            "line": 6,
             "column": 31
           },
           "end": {
-            "line": 7,
+            "line": 6,
             "column": 74
           }
         }
@@ -4168,6 +4182,10 @@
       {
         "isExternal": false,
         "url": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Base/EntityManager.ts"
+      },
+      {
+        "isExternal": false,
+        "url": "file:///Users/lindanian/projects/git/cocos-creator-projects/practice/13-CrampedRoomOfDeath/assets/Runtime/DataManager.ts"
       },
       {
         "isExternal": false,

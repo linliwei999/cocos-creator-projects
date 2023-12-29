@@ -73,8 +73,11 @@ export class PlayerManager extends EntityManager {
     }
 
     onAttack(enemyId: string){
-        this.state = ENTITY_STATE_ENUM.ATTACK;
-        EventManager.Instance.emit(EVENT_ENUM.ATTACK_ENEMY, enemyId);
+        if(enemyId){
+            this.state = ENTITY_STATE_ENUM.ATTACK;
+            EventManager.Instance.emit(EVENT_ENUM.ATTACK_ENEMY, enemyId);
+            EventManager.Instance.emit(EVENT_ENUM.DOOR_OPEN);
+        }
         return enemyId;
     }
 

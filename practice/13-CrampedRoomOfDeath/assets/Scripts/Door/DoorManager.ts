@@ -3,7 +3,6 @@ import {DIRECTION_ENUM, ENTITY_STATE_ENUM, ENTITY_TYPE_ENUM, EVENT_ENUM} from "d
 import EventManager from "db://assets/Runtime/EventManager";
 import {EntityManager} from "db://assets/Base/EntityManager";
 import DataManager from "db://assets/Runtime/DataManager";
-import {WoodenSkeletonStateMachine} from "db://assets/Scripts/WoodenSkeleton/WoodenSkeletonStateMachine";
 import {DoorStateMachine} from "db://assets/Scripts/Door/DoorStateMachine";
 
 const { ccclass, property } = _decorator;
@@ -30,7 +29,10 @@ export class DoorManager extends EntityManager {
     }
 
     onOpen(){
-
+        const allEnemyDeathFlag = DataManager.Instance.enemies.every((enemy)=> enemy.state === ENTITY_STATE_ENUM.DEATH);
+        if(allEnemyDeathFlag && this.state !== ENTITY_STATE_ENUM.DEATH){
+            this.state = ENTITY_STATE_ENUM.DEATH;
+        }
     }
 }
 

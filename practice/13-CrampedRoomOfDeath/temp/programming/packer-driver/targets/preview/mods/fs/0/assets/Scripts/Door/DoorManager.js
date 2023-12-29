@@ -1,7 +1,7 @@
-System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4"], function (_export, _context) {
+System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4", "__unresolved_5"], function (_export, _context) {
   "use strict";
 
-  var _reporterNs, _cclegacy, _decorator, DIRECTION_ENUM, ENTITY_STATE_ENUM, ENTITY_TYPE_ENUM, EVENT_ENUM, EventManager, EntityManager, DoorStateMachine, _dec, _class, _crd, ccclass, property, DoorManager;
+  var _reporterNs, _cclegacy, _decorator, DIRECTION_ENUM, ENTITY_STATE_ENUM, ENTITY_TYPE_ENUM, EVENT_ENUM, EventManager, EntityManager, DataManager, DoorStateMachine, _dec, _class, _crd, ccclass, property, DoorManager;
 
   function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
@@ -31,6 +31,10 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     _reporterNs.report("EntityManager", "db://assets/Base/EntityManager", _context.meta, extras);
   }
 
+  function _reportPossibleCrUseOfDataManager(extras) {
+    _reporterNs.report("DataManager", "db://assets/Runtime/DataManager", _context.meta, extras);
+  }
+
   function _reportPossibleCrUseOfDoorStateMachine(extras) {
     _reporterNs.report("DoorStateMachine", "db://assets/Scripts/Door/DoorStateMachine", _context.meta, extras);
   }
@@ -51,7 +55,9 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
     }, function (_unresolved_4) {
       EntityManager = _unresolved_4.EntityManager;
     }, function (_unresolved_5) {
-      DoorStateMachine = _unresolved_5.DoorStateMachine;
+      DataManager = _unresolved_5.default;
+    }, function (_unresolved_6) {
+      DoorStateMachine = _unresolved_6.DoorStateMachine;
     }],
     execute: function () {
       _crd = true;
@@ -107,7 +113,21 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
           }), EVENT_ENUM) : EVENT_ENUM).DOOR_OPEN, this.onOpen);
         }
 
-        onOpen() {}
+        onOpen() {
+          var allEnemyDeathFlag = (_crd && DataManager === void 0 ? (_reportPossibleCrUseOfDataManager({
+            error: Error()
+          }), DataManager) : DataManager).Instance.enemies.every(enemy => enemy.state === (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+            error: Error()
+          }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).DEATH);
+
+          if (allEnemyDeathFlag && this.state !== (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+            error: Error()
+          }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).DEATH) {
+            this.state = (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+              error: Error()
+            }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).DEATH;
+          }
+        }
 
       }) || _class));
 

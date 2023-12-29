@@ -180,14 +180,22 @@ System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__
         }
 
         onAttack(enemyId) {
-          this.state = (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
-            error: Error()
-          }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).ATTACK;
-          (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
-            error: Error()
-          }), EventManager) : EventManager).Instance.emit((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
-            error: Error()
-          }), EVENT_ENUM) : EVENT_ENUM).ATTACK_ENEMY, enemyId);
+          if (enemyId) {
+            this.state = (_crd && ENTITY_STATE_ENUM === void 0 ? (_reportPossibleCrUseOfENTITY_STATE_ENUM({
+              error: Error()
+            }), ENTITY_STATE_ENUM) : ENTITY_STATE_ENUM).ATTACK;
+            (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
+              error: Error()
+            }), EventManager) : EventManager).Instance.emit((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
+              error: Error()
+            }), EVENT_ENUM) : EVENT_ENUM).ATTACK_ENEMY, enemyId);
+            (_crd && EventManager === void 0 ? (_reportPossibleCrUseOfEventManager({
+              error: Error()
+            }), EventManager) : EventManager).Instance.emit((_crd && EVENT_ENUM === void 0 ? (_reportPossibleCrUseOfEVENT_ENUM({
+              error: Error()
+            }), EVENT_ENUM) : EVENT_ENUM).DOOR_OPEN);
+          }
+
           return enemyId;
         }
 
